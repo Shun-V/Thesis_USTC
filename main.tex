@@ -1,0 +1,54 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = en_US
+
+\documentclass[degree=doctor, language=english]{ustcthesis}
+% degree      = doctor | master | bachelor
+% degree-type = academic | professional
+% language    = chinese | english
+% fontset     = windows | mac | ubuntu | fandol
+
+% 加载宏包、全部的配置
+\input{ustcsetup.tex}
+
+
+\begin{document}
+
+\maketitle
+\copyrightpage
+
+\frontmatter
+\input{chapters/0_abstract.tex}
+\tableofcontents
+% \listoffigures
+% \listoftables
+\input{chapters/0_notation.tex}
+
+\mainmatter
+\input{chapters/1_intro.tex}
+\input{chapters/2_theory.tex}
+\input{chapters/3_detector.tex}
+\input{chapters/4_zzllvv.tex}
+\input{chapters/5_dm_search.tex}
+\input{chapters/6_hardware.tex}
+\input{chapters/7_summary.tex}
+
+
+
+\bibliography{bib/ustc}  % 参考文献使用 BibTeX 编译
+% \printbibliography       % 参考文献使用 BibLaTeX 编译
+
+\appendix
+\input{chapters/a_complementary.tex}
+
+\backmatter
+\input{chapters/8_acknowledgements.tex}
+\input{chapters/9_publications.tex}
+
+
+%Template docs
+%\input{chapters/floats.tex}
+%\input{chapters/math.tex}
+%\input{chapters/citations.tex}
+
+\end{document}

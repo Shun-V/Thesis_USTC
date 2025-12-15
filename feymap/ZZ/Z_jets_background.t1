@@ -1,0 +1,8 @@
+% Z_jets_background.t1 -- generated from Z_jets_background.mp
+\fmfL(101.70993,40.48943,rt){$Z$}%
+\fmfL(10.3916,-3.84119,rt){$q$}%
+\fmfL(10.3916,103.84119,rb){$\bar {q}$}%
+\fmfL(139.6084,-3.84119,lt){$\ell ^+$}%
+\fmfL(154.12013,31.03636,l){$\ell ^-$}%
+\fmfL(154.12,68.96452,l){Jet}%
+\fmfL(139.6084,103.84119,lb){Jet}%

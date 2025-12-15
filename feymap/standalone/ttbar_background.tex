@@ -1,0 +1,28 @@
+% ttbar to WbWb to lv b lv b
+\documentclass{standalone}
+\usepackage{feynmp-auto}
+\begin{document}
+
+\begin{fmffile}{ttbar_background}
+    \begin{fmfgraph*}(150,100)
+        \fmfleft{i1,i2}
+        \fmfright{o1,o2,o3,o4,o5,o6}
+        \fmflabel{$g$}{i1}
+        \fmflabel{$g$}{i2}
+        \fmflabel{$b$}{o1}
+        \fmflabel{$W^+$}{o2}
+        \fmflabel{$b$}{o3}
+        \fmflabel{$W^-$}{o4}
+        \fmf{gluon}{i1,v1}
+        \fmf{gluon}{i2,v1}
+        \fmf{fermion,label=$t$}{v1,v2}
+        \fmf{fermion,label=$\bar{t}$}{v1,v3}
+        \fmf{fermion}{v2,o1}
+        \fmf{boson}{v2,o2}
+        \fmf{fermion}{v3,o3}
+        \fmf{boson}{v3,o4}
+    \end{fmfgraph*}
+\end{fmffile}
+
+\end{document}
+

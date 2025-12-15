@@ -1,0 +1,151 @@
+% !TeX root = ../main.tex
+\chapter{The Standard Model of Particle Physics}
+
+%-------------SM----------------
+\section{Standard Model}
+
+
+The Standard Model (SM) of particle physics is the theoretical framework that describes the fundamental particles and their interactions, excluding gravity. It is one of the most successful theories in physics, providing precise predictions that have been confirmed by numerous experiments.
+
+\subsection{Fundamental Particles}
+
+The SM classifies all known elementary particles into two broad categories: fermions and bosons.
+
+\begin{enumerate}
+    \item \textbf{Fermions}: These are the building blocks of matter. They follow the Pauli exclusion principle and are categorized into quarks and leptons.
+        Quarks: There are six types (flavors) of quarks: up ($u$), down ($d$), charm ($c$), strange ($s$), top ($t$), and bottom ($b$). Quarks combine to form hadrons, such as protons and neutrons.
+    \item \textbf{Bosons}: These are force carriers that mediate interactions between fermions.
+        Gauge Bosons: The SM includes four gauge bosons corresponding to the three fundamental forces (excluding gravity):
+            Photon ($\gamma$): Mediates the electromagnetic force.
+            W and Z bosons ($W^{\pm} Z^{0}$): Mediate the weak nuclear force.
+            Gluon ($g$): Mediates the strong nuclear force.
+        Higgs Boson: Discovered in 2012, the Higgs boson ($H$) is associated with the Higgs field, which gives mass to other particles through the Higgs mechanism.
+\end{enumerate}
+
+
+\subsection{Fundamental Forces}
+
+The SM describes three of the four fundamental forces in nature:
+
+\begin{enumerate}
+    \item \textbf{Electromagnetic Force}: Described by Quantum Electrodynamics (QED), it acts between charged particles and is mediated by photons.
+    \item \textbf{Weak Nuclear Force}: Responsible for processes like beta decay, it is mediated by the W and Z bosons. The weak force can change the flavor of quarks, thus playing a crucial role in nuclear reactions.
+    \item \textbf{Strong Nuclear Force}: Described by Quantum Chromodynamics (QCD), it binds quarks together to form hadrons. Gluons mediate this force and carry color charge.
+\end{enumerate}
+
+\subsection{Math Theory Framework}
+
+The SM is a quantum field theory (QFT), specifically a gauge theory, based on the symmetry group $SU(3)_C \times SU(2)_L \times U(1)_Y$
+
+\begin{enumerate}
+    \item \textbf{$SU(3)_C$}: The symmetry group of QCD, describing the strong interactions between quarks and gluons.
+    \item \textbf{$SU(2)_L \times U(1)_Y$}: The electroweak symmetry, describing the unified description of the electromagnetic and weak interactions. This symmetry is spontaneously broken by the Higgs mechanism, giving masses to the W and Z bosons while leaving the photon massless.
+\end{enumerate}
+
+Besides the gauge theory, the Higgs mechanism is central to the SM. It explains how particles acquire mass, and it's deatiled introduced in \ref{sec:higgs}.
+
+
+
+
+
+\subsection{Di-boson Production}
+
+%-------------DM & BSM----------------
+\section{Beyond the Standard Model and Dark Matter Search}
+
+While the SM is remarkably successful, it is not complete. It does not include gravity, described by General Relativity, nor does it explain dark matter, dark energy, or the matter-antimatter asymmetry in the universe. These limitations suggest the need for a more comprehensive theory, such as string theory or other beyond the Standard Model (BSM) theories like supersymmetry (SUSY).
+
+
+\subsection{BSM Theory}
+
+
+\begin{enumerate}
+    \item \textbf{Supersymmetry (SUSY)}: SUSY extends the SM by postulating a symmetry between fermions and bosons. The lightest supersymmetric particle (LSP), often the neutralino, is a stable, electrically neutral particle and a prime candidate for DM. The production of neutralinos in collider experiments could manifest as missing transverse energy (\(E_T^{\text{miss}}\)) in events, making processes like \( ZZ \rightarrow \ell^+\ell^- \nu\bar{\nu} \) crucial for detecting such signals.
+
+    \item \textbf{Extra Dimensions}: Theories involving extra spatial dimensions, such as the Large Extra Dimensions (LED) model, predict the existence of Kaluza-Klein (KK) excitations. These KK particles could contribute to the DM relic density and might be produced in \( ZZ \) decays, leading to signatures with large \(E_T^{\text{miss}}\).
+
+    \item \textbf{Hidden Sector Models}: Hidden sector or dark sector models introduce new particles that interact weakly with SM particles through a mediator, such as a dark photon. The production of these mediators in \( ZZ \) decays could result in final states with leptons and missing energy, indicative of DM particles escaping detection.
+\end{enumerate}
+
+
+
+
+
+
+
+\label{sec:higgs}
+\section{Higgs-related mechanism/theory}% 
+
+
+The Higgs mechanism is a process by which gauge bosons in certain gauge theories acquire mass through spontaneous symmetry breaking. It is a central part of the Standard Model of particle physics, explaining how particles like the W and Z bosons gain mass while the photon remains massless.
+
+\subsection*{The Higgs Field and Potential}
+
+The Higgs field is a complex scalar field, often denoted by \(\phi\), which is an \(SU(2)\) doublet with four real degrees of freedom. The Higgs field can be written as:
+\[
+\phi = \begin{pmatrix} \phi^+ \\ \phi^0 \end{pmatrix} = \begin{pmatrix} \phi_1 + i \phi_2 \\ \phi_3 + i \phi_4 \end{pmatrix}
+\]
+
+The potential for the Higgs field is given by:
+\[
+V(\phi) = \mu^2 \phi^\dagger \phi + \lambda (\phi^\dagger \phi)^2
+\]
+where \(\mu^2\) and \(\lambda\) are constants. For the Higgs mechanism to work, \(\mu^2\) must be negative (\(\mu^2 < 0\)) and \(\lambda > 0\).
+
+\subsection*{Spontaneous Symmetry Breaking}
+
+The Higgs potential has a non-zero vacuum expectation value (VEV). The potential \(V(\phi)\) has a "Mexican hat" shape, and the minimum is not at \(\phi = 0\), but at some non-zero value:
+\[
+\langle \phi \rangle = \frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ v \end{pmatrix}
+\]
+where \(v\) is the VEV given by:
+\[
+v = \sqrt{\frac{-\mu^2}{\lambda}}
+\]
+
+\subsection*{Gauge Boson Masses}
+
+The covariant derivative of the Higgs field in the electroweak theory is:
+\[
+D_\mu \phi = \left( \partial_\mu - \frac{i}{2} g W_\mu^a \tau^a - \frac{i}{2} g' B_\mu \right) \phi
+\]
+where \(W_\mu^a\) (with \(a = 1, 2, 3\)) are the \(SU(2)_L\) gauge fields, \(B_\mu\) is the \(U(1)_Y\) gauge field, \(g\) is the \(SU(2)_L\) coupling constant, \(g'\) is the \(U(1)_Y\) coupling constant, and \(\tau^a\) are the Pauli matrices.
+
+When the Higgs field acquires a VEV, the gauge boson mass terms are generated from the kinetic term of the Higgs field:
+\[
+(D_\mu \phi)^\dagger (D_\mu \phi)
+\]
+
+Expanding this term and substituting the VEV, we obtain the mass terms for the gauge bosons:
+\[
+\frac{1}{2} g^2 v^2 \left( W_\mu^1 W^{\mu 1} + W_\mu^2 W^{\mu 2} \right) + \frac{1}{2} \left( \frac{1}{2} g W_\mu^3 - \frac{1}{2} g' B_\mu \right)^2 v^2
+\]
+
+This results in the masses of the W and Z bosons:
+\[
+M_W = \frac{1}{2} gv
+\]
+\[
+M_Z = \frac{1}{2} v \sqrt{g^2 + g'^2}
+\]
+while the photon remains massless:
+\[
+M_\gamma = 0
+\]
+
+\subsection*{Higgs Boson}
+
+The Higgs field also manifests as a physical particle, the Higgs boson \(H\). After symmetry breaking, the Higgs field can be written as:
+\[
+\phi = \frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ v + H \end{pmatrix}
+\]
+
+The Higgs boson mass is given by:
+\[
+M_H = \sqrt{2 \lambda} v
+\]
+
+\subsection*{Summary}
+
+The Higgs mechanism provides a way for gauge bosons to acquire mass through spontaneous symmetry breaking of the Higgs field. This process preserves the gauge invariance of the theory while giving mass to the W and Z bosons, with the photon remaining massless. The discovery of the Higgs boson at the LHC in 2012 was a crucial confirmation of this mechanism and a significant milestone in particle physics. And the mass of Higgs boson remains the important position in the SM theory since the discovery in 2012.
+

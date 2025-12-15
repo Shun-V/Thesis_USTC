@@ -1,0 +1,203 @@
+\section{Object and Event Selection} 
+
+To isolate the rare signal process from the vast number of particles produced in proton-proton collisions, a rigorous procedure is required to identify and select the final-state objects of interest. This procedure begins with the reconstruction of physics objects---including electrons, muons, and jets---from the electronic signals collected by the ATLAS detector. Following reconstruction, a stringent set of selection criteria is applied to ensure the high quality of these objects and to suppress contributions from misidentified particles and background processes, thereby enhancing the purity of the event sample.
+
+This chapter details the complete selection strategy, which is performed in two sequential stages. First, the criteria for selecting individual physics objects are defined, forming a clean and calibrated set of inputs for the analysis. Second, these objects are used to construct an event-level selection designed to isolate the distinct signal topology and define the final signal regions.
+
+The specific implementation of these selections adheres to the official recommendations of the ATLAS collaboration and is performed using AnalysisBase release 21.2.164. The analysis is conducted on STDM3 DAOD (Derived Analysis Object Data) samples, with r-tags r9364/r10201/r10724 corresponding to the MC16a/d/e campaigns.
+
+% ======================================================================
+\subsection{Object Selection}
+\label{sec:object_selection}
+
+The successful identification of the signal final state relies on the precise reconstruction and selection of its constituent physics objects from the complex collision environment. This section details the criteria applied to select the muons, electrons, and jets that form the basis of the analysis. A final step resolves any spatial ambiguities between these selected objects to ensure each is uniquely defined. All selections adhere to the recommendations provided by the ATLAS Combined Performance groups.
+
+\subsubsection{Muons}
+Muons are reconstructed as \textit{combined muons}, which involves matching a track identified in the inner detector (ID) with a corresponding track in the muon spectrometer. This combined fit provides a high-purity and well-measured muon candidate.
+
+Signal muons selected for this analysis are required to satisfy a stringent set of criteria to ensure they are prompt (originating from the primary interaction) and well-isolated.
+\begin{itemize}
+    \item \textbf{Kinematics:} Muons must have a transverse momentum $p_T > 20$ GeV and be within the detector acceptance of $|\eta| < 2.5$.
+    \item \textbf{Identification:} The `Medium` identification working point is required. This selection imposes quality requirements on the track fit and the compatibility between the ID and muon spectrometer measurements, effectively suppressing contamination from misidentified hadrons.
+    \item \textbf{Purity:} To reject non-prompt muons from heavy-flavour decays and cosmic-ray muons, requirements are placed on the track's impact parameters with respect to the primary vertex: the transverse impact parameter significance $|d_0/\sigma(d_0)| < 3$ and the longitudinal impact parameter $|z_0 \cdot \sin(\theta)| < 0.5$~mm.
+    \item \textbf{Isolation:} To ensure the muon is not part of a jet, an isolation requirement is applied. This is based on the sum of track and calorimeter energy deposits in a cone of $\Delta R = \sqrt{(\Delta\eta)^2+(\Delta\phi)^2} = 0.2$ around the muon. The `FixedCutPflowLoose` working point is used, which corresponds to an efficiency of approximately 99\% for high-$p_T$ muons.
+\end{itemize}
+To account for differences between data and simulation, dedicated scale and smearing corrections are applied to the muon momentum, and efficiency scale factors are used to correct the Monte Carlo event yields. In addition, a looser "baseline" selection ($p_T > 7$ GeV, `Loose` identification) is used to define muons for event vetoes.
+
+\subsubsection{Electrons}
+Electrons are reconstructed by matching a track in the inner detector to an energy cluster in the electromagnetic calorimeter. Signal electrons are selected based on the following criteria:
+\begin{itemize}
+    \item \textbf{Kinematics:} Electrons must have $p_T > 20$ GeV and be reconstructed within the fiducial pseudorapidity range of $|\eta| < 2.47$.
+    \item \textbf{Identification:} A likelihood-based discriminant, which combines information from shower shapes, track quality, and track-cluster matching, is used for identification. The `Medium` working point is chosen to provide a high signal efficiency with strong rejection of jets misidentified as electrons.
+    \item \textbf{Purity:} Similar to muons, cuts on the impact parameters are applied to ensure electrons originate from the primary vertex: $|d_0/\sigma(d_0)| < 5$ and $|z_0 \cdot \sin(\theta)| < 0.5$~mm.
+    \item \textbf{Isolation:} The `FixedCutPflowLoose` isolation working point, defined in a cone of $\Delta R = 0.2$, is required to reject non-prompt electrons and ensure they are well-separated from other particles.
+    \item \textbf{Quality Veto:} For the 2015-2016 data-taking period, events containing an electron in a known problematic region of the electromagnetic calorimeter crack ($1.37 < |\eta| < 1.52$) are vetoed to prevent mismeasurement of the event's missing transverse momentum.
+\end{itemize}
+Electron energy scale and resolution corrections, as well as efficiency scale factors, are applied to the simulation to ensure accurate modeling of the detector performance. A "baseline" electron selection ($p_T > 7$ GeV, `LooseLHB` identification) is used for veto purposes.
+
+\subsubsection{Jets}
+Jets provide crucial information about the hadronic activity in the event and are key to defining the VBS-like signal region.
+\begin{itemize}
+    \item \textbf{Reconstruction:} Jets are reconstructed from particle-flow objects using the anti-$k_T$ algorithm with a radius parameter of $R=0.4$.
+    \item \textbf{Kinematics and Cleaning:} Jets are selected if they have $p_T > 30$ GeV and $|\eta| < 4.5$. They must also pass the `Loose` jet cleaning criteria, which are designed to remove spurious jets arising from detector noise or non-collision backgrounds.
+    \item \textbf{Pileup Suppression:} To mitigate the impact of additional proton-proton interactions (pileup), jets within the tracker acceptance ($|\eta| < 2.4$) and with $p_T < 60$ GeV must satisfy a requirement on the Jet Vertex Tagger (JVT) discriminant.
+    \item \textbf{B-Jet Veto:} To suppress the large background from top-quark pair production, events containing b-jets are vetoed. Jets are identified as b-jets using the `DL1r` multivariate tagging algorithm. Any event containing a jet within $|\eta| < 2.5$ that passes the 85\% efficiency working point is rejected.
+\end{itemize}
+
+\subsubsection{Overlap Removal}
+A single detector signature can sometimes be reconstructed as multiple physics objects. To resolve these ambiguities and prevent double-counting, a sequential overlap removal procedure is applied to the baseline object collections. The procedure follows a prescribed hierarchy based on the most likely identity of the shared signature.
+\begin{enumerate}
+    \item Jets within $\Delta R < 0.2$ of a selected electron are removed.
+    \item Electrons that share an ID track with a selected muon are removed.
+    \item Jets within $\Delta R < 0.2$ of a selected muon are removed if they have few associated tracks, which is characteristic of muons depositing energy in the calorimeter.
+    \item Finally, any electrons or muons found within a wider cone of $\Delta R < 0.4$ around any surviving jet are removed. This step effectively rejects non-prompt leptons originating from heavy-flavour hadron decays inside jets.
+\end{enumerate}
+After this procedure, the final signal selections for leptons and jets are applied to the surviving, uniquely identified objects.
+
+% ======================================================================
+\subsection{Event Selection}
+\label{sec:event_selection}
+
+With a foundation of calibrated physics objects, the analysis proceeds to the crucial stage of event selection. The goal is to isolate the distinctive signature of \(Z \rightarrow \ell\ell\nu\nu\) production from an overwhelming background of other Standard Model processes. The final state is characterized by two same-flavour, opposite-sign leptons consistent with the decay of a Z boson, accompanied by significant missing transverse momentum ($E_T^\text{miss}$) due to the two neutrinos from the second Z boson's decay, which escape detection.
+
+The primary challenge in this channel is to distinguish the large, genuine $E_T^\text{miss}$ originating from the invisible Z decay from the fake $E_T^\text{miss}$ that arises from jet energy mismeasurements and instrumental effects, which is prevalent in the dominant Drell-Yan (Z+jets) background. Therefore, the event selection strategy is centered around stringent requirements on the $E_T^\text{miss}$ magnitude and its significance. This is complemented by topological requirements that exploit the expected event kinematics, such as the angular separation between the visible Z boson and the $E_T^\text{miss}$ vector. Furthermore, dedicated vetoes are employed to suppress other key backgrounds, including a b-jet veto to reject top-quark events and a veto on additional leptons to reduce contributions from WZ and \(ZZ \rightarrow 4\ell\) processes.
+
+The strategy is to build the selection incrementally, applying successive requirements that target the distinct features of the signal while systematically rejecting specific backgrounds. This process culminates in the definition of two primary signal regions (SRs): an \textit{inclusive} SR for the overall cross-section measurement, and a \textit{VBS-like} SR targeting the electroweak production mode.
+
+\subsubsection{Baseline Event Requirements and Z Boson Candidate}
+The initial step in the selection process is to identify a viable candidate for the leptonic Z boson decay, \(Z \rightarrow \ell\ell\). This forms the cornerstone of the event signature.
+\begin{itemize}
+    \item \textbf{Data Quality and Trigger:} Events are first required to pass standard data quality checks to ensure all detector components were functioning correctly. They must also have fired a single-lepton trigger, which provides the initial, high-efficiency selection of events containing at least one high-$p_T$ electron or muon.
+    \item \textbf{Primary Vertex:} A primary vertex with at least two associated tracks is required, ensuring that the event originates from a genuine proton-proton collision.
+    \item \textbf{Dilepton Final State:} The core of the selection requires the presence of exactly two signal leptons (as defined in \ref{sec:object_selection}) of the same flavour and opposite charge (SFOS). To ensure trigger efficiency is high, the leading and subleading leptons are required to have $p_T > 30$ GeV and $p_T > 20$ GeV, respectively. Events containing any additional "baseline" leptons ($p_T > 7$ GeV) are vetoed. This veto is crucial for suppressing backgrounds with three or more real leptons, primarily from WZ and \(ZZ \rightarrow 4\ell\) production.
+    \item \textbf{On-Shell Z Boson:} To select events consistent with a \(Z \rightarrow \ell\ell\) decay, the invariant mass of the dilepton pair is required to be within a window around the Z boson mass: $80 < m_{\ell\ell} < 100$ GeV. This is a powerful cut that significantly reduces non-resonant backgrounds such as \(t\bar{t}\) and WW production.
+\end{itemize}
+
+\subsubsection{Targeting the Invisible Z Decay and Suppressing Drell-Yan}
+After identifying a clean, on-shell Z boson candidate, the selection must target the signature of the second Z boson decaying to neutrinos: large missing transverse momentum ($E_T^\text{miss}$). The primary challenge here is rejecting the dominant Drell-Yan (Z+jets) background, where large, fake $E_T^\text{miss}$ can arise from the mismeasurement of jet energies. A series of topological and kinematic cuts are designed specifically for this purpose.
+\begin{itemize}
+    \item \textbf{Missing Transverse Momentum:} A significant amount of genuine $E_T^\text{miss}$ is the key feature of the signal. Therefore, a high threshold is placed on its magnitude.
+    \item \textbf{Lepton Collimation:} In the signal process, the \(Z\rightarrow\ell\ell\) boson often has a high transverse momentum, recoiling against the invisible Z boson. This boost causes its decay products to be more collimated. A requirement of $\Delta R(\ell,\ell) < 1.8$ is applied to exploit this feature, which preferentially rejects Drell-Yan events where the Z boson typically has lower $p_T$.
+    \item \textbf{Topological Correlation:} In signal events, the visible Z boson and the invisible neutrinos are expected to be produced back-to-back in the transverse plane. This results in a large azimuthal separation between the dilepton momentum vector and the $E_T^\text{miss}$ vector. A cut of $\Delta\Phi(Z, E_T^\text{miss}) > 2.2$ is imposed to select events with this topology, strongly suppressing Z+jets events where fake $E_T^\text{miss}$ from a mismeasured jet is often not aligned opposite to the Z boson.
+    \item \textbf{$E_T^\text{miss}$ Significance:} To further distinguish genuine $E_T^\text{miss}$ from instrumental effects, the ratio of the missing transverse momentum to the scalar sum of the transverse momenta of all selected objects, $H_T$, is used. For signal events, a large fraction of the total energy is invisible. A requirement of $E_T^\text{miss} / H_T > 0.65$ effectively rejects events with high hadronic activity where the $E_T^\text{miss}$ is small relative to the total visible energy.
+    \item \textbf{B-Jet Veto:} The production of top-quark pairs ($t\bar{t}$) is a significant background, as it can produce two leptons and genuine $E_T^\text{miss}$ from W boson decays. This background is effectively suppressed by vetoing any event that contains one or more b-tagged jets.
+\end{itemize}
+
+\subsubsection{Signal Region Definitions}
+The selection criteria described above were optimized to maximize signal significance and are now combined to define the two signal regions for the analysis.
+\paragraph{Inclusive Signal Region}
+This region is designed to measure the total ZZ production cross-section in this final state. It applies all the selection criteria developed above. The defining requirement on the missing transverse momentum is:
+\begin{itemize}
+    \item $E_T^\text{miss} > 110$ GeV.
+\end{itemize}
+
+\paragraph{VBS-like Signal Region}
+This region is tailored to enhance the contribution from electroweak ZZ production in association with two jets (a signature of Vector Boson Scattering). It builds upon the inclusive selection but requires a more energetic and hadronic final state.
+\begin{itemize}
+    \item The missing transverse momentum requirement is tightened to $E_T^\text{miss} > 150$ GeV to select more energetic events characteristic of VBS.
+    \item A requirement of at least two jets is imposed, with the leading and subleading jets required to have $p_T > 30$ GeV. This explicitly selects the desired ZZ+2-jets topology.
+\end{itemize}
+The specific cut values for all variables were chosen following an optimization procedure aimed at maximizing the expected signal significance.
+
+
+% ======================================================================
+
+%this subsection deatils the truth-level selection(which is called the phase space). 
+%this subsection shall include the comparison and meaning of reco and truth selections. 
+\subsubsection{Fiducial Phase Space Definition}
+\label{sec:fiducial_definition}
+
+The ultimate goal of this analysis is to measure the $ZZ$ production cross-section. However, a detector-level measurement is
+inherently \textbf{convolved with} the detector's response, its geometric acceptance, and the efficiencies of the reconstruction and selection algorithms. To unfold these effects and present a result that can be
+directly compared with theoretical calculations, the measurement is performed
+within a well-defined \textbf{fiducial phase space}.
+
+Defining this fiducial volume is a critical step that serves two main purposes. First, it provides a model-independent measurement target. By restricting the measurement to a phase space accessible to the detector, we minimize the reliance on theoretical models to extrapolate into regions with no experimental sensitivity, thereby reducing the associated theoretical uncertainties. Second, it provides the necessary framework for calculating the correction factors that relate the observed number of events at the detector level to the true number of events produced in the collisions.
+
+The fiducial volume is defined using particle-level ("truth") kinematics from the Monte Carlo event generator. The selection criteria are chosen to be close to the reconstruction-level requirements but are intentionally relaxed. This ensures that the detector-level selection is fully contained within the fiducial volume, which provides a stable basis for calculating the selection efficiency and minimizes migrations at the selection boundaries. For this analysis, the requirements on the missing transverse momentum and the dilepton invariant mass are notably relaxed at the truth level.
+
+\paragraph{Truth Object Definitions}
+Before defining the event selection, the particle-level objects are constructed as follows:
+\begin{itemize}
+    \item \textbf{Dressed Leptons:} To account for final-state QED radiation, the four-momenta of all prompt photons within a cone of $\Delta R(\ell, \gamma) < 0.1$ around a prompt electron or muon are added to the lepton's four-momentum. This procedure creates "dressed" leptons, which provide a more realistic proxy for the energy measured in the electromagnetic calorimeter.
+    \item \textbf{Truth Neutrinos:} The truth missing transverse momentum ($E_T^\text{miss, truth}$) is calculated as the magnitude of the vector sum of the transverse momenta of all prompt neutrinos in the event.
+    \item \textbf{Truth Jets:} Jets are clustered from all stable final-state particles (excluding the dressed leptons and all neutrinos) using the anti-$k_T$ algorithm with a radius parameter of $R=0.4$.
+\end{itemize}
+
+\paragraph{Fiducial Selection for Inclusive Production}
+For the inclusive $ZZ \rightarrow \ell\ell\nu\nu$ cross-section measurement, the fiducial volume is defined by the following requirements on the truth-level objects:
+\begin{itemize}
+    \item Exactly two same-flavour, opposite-sign (SFOS) dressed leptons with $|\eta^\ell| < 2.5$.
+    \item Lepton transverse momenta of $p_T^\ell > 30$ GeV for the leading and $p_T^\ell > 20$ GeV for the subleading lepton.
+    \item The dilepton invariant mass must be within the range $76 < m_{\ell\ell} < 106$ GeV.
+    \item The truth missing transverse momentum must be $E_T^\text{miss, truth} > 95$ GeV.
+    \item The dilepton angular separation must be $\Delta R(\ell,\ell) < 1.8$.
+    \item The azimuthal separation between the dilepton system and the missing momentum must be $\Delta\Phi(\vec{p}_T^{\ell\ell}, \vec{E}_T^\text{miss, truth}) > 2.2$.
+    \item The ratio of missing to total transverse momentum must be $E_T^\text{miss, truth} / H_T^\text{truth} > 0.65$.
+\end{itemize}
+
+\paragraph{Fiducial Selection for VBS-like Production}
+For the $ZZjj \rightarrow \ell\ell\nu\nu jj$ cross-section measurement, the fiducial volume builds upon the inclusive selection with additional requirements on the hadronic activity:
+\begin{itemize}
+    \item All inclusive fiducial selection criteria are applied, with the exception of the truth missing transverse momentum, which is tightened to $E_T^\text{miss, truth} > 130$ GeV.
+    \item The event must contain at least two truth jets with $p_T > 30$ GeV and $|\eta| < 4.5$.
+\end{itemize}
+
+\paragraph{Comparison of Detector-Level and Particle-Level Selections}
+To clearly illustrate the relationship between the final signal region definitions and their corresponding fiducial volumes, a detailed comparison of the selection criteria is provided in Tables~\ref{tab:reco_truth_inclusive} and \ref{tab:reco_truth_vbs}. The deliberate relaxation of the particle-level cuts, particularly for $m_{\ell\ell}$ and $E_T^\text{miss}$, is highlighted. This strategy ensures that detector resolution effects do not migrate a significant fraction of signal events from inside the reconstructed selection to outside the fiducial volume, which would lead to an unstable efficiency calculation.
+
+\begin{table}[!htbp]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \caption{Comparison of selection criteria for the \textbf{Inclusive Signal Region} at detector-level (Reco) and its corresponding particle-level (Truth) fiducial volume. Key differences are highlighted in \textbf{bold}.}
+    \label{tab:reco_truth_inclusive}
+    \begin{tabular}{l|c|c}
+        \hline \hline
+        \textbf{Requirement} & \textbf{Detector-Level (Reco)} & \textbf{Particle-Level (Truth)} \\
+        \hline
+        Leptons & \multicolumn{2}{c}{Exactly 2 SFOS leptons} \\
+        Lepton $p_T$ [GeV] & \multicolumn{2}{c}{$> 30$ (lead), $> 20$ (sublead)} \\
+        Lepton $|\eta|$ & $< 2.5$ ($\mu$); $< 2.47$ ($e$) & $< 2.5$ ($e, \mu$) \\
+        Electron $|\eta|$ Veto & \textbf{Veto $1.37 < |\eta| < 1.52$} & \textbf{Not Applied} \\
+        Dilepton Mass ($m_{\ell\ell}$) [GeV] & $80 < m_{\ell\ell} < 100$ & \textbf{$76 < m_{\ell\ell} < 106$} \\
+        \hline
+        Missing $E_T$ ($E_T^\text{miss}$) [GeV] & $> 110$ & \textbf{$> 95$} \\
+        Dilepton $\Delta R(\ell,\ell)$ & $< 1.8$ & $< 1.8$ \\
+        $\Delta\Phi(\vec{p}_T^{\ell\ell}, \vec{E}_T^\text{miss})$ & $> 2.2$ & $> 2.2$ \\
+        $E_T^\text{miss} / H_T$ & $> 0.65$ & $> 0.65$ \\
+        \hline
+        b-jet Veto & \textbf{Required} & \textbf{Not Applied} \\
+        \hline \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \caption{Comparison of selection criteria for the \textbf{VBS-like Signal Region} at detector-level (Reco) and its corresponding particle-level (Truth) fiducial volume. Differences are highlighted in \textbf{bold}.}
+    \label{tab:reco_truth_vbs}
+    \begin{tabular}{l|c|c}
+        \hline \hline
+        \textbf{Requirement} & \textbf{Detector-Level (Reco)} & \textbf{Particle-Level (Truth)} \\
+        \hline
+        Inclusive Selection Base & Applied & Applied \\
+        \hline
+        Missing $E_T$ ($E_T^\text{miss}$) [GeV] & $> 150$ & \textbf{$> 130$} \\
+        Number of Jets ($p_T > 30$ GeV) & $\geq 2$ & $\geq 2$ \\
+        Jet $|\eta|$ & \textbf{Depends on $p_T$ (e.g., $< 2.5$ or $< 4.5$)} & \textbf{$< 4.5$} \\
+        \hline \hline
+    \end{tabular}
+\end{table}
+
+The fiducial selections defined here provide the basis for calculating a correction factor, $C$, which maps the observed detector-level yield to the particle-level fiducial yield. This factor, derived from simulation, corrects the background-subtracted data for detector inefficiencies and resolution-induced migrations. It is calculated as the ratio of the number of simulated signal events passing the full reconstruction-level selection ($N_\text{reco}^\text{MC}$) to the number of simulated signal events passing the particle-level fiducial selection ($N_\text{fid}^\text{MC}$):
+$$
+C = \frac{N_\text{reco}^\text{MC}}{N_\text{fid}^\text{MC}}
+$$
+The fiducial cross-section, $\sigma_\text{fid}$, is then determined by:
+$$
+\sigma_\text{fid} = \frac{N_\text{obs} - N_\text{bkg}}{\mathcal{L}} \cdot \frac{1}{C}
+$$
+where $N_\text{obs}$ is the observed number of events in the signal region, $N_\text{bkg}$ is the estimated background contribution, and $\mathcal{L}$ is the integrated luminosity. This approach isolates the detector-dependent corrections ($C$) from any model-dependent extrapolations to the full phase space, which are not part of this measurement.
+
+
+

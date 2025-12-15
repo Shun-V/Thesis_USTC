@@ -1,0 +1,129 @@
+\section{Background Estimation}
+
+In the measurement of the \( ZZ \to \ell^+\ell^-\nu\bar{\nu} \) cross-section, several background processes contribute. These can be categorized as follows:
+
+\begin{itemize}
+
+    % --- FIRST TOP-LEVEL ITEM ---
+    \item \textbf{Irreducible Backgrounds}
+    \begin{itemize}
+        \item \textbf{Diboson processes:}
+        \begin{itemize}
+            \item \( WW \to \ell\nu\ell\nu \): The two neutrinos contribute to the MET signature, faking the \( ZZ \to \ell\ell\nu\nu \) process.
+            \item \( WZ \to \ell\nu\ell\ell \): If one lepton from the \( Z \) is missing, this process could fake the signal.
+            \item \( ZZ \to \ell\ell\ell\ell \): If two leptons escape detection, this process contributes as a background.
+        \end{itemize}
+    \end{itemize}
+
+    % --- SECOND TOP-LEVEL ITEM ---
+    \item \textbf{Reducible Backgrounds}
+    \begin{itemize}
+        \item \textbf{Top-quark backgrounds:}
+        \begin{itemize}
+            % THIS IS THE LINE THAT HAD THE ERROR
+            \item \( t\bar{t} \): If b-jets in the \( t\bar{t} \) final states are not tagged properly, it may fake the signal.
+            \item Single top \( (tW) \): Can contribute similarly.
+        \end{itemize}
+        \item \textbf{Drell-Yan + jets} (\( Z \to \ell\ell \) + jets): Jet energy mismeasurement can lead to artificial MET.
+        \item \textbf{W + jets}: A single \( W \) boson decaying leptonically with jets can mimic the signal region due to fake MET.
+    \end{itemize}
+
+\end{itemize}
+
+To achieve precise cross-section measurements, these backgrounds must be carefully estimated and subtracted using control regions. Considering the final states of the backgrounds, they can be categorized as following Control Regions(CR).
+
+\begin{itemize}
+    \item \textbf{Non-Resonant Backgrounds (Diboson and Top processes without a $Z$ boson)}
+    \begin{itemize}
+        \item \( WW \to \ell\nu\ell\nu \): The two neutrinos contribute to the MET signature, faking the \( ZZ \to \ell\ell\nu\nu \) process.
+        \item \( t\bar{t} \to WbWb \to \ell\nu b \ell\nu b \): If b-jets are not tagged properly, it may fake the signal.
+        \item Single top \( (tW) \): Can contribute similarly.
+    \end{itemize}
+
+    \item \textbf{Non-Resonant + 1b-Jet Backgrounds (Top backgrounds with a b-jet)}
+    \begin{itemize}
+        \item \( t\bar{t} \to WbWb \to \ell\nu b \ell\nu b \): Events with one identified b-jet contribute to this category.
+    \end{itemize}
+ 
+    
+    \item \textbf{3L Backgrounds (Processes with three leptons in the final state)}
+    \begin{itemize}
+        \item \( WZ \to \ell\nu\ell\ell \): If one lepton from the \( Z \) is lost, this process mimics the signal.
+    \end{itemize}
+    
+    \item \textbf{Z+Jets Backgrounds (Processes with a $Z$ boson and jets)}
+    \begin{itemize}
+        \item \textbf{Drell-Yan + jets} (\( Z/\gamma^* \to \ell\ell \) + jets): If jets are mismeasured, they create fake MET.
+        \item \textbf{W + jets}: A single \( W \) boson decaying leptonically with jets can mimic the signal region due to fake MET.
+    \end{itemize}
+   
+    \item \textbf{Instrumental Backgrounds (Detector-related effects)}
+    \begin{itemize}
+        \item \textbf{Fake MET from mismeasured jets:} Jet energy mismeasurement can lead to artificial MET.
+        \item \textbf{Cosmic-ray muons or beam halo:} Rare cases where fake leptons or MET appear in the detector.
+    \end{itemize}
+\end{itemize}
+
+To accurately estimate these background contributions, control regions (CRs) are defined, each enriched with a dominant background category. A simultaneous fit is performed across all CRs and the signal region to constrain both the yields and shapes of these backgrounds. This fit takes event distributions as input and derives scale factors to adjust Monte Carlo (MC) predictions to match data in the CRs. The scaled MC predictions then provide the background estimates in the signal region, ensuring a reliable determination of the differential cross-section.
+
+To further refine background estimation, each control region is designed to enhance a specific type of background, allowing us to isolate and constrain individual contributions effectively. The simultaneous fit across all CRs and the signal region ensures a consistent estimation of background yields and shapes. By utilizing event distributions, this fit derives scale factors that adjust MC predictions to align with data in all CRs. These scaled MC predictions then serve as the background estimates in the signal region, providing a foundation for an accurate differential cross-section measurement.
+
+The following sections describe the estimation strategy for each control region in detail.
+
+
+
+\subsection{Non-Resonant with/without 1 b-jet)}
+
+Considering the high percentage of the non-resonant backgrounds, it would be better if Control Regions are well defined to control the backgrounds from MC estimations. Therefore, 2 Control Regions are defined to further estimate the yields from those processes. 
+
+One is the non-resonant background, whcih requires Opposite Flavor Opposite Sign(OFOS) leptons in the final state. For example, in the \( WW \to \ell\nu\ell\nu \) process, the observable final state could be either Same Flavor Opposite Sign(SFOS) leptons, which fakes the true signals, or Opposite Flavor Opposite Sign(OFOS) leptons. Considering that there is an equal chance for W boson decaying to electron or muon or tau, the yield ratio between SFOS and OFOS final states would be 1:2. Since the OFOS events are well seperated from the SFOS, this would be a good approach to estimate the background yields in Signal Region(SR) using the CR events. 
+
+However, since the final state from top quark pair or single top decay contains 1 or 2 b jets, the observed final state could contain 1 or more b jets. Therefore define a CR with 1 b jet to further estimate the yield from the top backgrounds. This non-resonant with a b-jet CR defination is the same as the common non-resonant CR, except the b-jet number requirement. 
+
+Since this is aimming to estimate the yields in the SR, the non-resonant background definition is the same as the SR, except requiring the OFOS events. the detailed definations of non-resonant with/without 1 b-jet are shown in the following table. 
+
+
+
+This is a table TBA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{3l}
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Z+jet}
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Others}
+
+
