@@ -1,10 +1,83 @@
-\section{Systematic Uncertainty}
+\section{Systematic Uncertainties}
+\label{sec:systematics}
 
+This section summarizes the experimental and theoretical sources of systematic uncertainty affecting the event yields of the backgrounds and the signal. These sources impact the differential estimate of the signal cross-section after the unfolding procedure. 
 
+Consistent with previous analyses of the $ZZjj$ final state, the measurement of the signal yields and resulting cross-sections is dominated by statistical uncertainty. Among the sources of systematic uncertainty, the largest contributions arise from jet reconstruction—specifically pile-up suppression and $\eta$-intercalibration—and from the unfolding bias. The bias associated with the unfolding method is evaluated through the data-driven closure test discussed in Section~\ref{sec:unfolding_ddclosure}.
 
+\subsection{Experimental Sources}
+\label{subsec:exp_syst}
 
+The experimental systematic uncertainties encompass detector effects and reconstruction efficiencies. The lepton-related uncertainties follow the methodology established in the inclusive four-lepton analysis~\cite{STDM-2018-30}.
 
+For each source of systematic uncertainty, the propagation to the final measurement is performed as follows:
+\begin{enumerate}
+    \item A detector-level Standard Model (SM) distribution is constructed using Monte Carlo (MC) predictions where the specific systematic parameter has been varied (including background samples and data-driven fake estimates).
+    \item The nominal background is subtracted from this varied distribution.
+    \item The resulting background-subtracted distribution is unfolded using the \textit{nominal} response matrix.
+    \item The systematic uncertainty is defined as the difference between this unfolded distribution and the nominal MC particle-level (truth) distribution.
+\end{enumerate}
 
+To ensure that upward and downward variations are statistically significant and symmetric, bootstrap replicas are utilized. In cases where the variations are symmetric within statistical uncertainties, the final systematic value is smoothed by averaging the absolute values of the upward and downward variations. An exception is made for the Jet Energy Resolution (JER), which is manually symmetrized by taking the envelope of the variations.
+
+Given the hadronic nature of the VBS topology (two forward jets), the dominant experimental systematics are associated with jet reconstruction. The specific sources considered are listed below:
+
+\begin{itemize}
+    \item \textbf{Jet Energy Scale (JES) and Resolution (JER):} Uncertainties are evaluated following the standard ATLAS recommendations for Release 21. For the JES, the \texttt{GlobalReduction} configuration is employed, corresponding to 23 distinct nuisance parameters (each with up/down variations). For the JER, the \texttt{FullJER} configuration is used, consisting of 13 nuisance parameters.
+    
+    \item \textbf{Jet Vertex Tagger (JVT) Efficiency:} Scale factor variations for the JVT are applied based on pile-up jet recommendations. Consistent with previous measurements in this phase space, these variations result in a minor impact ($< 1\%$).
+
+    \item \textbf{Electron Efficiency (ID, Reconstruction, Isolation):} 
+    Uncertainties related to electron reconstruction are modeled using a simplified de-correlation model containing 25 nuisance parameters (including \texttt{EL\_EFF\_Reco\_CorrUncertainty} and simplified uncorrelated terms). 
+    Isolation efficiency is accounted for by a single nuisance parameter. 
+    Identification efficiency utilizes a model with 34 nuisance parameters, covering correlated and simplified uncorrelated uncertainties.
+
+    \item \textbf{Muon Efficiency (ID, Reconstruction, Isolation):} 
+    Muon reconstruction efficiency, which includes identification, involves four uncertainty components: statistical and systematic terms for both the general and low-$p_{\text{T}}$ regimes. Isolation efficiency is associated with two nuisance parameters covering statistical and systematic uncertainties.
+
+    \item \textbf{Trigger Efficiency:} 
+    Uncertainties in the trigger efficiency scale factors are separated by lepton flavor. For electrons, a single total nuisance parameter is used. For muons, the uncertainty is split into statistical and systematic components.
+
+    \item \textbf{Electron Momentum and Scale:} 
+    Two nuisance parameters, \texttt{EG\_RESOLUTION\_ALL} and \texttt{EG\_SCALE\_ALL}, account for the uncertainties in the electron momentum resolution and energy scale, respectively.
+
+    \item \textbf{Muon Momentum and Scale:} 
+    As the muon momentum is measured independently in the Inner Detector (ID) and Muon Spectrometer (MS), separate nuisance parameters are assigned to each measurement. Additionally, two parameters account for Sagitta correction uncertainties (\texttt{MUON\_SAGITTA\_RHO} and \texttt{MUON\_SAGITTA\_RESBIAS}), and one parameter accounts for the muon momentum scale (\texttt{MUON\_SCALE}).
+
+    \item \textbf{Pile-up Reweighting:} 
+    One nuisance parameter, \texttt{PRW\_DATASF}, accounts for the uncertainty in the scale factor applied to the data during the pile-up reweighting procedure.
+
+    \item \textbf{Luminosity:} 
+    An uncertainty of $\pm 0.83\%$ is assigned to the combined Full Run-2 luminosity.
+\end{itemize}
+
+\subsection{Theoretical Sources}
+\label{subsec:theo_syst}
+
+Theoretical variations can significantly impact the predicted MC yields at both the particle and reconstruction levels. However, they typically induce only minor changes in the shapes of observables, resulting in small uncertainties in the unfolding matrix itself. These uncertainties are process-specific and are evaluated separately for each MC sample.
+
+The propagation method for theoretical uncertainties differs slightly from experimental ones:
+\begin{enumerate}
+    \item Varied SM MC predictions are generated at both the particle level (truth) and detector level.
+    \item The varied detector-level distribution is unfolded using the \textit{nominal} response matrix.
+    \item The systematic uncertainty is calculated as the difference between this unfolding result and the \textit{varied} particle-level distribution.
+\end{enumerate}
+
+The sources of theoretical systematic uncertainty are detailed below:
+
+\begin{itemize}
+    \item \textbf{QCD Scale Uncertainties:} 
+    These are evaluated using on-the-fly weights corresponding to variations of the renormalization ($\mu_R$) and factorization ($\mu_F$) scales. Six variations are considered: combinations of $\mu_R$ and $\mu_F$ at factors of 0.5 and 2.0, excluding the extreme cases where the scales move in opposite directions. The envelope of these six variations constitutes the systematic uncertainty. For gluon-initiated QCD samples, variations are normalized to the nominal number of events to avoid double-counting effects related to higher-order k-factors.
+        
+    \item \textbf{PDF Uncertainties:} 
+    Uncertainties associated with the Parton Distribution Functions (PDF) are evaluated following the PMG recommendations for the NNPDF3.0 set. This includes the standard deviation of 100 internal variations (replicas) within NNPDF3.0. The total PDF uncertainty is defined as the envelope of the internal variations and alternative PDF sets. Additionally, uncertainties on the strong coupling constant $\alpha_S$ (up and down variations) are added in quadrature to the combined PDF uncertainty.
+
+    \item \textbf{Alternative QCD Modelling:} 
+    The nominal samples used to estimate the $ZZ \to 2\ell 2\nu$ QCD contribution are generated using \textsc{Sherpa} (DSID 345666 for $qq$ and 345723 for $gg$). To assess the uncertainty associated with the MC generator choice, an alternative QCD ($qq$) sample generated with \textsc{Powheg} (DSID 361604) is utilized. The relative difference between the nominal and alternative samples is calculated and applied symmetrically as a template histogram variation.
+    
+    \item \textbf{Parton Shower Uncertainties:}     
+    Parton shower uncertainties for the signal process are evaluated using the alternative QCD sample comparisons. Further details on this procedure are documented in Appendix~\ref{appendix:partonShower}.
+\end{itemize}
 
 
 

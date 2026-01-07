@@ -34,34 +34,34 @@ In the measurement of the \( ZZ \to \ell^+\ell^-\nu\bar{\nu} \) cross-section, s
 To achieve precise cross-section measurements, these backgrounds must be carefully estimated and subtracted using control regions. Considering the final states of the backgrounds, they can be categorized as following Control Regions(CR).
 
 \begin{itemize}
-    \item \textbf{Non-Resonant Backgrounds (Diboson and Top processes without a $Z$ boson)}
+    \item \textbf{Non-Resonant Backgrounds ($e\mu$ flavor symmetry)}
+    These processes decay via two $W$ bosons (or $\tau$ leptons) rather than a $Z$ boson, resulting in uncorrelated lepton flavors. They are further categorized by $b$-jet multiplicity to separate Top processes from Diboson processes:
     \begin{itemize}
-        \item \( WW \to \ell\nu\ell\nu \): The two neutrinos contribute to the MET signature, faking the \( ZZ \to \ell\ell\nu\nu \) process.
-        \item \( t\bar{t} \to WbWb \to \ell\nu b \ell\nu b \): If b-jets are not tagged properly, it may fake the signal.
-        \item Single top \( (tW) \): Can contribute similarly.
+        \item \textbf{0 $b$-jet Category (Diboson Enriched):}
+        \begin{itemize}
+            \item $WW \to \ell\nu\ell\nu$: The dominant contribution in the 0 $b$-tag phase space. The neutrinos create genuine MET.
+            \item $t\bar{t}$ / Single Top ($Wt$): Top events contribute to this category only if the $b$-jets fail to be identified (tagging inefficiency) or fall outside detector acceptance.
+        \end{itemize}
+        \item \textbf{$\geq 1$ $b$-jet Category (Top Enriched):}
+        \begin{itemize}
+             \item $t\bar{t} \to WbWb$ and $Wt$: The dominant contribution when at least one $b$-jet is identified. These events contain real MET from the $W$ decays.
+        \end{itemize}
     \end{itemize}
 
-    \item \textbf{Non-Resonant + 1b-Jet Backgrounds (Top backgrounds with a b-jet)}
+    \item \textbf{3-Lepton Backgrounds ($WZ$)}
     \begin{itemize}
-        \item \( t\bar{t} \to WbWb \to \ell\nu b \ell\nu b \): Events with one identified b-jet contribute to this category.
-    \end{itemize}
- 
-    
-    \item \textbf{3L Backgrounds (Processes with three leptons in the final state)}
-    \begin{itemize}
-        \item \( WZ \to \ell\nu\ell\ell \): If one lepton from the \( Z \) is lost, this process mimics the signal.
+        \item $WZ \to \ell\nu\ell\ell$: This is an irreducible background if one of the three leptons is lost (fails reconstruction) or falls outside the detector acceptance, mimicking the $2\ell + E_{miss}^{T}$ signature.
     \end{itemize}
     
-    \item \textbf{Z+Jets Backgrounds (Processes with a $Z$ boson and jets)}
+    \item \textbf{Z+Jets Backgrounds (Instrumental MET)}
     \begin{itemize}
-        \item \textbf{Drell-Yan + jets} (\( Z/\gamma^* \to \ell\ell \) + jets): If jets are mismeasured, they create fake MET.
-        \item \textbf{W + jets}: A single \( W \) boson decaying leptonically with jets can mimic the signal region due to fake MET.
+        \item \textbf{Drell-Yan + jets} ($Z/\gamma^* \to \ell\ell$ + jets): The dominant reducible background. It contains real leptons from the $Z$ boson, but the MET is artificial ("fake"), caused by jet energy mismeasurement or pile-up interactions.
     \end{itemize}
    
-    \item \textbf{Instrumental Backgrounds (Detector-related effects)}
+    \item \textbf{Fake Lepton / Instrumental Backgrounds}
     \begin{itemize}
-        \item \textbf{Fake MET from mismeasured jets:} Jet energy mismeasurement can lead to artificial MET.
-        \item \textbf{Cosmic-ray muons or beam halo:} Rare cases where fake leptons or MET appear in the detector.
+        \item \textbf{W + jets}: A process with one real lepton from a $W$ boson and a jet misidentified as a second lepton (fake lepton), creating a fake $2\ell$ signature.
+        \item \textbf{Fake MET}: Detector anomalies, cosmic-ray muons, or beam halo effects that produce large artificial missing energy.
     \end{itemize}
 \end{itemize}
 
@@ -299,6 +299,28 @@ Validation of the simultaneous fit performance across these regions is detailed 
 
 
 
-\subsection{Others}
+\subsection{Minor Backgrounds}
+\label{sec:bkg_minor}
+
+Several background processes contribute to the signal region at a subleading level (typically $< 1\%$ of the total yield). Due to their small cross-sections or low acceptance in the analysis phase space, it is not feasible to define statistically significant dedicated control regions for these processes. Instead, their contributions are estimated purely from Monte Carlo simulation normalized to their theoretical cross-sections.
+
+These minor backgrounds include:
+
+\begin{itemize}
+    \item \textbf{$ZZ \to 4\ell$:} This process can enter the signal region if two leptons are lost (e.g., falling outside detector acceptance or failing identification). While physically similar to the signal, the requirement of large $E_{miss}^T$ strongly suppresses this contribution.
+    
+    \item \textbf{Triboson Production ($VVV$):} Processes such as $WWW$, $WWZ$, and $WZZ$ have very small production cross-sections but can produce high lepton multiplicities and missing energy.
+    
+    \item \textbf{$t\bar{t}V$ ($t\bar{t}Z$, $t\bar{t}W$):} Associated production of top pairs with a boson. These events are largely rejected by the $b$-jet veto applied in the signal region.
+    
+    \item \textbf{$W$ + jets:} Events where a $W$ boson decays leptonically and a jet is misidentified as a second lepton. Strict lepton identification and isolation criteria employed in this analysis reduce this background to a negligible level.
+\end{itemize}
+
+Since these backgrounds are not constrained by data in the simultaneous fit, conservative systematic uncertainties are assigned to their theoretical cross-sections (typically on the order of $20\%$ to $30\%$) to account for potential modeling discrepancies.
+
+
+
+
+
 
 
