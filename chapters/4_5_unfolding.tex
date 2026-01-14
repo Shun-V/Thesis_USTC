@@ -1,5 +1,223 @@
 \section{Unfolding}
 \label{sec:unfolding}
 
+In measurements of differential cross-sections, the observed distributions are inevitably distorted by detector effects. These include the finite resolution of the detector, limited geometric acceptance, and reconstruction inefficiencies. To facilitate direct comparison with theoretical predictions and results from other experiments, these detector-level measurements must be corrected to the particle level. This correction process is referred to as \textit{unfolding}.
 
+The unfolding procedure relies on Monte Carlo (MC) simulations, which provide a mapping between the particle level (truth) and the reconstruction level (detector). This mapping is used to construct a response matrix that models the probability of migration between bins, as well as efficiency and acceptance corrections.
 
+\subsection{Detector Response Model}
+
+The relationship between the true physical observable and the measured quantity is characterized by several key components derived from the MC simulation.
+
+\subsubsection{Migration Matrix}
+The measured value of an observable often differs from the true value due to the non-zero resolution of the detector elements. In binned distributions, if this deviation is significant relative to the bin width, an event generated in bin $i$ may be reconstructed in bin $j$.
+
+The **Migration Matrix** ($M$) quantifies this effect. Each element $M_{ij}$ represents the probability that an event generated in the $i$-th bin at the particle level is reconstructed in the $j$-th bin. This matrix is populated using MC events that satisfy both the fiducial (truth) and reconstruction (reco) selection criteria.
+
+\subsubsection{Purity and Stability}
+To ensure a robust unfolding, the binning choice must be optimized such that the migration matrix remains diagonally dominant. Two metrics are defined to quantify this quality:
+
+\begin{itemize}
+    \item \textbf{Purity ($p_j$):} The fraction of events reconstructed in a specific bin $j$ that truly originated from that same bin at the particle level.
+    \begin{align}
+        p_j=\frac{M_{jj}}{\sum_{i}^{\text{reco bins}}M_{ij}}
+    \end{align}
+    \item \textbf{Stability ($s_i$):} The fraction of events generated in a specific bin $i$ that are also reconstructed in that same bin.
+    \begin{align}
+        s_i=\frac{M_{ii}}{\sum_{j}^{\text{truth bins}}M_{ij}}
+    \end{align}
+\end{itemize}
+High values of purity and stability indicate that the chosen bin widths are large enough compared to the detector resolution to minimize bin-to-bin migration.
+
+\subsubsection{Efficiency and Acceptance Corrections}
+In addition to bin migration, the unfolding procedure must correct for event losses and spurious inclusions:
+
+\begin{itemize}
+    \item \textbf{Reconstruction Efficiency ($\epsilon_i$):} This factor accounts for signal events occurring within the fiducial volume that are not reconstructed due to detector inefficiencies or acceptance gaps. It is defined as:
+    \begin{equation}
+        \epsilon_i=\frac{N_{i}^{(\text{pass Reco} \cap \text{pass Truth})}}{N_{i}^{(\text{pass Truth})}}
+    \end{equation}
+    
+    \item \textbf{Fiducial Fraction ($f_i$):} Also known as the purity of the selection, this factor corrects for events that are selected at the reconstruction level but originate from outside the fiducial phase space (background migrations). It is defined as:
+    \begin{align}
+        f_i=\frac{N_{i}^{(\text{pass Reco} \cap \text{pass Truth})}}{N_{i}^{(\text{pass Reco})}}
+    \end{align}
+\end{itemize}
+
+\subsection{Unfolding Algorithm}
+
+This analysis employs the **Iterative Bayesian Unfolding (IBU)** method \cite{dagostini2010improved}, implemented within the \texttt{RooUnfold} framework \cite{Adye:1349242}. 
+
+The algorithm is based on Bayes' theorem. It begins with a prior probability distribution, initially assumed to be the particle-level distribution from the nominal MC simulation. In each iteration, the prior is updated based on the agreement between the measured data and the folded prediction. The algorithm takes as input the measured background-subtracted data, the migration matrix ($M$), and the efficiency/acceptance corrections described above.
+
+The number of iterations serves as the regularization parameter. A low number of iterations may retain a bias towards the MC prior, while a high number of iterations reduces this bias but amplifies statistical fluctuations from the data. The optimization of this parameter is discussed in Section \ref{sec:unfolding_regularization}.
+
+\subsection{Validation of the Unfolding Procedure}
+\label{sec:unfolding_validation}
+
+To verify the robustness of the unfolding procedure, a series of validation tests are performed. These tests check the mathematical validity of the algorithm (technical closure) and estimate the systematic uncertainty arising from model dependence (signal modelling bias).
+
+\subsubsection{Technical Closure Tests}
+
+The technical closure test verifies that the unfolding algorithm can correctly retrieve the true distribution when the detector response is perfectly known. In this test, the MC reconstruction-level distribution is treated as "pseudo-data" and unfolded using the response matrix derived from the same MC dataset.
+
+Since the input distribution and the response matrix are consistent, the unfolded result must recover the MC truth-level distribution within numerical precision. This test has been performed for all differential variables. Three representative examples covering different kinematic regimes are presented below.
+
+\paragraph{Angular Variables: $\Delta\Phi(l,l)$ (Inclusive)}
+Figure \ref{fig:unfolding_technical_closure_dphill_inclusive} shows the validation for the azimuthal separation between leptons. The migration matrix (Fig. \ref{fig:unfolding_technical_closure_migration_dphill_inclusive}) shows strong diagonality. The unfolded result matches the truth perfectly, as confirmed by the ratio in Fig. \ref{fig:unfolding_technical_closure_distribution_dphill_inclusive} and the numerical values in Table \ref{tab:unfolding_technical_closure_dphill_inclusive}.
+
+\begin{figure}[h!]
+\centering
+  \subfloat[\label{fig:unfolding_technical_closure_purity_eff_dphill_inclusive}]{\includegraphics[width=0.35\textwidth]{figures/Unfolding/technical_closure/inclusive/dphill/all_dphill.png}}
+  \subfloat[\label{fig:unfolding_technical_closure_migration_dphill_inclusive}]{\includegraphics[width=0.35\textwidth]{figures/Unfolding/technical_closure/inclusive/dphill/migration_dphill.png}}
+  \subfloat[\label{fig:unfolding_technical_closure_distribution_dphill_inclusive}]{\includegraphics[height=0.40\textwidth]{figures/Unfolding/technical_closure/inclusive/dphill/final_dphill.png}}
+  \caption{Technical closure test for $\Delta\Phi(l,l)$ in the Inclusive region: (a) purity and efficiency, (b) migration matrix, (c) unfolded cross section compared to truth.}
+\label{fig:unfolding_technical_closure_dphill_inclusive}
+\end{figure}
+
+\begin{table}[h!]
+\centering
+\caption{Unfolded cross-sections (fb/rad) and uncertainties (\%) for the technical closure test of $\Delta\Phi(l,l)$ in the Inclusive region.}
+\small
+\begin{tabular}{c|ccccc}
+\toprule
+Bin (rad)       & 0 - 0.3   & 0.3 - 0.6  & 0.6 - 1    & 1 - 1.4    & 1.4 - 1.8 \\ 
+\midrule
+XS              & 7.092931  & 8.668584   & 11.756990  & 15.992146  & 10.534318 \\
+\midrule
+MET             & 0.46  & 0.80  & 0.42  & 0.35  & 1.57   \\
+Jet             & 0.67  & 0.53  & 0.85  & 0.69  & 1.23   \\
+Theory          & 0.93  & 0.32  & 1.12  & 0.42  & 1.27   \\
+\midrule
+Total           & 4.60  & 3.66  & 2.72  & 2.30  & 3.88   \\
+\bottomrule
+\end{tabular}
+\label{tab:unfolding_technical_closure_dphill_inclusive}
+\end{table}
+
+\paragraph{Discrete Variables: Jet Multiplicity (Inclusive)}
+Unfolding discrete variables can be challenging due to migration between adjacent bins. Figure \ref{fig:unfolding_technical_closure_n_jets_inclusive} demonstrates the performance for $N_{\text{jets}}$. Despite significant migration off-diagonal elements (Fig. \ref{fig:unfolding_technical_closure_migration_n_jets_inclusive}), the Bayesian unfolding correctly recovers the inclusive jet multiplicity spectrum.
+
+\begin{figure}[h!]
+\centering
+  \subfloat[\label{fig:unfolding_technical_closure_purity_eff_n_jets_inclusive}]{\includegraphics[width=0.35\textwidth]{figures/Unfolding/technical_closure/inclusive/n_jets/all_n_jets.png}}
+  \subfloat[\label{fig:unfolding_technical_closure_migration_n_jets_inclusive}]{\includegraphics[width=0.35\textwidth]{figures/Unfolding/technical_closure/inclusive/n_jets/migration_n_jets.png}}
+  \subfloat[\label{fig:unfolding_technical_closure_distribution_n_jets_inclusive}]{\includegraphics[height=0.40\textwidth]{figures/Unfolding/technical_closure/inclusive/n_jets/final_n_jets.png}}
+  \caption{Technical closure test for $n_{\text{jets}}$ in the Inclusive region: (a) purity and efficiency, (b) migration matrix, (c) unfolded cross section compared to truth.}
+\label{fig:unfolding_technical_closure_n_jets_inclusive}
+\end{figure}
+
+\begin{table}[h!]
+\centering
+\caption{Unfolded cross-sections (fb) and uncertainties (\%) for the technical closure test of $n_{\text{jets}}$ in the Inclusive region.}
+\small
+\begin{tabular}{c|cccc}
+\toprule
+Bin             & 0 - 1      & 1 - 2     & 2 - 3     & 3 - 11        \\
+\midrule
+XS              & 15.330063  & 3.808171  & 0.739250  & 0.020761 \\
+\midrule
+MET             & 0.39  & 1.46  & 1.26  & 1.57   \\
+Jet             & 5.68  & 13.29 & 40.21 & 61.25  \\
+Theory          & 0.90  & 2.06  & 7.15  & 5.09   \\
+\midrule
+Total           & 5.87  & 13.90 & 42.40 & 63.50  \\
+\bottomrule
+\end{tabular}
+\label{tab:unfolding_technical_closure_n_jets_inclusive}
+\end{table}
+
+\FloatBarrier
+
+\paragraph{VBS Variables: $m_{jj}$ (ZZjj Region)}
+The dijet invariant mass $m_{jj}$ is the primary observable for Vector Boson Scattering. In the ZZjj region, resolution effects at high mass are significant. As shown in Figure \ref{fig:unfolding_technical_closure_mjj_ZZjj} and Table \ref{tab:unfolding_technical_closure_mjj_ZZjj}, the unfolding procedure successfully handles the wide bins at the tail of the distribution, ensuring an unbiased result.
+
+\begin{figure}[h!]
+\centering
+  \subfloat[\label{fig:unfolding_technical_closure_purity_eff_mjj_ZZjj}]{\includegraphics[width=0.35\textwidth]{figures/Unfolding/technical_closure/ZZjj/mjj/all_mjj.png}}
+  \subfloat[\label{fig:unfolding_technical_closure_migration_mjj_ZZjj}]{\includegraphics[width=0.35\textwidth]{figures/Unfolding/technical_closure/ZZjj/mjj/migration_mjj.png}}
+  \subfloat[\label{fig:unfolding_technical_closure_distribution_mjj_ZZjj}]{\includegraphics[height=0.40\textwidth]{figures/Unfolding/technical_closure/ZZjj/mjj/final_mjj.png}}
+  \caption{Technical closure test for $m_{jj}$ in the ZZjj region: (a) purity and efficiency, (b) migration matrix, (c) unfolded cross section compared to truth.}
+\label{fig:unfolding_technical_closure_mjj_ZZjj}
+\end{figure}
+
+\begin{table}[h!]
+\centering
+\caption{Unfolded cross-sections (fb/GeV) and uncertainties (\%) for the technical closure test of $m_{jj}$ in the ZZjj region.}
+\small
+\begin{tabular}{c|ccc}
+\toprule
+Bin (GeV)       & 0 - 400   & 400 - 800  & 800 - 8000      \\
+\midrule
+XS              & 0.002052  & 0.000202   & 0.000005       \\
+\midrule
+MET             & 0.13  & 1.62  & 3.22   \\
+Jet             & 3.86  & 24.11 & 36.54  \\
+Theory          & 0.92  & 7.13  & 5.27   \\
+\midrule
+Total           & 4.36  & 29.20 & 42.10  \\
+\bottomrule
+\end{tabular}
+\label{tab:unfolding_technical_closure_mjj_ZZjj}
+\end{table}
+
+\FloatBarrier
+
+\subsubsection{Signal Modelling and Unfolding Bias}
+\label{sec:unfolding_bias_results}
+
+The unfolding result carries an intrinsic dependence on the physics model (prior) used to generate the migration matrix. To estimate the potential bias introduced by this assumption, a stress test is performed using an alternative signal model.
+
+The migration matrix is re-weighted using an alternative Monte Carlo sample (MadGraph qqZZ) to mimic a different underlying physics distribution. The nominal reconstruction-level distribution is then unfolded using this alternative matrix. The deviation of the unfolded result from the nominal truth is taken as the **unfolding bias**.
+
+Figures \ref{fig:unfolding_modelling_bias_inclusive_1} and \ref{fig:unfolding_modelling_bias_ZZjj_1} summarize the bias tests for the Inclusive and ZZjj regions, respectively. In most bins, the bias is found to be negligible. However, to ensure a conservative result, any bias exceeding 1\% is symmetrized and applied as a systematic uncertainty on the final measurement.
+
+\begin{figure}[h!]
+\centering
+  \subfloat[\label{fig:unfolding_modelling_bias_dphill_inclusive}]{\includegraphics[width=0.49\textwidth]{figures/Unfolding/bias/inclusive/final_dphill.png}}
+  \subfloat[\label{fig:unfolding_modelling_bias_leading_pT_lepton_inclusive}]{\includegraphics[width=0.49\textwidth]{figures/Unfolding/bias/inclusive/final_leading_pT_lepton.png}} \\
+  \subfloat[\label{fig:unfolding_modelling_bias_mt_zz_inclusive}]{\includegraphics[width=0.49\textwidth]{figures/Unfolding/bias/inclusive/final_mt_zz.png}}
+  \subfloat[\label{fig:unfolding_modelling_bias_n_jets_inclusive}]{\includegraphics[width=0.49\textwidth]{figures/Unfolding/bias/inclusive/final_n_jets.png}}
+  \caption{Unfolding closure test using reweighted migration matrix from alternative samples for (a) $\Delta\Phi(l,l)$, (b) $p_{T}^{\text{leading lepton}}$, (c) $m_{T}^{ZZ}$, and (d) jet multiplicity in the Inclusive region.}
+\label{fig:unfolding_modelling_bias_inclusive_1}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+  \subfloat[\label{fig:unfolding_modelling_bias_dphill_ZZjj}]{\includegraphics[width=0.49\textwidth]{figures/Unfolding/bias/ZZjj/final_dphill.png}}
+  \subfloat[\label{fig:unfolding_modelling_bias_leading_jet_pt_ZZjj}]{\includegraphics[width=0.49\textwidth]{figures/Unfolding/bias/ZZjj/final_leading_jet_pt.png}} \\
+  \subfloat[\label{fig:unfolding_modelling_bias_mjj_ZZjj}]{\includegraphics[width=0.49\textwidth]{figures/Unfolding/bias/ZZjj/final_mjj.png}}
+  \subfloat[\label{fig:unfolding_modelling_bias_mt_zz_ZZjj}]{\includegraphics[width=0.49\textwidth]{figures/Unfolding/bias/ZZjj/final_mt_zz.png}}
+  \caption{Unfolding closure test using reweighted migration matrix from alternative samples for (a) $\Delta\Phi(l,l)$, (b) $p_{T}^{\text{leading jet}}$, (c) $m_{jj}$, and (d) $m_{T}^{ZZ}$ in the ZZjj region.}
+\label{fig:unfolding_modelling_bias_ZZjj_1}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Regularization and Iteration Optimization}
+\label{sec:unfolding_regularization}
+
+The number of iterations in the Bayesian unfolding acts as a regularization parameter. Increasing the number of iterations reduces the dependence on the MC prior (bias) but increases the statistical uncertainty propagated from the data. 
+
+To determine the optimal number of iterations for each variable, the total uncertainty (stat $\oplus$ bias) was minimized. Based on the bias studies presented in Section \ref{sec:unfolding_bias_results}, an iteration number between 2 and 5 was found to be optimal for most variables. The specific iteration numbers selected for the final results are listed in Table \ref{tab:unfolding_technical_closure_n_itr}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Selected iteration number for each variable in the Bayesian unfolding algorithm.}
+    \begin{tabular}{l|cc} \toprule
+    \textbf{Variable} & \textbf{Inclusive} & \textbf{ZZjj} \\ \midrule
+        $\Delta\Phi(l,l)$             & 3         & 2 \\
+        $p_{T}^{\text{leading lepton}}$ & 2         & - \\
+        $p_{T}^{\text{leading jet}}$    & -         & 2 \\
+        $m_{T}^{ZZ}$                  & 3         & 5 \\
+        $m_{jj}$                      & -         & 4 \\
+        Jet multiplicity              & 5         & - \\
+        $p_{T}^{ZZ}$                  & 5         & 4 \\
+        $p_{T}^{Z}$                   & 2         & 3 \\
+        $y(Z)$                        & 2         & 3 \\
+        $sin(\phi)cos(\theta)$        & 2         & - \\ \bottomrule
+    \end{tabular}
+    \label{tab:unfolding_technical_closure_n_itr}
+\end{table}
+
+\FloatBarrier
