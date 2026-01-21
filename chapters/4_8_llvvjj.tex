@@ -1,0 +1,77 @@
+\section{Electroweak $ZZjj$ Production and Search for aQGCs}
+\label{sec:results_zzjj}
+
+While the inclusive $ZZ$ measurement provides a precision test of QCD and trilinear gauge couplings, the study of $ZZ$ production in association with two jets ($ZZjj$) offers a unique window into the electroweak sector. This final state is sensitive to Vector Boson Scattering (VBS), a process directly probing the quartic gauge boson self-interactions ($VVVV$) predicted by the Standard Model. This section presents the measurement of the $ZZjj \to \ell\ell\nu\nu jj$ cross-section and the subsequent search for Anomalous Quartic Gauge Couplings (aQGCs).
+
+\subsection{Event Selection and Optimization}
+\label{subsec:zzjj_selection}
+
+To target the VBS topology, the event selection is modified from the inclusive $\ell\ell\nu\nu$ baseline described in Section~\ref{sec:event_selection}. The selection is optimized to suppress the dominant QCD-induced $ZZ$ background and enhance the electroweak signal-to-background ratio.
+
+The definitions for leptons and the $Z$ boson candidate remain identical to the inclusive analysis. However, specific requirements are imposed on the hadronic activity and missing transverse momentum:
+
+\begin{itemize}
+    \item \textbf{Jet Multiplicity:} Events must contain at least two hadronic jets with $p_{\mathrm{T}} > 30$~GeV and $|\eta| < 4.5$. This ensures the presence of the "tagging jets" characteristic of VBS processes.
+    \item \textbf{Missing Transverse Momentum:} The threshold is raised significantly to $E_{\mathrm{T}}^{\text{miss}} > 150$~GeV (compared to $110$~GeV in the inclusive channel). This stricter cut is essential to suppress the $Z+\text{jets}$ background, which is more abundant in high jet-multiplicity regions.
+\end{itemize}
+
+Standard VBS analyses often apply cuts on the dijet invariant mass ($m_{jj}$) or pseudorapidity separation ($\Delta y_{jj}$). However, in this fiducial measurement, these kinematic variables are inspected differentially rather than being used as cut thresholds, allowing for a broader phase space measurement.
+
+\subsection{Fiducial Cross-Section Measurement}
+\label{subsec:zzjj_xsec}
+
+The signal yield is extracted using a profile-likelihood fit to the $\Delta\phi(\ell\ell, E_{\mathrm{T}}^{\text{miss}})$ distribution, similar to the inclusive strategy. The fit includes dedicated control regions for the $WZjj$ and non-resonant backgrounds.
+
+The observed signal strength for the $ZZjj$ process is:
+\begin{equation}
+    \mu_{ZZjj} = 1.02^{+0.19}_{-0.17}.
+\end{equation}
+The background normalization factors are determined to be $0.97^{+0.24}_{-0.20}$ for $WZ$ and $1.08^{+0.19}_{-0.15}$ for the non-resonant $WW/t\bar{t}$ component.
+
+The corresponding measured fiducial cross-section is:
+\begin{equation}
+    \sigma_{ZZjj \to \ell\ell\nu\nu jj}^{\text{fid}} = 0.96^{+0.18}_{-0.16}~\text{fb}.
+\end{equation}
+This result is in good agreement with the Standard Model prediction of $0.94 \pm 0.20$~fb, which combines the QCD-induced production (simulated by \textsc{Sherpa}) and the electroweak-induced production (simulated by \textsc{MadGraph5}). The uncertainty is dominated by data statistics due to the rarity of the process.
+
+Differential cross-sections were also measured for seven kinematic observables, including the dijet invariant mass $m_{jj}$ and the transverse mass of the $ZZ$ system ($m_{\mathrm{T}}^{ZZ}$). As shown in Figure~\ref{fig:diff_ZZjj}, the data is well described by the SM predictions within the larger uncertainties of this channel.
+
+% Placeholder for differential plots specific to ZZjj
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.45\textwidth]{figures/diff_mjj_ZZjj.pdf}
+%     \includegraphics[width=0.45\textwidth]{figures/diff_mTZZ_ZZjj.pdf}
+%     \caption{Differential cross-sections in the $ZZjj$ phase space as a function of the dijet invariant mass $m_{jj}$ (left) and the transverse mass of the $ZZ$ system $m_{\mathrm{T}}^{ZZ}$ (right).}
+%     \label{fig:diff_ZZjj}
+% \end{figure}
+
+\subsection{Constraints on Anomalous Quartic Gauge Couplings}
+\label{subsec:aqgc_limits}
+
+The $ZZjj$ channel provides direct sensitivity to the $ZZWW$ and $ZZZZ$ quartic vertices. In the Standard Model, the cross-section contribution from these vertices is small. However, physics Beyond the Standard Model (BSM) could manifest as Anomalous Quartic Gauge Couplings (aQGCs), leading to a significant enhancement of the cross-section at high energy scales.
+
+\subsubsection{EFT Interpretation}
+
+The aQGCs are parameterized using the Standard Model Effective Field Theory (SMEFT) framework. This analysis considers dimension-8 operators, specifically the transversal operators $T0$ through $T9$, which induce quartic couplings without modifying triple gauge couplings.
+
+The most sensitive observable for detecting aQGCs is the transverse mass of the $ZZ$ system, defined as:
+\begin{equation}
+    m_{\mathrm{T}}^{ZZ} = \sqrt{ \left( \sqrt{m_Z^2 + (p_{\mathrm{T}}^{\ell\ell})^2} + \sqrt{m_Z^2 + (E_{\mathrm{T}}^{\text{miss}})^2} \right)^2 - \left| \vec{p}_{\mathrm{T}}^{\ell\ell} + \vec{E}_{\mathrm{T}}^{\text{miss}} \right|^2 }.
+\end{equation}
+The presence of aQGCs would appear as an excess of events in the high-$m_{\mathrm{T}}^{ZZ}$ tail.
+
+\subsubsection{Limits on Wilson Coefficients}
+
+A binned likelihood fit is performed on the $m_{\mathrm{T}}^{ZZ}$ distribution in the $ZZjj$ signal region. No significant deviation from the SM background expectation is observed. Consequently, 95\% confidence level (CL) limits are set on the Wilson coefficients $f_{T,i}/\Lambda^4$.
+
+The observed limits are consistent with zero for all operators. To ensure the validity of the EFT expansion, unitarity bounds are calculated as a function of the energy cut-off scale $E_c$. The evolution of the limits for the $f_{T0}$ operator is shown in Figure~\ref{fig:aqgc_limits}.
+
+Notably, the constraints obtained in this $\ell\ell\nu\nu jj$ analysis are significantly tighter than those from the fully leptonic $ZZ \to 4\ell jj$ channel, improving the sensitivity by more than a factor of two. This improvement is driven primarily by the larger branching ratio of the $Z \to \nu\nu$ decay compared to $Z \to \ell\ell$, which preserves statistics in the high-$m_{\mathrm{T}}^{ZZ}$ tail where the aQGC sensitivity is highest.
+
+% Placeholder for aQGC limit plot
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.6\textwidth]{figures/limit_fT0.pdf}
+%     \caption{Expected and observed 95\% CL intervals for the Wilson coefficient $f_{T0}/\Lambda^4$ as a function of the EFT cut-off scale $E_c$. The solid green curve indicates the unitarity bound.}
+%     \label{fig:aqgc_limits}
+% \end{figure}
