@@ -1,0 +1,126 @@
+\section{Results}
+\label{sec:results_llvv}
+
+This section presents the results of the analysis performed on the full Run 2 dataset, corresponding to an integrated luminosity of $140~\text{fb}^{-1}$. The measurements include the extraction of signal strengths via a profile-likelihood fit, the determination of fiducial and total integrated cross-sections, and the measurement of differential cross-sections unfolded to particle level. Finally, limits are placed on anomalous neutral triple gauge couplings (aTGCs) and anomalous quartic gauge couplings (aQGCs) within the Effective Field Theory (EFT) framework.
+
+\subsection{Signal Extraction and Fit Results}
+\label{subsec:signal_extraction}
+
+The signal yields are extracted using a binned profile-likelihood fit to the discriminative observable $\Delta\phi(\ell\ell, E_{\mathrm{T}}^{\text{miss}})$. This fit is performed simultaneously across the Signal Regions (SRs) and the dedicated Control Regions (CRs) described in Section~\ref{sec:event_selection}. 
+
+For the inclusive $ZZ \to \ell\ell\nu\nu$ production, the observed signal strength parameter, defined as the ratio of the observed signal yield to the Standard Model (SM) prediction ($\mu = \sigma_{\text{obs}}/\sigma_{\text{exp}}$), is measured to be:
+\begin{equation}
+    \mu_{ZZ} = 1.05 \pm 0.05,
+\end{equation}
+indicating excellent agreement with the SM expectation. The dominant background normalization factors constrained by the fit are found to be close to unity, with $\mu_{WZ} = 1.00^{+0.06}_{-0.05}$ and $\mu_{\text{top}} = 0.98^{+0.13}_{-0.10}$. The normalization for the $Z+\text{jets}$ background varies by jet multiplicity, ranging from $1.14$ in the 0-jet region to $1.10$ in the $\geq 2$-jet region.
+
+In the electroweak-enriched $ZZjj$ channel, the fitted signal strength is:
+\begin{equation}
+    \mu_{ZZjj} = 1.02^{+0.19}_{-0.17}.
+\end{equation}
+The background normalization factors for this channel are determined to be $0.97^{+0.24}_{-0.20}$ for the $WZ$ background and $1.08^{+0.19}_{-0.15}$ for the non-resonant backgrounds ($WW$ and top).
+
+Post-fit distributions of $\Delta\phi(\ell\ell, E_{\mathrm{T}}^{\text{miss}})$ in the signal regions are shown in Figure~\ref{fig:postfit_control}. The data is well-described by the post-fit predictions within the assigned uncertainties. Representative kinematic distributions, such as the transverse mass of the $ZZ$ system ($m_{\mathrm{T}}^{ZZ}$) and the transverse momentum of the leading lepton, are shown in Figure~\ref{fig:postfit_kinematics}.
+
+% Placeholder for Figure 3 from the paper
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/postfit_dphi_ZZ.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/postfit_dphi_ZZjj.pdf}
+    \caption{The post-fit distributions of $\Delta\phi(\vec{E}_{\mathrm{T}}^{\text{miss}}, Z)$ in the inclusive $ZZ$ (left) and $ZZjj$ (right) signal regions. The bottom panels show the ratio of the data to the total prediction.}
+    \label{fig:postfit_control}
+\end{figure}
+
+\subsection{Integrated Cross-Section Measurements}
+\label{subsec:integrated_xsec}
+
+The measured signal strengths are converted into fiducial cross-sections using the SM predictions from \textsc{Sherpa} and \textsc{MadGraph5}. The results for both the inclusive and VBS-enriched phase spaces are summarized below.
+
+\subsubsection{Inclusive $ZZ \to \ell\ell\nu\nu$}
+
+The measured fiducial cross-section for the inclusive $ZZ \to \ell\ell\nu\nu$ process is:
+\begin{equation}
+    \sigma_{ZZ \to \ell\ell\nu\nu}^{\text{fid}} = 21.0 \pm 1.0~\text{fb}.
+\end{equation}
+The total uncertainty is composed of $\pm 0.73$ (stat), $\pm 0.57$ (exp), $\pm 0.18$ (theory), and $\pm 0.18$ (lumi) fb. This result represents a significant improvement in precision compared to previous ATLAS measurements using partial Run 2 data, with the total uncertainty reduced from 7.0\% to approximately 4.8\%. 
+
+The measurement is consistent with the state-of-the-art SM prediction calculated using \textsc{Matrix} at NNLO in QCD and NLO in EW corrections, which yields $21.03 \pm 0.30$ fb.
+
+Using the fiducial acceptance factor $A_{ZZ}$ and the branching ratio for $ZZ \to 2\ell 2\nu$, the result is extrapolated to the full phase space for $Z$ boson masses between 66 and 116 GeV. The total $pp \to ZZ$ cross-section is determined to be:
+\begin{equation}
+    \sigma_{pp \to ZZ}^{\text{total}} = 15.38 \pm 0.81~\text{pb},
+\end{equation}
+which agrees well with the \textsc{Matrix} prediction of $15.40 \pm 0.38$ pb.
+
+\subsubsection{Electroweak $ZZjj \to \ell\ell\nu\nu jj$}
+
+The fiducial cross-section for the $ZZjj$ production, which requires at least two jets in the final state, is measured to be:
+\begin{equation}
+    \sigma_{ZZjj \to \ell\ell\nu\nu jj}^{\text{fid}} = 0.96^{+0.18}_{-0.16}~\text{fb}.
+\end{equation}
+This value is compatible with the SM prediction of $0.94 \pm 0.20$ fb derived from \textsc{Sherpa} (QCD component) and \textsc{MadGraph5} (EW component). The uncertainty is dominated by statistical limitations due to the rarity of the process.
+
+\subsection{Differential Cross-Sections}
+\label{subsec:diff_xsec}
+
+Differential cross-sections are measured to probe the kinematic properties of the $ZZ$ production and test perturbative QCD predictions. The detector-level distributions are unfolded to the stable particle level using an iterative Bayesian method to correct for detector resolution and acceptance effects.
+
+For the inclusive $ZZ$ case, eight kinematic variables were measured. Figure~\ref{fig:diff_ZZ} (left) shows the differential cross-section as a function of the transverse momentum of the $Z$ boson ($p_{\mathrm{T}}^Z$). The data shows good agreement with both the \textsc{Sherpa} and \textsc{Matrix} predictions, though the \textsc{Matrix} calculation (incorporating NNLO QCD) tends to describe the normalization slightly better.
+
+For the $ZZjj$ case, seven variables were examined. Figure~\ref{fig:diff_ZZ} (right) displays the transverse mass of the $ZZ$ system ($m_{\mathrm{T}}^{ZZ}$). Despite the larger statistical uncertainties inherent to the $ZZjj$ channel, the shape of the distribution is well-modeled by the SM simulation.
+
+% Placeholder for differential plots (Fig 5 and 6 in paper)
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/diff_pTZ_ZZ.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/diff_mTZZ_ZZjj.pdf}
+    \caption{Measured differential cross-sections for inclusive $ZZ$ production as a function of $p_{\mathrm{T}}^Z$ (left) and for $ZZjj$ production as a function of $m_{\mathrm{T}}^{ZZ}$ (right). The data are compared to SM predictions from \textsc{Sherpa} and \textsc{Matrix}.}
+    \label{fig:diff_ZZ}
+\end{figure}
+
+\subsection{Constraints on Anomalous Couplings}
+\label{subsec:anom_couplings}
+
+The measured kinematic distributions are used to search for physics Beyond the Standard Model (BSM) manifesting as anomalous gauge boson self-interactions. As no significant deviations from the SM predictions are observed, limits are set on the coupling parameters.
+
+\subsubsection{Anomalous Neutral Triple Gauge Couplings (aTGCs)}
+
+The inclusive $ZZ$ production is sensitive to anomalous $ZZZ$ and $ZZ\gamma$ couplings, which are forbidden at tree level in the SM. Constraints are derived by fitting the reconstructed $p_{\mathrm{T}}$ distribution of the dilepton system. 
+
+Limits are set using two frameworks: the vertex function (VF) formalism and the SM Effective Field Theory (SMEFT). The 95\% confidence level (CL) intervals for the VF parameters $f_4^{\gamma/Z}$ (CP-violating) and $f_5^{\gamma/Z}$ (CP-conserving) are presented in Table~\ref{tab:atgc_limits}. These results improve upon the previous ATLAS $ZZ \to \ell\ell\nu\nu$ measurement by a factor of approximately 1.7.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Observed and expected 95\% CL intervals for the neutral aTGC parameters in the vertex function formalism.}
+    \label{tab:atgc_limits}
+    \begin{tabular}{lcc}
+        \hline
+        Parameter & Expected ($10^{-4}$) & Observed ($10^{-4}$) \\
+        \hline
+        $f_4^{\gamma}$ & $[-7.7, 7.7]$ & $[-6.4, 6.4]$ \\
+        $f_4^{Z}$ & $[-6.8, 6.8]$ & $[-5.7, 5.7]$ \\
+        $f_5^{\gamma}$ & $[-7.8, 7.7]$ & $[-6.4, 6.5]$ \\
+        $f_5^{Z}$ & $[-6.9, 6.9]$ & $[-5.8, 5.8]$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsubsection{Anomalous Quartic Gauge Couplings (aQGCs)}
+
+The $ZZjj$ channel provides a unique sensitivity to the $ZZWW$ and $ZZZZ$ quartic vertices via Vector Boson Scattering (VBS) topologies. Limits are placed on dimension-8 SMEFT operators ($T0$ through $T9$) by fitting the transverse mass of the $ZZ$ system ($m_{\mathrm{T}}^{ZZ}$).
+
+The observed limits on the Wilson coefficients $f_{T,i}/\Lambda^4$ are consistent with zero. To ensuring the validity of the EFT expansion, unitarity bounds are calculated as a function of the energy cut-off scale $E_c$. The constraints obtained in this analysis are significantly tighter than those from the $ZZ \to 4\ell jj$ channel, improving sensitivity by more than a factor of two, driven primarily by the larger branching ratio of the $\ell\ell\nu\nu$ final state.
+
+The evolution of the limits for the $f_{T0}$ operator as a function of the cutoff scale is visualized in Figure~\ref{fig:aqgc_limits}.
+
+% Placeholder for Fig 11a
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/limit_fT0.pdf}
+    \caption{Expected and observed 95\% CL intervals for the Wilson coefficient $f_{T0}/\Lambda^4$ as a function of the EFT cut-off scale $E_c$. The solid green curve indicates the unitarity bound.}
+    \label{fig:aqgc_limits}
+\end{figure}
+
+\subsection{Summary of Results}
+
+In summary, the fiducial and differential cross-sections for $ZZ \to \ell\ell\nu\nu$ and $ZZjj \to \ell\ell\nu\nu jj$ have been measured with high precision using the full ATLAS Run 2 dataset. The inclusive fiducial cross-section is measured with a precision of 4.8\%, limited by statistics. All measurements show excellent agreement with Standard Model predictions. Stringent limits have been placed on anomalous triple and quartic gauge couplings, significantly constraining the phase space for new physics in the electroweak sector.
