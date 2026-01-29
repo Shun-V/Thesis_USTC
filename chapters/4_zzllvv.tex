@@ -2,6 +2,37 @@
 
 \chapter{\texorpdfstring{Measurement of ZZ Production with $ll\nu\nu$ Final State}{Measurement of ZZ Production with llnunu Final State}}
 
+
+\section{Introduction}
+\label{sec:ZZ_intro}
+
+The study of diboson production at the Large Hadron Collider (LHC) is a cornerstone of the experimental program to test the Standard Model (SM) of particle physics. Among these processes, the production of $Z$ boson pairs ($ZZ$) is of particular importance. It provides a direct probe of the electroweak gauge structure and the non-Abelian self-interactions of the gauge bosons. Precise measurements of the $ZZ$ production cross-section constitute a stringent test of the SM predictions at the highest available energies and serve as a sensitive probe for new physics phenomena that may manifest as anomalous Triple Gauge Couplings (aTGCs).
+
+This chapter presents a measurement of the $ZZ$ production cross-section in proton-proton collisions at a center-of-mass energy of $\sqrt{s} = 13$ TeV, using the full Run 2 dataset collected by the ATLAS detector, corresponding to an integrated luminosity of $140~\text{fb}^{-1}$. The analysis focuses on the final state where one $Z$ boson decays into a pair of charged leptons ($\ell^+\ell^-$, where $\ell = e, \mu$) and the other decays into a pair of neutrinos ($\nu\bar{\nu}$).
+
+\subsection{Motivation for the $\ell\ell\nu\nu$ Channel}
+
+While the "golden channel" $ZZ \to 4\ell$ offers a fully reconstructed final state with very high signal purity, it suffers from a small branching ratio. The branching fraction of the $Z$ boson to neutrinos ($\mathcal{B}(Z \to \nu\bar{\nu}) \approx 20\%$) is approximately six times larger than that to charged leptons ($\mathcal{B}(Z \to \ell^+\ell^-) \approx 3.3\%$). Consequently, the $ZZ \to \ell\ell\nu\nu$ channel benefits from significantly higher statistics.
+
+This statistical advantage is particularly crucial in the high transverse momentum ($p_{\mathrm{T}}$) regime. Since deviations from the SM due to effective field theory (EFT) operators or new heavy resonances are expected to be enhanced at high energies, the $\ell\ell\nu\nu$ channel provides superior sensitivity for constraining aTGCs compared to the $4\ell$ channel. Furthermore, understanding the $ZZ \to \ell\ell\nu\nu$ process is essential as it constitutes a major irreducible background for searches for Dark Matter (Mono-$Z$) and high-mass Higgs boson decays.
+
+\subsection{Analysis Strategy and Outline}
+
+The measurement is performed in a fiducial phase space defined to match the experimental acceptance. The analysis relies on identifying events with a dilepton pair consistent with a $Z$ boson mass and significant missing transverse momentum ($E_{\mathrm{T}}^{\text{miss}}$) arising from the neutrinos.
+
+The structure of this chapter is as follows:
+\begin{itemize}
+    \item Section~\ref{sec:samples} describes the data and Monte Carlo (MC) simulation samples used to model the signal and background processes.
+    \item Section~\ref{sec:event_selection} details the reconstruction of physics objects and the selection criteria defining the Signal Regions (SR).
+    \item Section~\ref{sec:background} discusses the estimation of major backgrounds, particularly the dominant $WZ$ and non-resonant backgrounds, using data-driven control regions.
+    \item Section~\ref{sec:systematics} outlines the sources of experimental and theoretical systematic uncertainties.
+    \item Section~\ref{sec:unfolding} presents the unfolding procedure used to correct the detector-level distributions to the particle level.
+    \item Section~\ref{sec:dnn} describes the optimization strategies, including the use of Deep Neural Networks (DNN), to enhance the separation between signal and background.
+    \item Section~\ref{sec:results_llvv} reports the measured integrated and differential cross-sections for the inclusive $ZZ$ production and the constraints on aTGCs.
+    \item Finally, Section~\ref{sec:llvvjj} extends the analysis to the electroweak production of $ZZ$ in association with two jets ($ZZjj$), targeting the Vector Boson Scattering (VBS) topology and Anomalous Quartic Gauge Couplings (aQGCs).
+\end{itemize}
+
+
 \clearpage
 %\section{Data and Monte Carlo Samples}
 \input{chapters/4_1_samples.tex}
