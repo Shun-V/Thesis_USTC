@@ -1,4 +1,5 @@
 \section{Object and Event Selection} 
+\label{sec:llvv_selection}
 
 To isolate the rare signal process from the vast number of particles produced in proton-proton collisions, a rigorous procedure is required to identify and select the final-state objects of interest. This procedure begins with the reconstruction of physics objects---including electrons, muons, and jets---from the electronic signals collected by the ATLAS detector. Following reconstruction, a stringent set of selection criteria is applied to ensure the high quality of these objects and to suppress contributions from misidentified particles and background processes, thereby enhancing the purity of the event sample.
 
@@ -8,7 +9,7 @@ The specific implementation of these selections adheres to the official recommen
 
 % ======================================================================
 \subsection{Object Selection}
-\label{sec:object_selection}
+\label{sec:llvv_object_selection}
 
 The successful identification of the signal final state relies on the precise reconstruction and selection of its constituent physics objects from the complex collision environment. This section details the criteria applied to select the muons, electrons, and jets that form the basis of the analysis. A final step resolves any spatial ambiguities between these selected objects to ensure each is uniquely defined. All selections adhere to the recommendations provided by the ATLAS Combined Performance groups.
 
@@ -56,7 +57,7 @@ After this procedure, the final signal selections for leptons and jets are appli
 
 % ======================================================================
 \subsection{Event Selection}
-\label{sec:event_selection}
+\label{sec:llvv_event_selection}
 
 With a foundation of calibrated physics objects, the analysis proceeds to the crucial stage of event selection. The goal is to isolate the distinctive signature of \(Z \rightarrow \ell\ell\nu\nu\) production from an overwhelming background of other Standard Model processes. The final state is characterized by two same-flavour, opposite-sign leptons consistent with the decay of a Z boson, accompanied by significant missing transverse momentum ($E_T^\text{miss}$) due to the two neutrinos from the second Z boson's decay, which escape detection.
 
@@ -69,7 +70,7 @@ The initial step in the selection process is to identify a viable candidate for 
 \begin{itemize}
     \item \textbf{Data Quality and Trigger:} Events are first required to pass standard data quality checks to ensure all detector components were functioning correctly. They must also have fired a single-lepton trigger, which provides the initial, high-efficiency selection of events containing at least one high-$p_T$ electron or muon.
     \item \textbf{Primary Vertex:} A primary vertex with at least two associated tracks is required, ensuring that the event originates from a genuine proton-proton collision.
-    \item \textbf{Dilepton Final State:} The core of the selection requires the presence of exactly two signal leptons (as defined in \ref{sec:object_selection}) of the same flavour and opposite charge (SFOS). To ensure trigger efficiency is high, the leading and subleading leptons are required to have $p_T > 30$ GeV and $p_T > 20$ GeV, respectively. Events containing any additional "baseline" leptons ($p_T > 7$ GeV) are vetoed. This veto is crucial for suppressing backgrounds with three or more real leptons, primarily from WZ and \(ZZ \rightarrow 4\ell\) production.
+    \item \textbf{Dilepton Final State:} The core of the selection requires the presence of exactly two signal leptons (as defined in \ref{sec:llvv_object_selection}) of the same flavour and opposite charge (SFOS). To ensure trigger efficiency is high, the leading and subleading leptons are required to have $p_T > 30$ GeV and $p_T > 20$ GeV, respectively. Events containing any additional "baseline" leptons ($p_T > 7$ GeV) are vetoed. This veto is crucial for suppressing backgrounds with three or more real leptons, primarily from WZ and \(ZZ \rightarrow 4\ell\) production.
     \item \textbf{On-Shell Z Boson:} To select events consistent with a \(Z \rightarrow \ell\ell\) decay, the invariant mass of the dilepton pair is required to be within a window around the Z boson mass: $80 < m_{\ell\ell} < 100$ GeV. This is a powerful cut that significantly reduces non-resonant backgrounds such as \(t\bar{t}\) and WW production.
 \end{itemize}
 
