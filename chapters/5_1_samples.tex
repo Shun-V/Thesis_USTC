@@ -1,0 +1,35 @@
+\section{Data and MC Samples}
+\label{sec:monoZ_samples}
+
+This search utilizes the full ATLAS Run 2 dataset ($\sqrt{s}=13$ TeV), corresponding to an integrated luminosity of 139 fb$^{-1}$. Monte Carlo (MC) simulations are used to model the detector response and signal acceptance for both the Dark Matter (DM) signals and the Standard Model (SM) backgrounds. All simulated events were processed through the full ATLAS detector simulation based on \textsc{Geant4} or a fast simulation where indicated, and reconstructed using the same software as the data. Pile-up effects (multiple $pp$ interactions in the same or neighbouring bunch crossings) were modelled by overlaying simulated minimum-bias events generated with \textsc{Pythia} 8 \cite{Sjostrand:2007gs}.
+
+\subsection{Signal Samples}
+\label{subsec:signal_samples}
+
+Three distinct classes of signal models are simulated to interpret the results of this search: the invisible decay of the Higgs boson, simplified DM models with spin-1 mediators, and extended Two-Higgs-Doublet Models (2HDM+$a$).
+
+\paragraph{Higgs Boson to Invisible:}
+The Standard Model $ZH$ production is simulated using the \textsc{Powheg Box} v2 generator \cite{Nason:2009xu} at Next-to-Leading Order (NLO) accuracy in QCD. Both quark-induced ($q\bar{q} \to ZH$) and gluon-induced ($gg \to ZH$) processes are generated. The events are interfaced with \textsc{Pythia} 8 \cite{Sjostrand:2007gs} for the simulation of the parton shower, hadronisation, and underlying event, using the AZNLO tune and the NNPDF3.0 PDF set. The samples are normalised to cross-sections calculated at Next-to-Next-to-Leading Order (NNLO) in QCD with NLO Electroweak (EW) corrections \cite{deFlorian:2016spz}. The Higgs boson mass is set to $m_H = 125$ GeV, and it is required to decay to four neutrinos to mimic the invisible signature.
+
+\paragraph{Simplified Dark Matter Models:}
+Signals for vector and axial-vector mediators decaying into Dirac Dark Matter particles ($\chi$) are generated using \textsc{MadGraph5\_aMC@NLO} v2.6.2 \cite{Alwall:2014hca} at NLO accuracy. The generation uses the \texttt{DMsimp\_s\_spin1} model implementation. Events are interfaced with \textsc{Pythia} 8 using the A14 set of tuned parameters (tune) and the NNPDF3.0 PDF set. The coupling of the mediator to the DM particles ($g_{\chi}$) is set to 1.0, and the universal coupling to quarks ($g_{q}$) is set to 0.25. A grid of samples is produced spanning the mediator mass ($m_{med}$) and DM mass ($m_{\chi}$) plane.
+
+\paragraph{2HDM+$a$ Models:}
+The 2HDM+$a$ signal samples are generated using \textsc{MadGraph5\_aMC@NLO} \cite{Alwall:2014hca} at Leading Order (LO) accuracy. Both gluon-gluon fusion and $b$-quark associated production mechanisms are simulated. The showering and hadronisation are performed by \textsc{Pythia} 8 with the A14 tune. The kinematics of the signal are scanned across four parameters: the pseudoscalar masses $m_a$ and $m_A$, the ratio of the vacuum expectation values of the two Higgs doublets $\tan\beta$, and the mixing angle $\sin\theta$.
+
+\subsection{Background Samples}
+\label{subsec:bkg_samples}
+
+The dominant background contributions arise from diboson ($ZZ, WZ$) production and $Z+\text{jets}$ processes. Other contributions include top-quark pair production ($t\bar{t}$), single top, and triboson processes.
+
+\paragraph{Diboson ($ZZ, WZ, WW$):}
+The $q\bar{q}$-initiated diboson processes ($ZZ \to \ell\ell\nu\nu$, $ZZ \to 4\ell$, $WZ \to \ell\nu\ell\ell$) are simulated using the \textsc{Sherpa} 2.2.2 generator \cite{Bothmann:2019yzt}. Matrix elements are calculated at NLO accuracy for up to one additional parton and at LO accuracy for up to three additional partons. The loop-induced process $gg \to ZZ$ is simulated at LO accuracy using \textsc{Sherpa} 2.2.2 with up to one additional parton. All diboson samples use the NNPDF3.0NNLO PDF set.
+
+\paragraph{$Z+\text{jets}$:}
+The production of a $Z$ boson in association with jets is modeled using \textsc{Sherpa} 2.2.1 \cite{Bothmann:2019yzt}. Matrix elements are calculated at NLO for up to two partons and at LO for up to four partons, using the Comix and OpenLoops libraries \cite{Cascioli:2011va}. The samples are normalised to a Next-to-Next-to-Leading Order (NNLO) prediction. This background is particularly relevant for events with fake $E_{\mathrm{T}}^{\text{miss}}$ arising from jet mis-measurement.
+
+\paragraph{Top Quark Processes:}
+Top-quark pair ($t\bar{t}$) and single-top production (Wt, s-channel, and t-channel) are simulated using \textsc{Powheg Box} v2 \cite{Nason:2009xu, Hamilton:2012rf} interfaced with \textsc{Pythia} 8 \cite{Sjostrand:2007gs}. The A14 tune and NNPDF3.0 PDF set are used. The $t\bar{t}$ samples are normalised to the NNLO cross-section including soft-gluon resummation to next-to-next-to-leading-log (NNLL) accuracy.
+
+\paragraph{Other Backgrounds:}
+Rare backgrounds such as triboson ($VVV$) and top-pair production in association with a vector boson ($t\bar{t}V$) are simulated using \textsc{Sherpa} 2.2.2 \cite{Bothmann:2019yzt} and \textsc{MadGraph5\_aMC@NLO} \cite{Alwall:2014hca}, respectively. While their contribution to the signal region is minor ($<1\%$), they are included for completeness in the background estimation.

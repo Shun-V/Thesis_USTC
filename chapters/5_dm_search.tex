@@ -1,51 +1,57 @@
 % !TeX root = ../main.tex
 
-
-\chapter{\texorpdfstring{Search for Dark Matter with $ll + E^{miss}_{T}$ Final State}{Search for Dark Matter with ll + MET Final State}}
+\chapter{\texorpdfstring{Search for Dark Matter Produced in Association with a $Z$ Boson in the $\ell\ell + E^{\text{miss}}_{\text{T}}$ Final State}{Search for Dark Matter in the ll + MET Final State}}
 \label{chap:monoZ}
 
 \section{Introduction}
 \label{sec:monoZ_intro}
 
-The existence of Dark Matter (DM) is one of the most compelling evidences for physics Beyond the Standard Model (BSM). While astrophysical observations, such as galaxy rotation curves and the Cosmic Microwave Background anisotropy, provide strong gravitational evidence for DM, its particle nature remains unknown. The Large Hadron Collider (LHC) offers a unique opportunity to produce DM particles in high-energy proton-proton collisions. Since DM particles are electrically neutral and stable, they do not interact with the ATLAS detector and escape undetected, manifesting only as an imbalance in the transverse momentum, denoted as missing transverse momentum ($E_{\mathrm{T}}^{\text{miss}}$).
+The existence of Dark Matter (DM) remains one of the strongest evidences for physics Beyond the Standard Model (BSM). While astrophysical observations—ranging from galaxy rotation curves to the Cosmic Microwave Background anisotropy—provide compelling gravitational evidence for DM, its particle nature remains elusive[cite: 47]. The Large Hadron Collider (LHC) offers a unique laboratory to produce DM particles in high-energy proton-proton collisions. If DM particles interact weakly with the Standard Model (SM) sector, they may be produced in the ATLAS detector. Being electrically neutral and stable, they would escape detection, manifesting only as a significant imbalance in transverse momentum, denoted as missing transverse momentum ($E_{\mathrm{T}}^{\text{miss}}$)[cite: 49].
 
-To identify such events, the DM particles must be produced in association with a visible Standard Model particle ("X"), resulting in a "Mono-X" signature. This chapter presents a search for Dark Matter produced in association with a $Z$ boson, where the $Z$ boson decays into a pair of charged leptons ($\ell^+\ell^-$, with $\ell = e, \mu$). This is referred to as the \textit{Mono-Z} channel.
+To identify such events, the DM particles must be produced in association with a visible SM particle ("X") to recoil against, resulting in a distinct "Mono-X" signature. This chapter presents a search for Dark Matter produced in association with a $Z$ boson, where the $Z$ boson decays into a pair of charged leptons ($\ell^+\ell^-$, with $\ell = e, \mu$). This is referred to as the \textit{Mono-Z} channel[cite: 87].
 
-This analysis builds directly upon the measurement of the Standard Model $ZZ \to \ell\ell\nu\nu$ process presented in Chapter~\ref{chap:zz_analysis}. Both analyses share the same final state topology: two charged leptons and significant missing transverse momentum. However, they probe different kinematic regimes and interpretations:
+This analysis builds directly upon the measurement of the SM $ZZ \to \ell\ell\nu\nu$ process presented in Chapter~\ref{chap:zz_analysis}. Both analyses share the same final state topology: an on-shell $Z$ boson and large $E_{\mathrm{T}}^{\text{miss}}$. However, they probe distinct kinematic regimes:
 \begin{itemize}
-    \item In the previous chapter, the $ZZ \to \ell\ell\nu\nu$ process was the \textbf{signal}, and the focus was on measuring the inclusive production cross-section in the precision regime.
-    \item In this chapter, the $ZZ \to \ell\ell\nu\nu$ process represents the dominant, irreducible \textbf{background}. The search focuses on the high-$E_{\mathrm{T}}^{\text{miss}}$ tails where BSM signals are expected to appear over the Standard Model expectation.
+    \item \textbf{Precision Measurement:} In the previous chapter, $ZZ \to \ell\ell\nu\nu$ was the signal. The focus was on the inclusive production cross-section and unfolding kinematic spectra.
+    \item \textbf{BSM Search:} In this chapter, $ZZ \to \ell\ell\nu\nu$ represents the dominant, irreducible \textbf{background}. The search strategy is optimized for the high-$E_{\mathrm{T}}^{\text{miss}}$ tails where BSM signals are expected to deviate from the SM prediction[cite: 53].
 \end{itemize}
 
-The search is interpreted within the context of Simplified Model scenarios involving vector or axial-vector mediators, as well as more complex models such as Two-Higgs-Doublet Models with an additional pseudoscalar mediator (2HDM+$a$). These models predict an excess of events with large missing transverse momentum, distinct from the spectra of the Standard Model backgrounds.
+The results are interpreted within the context of two benchmark BSM scenarios recommended by the LHC Dark Matter Working Group:
+\begin{enumerate}
+    \item \textbf{Simplified Models:} Models involving vector or axial-vector mediators (spin-1) that couple the SM quarks to Dirac fermion DM candidates[cite: 69].
+    \item \textbf{2HDM+$a$ Models:} A more complex extension involving Two-Higgs-Doublet Models with an additional pseudoscalar mediator ($a$), which provides a rich phenomenology including mono-$Z$ signatures[cite: 122].
+\end{enumerate}
 
-The structure of this chapter is as follows. Section~\ref{sec:monoZ_samples} details the simulated signal samples used to model DM production. Section~\ref{sec:monoZ_selection} describes the event selection criteria, optimized to suppress the $Z+\text{jets}$ and diboson backgrounds while retaining sensitivity to DM signals. The estimation of background contributions, particularly the data-driven techniques used to constrain the dominant $ZZ$ and $WZ$ backgrounds, is discussed in Section~\ref{sec:monoZ_bkg}. Section~\ref{sec:monoZ_syst} outlines the systematic uncertainties. Finally, the statistical interpretation and the resulting exclusion limits on DM mediator masses are presented in Section~\ref{sec:monoZ_results}.
+The structure of this chapter is as follows. Section~\ref{sec:monoZ_samples} details the simulated samples used to model DM signals and SM backgrounds. Section~\ref{sec:monoZ_selection} describes the event selection criteria, optimized to suppress the $Z+\text{jets}$ and diboson backgrounds while retaining sensitivity to DM signals using the transverse mass of the $ZZ$ system ($m_T^{ZZ}$) as the primary discriminant. The background estimation strategy, utilizing specific Control Regions (CRs) to constrain dominant processes, is discussed in Section~\ref{sec:monoZ_bkg}. Section~\ref{sec:monoZ_syst} outlines the experimental and theoretical systematic uncertainties. Finally, the statistical interpretation and exclusion limits on mediator masses are presented in Section~\ref{sec:monoZ_results}.
 
 \clearpage
-%\section{Data and Monte Carlo Samples}
+%\section{Data and MC Samples}
+%\label{sec:monoZ_samples}
 \input{chapters/5_1_samples.tex}
-
 
 \clearpage
 %\section{Event Selection}
+%\label{sec:monoZ_selection}
 \input{chapters/5_2_events.tex}
-
 
 \clearpage
 %\section{Background Estimation}
+%\label{sec:monoZ_bkg}
 \input{chapters/5_3_background.tex}
 
-
 \clearpage
-%\section{Systematic Uncertainty}
+%\section{Systematic Uncertainties}
+%\label{sec:monoZ_syst}
 \input{chapters/5_4_syst.tex}
 
-
 \clearpage
-%\section{Unfolding}
+%\section{Statistical Interpretation}
+%\label{sec:monoZ_stats}
 \input{chapters/5_5_stats.tex}
-
 
 \clearpage
 %\section{Results}
+%\label{sec:monoZ_results}
 \input{chapters/5_6_results.tex}
+
+
