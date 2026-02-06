@@ -6,7 +6,7 @@ This section presents the results of the inclusive $ZZ \to \ell\ell\nu\nu$ analy
 \subsection{Signal Extraction and Fit Results}
 \label{subsec:signal_extraction}
 
-The signal yield is extracted using a binned profile-likelihood fit to the discriminative observable $\Delta\phi(\ell\ell, E_{\mathrm{T}}^{\text{miss}})$. This fit is performed simultaneously across the Signal Region (SR) and the dedicated Control Regions (CRs) described in Section~\ref{sec:event_selection}. 
+The signal yield is extracted using a binned profile-likelihood fit to the discriminative observable $\Delta\phi(\ell\ell, E_{\mathrm{T}}^{\text{miss}})$. This fit is performed simultaneously across the Signal Region (SR) and the dedicated Control Regions (CRs) described in Section~\ref{sec:llvv_event_selection}. 
 
 The observed signal strength parameter, defined as the ratio of the observed signal yield to the Standard Model (SM) prediction ($\mu = \sigma_{\text{obs}}/\sigma_{\text{exp}}$), is measured to be:
 \begin{equation}
@@ -14,15 +14,32 @@ The observed signal strength parameter, defined as the ratio of the observed sig
 \end{equation}
 indicating excellent agreement with the SM expectation. The dominant background normalization factors constrained by the fit are found to be close to unity, with $\mu_{WZ} = 1.00^{+0.06}_{-0.05}$ and $\mu_{\text{top}} = 0.98^{+0.13}_{-0.10}$. The normalization for the $Z+\text{jets}$ background varies by jet multiplicity, ranging from $1.14$ in the 0-jet region to $1.10$ in the $\geq 2$-jet region.
 
-The post-fit distribution of $\Delta\phi(\ell\ell, E_{\mathrm{T}}^{\text{miss}})$ in the signal region is shown in Figure~\ref{fig:postfit_control}. The data is well-described by the post-fit predictions within the assigned uncertainties. Representative kinematic distributions, such as the transverse mass of the $ZZ$ system ($m_{\mathrm{T}}^{ZZ}$) and the transverse momentum of the leading lepton, are shown in Figure~\ref{fig:postfit_kinematics}.
+The post-fit distribution of $\Delta\phi(\ell\ell, E_{\mathrm{T}}^{\text{miss}})$ in the signal region is shown in Figure~\ref{fig:postfit_observed}. The data is well-described by the post-fit predictions within the assigned uncertainties. Representative kinematic distributions, such as the transverse mass of the $ZZ$ system ($m_{\mathrm{T}}^{ZZ}$) and the transverse momentum of the leading lepton, are shown in Figure~\ref{fig:postfit_observed}.
 
-% Placeholder for Figure 3 from the paper (Modified to show only ZZ)
-% \begin{figure}[htbp]
-%     \centering
-%     \includegraphics[width=0.6\textwidth]{figures/postfit_dphi_ZZ.pdf}
-%     \caption{The post-fit distribution of $\Delta\phi(\vec{E}_{\mathrm{T}}^{\text{miss}}, Z)$ in the inclusive $ZZ$ signal region. The bottom panel shows the ratio of the data to the total prediction.}
-%     \label{fig:postfit_control}
-% \end{figure}
+\begin{figure}[!htbp]
+    \centering
+    \subfloat[]{
+        \includegraphics[width=0.32\linewidth]{figures/llvv/fig_postfit_a.pdf}
+        \label{fig:postfit_leading_lep_pt}
+    }
+    \hfill
+    \subfloat[]{
+        \includegraphics[width=0.32\linewidth]{figures/llvv/fig_postfit_b.pdf}
+        \label{fig:postfit_met}
+    }
+    \hfill
+    \subfloat[]{
+        \includegraphics[width=0.32\linewidth]{figures/llvv/fig_postfit_c.pdf}
+        \label{fig:postfit_dphi_ll}
+    }
+    
+    \caption{Post-fit kinematic distributions for the inclusive $ZZ$ SR
+    (a) the transverse momentum of the leading lepton $p_\text{T}^\text{leading lepton}$, 
+    (b) $E_\text{T}^\text{miss}$, and 
+    (c) the azimuthal angle separation between two charged leptons $\Delta\phi(\ell, \ell)$. 
+    The data points are shown with statistical error bars, while the shaded band represents the total post-fit uncertainty in the prediction, combining statistical and systematic uncertainties. Open markers indicate data points lying outside the vertical range of the plot.}
+    \label{fig:postfit_observed}
+\end{figure}
 
 \subsection{Integrated Cross-Section Measurements}
 \label{subsec:integrated_xsec}
@@ -48,15 +65,65 @@ which agrees well with the \textsc{Matrix} prediction of $15.40 \pm 0.38$ pb.
 
 Differential cross-sections are measured to probe the kinematic properties of the inclusive $ZZ$ production and test perturbative QCD predictions. The detector-level distributions are unfolded to the stable particle level using an iterative Bayesian method to correct for detector resolution and acceptance effects.
 
-Eight kinematic variables were measured for the inclusive channel. Figure~\ref{fig:diff_ZZ} shows the differential cross-section as a function of the transverse momentum of the $Z$ boson ($p_{\mathrm{T}}^Z$). The data shows good agreement with both the \textsc{Sherpa} and \textsc{Matrix} predictions, though the \textsc{Matrix} calculation (incorporating NNLO QCD) tends to describe the normalization slightly better.
+Eight kinematic variables were measured for the inclusive channel. Figure~\ref{fig:diff_xs_ZZ} shows the differential cross-section as a function of the transverse momentum of the $Z$ boson ($p_{\mathrm{T}}^Z$). The data shows good agreement with both the \textsc{Sherpa} and \textsc{Matrix} predictions, though the \textsc{Matrix} calculation (incorporating NNLO QCD) tends to describe the normalization slightly better.
 
-% Placeholder for differential plots (Modified to show only inclusive ZZ variables)
-% \begin{figure}[htbp]
-%     \centering
-%     \includegraphics[width=0.6\textwidth]{figures/diff_pTZ_ZZ.pdf}
-%     \caption{Measured differential cross-sections for inclusive $ZZ$ production as a function of $p_{\mathrm{T}}^Z$. The data are compared to SM predictions from \textsc{Sherpa} and \textsc{Matrix}.}
-%     \label{fig:diff_ZZ}
-% \end{figure}
+
+\begin{figure}[!hbtp]
+    \centering
+    % Row 1
+    \subfloat[]{
+        \includegraphics[width=0.32\linewidth]{figures/llvv/fig_diff_llvv_a.pdf}
+        \label{fig:diff_llvv_lep_pt}
+    }
+    \hfill
+    \subfloat[]{
+        \includegraphics[width=0.32\linewidth]{figures/llvv/fig_diff_llvv_b.pdf}
+        \label{fig:diff_llvv_z_pt}
+    }
+    \hfill
+    \subfloat[]{
+        \includegraphics[width=0.32\linewidth]{figures/llvv/fig_diff_llvv_c.pdf}
+        \label{fig:diff_llvv_dphi}
+    }
+    \\ % Line break for Row 2
+    \subfloat[]{
+        \includegraphics[width=0.32\linewidth]{figures/llvv/fig_diff_llvv_d.pdf}
+        \label{fig:diff_llvv_y_z}
+    }
+    \hfill
+    \subfloat[]{
+        \includegraphics[width=0.32\linewidth]{figures/llvv/fig_diff_llvv_e.pdf}
+        \label{fig:diff_llvv_pt_zz}
+    }
+    \hfill
+    \subfloat[]{
+        \includegraphics[width=0.32\linewidth]{figures/llvv/fig_diff_llvv_f.pdf}
+        \label{fig:diff_llvv_mt_zz}
+    }
+    \\ % Line break for Row 3
+    \subfloat[]{
+        \includegraphics[width=0.32\linewidth]{figures/llvv/fig_diff_llvv_g.pdf}
+        \label{fig:diff_llvv_njets}
+    }
+    \hfill
+    \subfloat[]{
+        \includegraphics[width=0.32\linewidth]{figures/llvv/fig_diff_llvv_h.pdf}
+        \label{fig:diff_llvv_cp}
+    }
+    % Filler to align the last row to the left if needed, or center (default)
+    
+    \caption{Differential cross-section measurements in the inclusive $ZZ\rightarrow \ell\ell\nu\nu$ fiducial phase space, compared with MC predictions calculated with the nominal \textsc{Sherpa} simulation and with \textsc{Matrix} for a set of kinematic variables:
+    (a) $p_\text{T}^\text{leading lepton}$,
+    (b) $p_\text{T}^\text{Z}$,
+    (c) $\Delta\phi(\ell, \ell)$,
+    (d) $|y^Z|$,
+    (e) $p_\text{T}^\text{ZZ}$,
+    (f) $m_\text{T}^\text{ZZ}$,
+    (g) $N_{\text{jets}}$, and
+    (h) a CP-sensitive angular variable, $\sin(\varphi)\cos(\theta)$.
+    The statistical and total uncertainties in the data points are displayed in both the differential cross-sections and the corresponding ratios. The total theory uncertainties in the \textsc{Sherpa} and \textsc{Matrix} predictions are represented as shaded bands in the cross-section panels and as error bars in the ratio panels.}
+    \label{fig:diff_xs_ZZ}
+\end{figure}
 
 \subsection{Constraints on Anomalous Neutral Triple Gauge Couplings}
 \label{subsec:anom_couplings}
