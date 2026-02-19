@@ -20,18 +20,53 @@
 \frontmatter
 \input{chapters/0_abstract.tex}
 \tableofcontents
+
 % \listoffigures
 % \listoftables
 \input{chapters/0_notation.tex}
 
 \mainmatter
-\input{chapters/1_intro.tex}
-\input{chapters/2_theory.tex}
-\input{chapters/3_detector.tex}
-\input{chapters/4_zzllvv.tex}
-\input{chapters/5_dm_search.tex}
-\input{chapters/6_hardware.tex}
-\input{chapters/7_summary.tex}
+\chapter{Introduction}
+\label{sec:Intro}
+\input{chapters/Ch1-Intro/1_intro.tex}
+
+\chapter{The Standard Model of Particle Physics}
+\label{sec:theory}
+\input{chapters/Ch2-Theory/2_theory.tex}
+
+\chapter{The LHC and ATLAS Experiment}
+\label{sec:experiment}
+\input{chapters/Ch3-LHCandATLAS/3_detector.tex}
+
+\chapter{Reconstruction}
+\label{sec:recon}
+
+\chapter{\texorpdfstring{Measurement of ZZ Production with $ll\nu\nu$ Final State}{Measurement of ZZ Production with llnunu Final State}}
+\label{chap:llvv_analysis}
+\input{chapters/Ch5-ZZxs/5_1_samples}
+\input{chapters/Ch5-ZZxs/5_2_events}
+\input{chapters/Ch5-ZZxs/5_3_background}
+\input{chapters/Ch5-ZZxs/5_4_syst}
+\input{chapters/Ch5-ZZxs/5_5_unfolding}
+\input{chapters/Ch5-ZZxs/5_6_results}
+\input{chapters/Ch5-ZZxs/5_7_dnn}
+\input{chapters/Ch5-ZZxs/5_8_llvvjj}
+
+\chapter{\texorpdfstring{Search for Dark Matter Produced in Association with a $Z$ Boson}{Search for Dark Matter in the ll + MET Final State}}
+\label{chap:monoZ}
+\input{chapters/Ch6-DMsearch/6_dm_search}
+\input{chapters/Ch6-DMsearch/6_1_samples}
+\input{chapters/Ch6-DMsearch/6_2_events}
+\input{chapters/Ch6-DMsearch/6_3_background}
+\input{chapters/Ch6-DMsearch/6_4_syst}
+\input{chapters/Ch6-DMsearch/6_5_stats}
+\input{chapters/Ch6-DMsearch/6_6_results}
+
+%\input{chapters/6_hardware.tex}
+
+\chapter{Summary}
+\label{sec:sum}
+%\input{chapters/Ch7-Summary/7_summary.tex}
 
 
 
