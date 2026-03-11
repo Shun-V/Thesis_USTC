@@ -5,54 +5,100 @@
 %-------------ATLAS----------------
 \section{Particle Physics}
 
-Particle physics is a subject that focuses on the fundamental properties of elementary particles. 
+This thesis presents studies in particle physics conducted with the ATLAS experiment at the Large Hadron Collider (LHC). Particle physics, also known as high-energy physics, aims to understand the fundamental building blocks of the universe and the forces governing their interactions. It focuses on elementary particles, such as quarks and electrons, and investigates their behavior through high-energy particle collisions produced at accelerators like the LHC. By analyzing the products of these collisions, researchers test the predictions of the Standard Model (SM) and search for new phenomena that may shed light on open questions, including the nature of dark matter and the underlying structure of space and time.
 
-Back in the 1930s, the weak interaction was first postulated in the 1930s to explain beta decay, but the mediate particle remains hidden. After the discovery of CP violation in the WU experiment and the formulation of Yang-Mills theory in 1950s, during 1964-1971, Sheldon Glashow, Abdus Salam, and Steven Weinberg formulated the electroweak theory, which predicted the Z boson as the mediator of neutral current weak interactions. However, the mass of this unknown heavy mediator particle has remained unknown for more than 10 years. In 1983, the Super Proton Synchrotron(SPS) discovered the Z boson in both UA1 and UA2 experiments. This is the first significant verification of the Standard Model(SM), and it keeps an important component of SM.
+%Particle physics is a subject that focuses on the fundamental properties of elementary particles. 
+\begin{figure}[!hbtp]
+    \centering
+    \includegraphics[width=0.80\linewidth]{figures/ch1-intro/four_fundamental_forces.png}
+    \caption{Illustration of four fundamental forces: gravity (top left), electromagnetic (top right), weak (bottom left), and strong forces (bottom right). }
+    \label{fig:four-force}
+\end{figure}
 
-The Z boson remains the important rule in the Standard Model(SM), and the properties of Z boson are important parameters in the electroweak theory. Measurement of the mass, width, and other properties of the Z boson can provide insights into the electroweak symmetry breaking mechanism. 
+The study of particle physics has a long history spanning nearly two centuries. Over this time, physicists have established that the universe is governed by four fundamental forces, which act universally and influence phenomena ranging from everyday experiences, such as walking, telecommunications, and radiation therapy, to advanced technologies like nuclear energy production. These four forces, gravity, electromagnetism, the weak nuclear force, and the strong nuclear force, are illustrated in Figure~\ref{fig:four-force}.
 
-The precise measurements of the Z boson's decay widths also allow for stringent tests of the SM and constraints on new physics beyond the SM(BSM), which is one of the most compelling challenges in modern particle physics. Since the Standard Model does not account for the presence of DM, which constitutes approximately 27\% of the universe's mass-energy content, it hint the theories beyond the Standard Model. Beyond Standard Model (BSM) theories propose various candidates and mechanisms to explain the existence of the dark matter. 
+In the 1960s, the electromagnetic and weak forces were unified within the Standard Model (SM) theoretical framework, representing a breakthrough in our understanding of particle physics.
+The weak interaction was first postulated in the 1930s to explain beta decay, though its mediator particles remained unknown. In the 1950s, the discovery of CP violation in the Wu experiment revealed that weak interactions do not conserve the combined symmetries of charge conjugation (C) and parity (P), highlighting an asymmetry between matter and antimatter. Building on the framework of Yang-Mills theory, Sheldon Glashow, Abdus Salam, and Steven Weinberg formulated the electroweak theory between 1964 and 1971, unifying the electromagnetic and weak forces. The theory predicted the $W^\pm$ bosons, mediators of charged-current weak interactions, and the $Z$ boson, mediator of neutral-current weak interactions. The masses of these particles remained unknown for over a decade until their discovery in 1983 at the Super Proton Synchrotron (SPS) in the UA1 and UA2 experiments, providing the first major confirmation of the SM. 
 
-Several BSM theories propose particles that could serve as DM candidates. These theories often extend the SM by introducing new particles and interactions. However, the dark matter particles are expected to be neutral and weakly interacting, meaning they won’t leave direct signals in the detectors. Therefore, the detection of dark matter relies on observing its decay products or the invisible component resulting from visible parent processes. Current dark matter detection methods at the Large Hadron Collider (LHC) are based on precise measurements of Missing Transverse Energy (MET) and constraints from existing process decay ratios.
+The component of the SM that describes the strong force, Quantum Chromodynamics (QCD), was developed in the early 1970s by Harald Fritzsch, Murray Gell-Mann, and Heinrich Leutwyler. QCD proposes that quarks carry “color” charges (red, green, and blue) and are bound together by gluons. The discovery of asymptotic freedom in 1973 explained why the strong force weakens at high energies, providing a fundamental understanding of quark interactions.
 
-Both methods require the high-precision measurement of the existing processes in the SM, as many processes from the expected SM behavior could indicate the presence of dark matter. This precision is crucial for accurately identifying the subtle signals of dark matter among the complex background of SM processes.
+\begin{figure}[!hbtp]
+    \centering
+    \includegraphics[width=0.60\linewidth]{figures/ch1-intro/SM-of-particle-physics.pdf}
+    \caption{Elementary particles included in the SM of particle physics theory. }
+    \label{fig:sm}
+\end{figure}
+The SM represents our current understanding of particle physics and stands as one of the great triumphs of modern science. Figure~\ref{fig:sm} shows all the elementary particles, along with their key properties, including electric charge, spin, and mass.
+%
+Elementary particles are classified as either fermions or bosons in the SM. Fermions (quarks and leptons in three generations) are spin-$\frac{1}{2}$ particles that follow the Fermi-Dirac statistics, constituting most of the visible physical matter in the universe. 
+The gauge bosons are spin-1 particles that serve as the force carriers in the SM:
+Gluons ($g$) mediate the strong interaction. They are also massless and electrically neutral.
+Photons ($\gamma$) mediate electromagnetic interactions. They are massless and electrically neutral.
+$W^\pm$ and $Z$ bosons mediate the weak interactions. These are massive particles.
+Additionally, the Higgs boson is a spin-0 scalar particle responsible for generating mass for other particles (except neutrinos) through the Higgs mechanism.
+
+Gravity is not included in the SM because it is extremely weak, about $10^{38}$ 
+times weaker than electromagnetism. At subatomic scales, its effects are negligible, making them essentially impossible to measure in particle physics experiments. As a result, the SM remains highly accurate for describing particle interactions without incorporating gravity.
+%%%%%%%%%%%
+
+Today, experiments at the LHC, such as ATLAS, continue to test the SM with unprecedented precision.
+One of the primary physics goals of LHC experiments is the measurement of diboson production, such as 
+$ZZ$, to probe the electroweak symmetry breaking mechanism, which is closely related to the fundamental question of how particles acquire mass. This topic forms a major part of the research presented in this PhD thesis.
+
+%%%%%%%%%%%%%%%%%%%%%
+%The Z boson remains the important rule in the Standard Model(SM), and the properties of Z boson are important parameters in the electroweak theory. Measurement of the mass, width, and other properties of the Z boson can provide insights into the electroweak symmetry breaking mechanism. 
+
+Precise measurements of diboson production provide stringent tests of the SM and place constraints on physics beyond the SM (BSM), one of the most compelling challenges in modern particle physics. Because the SM does not account for dark matter (DM), which constitutes roughly 27\% of the universe's mass-energy content according to astrophysical observations, it motivates BSM theories proposing new particles and mechanisms to explain the nature of DM. Searches for dark matter at the LHC, using indirect signatures such as missing transverse energy and deviations from known SM processes, form another major component of the research presented in this thesis.
+
+Many BSM models introduce particles that could serve as dark matter candidates. These particles are expected to be neutral and weakly interacting, so they typically leave no direct signals in detectors. Consequently, dark matter is detected indirectly, either through the decay products of visible particles or via the invisible component inferred from known processes. At the LHC, these searches rely heavily on precise measurements of missing transverse energy ($E_\text{T}^\text{miss}$) and detailed constraints from established SM process decay ratios.
+%
+Achieving this requires high-precision measurements of SM processes, as any deviations from expected behavior may indicate the presence of dark matter particles produced in the colliding beam data. Such precision is essential for identifying subtle dark matter signals within the complex background of SM events.
+
+\section{Experiments at the energy frontier}
+
+The LHC is the world’s largest high-energy particle collider, designed to explore particle physics at the energy frontier. Experiments at the energy frontier are essential for directly producing and studying new, massive subatomic particles, probing the fundamental structure of matter at the smallest scales, and recreating the extreme conditions of the early universe. These high-energy collisions enable searches for dark matter, extra spatial dimensions, and insights into why matter dominates over antimatter.
+%
+Designing and building experiments at the energy frontier allows physicists to address fundamental questions in particle physics. High collision energies, as described by Einstein’s relation $E=mc^2$, enable the direct production of massive, previously unknown particles and the discovery of new forces or particles, such as those predicted by supersymmetry or additional heavy bosons. Through wave–particle duality, higher particle energies correspond to shorter de Broglie wavelengths, $\lambda=h/p$, allowing high-energy particles to probe smaller distance scales within matter. In addition, high-energy collisions recreate the extreme conditions that existed shortly after the Big Bang, providing insight into the fundamental interactions that shaped the early universe. Experiments at the energy frontier also enable precise studies of the SM and searches for phenomena beyond the SM.
+
+Designing and building the accelerator and its detectors is a massive undertaking, involving very large and complex mechanical, electrical, materials research, and engineering efforts, and requiring more than a decade for the LHC and its experiments. An introduction to the LHC and the ATLAS detector is presented in this thesis Chapter~\ref{chap:experiment}.
+The author of this thesis had the opportunity to participate in a large muon detector construction project for the High-Luminosity LHC (HL-LHC), which is expected to begin operations around the mid-2030s. Through this multi-year design and construction effort, the author gained extensive experience in detector hardware design, construction, control systems, and testing procedures. Detailed descriptions of this work are presented in Chapter~\ref{chap:sMDT}.
+
+\section{Physics analysis approach at the LHC experiment}
+
+Physics data analysis at LHC experiments relies heavily on integrated luminosity, which quantifies the amount of data collected and enables precision measurements. The analysis itself is a structured, multi-step process designed to extract rare and interesting signal events from the vast background of ordinary collisions, transforming raw detector data into meaningful scientific results. This process begins with Monte Carlo (MC) simulations that model both the underlying physics processes and the detector response, followed by data-taking with appropriate triggers, reconstruction of physics objects, event selection, and statistical analysis to test the SM or search for new physics.
+%
+Major steps in LHC physics analysis are briefly described below.
+\begin{itemize}
+\item {\bf Event Simulation}: Before analyzing real data, physicists use simulations to model how specific physical processes (e.g., $pp\rightarrow ZZ \rightarrow 2\ell 2\nu$) should look in the detector.
+\item {\bf Trigger System and Data Acquisition}: The LHC produces millions of collisions per second, too many to record. A multi-level trigger system (real-time filtering) selects only the most interesting events.
+\item {\bf Object Reconstruction and Calibration}: Raw data (detector hits, energy deposits) are converted into physical objects: electrons, muons, photons, jets of hadrons, and missing transverse energy. Detectors are calibrated using known particle decays to ensure high precision. Details are described in Chapter~\ref{chap:recon}.
+\item {\bf Event Selection and Background Suppression}: Analysts apply cuts on kinematic variables (e.g., transverse momentum, angles) to enhance the signal-to-background ratio. This is crucial for isolating the desired physics, such as the cross-section measurement of the $ZZ \rightarrow 2\ell 2\nu$ channel.
+\item {\bf Background Estimation}: estimating the background (often from standard model processes) is critical, usually done using a combination of simulation and data-driven methods from control regions.
+\item {\bf Systematic Uncertainties}: evaluation of how detector imperfections, calibration errors, and theoretical uncertainties affect the final result. 
+\item {\bf Statistical Analysis and Interpretation}:\\
+    \bullet{\it Likelihood Functions:} A probability model is constructed (often using histograms/templates) to model the data as a sum of expected signal and background;\\
+    \bullet{\it Statistical Inference:} The profile maximum likelihood method is often used to measure parameters (e.g., particle mass) or set limits on new physics.
+\bullet{\it Significance:} Results are expressed in standard deviations ($\sigma$) to determine if a signal is a discovery ($>5\sigma$) or just a background fluctuation.   
+\end{itemize}
+The key analysis steps described above are applied in two studies presented in this thesis: Chapter~\ref{chap:zz}, “Measurement of $ZZ$ Production with $\ell\ell \nu\nu$ Final State,” and Chapter~\ref{chap:monoZ}, “ Search for Dark Matter in 
+the $ZH$ Production with $\ell\ell + E_\text{T}^\text{miss}$ Final State.”
+
+%\subsection{Measurement of ZZ Production}
+%
+%The differential cross-section measurement of the process $ZZ \rightarrow \ell^+\ell^- \nu\bar{\nu}$ is a crucial component in the study of electroweak interactions and the Higgs mechanism. This process can provide a stringent test of the SM predictions, including the leptonic decay properties of Z boson. Since there are only leptons in the final state, this channel has a clear and distinctive signature that can be precisely measured on the ATLAS detector. 
+
+%\subsection{\texorpdfstring{Search for Dark Matter with $ll+E^{miss}_{T}$ Final State}{Search for Dark Matter with ll+MET Final State}}
+
+%The \( ZZ \rightarrow \ell^+\ell^- \nu\bar{\nu} \) decay channel plays an important rule in the search for DM with the following several reasons:
+
+%\begin{enumerate}
+%    \item \textbf{Clean Signature}: The final state with two charged leptons and missing energy provides a clean and relatively background-free signature. The charged leptons can be precisely measured, and the missing energy can be attributed to neutrinos and potential DM particles.
+
+%    \item \textbf{Sensitivity to New Physics}: The presence of missing energy makes this channel highly sensitive to new physics scenarios, including those predicting DM production. Deviations from the SM predictions in the measured differential cross-sections can signal the existence of BSM particles.
+
+%    \item \textbf{Complementary to Other Searches}: While direct detection experiments aim to observe DM interactions with ordinary matter, collider searches like those involving the \( ZZ \rightarrow \ell^+\ell^- \nu\bar{\nu} \) channel provide complementary information by attempting to produce DM particles directly. This multi-faceted approach increases the likelihood of discovering DM.
+%\end{enumerate}
+
+%The study of the \( ZZ \rightarrow \ell^+\ell^- \nu\bar{\nu} \) decay channel is vital for probing BSM theories and searching for DM. By leveraging the clean signature and sensitivity to missing energy, physicists can test various DM candidates and models. This channel, combined with other experimental searches, enhances the potential to uncover the nature of dark matter and extend our understanding beyond the Standard Model.
 
 
-
-\section{Analyses}
-
-\subsection{Measurement of ZZ Production}
-
-The differential cross-section measurement of the process $ZZ \rightarrow \ell^+\ell^- \nu\bar{\nu}$ is a crucial component in the study of electroweak interactions and the Higgs mechanism. This process can provide a stringent test of the SM predictions, including the leptonic decay properties of Z boson. Since there are only leptons in the final state, this channel has a clear and distinctive signature that can be precisely measured on the ATLAS detector. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{\texorpdfstring{Search for Dark Matter with $ll+E^{miss}_{T}$ Final State}{Search for Dark Matter with ll+MET Final State}}
-
-The \( ZZ \rightarrow \ell^+\ell^- \nu\bar{\nu} \) decay channel plays an important rule in the search for DM with the following several reasons:
-
-\begin{enumerate}
-    \item \textbf{Clean Signature}: The final state with two charged leptons and missing energy provides a clean and relatively background-free signature. The charged leptons can be precisely measured, and the missing energy can be attributed to neutrinos and potential DM particles.
-
-    \item \textbf{Sensitivity to New Physics}: The presence of missing energy makes this channel highly sensitive to new physics scenarios, including those predicting DM production. Deviations from the SM predictions in the measured differential cross-sections can signal the existence of BSM particles.
-
-    \item \textbf{Complementary to Other Searches}: While direct detection experiments aim to observe DM interactions with ordinary matter, collider searches like those involving the \( ZZ \rightarrow \ell^+\ell^- \nu\bar{\nu} \) channel provide complementary information by attempting to produce DM particles directly. This multi-faceted approach increases the likelihood of discovering DM.
-\end{enumerate}
-
-The study of the \( ZZ \rightarrow \ell^+\ell^- \nu\bar{\nu} \) decay channel is vital for probing BSM theories and searching for DM. By leveraging the clean signature and sensitivity to missing energy, physicists can test various DM candidates and models. This channel, combined with other experimental searches, enhances the potential to uncover the nature of dark matter and extend our understanding beyond the Standard Model.
-
-
-
-
-
-\section{Hardware Work}

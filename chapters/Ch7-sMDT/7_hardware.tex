@@ -1,0 +1,436 @@
+% !TeX root = ../main.tex
+
+%\chapter{Hardware Work in ATLAS}
+%-------------Tube----------------
+\section{HL-LHC ATLAS detector upgrade}
+\label{chap:ATLAS-upgrade}
+The ATLAS upgrade for the High-Luminosity Large Hadron Collider (HL-LHC), expected to begin full operation in the mid-2030s, represents a major overhaul of the detector designed to cope with an order-of-magnitude increase in luminosity. Figure~\ref{fig:ATLAS-upgrade} illustrates the major upgrade components. Over its lifetime, the HL-LHC is expected to deliver an integrated luminosity of about $3000$--$4000~\mathrm{fb^{-1}}$ by around 2041. To operate efficiently in this high-luminosity environment, the ATLAS detector will undergo several significant upgrades. These include the replacement of the current inner detector with a new all-silicon Inner Tracker (ITk); the installation of additional small-diameter monitored drift tube (sMDT) and RPC chambers in the barrel region, as well as new TGC chambers in the end-cap region of the muon spectrometer; and the addition of a High-Granularity Timing Detector (HGTD) in the end-cap region of the inner tracker. Furthermore, the front-end electronics and trigger/readout systems will be upgraded to accommodate higher data rates. These upgrades will significantly enhance the ATLAS detector’s capability to search for new physics, study Higgs boson properties, and probe rare physics processes.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.98\linewidth]{figures/ch7-sMDT/ATLAS-upgrade.png}
+    \caption{The ATLAS detector HL-LHC upgrade plan.}
+    \label{fig:ATLAS-upgrade}
+\end{figure}
+
+The author of this thesis was extensively involved in the construction and testing of the muon small-diameter monitored drift tube (sMDT) chambers from 2019 to 2024 at the University of Michigan and at CERN. This chapter presents the author's major contributions, made in collaboration with a dedicated team of engineers, technicians, and students. These contributions include the design and development of the infrastructure, tooling, control systems, electronics, and software required for the construction and testing of the sMDT tube and chamber. The author also participated in the assembly of precision drift tubes and chambers and in the execution of quality-control tests. In addition, the author served as the primary author of two recent publications on sMDT development and construction~\cite{sMDT-papers}.
+
+
+\section{sMDT tube construction and quality control tests}
+\label{chap:sMDT-tube}
+This section describes the design and construction of the infrastructure and test stations for small-diameter monitored drift tube (sMDT) assembly and testing, followed by the tube construction procedures, quality control tests, and their results.
+
+The components of a precision sMDT tube and the overall tube geometry are shown in Figure~\ref{fig:sMDT-tube}(a) and (b), respectively. A critical component is the wire locator, known as the \textit{twister}, which holds the anode wire at the center of the tube with a precision better than $10~\mu\mathrm{m}$. The precision cylinder on the end-plug serves as the reference for the wire locator and is measured during chamber construction to determine the precise position of the wire.
+
+\begin{figure}[!htb]
+    \centering
+    \subfloat[]{
+    \includegraphics[width=0.42\linewidth]{figures/ch7-sMDT/end_plug1.png}
+    }
+    \subfloat[]{
+    \includegraphics[width=0.57\linewidth]{figures/ch7-sMDT/TubeDesign_sBIS-1-6.jpg}
+    }
+    \caption{The small-diameter drift tube: left, components; right, cross-section view of an assembled end-plug and tube.}
+    \label{fig:sMDT-tube}
+\end{figure}
+
+The sMDT drift tube design and parameters are described in 
+detail in~\cite{smdtDesign}.
+Table~\ref{tab:parameters} lists the major tube parameters.
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{l|l}
+             \hline
+            Parameter & sMDT \\
+            \hline
+            Tube material & Aluminium AW6060-T6/AlMgSi \\
+            Tube surface & Surtec 650 chromatization \\
+            Tube outer diameter & 15.000 mm \\
+            Tube wall thickness & 0.4 mm \\
+            Tube length & 1615 mm \\
+            Tube straightness & 0.5 mm / tube\\
+            Wire material & W-Re (97:3) \\
+            Wire diameter &  $\rm 50\,\mu m$ \\
+            Wire resistance & 44 $\Omega$/m \\
+            Wire tension & 350 $ {} \pm 15 \; $  g \\
+            Gas mixture & Ar:CO2 (93:7) \\
+            Gas pressure & 3 bar (abs.) \\
+            Gas leak rate limit & $< ~ 1\times 10^{-8}~\frac{mbar ~\times ~cm^3}{sec}$ per tube\\
+            Gas gain & $\rm 2\times10^{4}$ \\
+            Wire potential & 2730 V \\
+%            Maximum drift time & 180 ns \\
+%            Wire positioning accuracy & $\rm 10\,\mu m$ r.m.s. \\
+%            Wire dark current limit & $<$ 2 nA \\
+            \hline
+        \end{tabular}
+        \caption{sMDT tube materials and operating parameters}
+        \label{tab:parameters} 
+    \end{table}
+
+\subsection{Stations for sMDT tube construction and testing}
+\label{chap:stations}
+The tube construction process consists of end-plug assembly, tube wiring, and crimping, as shown in the construction stations in Figure~\ref{fig:sMDT-stations}(a). 
+\begin{figure}[!htb]
+    \centering
+    \subfloat[]{
+    \includegraphics[width=0.49\linewidth]{figures/ch7-sMDT/wire-station-UM.jpg}
+    }
+     \subfloat[]{
+    \includegraphics[width=0.49\linewidth]{figures/ch7-sMDT/tube-tension-test-station.png}
+    }
+    \caption{(a) The tube wiring and crimping stations, and (b) The wire tension and length measurement station.}
+    \label{fig:sMDT-stations}
+\end{figure}
+The crimping step sets the wire tension and establishes a gas-tight seal between the end-plug and the inner wall of the tube. The quality control tests include measurements of the tube length, wire tension (see Figure~\ref{fig:sMDT-stations}(b)), gas leak rate, and dark current under a high voltage of 2730~V.
+
+The wiring station consists of two vacuum chucks that hold the tube rigidly in a straight line and aligned with the wire feed. The wire is supplied from a spool mounted on a magnetically damped spindle to allow smooth pulling, and passes through a tube and through a three-wheel tension meter and a linear actuator, as shown in Figure~\ref{fig:sMDT-wire-tension}(a), which stretches the wire to the desired tension of 350~g. Two pairs of cam-operated crimp jaws (see Figure~\ref{fig:sMDT-wire-tension}(b)) are mounted at each end of the chuck. These jaws compress the 1.0~mm outer-diameter wire-crimping tube down to 0.7~mm, thereby fixing the wire tension inside the tube.
+\begin{figure}[!htb]
+    \centering
+    \subfloat[]{
+ \includegraphics[width=0.72\linewidth]{figures/ch7-sMDT/WireTensionGauge2a.jpg}
+ }
+ \subfloat[]{
+    \includegraphics[width=0.27\linewidth]{figures/ch7-sMDT/CrimpJaws.jpg}
+    }
+    \caption{(a), Wire tension gauge. (b), wire crimping jaw.}
+    \label{fig:sMDT-wire-tension}
+\end{figure}
+
+The second station used in tube construction is the tube crimping station, where the thin wall of the tube is deformed (crimped) to compress against the O-rings on the end-plugs and form a gas-tight seal. The crimping head is a custom-built rotary device
+that gradually forces three roller heads radially inward while rotating
+around the tube. The side view and end view of the rotator setup are shown
+in Figure~\ref{fig:sMDT-tubeswage}(a) and (b), respectively.
+\begin{figure}[!htb]
+    \centering
+        \subfloat[]{
+ \includegraphics[width=0.48\linewidth]{figures/ch7-sMDT/SwagerSideView.jpg}
+ }
+     \subfloat[]{
+    \includegraphics[width=0.49\linewidth]{figures/ch7-sMDT/SwagerEndView-a.jpg}
+ }
+    \caption{Tube crimping set up, (a) side-view and (b) the end-view.}
+    \label{fig:sMDT-tubeswage}
+\end{figure}
+
+The wiring and tube-crimping control software were developed by the author of this thesis using LabVIEW~\cite{LabView} to operate the linear actuator and the rotator motor. During the wiring process, the program continuously monitors the wire tension using the tension gauge while the wire is being pulled. The wire is first stretched to a tension of 400~g and held at this level for one minute, after which the tension is relaxed to the final value of 350~g. The wire is then fixed by crimping with the crimping jaws. This procedure ensures a stable final wire tension.
+%
+For the tube crimping required to achieve the gas seal, the motor controls both the rotation and the forward motion of the crimping head. During this process, the three crimping (swaging) rollers are gradually pushed inward at the O-ring locations, compressing the tube wall against the O-rings to form a gas-tight seal. After the crimping is completed, the motor moves backward to retract the rollers to their original radial positions, allowing the tube to be released from the rotating head.
+
+After the tube is crimped, the tube assembly is complete. The tube is then immediately subjected to a gas leak test. The leak test station, designed and constructed as shown in Figure~\ref{fig:sMDT-leaktest}(a), consists of a helium mass spectrometer leak detector connected to a vacuum vessel with an inner diameter of 25~mm and a length of 1.8~m. 
+%
+During the test, one end of the tube is sealed with a brass cap and an O-ring, while the other end is screwed into the cap of the vacuum vessel, allowing the tube to be pressurized with helium at 3~bar. The constructed tube is required to be leak-tight with an upper leak-rate limit of $\rm 1\times10^{-8}\,cm^{3}\,mbar/s$ at a tube pressure of 3~bar (absolute).
+\begin{figure}[!htb]
+    \centering
+        \subfloat[]{
+ \includegraphics[width=0.43\linewidth]{figures/ch7-sMDT/leak-test-station.jpg}
+ }
+     \subfloat[]{
+  \includegraphics[width=0.55\linewidth]{figures/ch7-sMDT/DC-Test-Station.jpeg}
+  }
+    \caption{(a)Tube leak test station. (b)Dark-current test station. }
+    \label{fig:sMDT-leaktest}
+\end{figure}
+
+Figure~\ref{fig:sMDT-leaktest}(b) shows the tube dark current test station, which consists of a gas flow control panel, custom-built dark current test electronics, HV/LV power systems, and an online monitoring and data acquisition system capable of testing 24 tubes in parallel. The author of this thesis designed and set up the front-end electronics and developed the online DAQ software for this test station.
+
+\begin{figure}[!htb]
+    \centering
+ \includegraphics[width=0.95\linewidth]{figures/ch7-sMDT/Circuit-Tension-Test.PNG}
+    \caption{Schematic of wire tension test circuit. }
+    \label{fig:sMDT-circuit}
+\end{figure}
+
+The tube length and the wire tension are measured 
+using the station shown in Figure~\ref{fig:sMDT-stations}(b).
+A tube is placed in the V-shaped aluminum bar with its 
+midpoint inside a U-shaped magnet, and a linear digital scale is used for the length measurement. 
+%
+Wire tension is measured using the same setup. The aluminum tube is grounded on a V-shaped support, while the wire is connected to a custom multiplexing circuit (Figure~\ref{fig:sMDT-circuit}) consisting of an analog multiplexer, a signal generator, an instrumentation amplifier, and the tube itself. A pulse from the signal generator excites wire vibrations, and the resulting signal is amplified and recorded by a data acquisition (DAQ) system interfaced with a computer. A graphical user interface was developed to set measurement parameters (e.g., tube length) and perform real-time analysis.
+
+After the excitation pulse stops, the wire oscillates at its natural frequencies~\cite{TensionPaper}:
+\begin{equation}
+  f_n = \frac{n}{2L}\sqrt{\frac{T}{\rho}},
+  \label{eq:tension}
+\end{equation}
+where $L$ is the wire length, $T$ the tension, and $\rho$ the wire density. The tension can be expressed as
+\[
+T = \frac{\pi L^2 d^2 f_1^2 \rho}{g}.
+\]
+For the nominal sMDT parameters ($L = 1597$~mm, $d = 50~\mu$m, $\rho = 19.7~\mathrm{g/cm^3}$, $g = 9.81~\mathrm{m/s^2}$), the first resonant frequency of 93.3~Hz corresponds to a wire tension of 350~g. The resonant frequency is extracted using a custom LabVIEW program that applies a fast Fourier transform (FFT) to determine $f_1$ and thus the wire tension.
+
+%%%%%%%%%%%%%%%
+\subsection{the sMDT tube construction and quality control test results}
+\label{chap:asembling-tubes}
+
+Using the tube construction and test stations described in Section~\ref{chap:stations}, and following the well-established procedures outlined above, approximately 3,500 (22,000) precision drift tubes were constructed at the University of Michigan (Michigan State University). All 26,000 tubes were fully tested at the University of Michigan (UM). 
+
+The overall failure rate of the tubes produced at UM was below 3\%, based on the quality control test criteria. Figure~\ref{fig:sMDT-length-tension-dc} presents the tube production quality control results for tube length (a), wire tension (b), and dark current (c), demonstrating the excellent quality of the tubes produced for sMDT chamber construction in the ATLAS HL-LHC upgrade project.
+
+\begin{figure}[!htbp]
+    \centering
+        \subfloat[]{
+\includegraphics[width=0.37\linewidth]{figures/ch7-sMDT/UM_LEN.png}}
+    \subfloat[]{
+\includegraphics[width=0.31\linewidth]{figures/ch7-sMDT/UM_TEN.png}}
+    \subfloat[]{
+\includegraphics[width=0.30\linewidth]{figures/ch7-sMDT/UM_DC.png}}
+\caption{Tube production quality control test results on tube length (a), wire tension (b), and dark-current (c). }
+    \label{fig:sMDT-length-tension-dc}
+\end{figure}
+
+This large-scale tube construction and testing effort at the University of Michigan was carried out primarily by a student team. The author of this thesis made significant contributions to the sMDT tube construction and testing activities, including building the dark current test electronics boards, the setup and debugging of the workstation hardware and software. Figure~\ref{fig:sMDT-test-setup}(a) shows the author (center) performing sMDT tube construction and wire tension measurements together with two students, while Figure~\ref{fig:sMDT-test-setup}(b) shows the setup and testing of the dark current test station by an engineer and the author.
+
+\begin{figure}[!htb]
+    \centering
+     \subfloat[]{
+  \includegraphics[width=0.63\linewidth]{figures/ch7-sMDT/Tube-test.jpg}
+  }
+      \subfloat[]{
+    \includegraphics[width=0.35\linewidth]{figures/ch7-sMDT/chuanshun-Curtis.png}
+ }
+    \caption{(a) sMDT tube construction and wire tension measurement performed by the author of this thesis (center) together with two students. (b) Set up and testing of the dark current test station by an engineer and the author.}
+    \label{fig:sMDT-test-setup}
+\end{figure}
+
+%\subsection{sMDT tube Assemb}
+
+%\subsection{sMDT tube Quality Test}
+
+%\subsubsection{Straightness}
+
+%\subsubsection{Gas Tightness}
+
+%\subsubsection{Dark Current}
+
+%\subsubsection{Tension}
+\clearpage
+
+%-------------Chamber----------------
+
+\section{sMDT chamber construction}
+\label{chap:sMDT-chamber}
+
+The fully tested sMDT tubes are assembled into larger structures known as chambers. 
+\begin{figure}[!htb]
+    \centering
+ \includegraphics[width=0.95\linewidth]{figures/ch7-sMDT/chamber-on-granite.PNG}
+    \caption{A constructed chamber on the assembly jig, mounted on a large granite table.}
+    \label{fig:sMDT-chamber-granite}
+\end{figure}
+Figure~\ref{fig:sMDT-chamber-granite} shows 
+a reconstructed sMDT chamber still held by the precision construction combs at both ends of the chamber on the large flat granite table, and the automatic glue machine, which was parked at the end of the granite table.
+
+The chamber consists of two tube multilayers (MLs), each containing four tube layers of 70 tubes (BIS1) or 58 tubes (BIS2--6). A spacer frame containing the RASNIK in-plane alignment system is glued between the two MLs. Platforms for mounting the magnetic-field sensors and global alignment devices are attached on top of the chamber, together with the chamber kinematic mounts used to support the chamber on the detector structure.
+
+The author of this thesis played a key role in the chamber construction working group. Major contributions included developing and testing the control software for the automatic glue machine, setting up and verifying the precision chamber assembly jigging on the granite table, participating in chamber gluing, measuring the wire positions, and installing the platforms for the magnetic-field and alignment sensors.
+
+A total of 50 sMDT chambers (50\% of the total number produced for the ATLAS HL-LHC upgrade) were constructed at the University of Michigan (UM) between 2020 and 2023. Commissioning with the final electronics was carried out at CERN from 2024 to 2025. This section describes the infrastructure used for sMDT chamber construction at UM, the assembly procedure, and the corresponding quality-control and performance-test results.
+
+\subsection{Infrastructure and tooling}
+
+The infrastructure for sMDT chamber construction includes a large flat granite table ($ 3 \times 7 $~m$^2$, with 25~micron flatness) located in a temperature and humidity-controlled lab with an overhead crane. The major tooling includes a set of precision combs and an automatic glue machine.
+
+\begin{figure}[!htb]
+    \centering
+    \subfloat[]{
+ \includegraphics[width=0.415\linewidth]{figures/ch7-sMDT/measure-combs.PNG}}
+ \subfloat[]{
+\includegraphics[width=0.57\linewidth]{figures/ch7-sMDT/measure-jigging.jpeg}}
+    \caption{Measuring the precision combs using the computing-aid FORA-arm. (a) set up the measurement coordinates, and (b) measure the comb pitch by the author.}
+    \label{fig:sMDT-base-plates}
+\end{figure}
+
+\noindent{\bf Precision combs for chamber reconstruction}:\\
+Two sets of precision end-combs are used to position the tube ends in a close-packed array accurately. Each tube end-plug has a precision brass surface with a diameter of 
+$5.00\,\genfrac{}{}{0pt}{1}{+0.00}{-0.01}$~mm, concentric with the tube center (and thus the wire) within 5~$\mu$m rms. This surface is held between two half-holes formed by adjacent stacked comb plates.
+%
+The combs define a horizontal tube pitch of 15.100~mm and a vertical (layer) pitch of 13.077~mm, with a 45.600~mm plate providing the spacer-frame gap. A full comb set consists of nine stacked plates with precision holes of diameter 
+$5.00\,\genfrac{}{}{0pt}{1}{+0.01}{-0.00}$~mm at the interfaces between neighboring plates.
+
+Figure~\ref{fig:sMDT-base-plates} shows the comb measurements performed using a coordinate-measuring FORA-arm, which determines three-dimensional points with a precision better than 10~$\mu$m after calibration.
+
+During chamber assembly, the precision cylinder of each tube end-plug is placed in the open half-cylinders of the end-combs. The lower comb constrains the horizontal position of the tube, while the upper comb is screwed onto the lower comb to fix the vertical position.
+
+The tubes are kept straight by resting on four base inner-combs mounted on the granite table. When gluing the fifth tube layer onto the spacer frame bars, an additional set of four secondary inner-combs is placed on top of the bottom multilayer to guide the tube positioning. These combs serve the same purpose as the base inner-combs when assembling the top multilayer.
+
+To control tube straightness and prevent bowing during gluing, four upper comb weights with 7.5 mm radius semicircular grooves are placed on top of each newly glued tube layer.
+
+\noindent{\bf Automatic glue machine}:\\
+
+
+\subsection{Precision comb setup and measurements}
+
+\begin{figure}[!htb]
+    \centering
+ \includegraphics[width=0.6\linewidth]{figures/ch7-sMDT/base-plates.PNG}
+\includegraphics[width=0.37\linewidth]{figures/ch7-sMDT/middle-comb.png}
+    \caption{baseplate set up. }
+    \label{fig:sMDT-base-plates}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.75\linewidth]{figures/ch7-sMDT/BaseComb-setup.jpg}
+    \caption{Measurements of the base plates set up. }
+    \label{fig:sMDT-base-measurement}
+\end{figure}
+
+
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.90\linewidth]{figures/ch7-sMDT/WirePitch.png}
+    \caption{Measurements of the wire pitch for readout and high-voltage side combs. }
+    \label{fig:sMDT-wirepitch}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.90\linewidth]{figures/ch7-sMDT/JiggingTuning.png}
+    \caption{Measurements of the base comb heights, initial and fine-tuned. }
+    \label{fig:sMDT-base-tuning}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.355\linewidth]{figures/ch7-sMDT/CCC-jigging-plates.PNG}
+\includegraphics[width=0.26\linewidth]{figures/ch7-sMDT/big-plate-jigging.PNG}
+\includegraphics[width=0.365\linewidth]{figures/ch7-sMDT/Glue-big-plate.PNG}
+\caption{Jigging plate for CCC plotform installation. }
+    \label{fig:sMDT-big-plate}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.4\linewidth]{figures/ch7-sMDT/put-weights.PNG}
+\includegraphics[width=0.47\linewidth]{figures/ch7-sMDT/rotation-cart-2.jpg}
+\caption{Chamber rotation cart. }
+    \label{fig:sMDT-rotation-cart}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.32\linewidth]{figures/ch7-sMDT/CosmicRay-Station.PNG}
+\includegraphics[width=0.65\linewidth]{figures/ch7-sMDT/RO-side.jpg}
+\caption{Cosmic ray test station} 
+    \label{fig:cosmic-station}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.58\linewidth]{figures/ch7-sMDT/DAQ_Diagram.png}
+\includegraphics[width=0.40\linewidth]{figures/ch7-sMDT/Cosmic-DAQ-system.PNG}
+\caption{Cosmic ray test DAQ system} 
+    \label{fig:cosmic-daq}
+\end{figure}
+
+\subsection{Chamber assembly}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.62\linewidth]{figures/ch7-sMDT/glue-tube.jpg}
+\includegraphics[width=0.35\linewidth]{figures/ch7-sMDT/glue-Spacer.jpg}
+\caption{Chamber assumbly} 
+    \label{fig:glue-chamber}
+\end{figure}
+
+\subsection{Precision measurement of tube positions}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.26\linewidth]{figures/ch7-sMDT/measure-tube-height.JPG}
+\includegraphics[width=0.46\linewidth]{figures/ch7-sMDT/ChamberWireOffset_30sMDT.png}
+\includegraphics[width=0.26\linewidth]{figures/ch7-sMDT/Chuanshun-meaure-cccplate.jpg}
+\caption{Chamber assumbly} 
+    \label{fig:glue-chamber}
+\end{figure}
+
+\subsection{Chamber service installation and test}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.24\linewidth]{figures/ch7-sMDT/gas-bar.PNG}    
+\includegraphics[width=0.28\linewidth]{figures/ch7-sMDT/gas-bar-installation.PNG}
+\includegraphics[width=0.465\linewidth]{figures/ch7-sMDT/gas-gauge-tubing.jpg}
+\caption{Chamber assumbly} 
+    \label{fig:glue-chamber}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.95\linewidth]{figures/ch7-sMDT/sMDT-leakrate.png}    
+\caption{The measured gas leak rate for all 50 sMDT chambers built at UM.} 
+    \label{fig:leakrate}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.95\linewidth]{figures/ch7-sMDT/Chamber-topview.PNG}    
+\caption{Chamber top view} 
+    \label{fig:glue-chamber}
+\end{figure}
+
+
+\subsection{Chamber performance test using cosmic-rays}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.98\linewidth]{figures/ch7-sMDT/Grounding.PNG}    
+\caption{Chamber grounding schematics and the connections.} 
+    \label{fig:grounding-chamber}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.60\linewidth]{figures/ch7-sMDT/ElectricalConnection.PNG} 
+\hspace{0.1 cm}
+\includegraphics[width=0.35\linewidth]{figures/ch7-sMDT/ATLAS-TDR-026.jpg}    
+\caption{Electrical diagram for a tube} 
+    \label{fig:Elx-chamber}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.95\linewidth]{figures/ch7-sMDT/sMDT-noise.png}    
+\caption{The measured gas leak rate for all 50 sMDT chambers built at UM.} 
+    \label{fig:leakrate}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.325\linewidth]{figures/ch7-sMDT/sMDT-TDC_fit.png}
+\includegraphics[width=0.325\linewidth]{figures/ch7-sMDT/sMDT-ADC_dist.png}
+\includegraphics[width=0.33\linewidth]{figures/ch7-sMDT/sMDT-RT-function.png}
+\caption{TAC and ADC spectra from cosmic ray test. The corresponding RT function curve.} 
+    \label{fig:cosmic-data}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.95\linewidth]{figures/ch7-sMDT/sMDT-eff.png}    
+\caption{The measured tracking efficiencies for all 50 sMDT chambers built at UM.} 
+    \label{fig:leakrate}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.35\linewidth]{figures/ch7-sMDT/BIS_track.png}
+\includegraphics[width=0.31\linewidth]{figures/ch7-sMDT/Module14_BiasedResidual.png}
+\includegraphics[width=0.31\linewidth]{figures/ch7-sMDT/Module14_UnbiasedResidual.png}
+\caption{Cosmic ray event display. Track fitting biased and unbiased residual distributions} 
+    \label{fig:display}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+\includegraphics[width=0.95\linewidth]{figures/ch7-sMDT/sMDT-resolution.png}    
+\caption{The measured tracking resolution per tube for all 50 sMDT chambers built at UM.} 
+    \label{fig:resolution}
+\end{figure}
+
+\section{Summary of the sMDT construction project}
+\begin{figure}[!htb]
+    \centering
+ \includegraphics[width=0.98\linewidth]{figures/ch7-sMDT/sMDT-production-UM.png}
+    \caption{The sMDT production team in the UM lab. Two constructed chambers are also shown in the picture. The 3rd person from the left is the author of this thesis.}
+    \label{fig:sMDT-Team}
+\end{figure}

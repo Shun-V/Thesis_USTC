@@ -1,0 +1,192 @@
+%\section{Physics object reconstruction}
+%\label{sec:obj}
+
+The ATLAS detector identifies and measures the fundamental particles produced in high-energy 
+$pp$ collisions, including electrons, muons, taus, photons, jets of hadrons (originating from quarks and gluons), and missing transverse energy, as illustrated in the left panel of Fig.~\ref{fig:coordinator}. These physics objects are reconstructed from detector signals 
+to transform raw data, such as energy deposits, hit patterns, timing information, and collected charges, into high-level physics objects, including electrons, photons, muons, $\tau$ leptons, and hadronic jets. This reconstruction relies on sophisticated algorithms and AI-based techniques to achieve high-precision tracking and calorimetry. Core components of the process include primary-vertex reconstruction to identify proton–proton interaction points, clustering of energy deposits in the calorimeters, charged-particle track reconstruction in the Inner Detector and the Muon Spectrometer, and the determination of missing transverse energy ($E_\text{T}^{\mathrm{miss}}$).
+
+%This chapter presents the reconstruction of the primary physics objects used in the event selection. ATLAS coordinator for reconstruction is shown in the right panel of Figure~\ref{fig:coordinator}.
+%The ATLAS experiment at the CERN Large Hadron Collider (LHC) employs a right-handed, cylindrical coordinate system to define the position of particles and detector components.
+\begin{figure}[!htb]
+    \centering
+    \subfloat[]{
+    \includegraphics[width=0.43\textwidth]{figures/ch4-recon/particlepaths.jpg} 
+    }
+    \subfloat[]{
+    \includegraphics[width=0.55\textwidth]{figures/ch4-recon/ATLAS-coordinate.png}
+    }
+    \caption{(a) illustration of the particles produced in the pp collision passing the ATLAS sub-detector layers; (b) the ATLAS coordinator for physics object reconstruction.}
+    \label{fig:coordinator}
+\end{figure}
+
+%\subsection{Coordinate System}
+
+The ATLAS experiment uses a right-handed coordinate system, shown in Fig.~\ref{fig:coordinator}(b), with its origin at the nominal interaction point (IP) at the center of the detector. The $z$-axis is defined along the beam pipe. The positive $z$ direction corresponds to side A of the detector, while the negative $z$ direction corresponds to side C.
+%
+The $x$-axis points from the interaction point toward the center of the LHC ring, and the $y$-axis points upward toward the surface of the Earth. The $x$--$y$ plane is referred to as the transverse plane, which is perpendicular to the beam direction. The radial distance from the beam line in this plane is denoted by $r$.
+
+Angular coordinates are defined using the azimuthal angle $\phi$ and the polar angle $\theta$. The azimuthal angle $\phi$ is measured in the transverse plane around the $z$-axis, typically in the range $[-\pi,\,\pi]$. The polar angle $\theta$ is measured from the positive $z$-axis.
+%
+Instead of the polar angle $\theta$, the pseudorapidity $\eta$ is commonly used in collider physics because differences in $\eta$ are invariant under Lorentz boosts along the beam direction. The pseudorapidity is defined as
+\begin{equation}
+\eta = -\ln\left(\tan\frac{\theta}{2}\right).
+\end{equation}
+
+\section{Primary-vertex}
+
+Primary vertex reconstruction determines the precise three-dimensional position of the proton--proton collision in an event and is a crucial step in event reconstruction in ATLAS. The procedure relies on high-quality tracks reconstructed in the inner tracking detectors. Tracks are first grouped using seeding algorithms based on their $z$-coordinates, and candidate vertices are then reconstructed through an iterative vertex-fitting procedure. Adaptive fitting algorithms are typically used to account for the presence of multiple proton--proton interactions in the same bunch crossing (pile-up).
+
+Events are required to contain at least one reconstructed collision vertex associated with at least two tracks, each with transverse momentum $p_\text{T} > 0.5~\text{GeV}$. Among all reconstructed vertices, the primary vertex is defined as the vertex with the largest sum of the squared transverse momenta of its associated tracks, $\sum p_\text{T}^2$.
+
+The tracks associated with the primary vertex are required to satisfy quality criteria on their impact parameters. In particular, the longitudinal impact parameter $z_0$, defined as the difference between the $z$ coordinate of the track at the point where the transverse impact parameter $d_0$ is defined and the $z$ position of the primary vertex, must satisfy
+\[
+|z_0 \sin\theta| < 0.5~\text{mm},
+\]
+where $\theta$ is the polar angle of the track with respect to the beam axis.
+
+In the analyses presented in this thesis, electron and muon candidates are required to originate from the primary vertex. To ensure this, requirements are imposed on the transverse impact parameter significance. In particular, leptons must satisfy $|d_0/\sigma_{d_0}| < 3~(5)$ for muons (electrons), where $d_0$ is the transverse impact parameter of the track with respect to the measured beam-line position, and $\sigma_{d_0}$ is its corresponding uncertainty.
+
+\section{Electrons}
+Electron reconstruction in the ATLAS experiment is based on energy clusters in the electromagnetic (EM) calorimeter matched to tracks reconstructed in the Inner Detector (ID). A supercluster algorithm is used to collect the energy deposits associated with electromagnetic showers, providing high reconstruction efficiency for electrons with transverse energy $E_\text{T}$ above a few GeV.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/ch4-recon/Obj-electron-flow.pdf}
+    \caption{Schematic drawing of the detector parts used for electron reconstruction, matching the electromagnetic (EM) calorimeter clusters to Inner Detector (ID) tracks.}
+    \label{fig:e-ID}    
+\end{figure}
+
+As illustrated in Figure~\ref{fig:e-ID}, electron candidates are formed by matching EM calorimeter clusters to ID tracks. Electron identification is performed using a likelihood discriminant that combines information from EM shower shapes, track properties, and track-cluster matching variables. Several identification working points are defined, including \texttt{Loose}, \texttt{Medium}, and \texttt{Tight}~\cite{ref-e-wp}. 
+\begin{figure}[!htb]
+    \centering
+    \subfloat[] {
+    \includegraphics[width=0.45\textwidth]{figures/ch4-recon/Obj-eID-eff-ET.pdf}
+    }
+    \subfloat[] {
+    \includegraphics[width=0.45\textwidth]{figures/ch4-recon/Obj-eID-eff-eta.pdf}
+    }
+    \caption{Electron reconstruction and identification efficiency as a function of electron $E_\text{T}$ (a), and pseudorapidity $\eta$ (b).}
+    \label{fig:eID-eff}
+\end{figure}
+In the analyses presented in this thesis, electrons are required to satisfy the \texttt{Medium} likelihood identification criterion, which provides an overall identification efficiency of approximately $90\%$~\cite{EGAM-2021-02}, as shown in Figure~\ref{fig:eID-eff}. The electron momentum is determined from the cluster energy measured in the calorimeter, combined with the direction of the associated track.
+
+Electron candidates are required to lie within the fiducial region of the detector with cluster pseudorapidity $|\eta| < 2.47$, excluding the transition region between the barrel and endcap calorimeters, $1.37 < |\eta| < 1.52$.
+
+To suppress hadronic and non-prompt lepton background, electrons are required to be isolated from other particles and each other, according to the clusters of energy deposits in the calorimeter and inner detector track information, satisfying the particle-flow isolation criteria~\cite{e-ID-2024}. 
+
+\section{Muons}
+
+The ATLAS muon reconstruction algorithm utilizes a multistage approach (see Figure~\ref{fig:mu-ID}), combining data from the Inner Detector (ID) and the Muon Spectrometer (MS) to identify muons with $\sim 98\%$
+ efficiency. It employs four main types: Combined (CB), Standalone (SA), Segment-Tagged (ST), and Calorimeter-Tagged (CT) to reconstruct muon tracks, with Combined muons offering the highest signal to background ratio, particularly for muon $p_T > 20$ GeV.
+The process involves finding tracks in the MS, extrapolating them to the beamline (accounting for energy loss), and matching them with ID tracks.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/ch4-recon/Muon-recon.png}
+    \caption{Schematic drawing of the detector parts used for muon reconstruction. Dependent on the detector parts used for the recontruction, several muon types are defined: Combined muons use the information of both inner detector and muon spectrometer, Standalone muons are reconstructed in the muon spectrometer only, Segment-Tagged muons are reconstructed in the inner detector and a single segment of the muon spectrometer and Calorimeter-Tagged muons get reconstructed in the inner detector and additionally leave a characteristic energy deposit in the calorimeter.}
+    \label{fig:mu-ID}
+\end{figure}
+
+Muon momentum scale and resolution are calibrated using $Z\rightarrow \mu^+\mu^-$ and $J/\psi \rightarrow \mu^+\mu^-$ events. The reconstruction efficiencies as functions of the muon transverse momentum $p_\text{T}$ and the pseudorapidity $\eta$, are shown in Figure~\ref{fig:mu-ID}.
+
+A \texttt{Medium} identification selection is applied in the analyses presented in this thesis, based on requirements for the number of hits in both the ID and the MS~\cite{ATLAS-CONF-2020-030}. The muon momentum is determined by combining the MS measurement, corrected for energy deposited in the calorimeters, with the ID measurement, with the pseudorapidity satisfying $|\eta| < 2.5$.
+
+\begin{figure}[!htb]
+    \centering
+        \subfloat[] {
+    \includegraphics[width=0.48\textwidth]{figures/ch4-recon/Muon-eff-eta.png}
+    }
+        \subfloat[] {
+    \includegraphics[width=0.48\textwidth]{figures/ch4-recon/Muon-eff-pT.png}
+    }
+    \caption{Muon reconstruction and identification efficiency as a function of $\eta$ (a) and $p_\text{T}$ (b).}
+    \label{fig:mu-ID}
+\end{figure}
+
+%%%%%%%%%%%%%%%
+Muons from $W$ and $Z$ boson decays are isolated. 
+In the analyses presented in this thesis, the muons are also required to be isolated from other particles and each other, according to the clusters of energy deposits in the calorimeter and inner detector track information, satisfying the particle-flow isolation criteria~\cite{mu-ID-2021}. 
+
+\section{Jets}
+Hadronic jets arise from the hadronization of quarks and gluons produced in
+inelastic hadron collisions. Jet reconstruction combines energy deposits in
+the electromagnetic and hadronic calorimeters with tracks reconstructed in
+the Inner Detector.
+
+In ATLAS, jets are reconstructed using the anti-$k_T$ clustering
+algorithm~\cite{Cacciari:2008gp}. The main parameter of this algorithm is the
+angular distance $R$, which defines the jet radius and determines how
+particles and energy deposits are clustered into jets. Small-$R$ jets are
+predominantly initiated by quarks or gluons and are reconstructed using the
+anti-$k_T$ algorithm with $R=0.4$. Large-$R$ jets mainly originate from
+hadronic decays of boosted Higgs bosons, $W$ and $Z$ bosons, and top quarks,
+and are reconstructed using the anti-$k_T$ algorithm with $R=1.0$.
+
+Jets with $p_{\mathrm{T}} > 30$~GeV and $|\eta| < 4.5$ are reconstructed
+using the anti-$k_T$ algorithm applied to particle-flow (PFlow) objects,
+which combine information from the Inner Detector and calorimeters to
+improve the measurement of jet properties~\cite{ATLAS-CONF-2017-020}. The
+jet energy scale (JES) is initially derived from simulation and
+subsequently refined using in situ calibration techniques based on
+dijet, $\gamma+$jet, and $Z+$jet events~\cite{JETM-2018-05}.
+
+A jet-vertex tagger (JVT)~\cite{ATLAS2016-pileup} is applied to jets with
+$p_{\mathrm{T}} < 60$~GeV and $|\eta| < 2.4$ in order to suppress jets
+originating from pile-up interactions.
+
+The jet energy scale (JES), jet energy resolution (JER), and their
+associated uncertainties constitute major sources of systematic
+uncertainty in analyses involving jets. Figure~\ref{fig:JER} shows the
+ATLAS small-$R$ jet energy resolution as a function of the jet
+transverse momentum $p_{\mathrm{T}}$.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.90\textwidth]{figures/ch4-recon/JERpTanduncertainty.png}
+    \caption{Jet energy resolution.}
+    \label{fig:JER}
+\end{figure}
+
+In addition, jets with $p_{\text{T}} > 20$ GeV and $|\eta| < 2.5$ containing $b$-hadrons are identified using the \texttt{DL1r} multivariate $b$-tagging algorithm~\cite{FTAG-2020-08, FTAG-2019-02}. The 85\% efficiency working point is used in this thesis data analysis, which corresponds to rejection factors of 6.3 for $c$-jets and 33 for light-flavour jets.
+
+%Overlaps between reconstructed objects are accounted for with a removal procedure that is mainly based on the angular separation between the different final-state objects (electrons, muons, jets). The procedure is the same as the one described in Ref.~\cite{ATLAS2016-overlap}.
+
+\section{Missing transverse energy}
+The neutrinos $\nu$ in the final state of an event do not interact with the ATLAS detector and cannot be reconstructed.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/ch4-recon/Obj-met-diagram.png}    
+    \caption{Missing transverse energy is reconstructed by measured leptons and jets.}
+    \label{fig:met}
+\end{figure}
+ Their presence is identified using the $E_\text{T}^{\text{miss}}$ variable, which is computed as the magnitude of the negative vector sum of transverse momenta of all leptons and jets and the tracks originating from the primary vertex but not associated with any of the leptons or jets~\cite{JETM-2020-03}
+(shown in equation \ref{eq:Et-miss}). 
+
+\begin{equation} \label{eq:Et-miss}
+\small
+    \mathbf{E}_T^{\text{miss}} = - \sum_{\substack{\text{selected}\\\text{electrons}}} \mathbf{p}_T^e - \sum_{\substack{\text{accepted}\\\text{photons}}} \mathbf{p}_T^{\gamma} - \sum_{\substack{\text{accepted}\\ \tau \text{leptons}}} \mathbf{p}_T^{\tau_{\text{had}}} - \sum_{\substack{\text{selected}\\\text{muons}}} \mathbf{p}_T^{\mu} - \sum_{\substack{\text{accepted}\\\text{jets}}} \mathbf{p}_T^{\text{jet}} - \sum_{\substack{\text{unused}\\\text{tracks}}} \mathbf{p}_T^{\text{track}},
+\end{equation} 
+
+Another quantity used in the event selection is the total transverse energy, $H_\text{T}$, which is the scalar sum of the transverse momenta of all selected leptons and jets.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

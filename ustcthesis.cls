@@ -2719,7 +2719,8 @@
   tableposition  = top,
 }
 \ifustc@degree@graduate
-  \captionsetup{font+=bf}
+  \captionsetup{font+=rm}
+% \captionsetup{font+=bf}
   \captionsetup[table]{font+=sf}
 \fi
 \captionsetup[figure]{

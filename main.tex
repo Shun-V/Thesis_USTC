@@ -27,46 +27,43 @@
 
 \mainmatter
 \chapter{Introduction}
-\label{sec:Intro}
+\label{chap:Intro}
 \input{chapters/Ch1-Intro/1_intro.tex}
+\clearpage
 
 \chapter{The Standard Model of Particle Physics}
-\label{sec:theory}
+\label{chap:theory}
 \input{chapters/Ch2-Theory/2_theory.tex}
+\clearpage
 
 \chapter{The LHC and ATLAS Experiment}
-\label{sec:experiment}
+\label{chap:experiment}
 \input{chapters/Ch3-LHCandATLAS/3_detector.tex}
+\clearpage
 
-\chapter{Reconstruction}
-\label{sec:recon}
+\chapter{Physics object reconstruction}
+\label{chap:recon}
+\input{chapters/Ch4-Reconstruction/4_obj_reconstruction}
+\clearpage
 
-\chapter{\texorpdfstring{Measurement of ZZ Production with $ll\nu\nu$ Final State}{Measurement of ZZ Production with llnunu Final State}}
-\label{chap:llvv_analysis}
-\input{chapters/Ch5-ZZxs/5_1_samples}
-\input{chapters/Ch5-ZZxs/5_2_events}
-\input{chapters/Ch5-ZZxs/5_3_background}
-\input{chapters/Ch5-ZZxs/5_4_syst}
-\input{chapters/Ch5-ZZxs/5_5_unfolding}
-\input{chapters/Ch5-ZZxs/5_6_results}
-\input{chapters/Ch5-ZZxs/5_7_dnn}
-\input{chapters/Ch5-ZZxs/5_8_llvvjj}
+\chapter{\texorpdfstring{Measurement of ZZ Production Cross-section with $\ell\ell\nu\nu$ Final State}{Measurement of ZZ Production with llnunu Final State}}
+\label{chap:zz}
+\input{chapters/Ch5-ZZxs/5_zzllvv}
+\clearpage
 
-\chapter{\texorpdfstring{Search for Dark Matter Produced in Association with a $Z$ Boson}{Search for Dark Matter in the ll + MET Final State}}
+\chapter{Search for DM in $ZH$ production in $\ell\ell E_T^{miss}$ Final State}
 \label{chap:monoZ}
 \input{chapters/Ch6-DMsearch/6_dm_search}
-\input{chapters/Ch6-DMsearch/6_1_samples}
-\input{chapters/Ch6-DMsearch/6_2_events}
-\input{chapters/Ch6-DMsearch/6_3_background}
-\input{chapters/Ch6-DMsearch/6_4_syst}
-\input{chapters/Ch6-DMsearch/6_5_stats}
-\input{chapters/Ch6-DMsearch/6_6_results}
+\clearpage
 
-%\input{chapters/6_hardware.tex}
+\chapter{Building sMDTs for Muon Detector HL-LHC Upgrade}
+\label{chap:sMDT}
+\input{chapters/Ch7-sMDT/7_hardware}
+\clearpage
 
 \chapter{Summary}
-\label{sec:sum}
-%\input{chapters/Ch7-Summary/7_summary.tex}
+\label{chap:sum}
+\input{chapters/Ch8-Summary/8_summary.tex}
 
 
 
@@ -75,10 +72,12 @@
 
 \appendix
 \input{chapters/a_complementary.tex}
+\clearpage
 
 \backmatter
-\input{chapters/8_acknowledgements.tex}
-\input{chapters/9_publications.tex}
+\input{chapters/9_acknowledgements.tex}
+\clearpage
+\input{chapters/10_publications.tex}
 
 
 %Template docs
