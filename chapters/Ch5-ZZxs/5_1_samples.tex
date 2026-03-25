@@ -1,18 +1,15 @@
 \section{Monte Carlo and Data Samples}
 \label{sec:llvv_samples}
 
-This chapter details the datasets and simulated samples employed in the analysis. The measurement is performed on the full proton-proton ($pp$) collision dataset recorded by the ATLAS experiment during Run~2 of the Large Hadron Collider (LHC) at a centre-of-mass energy of $\sqrt{s} = 13$~TeV.
+This section details the datasets and simulated samples employed in the analysis. The measurement is performed on the full proton-proton ($pp$) collision dataset recorded by the ATLAS experiment during Run~2 of the LHC at a centre-of-mass energy of $\sqrt{s} = 13$~TeV.
 
-Monte Carlo (MC) simulations are essential for modeling the kinematic and topological properties of the signal process and for estimating the contributions from all significant Standard Model backgrounds. A cornerstone of the analysis methodology is the consistent application of object reconstruction, calibration, and event selection criteria to both the data and the simulated samples. This unified treatment ensures that a direct and unbiased comparison can be made between the observed data and the theoretical predictions, allowing for the extraction of the physics results.
+MC simulations, incorporating both theoretical predictions and detailed modeling of the detector response, play a central role in describing the kinematic and topological properties of the signal, as well as in estimating contributions from all significant SM backgrounds.
+
+A key element of the analysis is the consistent application of physics object reconstruction, calibration, and event selection criteria to both data and simulated samples. This unified treatment ensures a direct and unbiased comparison between observed data and theoretical predictions, enabling a robust extraction of the physics results.
 
 The following sections will first provide a comprehensive overview of the MC samples generated for the signal and various background processes. Subsequently, the data samples, data quality requirements, and the trigger strategy employed to select events for this analysis will be detailed.
 
-
-\subsection{Monte Carlo Samples}
-
-The estimation of signal efficiencies and background contributions relies on a diverse set of Monte Carlo (MC) event samples. These samples are generated to correspond to the 2015--2018 data-taking periods and are processed through the same reconstruction software and calibration procedures as the collision data. This ensures a consistent treatment of physics objects and allows for a direct comparison between observation and prediction. The following sections describe the general simulation framework before detailing the specific samples used to model signal and background processes.
-
-\subsubsection{The ATLAS Simulation Framework}
+\subsection{The ATLAS Simulation Framework}
 The production of simulated events in ATLAS follows a well-established multi-step procedure, ensuring a high-fidelity representation of proton-proton collisions and the subsequent detector response. This simulation chain consists of three main stages:
 
 \begin{enumerate}
@@ -25,22 +22,26 @@ The production of simulated events in ATLAS follows a well-established multi-ste
 
 Correction factors, or scale factors, are applied to all simulated samples to account for small differences in trigger, reconstruction, and identification efficiencies between data and MC simulation.
 
+
+\subsection{Monte Carlo Samples}
+
+The estimation of signal efficiencies and background contributions relies on a diverse set of MC event samples. These samples are generated to correspond to the 2015--2018 data-taking periods and are processed through the same reconstruction software and calibration procedures as the collision data. This ensures a consistent treatment of physics objects and allows for a direct comparison between observation and prediction. The following sections describe the general simulation framework before detailing the specific samples used to model signal and background processes.
+
+
 \subsubsection{Signal Samples}
 The analysis targets the measurement of the SM $ZZ$ production cross-section in the $\ell^+\ell^-\nu\bar{\nu}$ final state and searches for BSM physics through anomalous gauge boson couplings.
 
 \paragraph{Standard Model \textit{ZZ} Production}
-The primary signal process is the production of a pair of $Z$ bosons decaying to $\ell^+\ell^-\nu\bar{\nu}$. This includes both quark-antiquark initiated and loop-induced gluon-gluon fusion processes, which are simulated with \texttt{Sherpa 2.2.2}. Electroweak $ZZ$ production in association with two jets is modelled separately with \texttt{MadGraph5}. Details of these samples are provided in Table~\ref{tab:ZZ_signal_samples}.
+The primary signal process is the production of a pair of $Z$ bosons decaying to $\ell^+\ell^-\nu\bar{\nu}$. This includes both quark-antiquark initiated and loop-induced gluon-gluon fusion processes, which are simulated with \texttt{Sherpa 2.2.2}. Electroweak $ZZ$ production in association with two jets is modelled separately with \texttt{MadGraph5}~\cite{Alwall:2014hca}. Details of these samples are provided in Table~\ref{tab:ZZ_signal_samples}.
 
-\paragraph{Anomalous Gauge Couplings}
+\paragraph{Samples with anomalous Gauge Couplings}
 The search for new physics is performed by probing for anomalous neutral triple gauge couplings (nTGC) and anomalous quartic gauge couplings (aQGC) using an Effective Field Theory (EFT) framework. A dedicated set of MC samples has been generated to model the kinematic effects of these BSM operators. The samples used for the nTGC and aQGC searches are listed in Tables~\ref{tab:ZZEFTsamples} and~\ref{tab:ZZaQGCsamples}, respectively.
 
 \begin{table}[htbp]
 \centering
-\renewcommand\arraystretch{1.5}
-\caption{Summary of Monte Carlo samples used to model the SM $ZZ \to \ell^+\ell^-\nu\bar{\nu}$ signal components. Cross-sections ($\sigma$) are provided by the generator, and k-factors are applied to correct to higher-order predictions.}
-\label{tab:ZZ_signal_samples}
+%\renewcommand\arraystretch{1.0}
 \scriptsize
-\begin{tabularx}{450pt}{|X||c|c|c|c|}
+\begin{tabularx}{400pt}{|X||c|c|c|c|}
 \hline
 \centering \textbf{Process} & \textbf{DSID} & \textbf{Generator} & \textbf{$\sigma$ [pb]} & \textbf{k-factor}\\
 \hline
@@ -48,15 +49,15 @@ The search for new physics is performed by probing for anomalous neutral triple 
 \centering $q\bar{q}\rightarrow ZZ/\gamma^* \to \ell^+\ell^-\nu\bar{\nu}$ & 345666 & Sherpa 2.2.2 & 0.49908 & 1.5 \\ \hline
 \centering Electroweak $ZZjj \to \ell^+\ell^-\nu\bar{\nu}jj$ & 363724 &  MadGraph5 & 0.0013529 & - \\ \hline
 \end{tabularx}
+\caption{\rm Summary of Monte Carlo samples used to model the SM $ZZ \to \ell^+\ell^-\nu\bar{\nu}$ signal components. Cross-sections ($\sigma$) are provided by the generator, and k-factors are applied to correct for higher-order predictions.}
+\label{tab:ZZ_signal_samples}
 \end{table}
 
 \begin{table}[htbp]
 \centering
-\renewcommand\arraystretch{1.5}
-\caption{List of samples generated for the study of anomalous Neutral Triple Gauge Couplings (nTGCs).}
-\label{tab:ZZEFTsamples}
+%\renewcommand\arraystretch{1.0}
 \scriptsize
-\begin{tabularx}{450pt}{|X|c|}
+\begin{tabularx}{400pt}{|X|c|}
 \hline
 \centering \textbf{Process} & \textbf{DSID} \\
 \hline
@@ -66,15 +67,15 @@ nunull\_f5gamma\_plus0001 & 367913 \\ \hline
 nunull\_f5Z\_plus0001 & 367914 \\ \hline
 nunull\_sm & 367915 \\ \hline
 \end{tabularx}
+\caption{\rm List of samples generated for the study of anomalous Neutral Triple Gauge Couplings (nTGCs).}
+\label{tab:ZZEFTsamples}
 \end{table}
 
 \begin{table}[htbp]
 \centering
-\renewcommand\arraystretch{1.5}
-\caption{List of samples generated for the study of anomalous Quartic Gauge Couplings (aQGCs).}
-\label{tab:ZZaQGCsamples}
+%\renewcommand\arraystretch{1.0}
 \scriptsize
-\begin{tabularx}{450pt}{|X|c|}
+\begin{tabularx}{400pt}{|X|c|}
 \hline
 \centering \textbf{Process} & \textbf{DSID} \\
 \hline
@@ -95,6 +96,8 @@ aQGCFT8\_QUAD\_1\_ZZ\_llvv & 515540 \\ \hline
 aQGCFT9\_INT\_2\_ZZ\_llvv & 515541 \\ \hline
 aQGCFT9\_QUAD\_2\_ZZ\_llvv & 515542 \\ \hline
 \end{tabularx}
+\caption{\rm List of samples generated for the study of anomalous Quartic Gauge Couplings (aQGCs).}
+\label{tab:ZZaQGCsamples}
 \end{table}
 
 \FloatBarrier
@@ -102,7 +105,7 @@ aQGCFT9\_QUAD\_2\_ZZ\_llvv & 515542 \\ \hline
 Backgrounds to the $\ell^+\ell^- + E_{\text{T}}^{\text{miss}}$ final state are broadly categorised as either featuring prompt leptons and genuine $E_{\text{T}}^{\text{miss}}$ (irreducible) or arising from misidentified objects or detector mismeasurement (reducible). The MC samples used to model these processes are detailed in the following tables.
 
 \paragraph{Diboson and Triboson Backgrounds}
-The production of $WZ$, $WW$, and $ZZ \to \ell^+\ell^-\ell^+\ell^-$ represent the most significant irreducible backgrounds. Smaller contributions from triboson processes ($WWW$, $WWZ$, $WZZ$, $ZZZ$) are also considered. These processes are primarily simulated with \texttt{Sherpa} and \texttt{Powheg+Pythia8}. Summaries are provided in Tables~\ref{tab:ZZbkg_samples},~\ref{tab:WZandWWsamples}, and~\ref{tab:VVVsamples}.
+The production of $WZ$, $WW$, and $ZZ \to \ell^+\ell^-\ell^+\ell^-$ represents the most significant irreducible backgrounds. Smaller contributions from triboson processes ($WWW$, $WWZ$, $WZZ$, $ZZZ$) are also considered. These processes are primarily simulated with \texttt{Sherpa} and \texttt{Powheg+Pythia8}. Summaries are provided in Tables~\ref{tab:ZZbkg_samples},~\ref{tab:WZandWWsamples}, and~\ref{tab:VVVsamples}.
 
 \paragraph{Top Quark Backgrounds}
 Events from top-antitop ($t\bar{t}$) and single-top production are a significant source of background, primarily from their dileptonic decay channels. Associated production with a vector boson ($t\bar{t}V$) also contributes. These are simulated with \texttt{Powheg+Pythia8} and \texttt{MadGraph5\_aMC@NLO}, as detailed in Tables~\ref{tab:Topsamples} and~\ref{tab:ttVsamples}.
@@ -116,11 +119,9 @@ Processes involving the production of a Higgs boson can also contribute to the s
 % --- Diboson BG Tables ---
 \begin{table}[htbp]
 \centering
-\renewcommand\arraystretch{1.5}
-\caption{Summary of $ZZ$ background samples, including the four-lepton final state.}
-\label{tab:ZZbkg_samples}
+%\renewcommand\arraystretch{1.5}
 \scriptsize
-\begin{tabularx}{450pt}{|X||c|c|c|c|}
+\begin{tabularx}{400pt}{|X||c|c|c|c|}
 \hline
 \centering \textbf{Process} & \textbf{DSID} & \textbf{Generator} & \textbf{$\sigma$ [pb]} & \textbf{k-factor}\\
 \hline
@@ -128,15 +129,15 @@ Processes involving the production of a Higgs boson can also contribute to the s
 \centering $q\bar{q}\rightarrow ZZ/\gamma^* \to 4\ell$ & 364250 & Sherpa 2.2.2 & 1.2522 & - \\ \hline 
 \centering $q\bar{q}\rightarrow ZZ \rightarrow q\bar{q} \ell^+\ell^-$ & 363356 & Sherpa 2.2.1 & 15.565 & 0.1419 \\ \hline 
 \end{tabularx}
+\caption{\rm Summary of $ZZ$ background samples, including the four-lepton final state.}
+\label{tab:ZZbkg_samples}
 \end{table}
 
 \begin{table}[htbp]
 \centering
-\renewcommand\arraystretch{1.5}
-\caption{Summary of $WZ$ and $WW$ background samples.}
-\label{tab:WZandWWsamples}
+%\renewcommand\arraystretch{1.5}
 \scriptsize
-\begin{tabularx}{450pt}{|X||c|c|c|c|}
+\begin{tabularx}{400pt}{|X||c|c|c|c|}
 \hline
 \centering \textbf{Process} & \textbf{DSID} & \textbf{Generator} & \textbf{$\sigma$ [pb]} & \textbf{k-factor}\\
 \hline
@@ -147,16 +148,16 @@ Processes involving the production of a Higgs boson can also contribute to the s
 \centering $q\bar{q}\rightarrow WW \rightarrow q\bar{q} \ell\nu $ & 361606 & Powheg+Pythia8 & 44.18 & - \\ \hline
 \centering $gg \rightarrow WW \to \ell\nu\ell\nu$ & 345718 & Sherpa 2.2.2 & 0.4823 & - \\ \hline
 \end{tabularx}
+\caption{\rm Summary of $WZ$ and $WW$ background samples.}
+\label{tab:WZandWWsamples}
 \end{table}
 
 % --- Triboson BG Table ---
 \begin{table}[htbp]
 \centering
-\renewcommand\arraystretch{1.5}
-\caption{Summary of triboson ($VVV$) background samples.}
-\label{tab:VVVsamples}
+%\renewcommand\arraystretch{1.5}
 \scriptsize
-\begin{tabularx}{450pt}{|X||c|c|c|c|}
+\begin{tabularx}{400pt}{|X||c|c|c|c|}
 \hline
 \centering \textbf{Process} & \textbf{DSID} & \textbf{Generator} & \textbf{$\sigma$ [pb]} & \textbf{k-factor}\\
 \hline
@@ -169,17 +170,17 @@ Processes involving the production of a Higgs boson can also contribute to the s
 \centering $ZZZ \to 4\ell2\nu$ & 364248 & Sherpa 2.2.2 & 0.00038556 & - \\ \hline
 \centering $ZZZ \to 2\ell4\nu$ & 364249 & Sherpa 2.2.2 & 0.00038491 & 0.44479 \\ \hline 
 \end{tabularx}
+\caption{\rm Summary of triboson ($VVV$) background samples.}
+\label{tab:VVVsamples}
 \end{table}
 
 \FloatBarrier
 % --- Top BG Tables ---
 \begin{table}[htbp]
 \centering
-\renewcommand\arraystretch{1.5}
-\caption{Summary of $t\bar{t}$ and single-top background samples.}
-\label{tab:Topsamples}
+%\renewcommand\arraystretch{1.5}
 \scriptsize
-\begin{tabularx}{450pt}{|X||c|c|c|c|}
+\begin{tabularx}{400pt}{|X||c|c|c|c|}
 \hline
 \centering \textbf{Process} & \textbf{DSID} & \textbf{Generator} & \textbf{$\sigma$ [pb]} & \textbf{k-factor}\\
 \hline
@@ -191,15 +192,15 @@ Processes involving the production of a Higgs boson can also contribute to the s
 \centering $Wt$ (dilepton) & 410648 & Powheg+Pythia8 & 3.997 & - \\ \hline 
 \centering $W\bar{t}$ (dilepton) & 410649 & Powheg+Pythia8 & 3.993 & - \\ \hline 
 \end{tabularx}
+\caption{\rm Summary of $t\bar{t}$ and single-top background samples.}
+\label{tab:Topsamples}
 \end{table}
 
 \begin{table}[htbp]
 \centering
-\renewcommand\arraystretch{1.5}
-\caption{Summary of background samples for associated production of top quarks with vector bosons.}
-\label{tab:ttVsamples}
+%\renewcommand\arraystretch{1.5}
 \scriptsize
-\begin{tabularx}{450pt}{|X||c|c|c|c|}
+\begin{tabularx}{400pt}{|X||c|c|c|c|}
 \hline
 \centering \textbf{Process} & \textbf{DSID} & \textbf{Generator} & \textbf{$\sigma$ [pb]} & \textbf{k-factor}\\
 \hline
@@ -208,17 +209,17 @@ Processes involving the production of a Higgs boson can also contribute to the s
 \centering $t\bar{t}W$ & 410155 & MG5\_aMC@NLO+Pythia8 & 0.5483 & 1.1 \\ \hline 
 \centering $t\bar{t}WW$ & 410081 & MadGraph+Pythia8 & 0.0080975 & 1.2231 \\ \hline
 \end{tabularx}
+\caption{\rm Summary of background samples for associated production of top quarks with vector bosons.}
+\label{tab:ttVsamples}
 \end{table}
 
 \FloatBarrier
 % --- Z+jets BG Tables ---
 \begin{table}[htbp]
 \centering
-\renewcommand\arraystretch{1.5}
-\caption{Summary of the $Z/\gamma^* \to e^+e^-$+jets background samples generated with \texttt{Sherpa~2.2.1}.}
-\label{tab:ZjetsSamplesSherpa1}
+%\renewcommand\arraystretch{1.5}
 \scriptsize
-\begin{tabularx}{450pt}{|X||c|c|c|}
+\begin{tabularx}{400pt}{|X||c|c|c|}
 \hline
 \centering \textbf{Process Slice} & \textbf{DSID} & \textbf{$\sigma$ [pb]} & \textbf{k-factor}\\
 \hline
@@ -237,15 +238,15 @@ $Z\rightarrow ee$, $280 < H_{T,parton} < 500$ GeV, BFilter & 364125 & 8.6766 & 0
 $Z\rightarrow ee$, $500 < H_{T,parton} < 1000$ GeV & 364126 & 1.8081 & 0.9751 \\ \hline
 $Z\rightarrow ee$, $H_{T,parton} > 1000$ GeV & 364127 & 0.14857 & 0.9751 \\ \hline
 \end{tabularx}
+\caption{\rm Summary of the $Z/\gamma^* \to e^+e^-$+jets background samples generated with \texttt{Sherpa~2.2.1}.}
+\label{tab:ZjetsSamplesSherpa1}
 \end{table}
 
 \begin{table}[htbp]
 \centering
-\renewcommand\arraystretch{1.5}
-\caption{Summary of the $Z/\gamma^* \to \mu^+\mu^-$+jets background samples generated with \texttt{Sherpa~2.2.1}.}
-\label{tab:ZjetsSamplesSherpa2}
+%\renewcommand\arraystretch{1.5}
 \scriptsize
-\begin{tabularx}{450pt}{|X||c|c|c|}
+\begin{tabularx}{400pt}{|X||c|c|c|}
 \hline
 \centering \textbf{Process Slice} & \textbf{DSID} & \textbf{$\sigma$ [pb]} & \textbf{k-factor}\\
 \hline
@@ -264,15 +265,15 @@ $Z\rightarrow \mu\mu$, $280 < H_{T,parton} < 500$ GeV, BFilter & 364111 & 8.4932
 $Z\rightarrow \mu\mu$, $500 < H_{T,parton} < 1000$ GeV & 364112 & 1.7881 & 0.9751 \\ \hline
 $Z\rightarrow \mu\mu$, $H_{T,parton} > 1000$ GeV & 364113 & 0.14769 & 0.9751 \\ \hline
 \end{tabularx}
+\caption{\rm Summary of the $Z/\gamma^* \to \mu^+\mu^-$+jets background samples generated with \texttt{Sherpa~2.2.1}.}
+\label{tab:ZjetsSamplesSherpa2}
 \end{table}
 
 \begin{table}[htbp]
 \centering
-\renewcommand\arraystretch{1.5}
-\caption{Summary of the $Z/\gamma^* \to \tau^+\tau^-$+jets background samples generated with \texttt{Sherpa~2.2.1}.}
-\label{tab:ZjetsSamplesSherpa3}
+%\renewcommand\arraystretch{1.5}
 \scriptsize
-\begin{tabularx}{450pt}{|X||c|c|c|}
+\begin{tabularx}{400pt}{|X||c|c|c|}
 \hline
 \centering \textbf{Process Slice} & \textbf{DSID} & \textbf{$\sigma$ [pb]} & \textbf{k-factor}\\
 \hline
@@ -291,34 +292,34 @@ $Z\rightarrow \tau\tau$, $280 < H_{T,parton} < 500$ GeV, BFilter & 364139 & 8.68
 $Z\rightarrow \tau\tau$, $500 < H_{T,parton} < 1000$ GeV & 364140 & 1.8096 & 0.9751 \\ \hline
 $Z\rightarrow \tau\tau$, $H_{T,parton} > 1000$ GeV & 364141 & 0.14834 & 0.9751 \\ \hline
 \end{tabularx}
+\caption{\rm Summary of the $Z/\gamma^* \to \tau^+\tau^-$+jets background samples generated with \texttt{Sherpa~2.2.1}.}
+\label{tab:ZjetsSamplesSherpa3}
 \end{table}
 
 % --- Higgs BG Table ---
 \begin{table}[htbp]
 \centering
-\renewcommand\arraystretch{1.5}
-\caption{List of background samples from Higgs boson production processes.}
-\label{tab:Higgssamples}
+%\renewcommand\arraystretch{1.5}
 \scriptsize
-\begin{tabularx}{450pt}{|X||c|c|}
+\begin{tabularx}{400pt}{|X||c|c|}
 \hline
 \centering \textbf{Process} & \textbf{DSID} & \textbf{Generator} \\
 \hline
 \centering $WH, H\rightarrow WW, W \to q\bar{q}', H \to \ell\nu\ell\nu$  & 346560 & Powheg+Pythia8 \\ \hline 
 \centering $WH, H\rightarrow WW, W \to \ell\nu, H \to \ell\nu q\bar{q}'$  & 346561 & Powheg+Pythia8 \\ \hline 
 \end{tabularx}
+\caption{\rm List of background samples from Higgs boson production processes.}
+\label{tab:Higgssamples}
 \end{table}
 
 \FloatBarrier
 
 \subsection{Data Samples}
 
-The Run II pp collision data collection by the ATLAS experiment starts from 2015, and ends in 2018. This analysis uses the full Run II pp collision data using Release 21 reconstruction, which pass the final Good Run List (GRL) released by the Data Quality group for 2015-2018. 
+The Run II pp collision data collection by the ATLAS experiment starts from 2015 and ends in 2018. This analysis uses the full Run II pp collision data using Release 21 reconstruction, which passes the final Good Run List (GRL) released by the Data Quality group for 2015-2018. 
 
 \begin{table}[htbp]
 \centering
-\caption{Good Run Lists (GRLs) used in the analysis.}
-\label{tab:grls}
 \begin{tabular}{@{}llp{8.5cm}@{}}
 \toprule
 \textbf{Data Period} & \textbf{Run Range} & \textbf{GRL File Path} \\
@@ -332,6 +333,8 @@ data17\_13TeV & ---            & \url{GoodRunsLists/data17_13TeV/20180619/physic
 data18\_13TeV & ---            & \url{GoodRunsLists/data18_13TeV/20180924/physics_25ns_Triggerno17e33prim.lumicalc.OflLumi-13TeV-001.root} \\
 \bottomrule
 \end{tabular}
+\caption{\rm Good Run Lists (GRLs) used in the analysis.}
+\label{tab:grls}
 \end{table}
 
 To ensure a high and robust acceptance for events containing one or more energetic leptons, a selection based on a logical disjunction (OR) of multiple trigger paths is applied. The trigger strategy combines both single-lepton and di-lepton-seeded triggers to maximize efficiency across a broad kinematic phase space. 
@@ -340,9 +343,7 @@ This approach is crucial for retaining signal events where individual lepton tra
 
 \begin{table}[h!]
 \centering
-\caption{Single-lepton triggers used for this analysis by data period and lepton flavor.}
-\label{tab:lepton_triggers}
-\begin{tabular}{ l p{6.5cm} p{4cm} }
+\begin{tabular}{ l p{6.5cm} p{5cm} }
     \hline
     \textbf{Year} & \textbf{Electron Triggers} & \textbf{Muon Triggers} \\
     \hline
@@ -390,4 +391,6 @@ This approach is crucial for retaining signal events where individual lepton tra
       & HLT\_mu26\_ivarmedium\_OR\_mu50 \\
     \hline
 \end{tabular}
+\caption{\rm Single-lepton triggers used for this analysis by data period and lepton flavor.}
+\label{tab:lepton_triggers}
 \end{table}

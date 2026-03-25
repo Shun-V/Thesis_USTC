@@ -4,7 +4,7 @@
 %-------------SM----------------
 \section{Standard Model}
 
-The Standard Model (SM) of particle physics is the theoretical framework that describes the fundamental particles and their interactions, excluding gravity. It is one of the most successful theories in physics, providing highly precise predictions that have been confirmed by experiments over energy scales spanning more than twelve orders of magnitude.
+The SM of particle physics is the theoretical framework that describes the fundamental particles and their interactions, excluding gravity. It is one of the most successful theories in physics, providing highly precise predictions that have been confirmed by experiments over energy scales spanning more than twelve orders of magnitude.
 
 %\subsection{Fundamental Particles}
 
@@ -31,10 +31,10 @@ The Standard Model (SM) of particle physics is the theoretical framework that de
 %    \item \textbf{Strong Nuclear Force}: Described by Quantum Chromodynamics (QCD), it binds quarks together to form hadrons. Gluons mediate this force and carry color charge.
 %\end{enumerate}
 
-The theoretical framework of the SM is formulated using a Lagrangian density function, grounded in quantum field theory, special relativity, and the conservation laws observed in nature. The Lagrangian includes the kinematic terms for elementary and gauge fields as well as their interactions, and the physics law, the equations of motion for particles, can be derived directly from it. To be consistent with fundamental principles, the Lagrangian must remain invariant under symmetry transformations. In particular, gauge fields and their interactions arise naturally from the requirement of gauge invariance, which ensures that the particle wave function $\psi(x)$ transforms locally as $\psi(x)\rightarrow \psi'(x)= e^{i\alpha(x)}\psi(x)$ where $x$ is 4-dimensional space-time coordinates
+The theoretical framework of the SM is formulated using a Lagrangian density function~\cite{PeskinSchroeder1995}, grounded in quantum field theory, special relativity, and the conservation laws observed in nature. The Lagrangian includes the kinematic terms for elementary and gauge fields as well as their interactions, and the physics law, the equations of motion for particles, can be derived directly from it. To be consistent with fundamental principles, the Lagrangian must remain invariant under symmetry transformations~\cite{Noether1918}. In particular, gauge fields and their interactions arise naturally from the requirement of gauge invariance, which ensures that the particle wave function $\psi(x)$ transforms locally as $\psi(x)\rightarrow \psi'(x)= e^{i\alpha(x)}\psi(x)$ where $x$ is 4-dimensional space-time coordinates
 and $\alpha(x)$ is a local phase angle in rotation.
 
-The interactions in the SM are described by the non-Abelian Yang-Mills gauge theory~\cite{Yang:1954ek}, based on the symmetry group 
+The interactions in the SM are described by the non-Abelian Yang-Mills gauge theory, based on the symmetry group 
 \(\text{SU}(3)_{C} \otimes \text{SU}(2)_{L} \otimes \text{U}(1)_{Y}\).  
 In this framework, the labels $C$, $L$, and $Y$ stand for the color charge, left-handed fields, and weak hypercharge, respectively.
 The \(\text{SU}(3)_C\) symmetry governs the strong interaction and corresponds to internal rotations of the three-dimensional quark wave function in color space, \((\psi_q^r, \psi_q^g, \psi_q^b)\). Its gauge fields are the eight gluons, each carrying a combination of two color charges~\cite{pich2007SM}.  
@@ -44,7 +44,7 @@ The Higgs mechanism is central to the SM. It explains how particles acquire mass
 
 \section{Mathematical Presentation of the Theoretical Framework}
 
-The theoretical framework of the Standard Model is formulated in terms of the Lagrangian density function, $\mathcal{L}$. 
+The theoretical framework of the SM is formulated in terms of the Lagrangian density function, $\mathcal{L}$. 
 The SM Lagrangian can be written as the sum of the Quantum Chromodynamics (QCD) and Electroweak (EW) components:
 \begin{equation}
     \mathcal{L}_{\text{SM}} = \mathcal{L}_{\text{QCD}} + \mathcal{L}_{\text{EW}} .
@@ -55,7 +55,7 @@ The QCD and electroweak terms are discussed in detail in the following sections.
 \subsection{The strong interaction Lagrangian}
 
 Denote the quark field of flavor $f$ by $q_f$, which carries three color components 
-$(q_f^r, q_f^g, q_f^b)$. The quark kinetic term of the QCD Lagrangian is given by~\cite{pich2007SM}
+$(q_f^r, q_f^g, q_f^b)$. The free quark kinetic term of the QCD Lagrangian is given by~\cite{pich2007SM}
 \begin{equation}\label{eq:lag_qcd_1}
     \mathcal{L}_\text{QCD}^0 = \sum_{f} \bar{q}_{f}\left(i \gamma^{\mu} \partial_{\mu} - m_{f}\right) q_{f}.
 \end{equation}
@@ -92,13 +92,13 @@ the covariant derivative in Eq.~\ref{eq:QCD-quark}:
 \end{equation}
 Here, $\lambda^{a} (a = 0,1,...,8)$ are the Gell-Mann matrices, $G_{a}^{\mu}$ are the gluon fields and $g_s$ is the strong (QCD) coupling constant.
 
-The existence of the strong-interaction force carrier, the gluon, predicted by QCD, was experimentally confirmed in the late spring of 1979 at the PETRA electron-positron collider at DESY in Germany. Four experiments: TASSO, MARK-J, JADE, and PLUTO, independently observed three-jet events arising from gluon bremsstrahlung. This discovery provided direct evidence for the gluon's existence, established its spin-1 nature, and confirmed its role as the gauge boson of the strong interaction.
+The existence of the strong-interaction force carrier, the gluon, predicted by QCD, was experimentally confirmed in the late spring of 1979 at the PETRA electron-positron collider at DESY in Germany. Four experiments: TASSO~\cite{Tasso1979_PlanarEvents}, MARK-J~\cite{MarkJ1979_ThreeJet}, JADE~\cite{JADE1980_PlanarThreeJets}, and PLUTO~\cite{Pluto1979_GluonBremsstrahlung}, independently observed three-jet events arising from gluon bremsstrahlung. This discovery provided direct evidence for the gluon's existence, established its spin-1 nature, and confirmed its role as the gauge boson of the strong interaction.
 
 In both theoretical perturbative calculations and experimental measurements, the strong coupling constant is commonly expressed as
 \begin{equation}
 \alpha_S = \frac{g_S^2}{4\pi}.
 \end{equation}
-It is conventionally quoted at the mass scale of the $Z$ boson, with
+It is conventionally quoted at the mass scale of the $Z$ boson~\cite{PDG2016}, with
 \begin{equation}
 \alpha_S(M_Z) = 0.1181 \pm 0.0011.
 \end{equation}
@@ -426,7 +426,7 @@ m_Z = \frac{1}{2} v \sqrt{g^2 + g'^2},
 \qquad
 \frac{m_W}{m_Z} = \cos\theta_W .
 \end{equation}
-In addition to generating the mass terms of the $W$ and $Z$ bosons, the Higgs kinetic term also gives rise to the interaction vertices between the Higgs boson and the massive weak gauge bosons. The corresponding coupling strengths are directly proportional to the gauge boson masses, thereby providing a direct manifestation of electroweak symmetry breaking as the origin of mass. These couplings have been measured at the LHC experiments with precisions better than $10\%$, in agreement with the Standard Model predictions derived from Eq.~\ref{eq:lag_ew_Higgs_T}.
+In addition to generating the mass terms of the $W$ and $Z$ bosons, the Higgs kinetic term also gives rise to the interaction vertices between the Higgs boson and the massive weak gauge bosons. The corresponding coupling strengths are directly proportional to the gauge boson masses, thereby providing a direct manifestation of electroweak symmetry breaking as the origin of mass. These couplings have been measured at the LHC experiments with precisions better than $10\%$, in agreement with the SM predictions derived from Eq.~\ref{eq:lag_ew_Higgs_T}.
 
 The Higgs potential $V(\Phi)$ can be rewritten, using Eq.~\ref{eq:phi_afterEWSB}, as
 \begin{equation}\label{eq:lag_ew_Higss_V}
@@ -517,9 +517,10 @@ As in the lepton sector, the interaction coupling between the Higgs boson and a 
 The Yukawa couplings of the Higgs boson to third-generation fermions have been measured at the LHC with precisions at the level of a few tens of percent. In contrast, measurements of the Higgs couplings to second-generation fermions remain significantly more challenging due to their much smaller Yukawa couplings and correspondingly lower experimental sensitivity. Consequently, searches for Higgs interactions with second-generation fermions constitute an active area of research at the LHC experiments.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Multi-boson Interactions}
+\subsection{The non-Abelian self-interactions among gauge bosons}
+\label{boson-interactions}
 
-Multi-boson interaction vertices can be derived from the EW gauge field Lagrangian.  It can be rewritten using the mixing gauge boson expressions,~\ref{eq:photon},~\ref{eq:zboson}, and ~\ref{eq:bosons} as,
+The non-Abelian self-interactions among gauge bosons within the electroweak theoretical framework manifest as multi-boson interaction vertices, which arise directly from the electroweak gauge field Lagrangian. By expressing the gauge fields in terms of the physical (mixed) boson states defined in Eqs.~\ref{eq:photon}, \ref{eq:zboson}, and \ref{eq:bosons}, the Lagrangian can be rewritten as
 \begin{equation}\label{eq:lag_ew_gauge}
 \small
 \begin{aligned}
@@ -553,26 +554,26 @@ corresponds to $Z$ boson field strength, and  $F_{\mu\nu}=\partial_\mu A_\nu
 The electroweak (EW) gauge boson Lagrangian expressed above (Eq.~\ref{eq:lag_ew_gauge}) contains both triple and quartic gauge boson interaction vertices, which arise from the non-Abelian structure of the $\mathrm{SU}(2)_L \otimes \mathrm{U}(1)_Y$ gauge symmetry. 
 However, the neutral triple gauge boson vertices $ZZZ$ and $ZZ\gamma$ do not appear in the EW Lagrangian and are therefore absent in the Standard Model description of diboson $ZZ$ production at tree level. Such interactions may arise in theories beyond the Standard Model (BSM), where higher-dimensional operators or new dynamics can induce anomalous neutral triple gauge couplings (nTGCs). Searches for these anomalous couplings are therefore well motivated within the LHC physics program. The study of anomalous neutral triple gauge boson interactions through the $ZZ$ production at the LHC constitutes one of the topics investigated in this thesis.
 
-\section{Summary of the Standard Model Framework}
+\subsection{Summary of the Standard Model Framework}
 
-As discussed in this chapter, the Standard Model (SM) of particle physics is built upon two fundamental principles. The first is gauge invariance, which provides the theoretical framework for describing the strong and electroweak interactions. The second is the Higgs mechanism, which allows gauge bosons to acquire mass through the spontaneous symmetry breaking of the Higgs field. This mechanism preserves the gauge invariance of the theory while generating masses for the $W$ and $Z$ bosons, with the photon remaining massless.
+As discussed in this chapter, the SM of particle physics is built upon two fundamental principles. The first is gauge invariance, which provides the theoretical framework for describing the strong and electroweak interactions. The second is the Higgs mechanism, which allows gauge bosons to acquire mass through the spontaneous symmetry breaking of the Higgs field. This mechanism preserves the gauge invariance of the theory while generating masses for the $W$ and $Z$ bosons, with the photon remaining massless.
 
-The non-Abelian structure of the $\mathrm{SU}(2)_L \otimes \mathrm{U}(1)_Y$ gauge symmetry has been firmly confirmed experimentally. In particular, multi-gauge-boson interactions predicted by the Standard Model have been extensively studied at the LHC experiments, with several rare processes observed with significances exceeding five standard deviations ($>5\sigma$).
+The non-Abelian structure of the $\mathrm{SU}(2)_L \otimes \mathrm{U}(1)_Y$ gauge symmetry has been firmly confirmed experimentally. In particular, multi-gauge-boson interactions predicted by the SM have been extensively studied at the LHC experiments, with several rare processes observed with significances exceeding five standard deviations ($>5\sigma$).
 
-All particles predicted by the SM have now been experimentally observed, and many of their properties have been measured with remarkable precision. The last missing particle predicted by the SM was the Higgs boson. Its discovery by the LHC experiments in 2012 provided crucial confirmation of the Higgs mechanism and marked a major milestone in particle physics.
+All particles predicted by the SM have now been experimentally observed, and many of their properties have been measured with remarkable precision. The last missing particle predicted by the SM was the Higgs boson. Its discovery by the LHC experiments in 2012~\cite{ATLAS2012Higgs,CMS2012Higgs} provided crucial confirmation of the Higgs mechanism and marked a major milestone in particle physics.
 
-Since its discovery, the Higgs boson mass has been measured with unprecedented precision. The most precise determination to date comes from the ATLAS experiment, yielding $m_H = 125.11 \pm 0.11~\text{GeV}$, corresponding to a relative precision of about $0.09\%$. This remarkable achievement reflects the ATLAS Collaboration's long-standing efforts in detector understanding, calibration, and advanced analysis techniques, enabling extremely precise measurements of this fundamental parameter.
+Since its discovery, the Higgs boson mass has been measured with unprecedented precision. The most precise determination to date comes from the ATLAS experiment~\cite{ATLAS2023HiggsMass}, yielding $m_H = 125.11 \pm 0.11~\text{GeV}$, corresponding to a relative precision of about $0.09\%$. This remarkable achievement reflects the ATLAS Collaboration's long-standing efforts in detector understanding, calibration, and advanced analysis techniques, enabling extremely precise measurements of this fundamental parameter.
 
-While the interaction strengths dictated by gauge invariance are universal and independent of quark or lepton flavor, the couplings of the Higgs boson to gauge bosons and fermions are not universal. Instead, these couplings are proportional to the particle masses, reflecting the role of the Higgs field in generating mass through the Yukawa and gauge interactions of the Standard Model.
+While the interaction strengths dictated by gauge invariance are universal and independent of quark or lepton flavor, the couplings of the Higgs boson to gauge bosons and fermions are not universal. Instead, these couplings are proportional to the particle masses, reflecting the role of the Higgs field in generating mass through the Yukawa and gauge interactions of the SM.
 
 %-------------DM & BSM----------------
 \section{Beyond the Standard Model Theories}
 
-Despite its extraordinary success in describing results from collider and other high-energy physics experiments, the Standard Model of particle physics is widely regarded as incomplete. In particular, it does not incorporate gravity as described by General Relativity, nor does it provide explanations for several key observations in cosmology and astrophysics, such as dark matter, dark energy, and the matter--antimatter asymmetry of the Universe. In addition, the observation of neutrino oscillations implies that neutrinos have non-zero masses, which cannot be naturally accommodated within the minimal formulation of the SM.
+Despite its extraordinary success in describing results from collider and other high-energy physics experiments, the SM of particle physics is widely regarded as incomplete. In particular, it does not incorporate gravity as described by General Relativity, nor does it provide explanations for several key observations in cosmology and astrophysics, such as dark matter, dark energy, and the matter-antimatter asymmetry of the Universe. In addition, the observation of neutrino oscillations implies that neutrinos have non-zero masses, which cannot be naturally accommodated within the minimal formulation of the SM.
 
 Furthermore, the SM contains many free parameters (19 in its minimal form) that must be determined experimentally rather than predicted by the theory. It also does not provide a consistent framework for unifying quantum mechanics with gravity. These limitations strongly suggest that the SM is an effective theory valid up to a certain energy scale, beyond which new physics is expected to emerge.
 
-A wide range of theoretical frameworks beyond the Standard Model (BSM) have been proposed to address these shortcomings. Examples include supersymmetry (SUSY), theories with extra spatial dimensions, and hidden sector models:
+A wide range of theoretical frameworks beyond the SM (BSM) have been proposed to address these shortcomings. Examples include supersymmetry (SUSY), theories with extra spatial dimensions, and hidden sector models~\cite{Strassler2007hv}:
 \begin{enumerate}
     \item \textbf{Supersymmetry (SUSY)}: 
     SUSY extends the SM by postulating a symmetry between fermions and bosons, predicting a superpartner for each SM particle. In many SUSY scenarios, the lightest supersymmetric particle (LSP), often the neutralino, is stable, electrically neutral, and weakly interacting, making it a compelling dark matter (DM) candidate. At collider experiments, the production of such particles would lead to signatures with significant missing transverse energy (\(E_T^{\text{miss}}\)), since the DM particles escape the detector. 
@@ -584,10 +585,10 @@ A wide range of theoretical frameworks beyond the Standard Model (BSM) have been
     Hidden sector (or dark sector) models introduce new particles that interact only weakly with SM particles through mediator states, such as a dark photon or other portal interactions. The production of such mediators at the LHC could lead to final states containing leptons and missing transverse energy, potentially arising from invisible particles escaping detection.
 
     \item \textbf{Higgs Portal Model}: 
-Higgs portal models provide a simple and well-motivated framework in which dark matter (DM) particles (denoted as $\chi$) interact with the SM through the Higgs boson. In these scenarios, the Higgs boson can couple to invisible DM particles, allowing it to decay into a pair of DM candidates $\chi\chi$. At the LHC, such signatures can be probed in processes such as \(ZH \rightarrow \ell^+\ell^- \chi\chi\), where the associated production of a Higgs boson with a $Z$ boson provides a clean experimental signature. The $Z$ boson decays into a pair of charged leptons, while the Higgs boson decays invisibly into DM particles, resulting in events with dileptons and large missing transverse energy.
+Higgs portal models~\cite{McDonald1994} provide a simple and well-motivated framework in which dark matter (DM) particles (denoted as $\chi$) interact with the SM through the Higgs boson. In these scenarios, the Higgs boson can couple to invisible DM particles, allowing it to decay into a pair of DM candidates $\chi\chi$. At the LHC, such signatures can be probed in processes such as \(ZH \rightarrow \ell^+\ell^- \chi\chi\), where the associated production of a Higgs boson with a $Z$ boson provides a clean experimental signature. The $Z$ boson decays into a pair of charged leptons, while the Higgs boson decays invisibly into DM particles, resulting in events with dileptons and large missing transverse energy.
 \end{enumerate}
 
-The BSM theoretical approaches aim to provide a deeper and more unified description of fundamental interactions and may help address some of the open questions that remain unresolved within the Standard Model.
+The BSM theoretical approaches aim to provide a deeper and more unified description of fundamental interactions and may help address some of the open questions that remain unresolved within the SM.
 
 
 

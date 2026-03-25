@@ -1,11 +1,11 @@
 \section{Systematic Uncertainties}
 \label{sec:llvv_systematics}
 
-This section summarizes the experimental and theoretical sources of systematic uncertainty affecting the event yields of the backgrounds and the signal. These sources impact the differential estimate of the signal cross-section after the unfolding procedure. 
+This section summarizes the experimental and theoretical sources of systematic uncertainty affecting the event yields of both the signal and background processes, and their impact on the total and differential cross-section measurements.
 
-The systematic uncertainties are assessed to account for residual discrepancies between data and simulation in the modelling of trigger efficiencies, lepton reconstruction, jet calibration, $b$-tagging, missing transverse energy ($E_{\text{T}}^{\text{miss}}$), luminosity, and the average number of proton--proton interactions per bunch crossing (pile-up).
+The systematic uncertainties are evaluated to account for residual discrepancies between data and simulation in the modelling of trigger efficiencies, lepton reconstruction and identification, jet calibration, $b$-tagging, missing transverse energy ($E_{\text{T}}^{\text{miss}}$), the integrated luminosity, and the average number of proton--proton interactions per bunch crossing (pile-up). In addition, theoretical uncertainties are considered, including those arising from the choice of parton distribution functions, renormalization and factorization scales, higher-order corrections, and the modelling of parton shower and hadronization.
 
-Consistent with previous analyses of the $ZZjj$ final state, the measurement of the signal yields and resulting cross-sections is dominated by statistical uncertainty. Among the sources of systematic uncertainty, the largest contributions arise from jet reconstruction—specifically pile-up suppression and $\eta$-intercalibration—and from the unfolding bias. 
+Consistent with previous analyses of the $ZZjj$ final state, the measurement of the signal yields and the resulting cross-sections is dominated by statistical uncertainty. Among the systematic sources, the largest contributions arise from jet reconstruction, particularly pile-up suppression and $\eta$-intercalibration, as well as from the unfolding procedure.
 %The bias associated with the unfolding method is evaluated through the data-driven closure test discussed in Section~\ref{sec:unfolding_ddclosure}.
 
 \subsection{Experimental Sources}
@@ -13,7 +13,7 @@ Consistent with previous analyses of the $ZZjj$ final state, the measurement of 
 
 The experimental systematic uncertainties encompass detector effects and reconstruction efficiencies. For each source, the propagation to the final measurement is performed as follows:
 \begin{enumerate}
-    \item A detector-level Standard Model (SM) distribution is constructed using Monte Carlo (MC) predictions where the specific systematic parameter has been varied.
+    \item A detector-level SM distribution is constructed using MC predictions where the specific systematic parameter has been varied.
     \item The nominal background is subtracted from this varied distribution.
     \item The resulting background-subtracted distribution is unfolded using the \textit{nominal} response matrix.
     \item The systematic uncertainty is defined as the difference between this unfolded distribution and the nominal MC particle-level (truth) distribution.
@@ -33,7 +33,7 @@ The specific sources considered are listed below:
     \item \textbf{Trigger Efficiency:} 
     Uncertainties in the trigger efficiency scale factors are separated by lepton flavor. For electrons, a single total nuisance parameter is used. For muons, the uncertainty is split into statistical and systematic components.
 
-    \item \textbf{Lepton Efficiency (Reconstruction, ID, Isolation):} 
+    \item \textbf{Lepton Efficiency (reconstruction, identification, and isolation):} 
     Efficiencies for lepton reconstruction, identification, and isolation are corrected in simulation using scale factors derived from tag-and-probe control samples in data.
     \begin{itemize}
         \item \textbf{Electrons:} Modeled using a simplified de-correlation model containing 25 nuisance parameters for reconstruction, plus parameters for isolation and identification.
@@ -80,21 +80,20 @@ Theoretical variations typically induce only minor changes in the shapes of obse
     To assess the uncertainty associated with the MC generator choice for the QCD-induced signal component, the nominal \textsc{Sherpa} sample is compared to an alternative sample generated with \textsc{Powheg}. The relative difference in the unfolded cross-section is taken as a systematic uncertainty.
     
     \item \textbf{Parton Shower:}     
-    Uncertainties in the parton showering are calculated within \textsc{Sherpa} by varying the shower recoil scheme. Further details are documented in \ref{llvv_partonshower}.
+    Uncertainties in the parton showering are calculated within \textsc{Sherpa} by varying the shower recoil scheme. Further details are documented in \cite{llvv_partonshower}.
 
     \item \textbf{$Z$+jets Background Normalization:}
     In the $ZZjj$ phase space, the $Z+\text{jets}$ background is estimated using MC simulation. A conservative normalization uncertainty of $50\%$ is assigned to this background to account for potential mismodelling in events with high jet multiplicity. This value is motivated by discrepancies observed in inclusive $Z+\geq 2$ jets control regions.
 \end{itemize}
 
-\subsection{Summary of Impact}
+\subsection{Summary of Impact of the Systematic Uncertainties}
 
-The experimental and theoretical uncertainties are incorporated into the analysis through variations in relevant nuisance parameters in simultaneous fits to data. The impact of these systematics on the measured fiducial cross-sections for the inclusive ($ZZ \to \ell\ell\nu\nu$) and VBS-enriched ($ZZjj \to \ell\ell\nu\nu jj$) phase spaces is summarized in Table~\ref{tab:uncertainties}.
+The experimental and theoretical uncertainties are incorporated into the analysis as variations of the corresponding nuisance parameters in a simultaneous fit to the data used to extract the cross-sections. The impact of these uncertainties on the measured fiducial cross-sections for the inclusive ($ZZ \to \ell\ell\nu\nu$) and VBS-enriched ($ZZjj \to \ell\ell\nu\nu jj$) phase spaces is summarized in Table~\ref{tab:uncertainties}.
 
 \begin{table}[hbtp]
-\caption{The breakdown of systematic uncertainties on the measured fiducial cross-sections $\sigma_{ZZ \to \ell \ell \nu\nu}$ and $\sigma_{ZZjj \to  \ell \ell \nu\nu jj}$. The values represent the relative uncertainty on the measured cross-section.}
 \centering
 \scriptsize
-\renewcommand{\arraystretch}{1.2}
+\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{lcc}
 \toprule
 \textbf{Systematic source} & \textbf{Impact on $\sigma_{ZZ \to \ell \ell \nu\nu}$} & \textbf{Impact on $\sigma_{ZZjj \to \ell \ell \nu\nu jj}$} \\
@@ -121,6 +120,7 @@ Statistics             & 3.6\%   & 14\%   \\
 \textbf{Total Uncertainty}            &  \textbf{4.8\%}  &  \textbf{18\%}   \\
 \bottomrule
 \end{tabular}
+\caption{\rm The breakdown of systematic uncertainties on the measured fiducial cross-sections $\sigma_{ZZ \to \ell \ell \nu\nu}$ and $\sigma_{ZZjj \to  \ell \ell \nu\nu jj}$. The values represent the relative uncertainty on the measured cross-section.}
 \label{tab:uncertainties}
 \end{table}
 

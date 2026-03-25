@@ -10,8 +10,8 @@ In the measurement of the \( ZZ \to \ell^+\ell^-\nu\bar{\nu} \) cross-section, s
     \begin{itemize}
         \item \textbf{Diboson processes:}
         \begin{itemize}
-            \item \( WW \to \ell\nu\ell\nu \): The two neutrinos contribute to the MET signature, faking the \( ZZ \to \ell\ell\nu\nu \) process.
-            \item \( WZ \to \ell\nu\ell\ell \): If one lepton from the \( Z \) is missing, this process could fake the signal.
+            \item \( WW \to \ell\nu\ell\nu \): The two neutrinos contribute to the $E_\text{T}^\text{miss}$ signature, faking the \( ZZ \to \ell\ell\nu\nu \) process.
+            \item \( WZ \to \ell\nu\ell\ell \): If one lepton from the \( Z \) is missing in detection, this process could fake the signal.
             \item \( ZZ \to \ell\ell\ell\ell \): If two leptons escape detection, this process contributes as a background.
         \end{itemize}
     \end{itemize}
@@ -23,84 +23,84 @@ In the measurement of the \( ZZ \to \ell^+\ell^-\nu\bar{\nu} \) cross-section, s
         \begin{itemize}
             % THIS IS THE LINE THAT HAD THE ERROR
             \item \( t\bar{t} \): If b-jets in the \( t\bar{t} \) final states are not tagged properly, it may fake the signal.
-            \item Single top \( (tW) \): Can contribute similarly.
+            \item Single top \( (tW) \): It can contribute similarly as the $t\bar t$ background.
         \end{itemize}
-        \item \textbf{Drell-Yan + jets} (\( Z \to \ell\ell \) + jets): Jet energy mismeasurement can lead to artificial MET.
-        \item \textbf{W + jets}: A single \( W \) boson decaying leptonically with jets can mimic the signal region due to fake MET.
+        \item \textbf{Drell-Yan + jets} (\( Z \to \ell\ell \) + jets): Jet energy mismeasurement can lead to artificial $E_\text{T}^\text{miss}$.
+        \item \textbf{W + jets}: A single \( W \) boson decaying leptonically with jets can mimic the signal region due to misidentification of a jet as a faked lepton.
     \end{itemize}
 
 \end{itemize}
 
-To achieve precise cross-section measurements, these backgrounds must be carefully estimated and subtracted using control regions. Considering the final states of the backgrounds, they can be categorized as following Control Regions(CR).
+To achieve precise cross-section measurements, these backgrounds must be carefully estimated using the background control regions. Considering the final states of the backgrounds, they can be categorized as following Control Regions(CRs).
 
 \begin{itemize}
-    \item \textbf{Non-Resonant Backgrounds ($e\mu$ flavor symmetry)}
-    These processes decay via two $W$ bosons (or $\tau$ leptons) rather than a $Z$ boson, resulting in uncorrelated lepton flavors. They are further categorized by $b$-jet multiplicity to separate Top processes from Diboson processes:
+    \item \textbf{Non-Resonant Backgrounds} (from $t\bar t, Wt, WW, \tau\tau$):\\
+    These processes decay via two $W$ bosons (or $\tau$ leptons) rather than a $Z$ boson, resulting in uncorrelated lepton flavors. They are further categorized by $b$-jet multiplicity to separate Top processes from $WW$ processes:
     \begin{itemize}
-        \item \textbf{0 $b$-jet Category (Diboson Enriched):}
+        \item \textbf{0 $b$-jet Category ($WW$ Enriched):}
         \begin{itemize}
-            \item $WW \to \ell\nu\ell\nu$: The dominant contribution in the 0 $b$-tag phase space. The neutrinos create genuine MET.
+            \item $WW \to \ell\nu\ell\nu$: The dominant contribution in the 0 $b$-tag phase space. The neutrinos create genuine $E_\text{T}^\text{miss}$.
             \item $t\bar{t}$ / Single Top ($Wt$): Top events contribute to this category only if the $b$-jets fail to be identified (tagging inefficiency) or fall outside detector acceptance.
         \end{itemize}
         \item \textbf{$\geq 1$ $b$-jet Category (Top Enriched):}
         \begin{itemize}
-             \item $t\bar{t} \to WbWb$ and $Wt$: The dominant contribution when at least one $b$-jet is identified. These events contain real MET from the $W$ decays.
+             \item $t\bar{t} \to WbWb$ and $Wt$: The dominant contribution when at least one $b$-jet is identified. These events contain real $E_\text{T}^\text{miss}$ from the $W$ decays.
         \end{itemize}
     \end{itemize}
 
     \item \textbf{3-Lepton Backgrounds ($WZ$)}
     \begin{itemize}
-        \item $WZ \to \ell\nu\ell\ell$: This is an irreducible background if one of the three leptons is lost (fails reconstruction) or falls outside the detector acceptance, mimicking the $2\ell + E_{miss}^{T}$ signature.
+        \item $WZ \to \ell\nu\ell\ell$: This is an irreducible background if one of the three leptons is lost (fails reconstruction) or falls outside the detector acceptance, mimicking the $2\ell + E_\text{T}^\text{miss}$ signature.
     \end{itemize}
     
-    \item \textbf{Z+Jets Backgrounds (Instrumental MET)}
+    \item \textbf{Z+Jets Backgrounds (Instrumental $E_\text{T}^\text{miss}$)}
     \begin{itemize}
-        \item \textbf{Drell-Yan + jets} ($Z/\gamma^* \to \ell\ell$ + jets): The dominant reducible background. It contains real leptons from the $Z$ boson, but the MET is artificial ("fake"), caused by jet energy mismeasurement or pile-up interactions.
+        \item \textbf{Drell-Yan + jets} ($Z/\gamma^* \to \ell\ell$ + jets): The dominant reducible background. It contains real leptons from the $Z$ boson, but the $E_\text{T}^\text{miss}$ is artificial ("fake"), caused by jet energy mismeasurement or pile-up interactions.
     \end{itemize}
    
     \item \textbf{Fake Lepton / Instrumental Backgrounds}
     \begin{itemize}
         \item \textbf{W + jets}: A process with one real lepton from a $W$ boson and a jet misidentified as a second lepton (fake lepton), creating a fake $2\ell$ signature.
-        \item \textbf{Fake MET}: Detector anomalies, cosmic-ray muons, or beam halo effects that produce large artificial missing energy.
+        \item \textbf{Fake $E_\text{T}^\text{miss}$}: Detector anomalies, cosmic-ray muons, or beam halo effects that produce large artificial missing energy.
     \end{itemize}
 \end{itemize}
 
-To accurately estimate these background contributions, control regions (CRs) are defined, each enriched with a dominant background category. A simultaneous fit is performed across all CRs and the signal region to constrain both the yields and shapes of these backgrounds. This fit takes event distributions as input and derives scale factors to adjust Monte Carlo (MC) predictions to match data in the CRs. The scaled MC predictions then provide the background estimates in the signal region, ensuring a reliable determination of the differential cross-section.
-
-To further refine background estimation, each control region is designed to enhance a specific type of background, allowing us to isolate and constrain individual contributions effectively. The simultaneous fit across all CRs and the signal region ensures a consistent estimation of background yields and shapes. By utilizing event distributions, this fit derives scale factors that adjust MC predictions to align with data in all CRs. These scaled MC predictions then serve as the background estimates in the signal region, providing a foundation for an accurate differential cross-section measurement.
+To accurately estimate background contributions, dedicated control regions (CRs) are defined, each enriched in a specific background process. A simultaneous fit is performed across all CRs and the signal region to constrain both the yields and shapes of these backgrounds consistently. The fit uses event distributions as inputs and derives scale factors that adjust the MC predictions to match the data in the CRs. These scaled MC predictions are then extrapolated to the signal region to provide reliable background estimates, forming the basis for the cross-section measurement.
 
 The following sections describe the estimation strategy for each control region in detail.
 
-
-
-\subsection{Non-Resonant with/without 1 b-jet)}
+\subsection{Non-Resonant background CR (with/without b-jet)}
 \label{sec:bkg_emuCR}
 
-Considering the high percentage of the non-resonant backgrounds, it would be better if Control Regions are well defined to control the backgrounds from MC estimations. Therefore, 2 Control Regions are defined to further estimate the yields from those processes. 
+Considering the high percentage of the non-resonant backgrounds, it would be better if the control regions are well defined to control the backgrounds from MC estimations. Therefore, 2 Control Regions are defined to further estimate the yields from those processes. 
 
-One is the non-resonant background, whcih requires Opposite Flavor Opposite Sign(OFOS) leptons in the final state. For example, in the \( WW \to \ell\nu\ell\nu \) process, the observable final state could be either Same Flavor Opposite Sign(SFOS) leptons, which fakes the true signals, or Opposite Flavor Opposite Sign(OFOS) leptons. Considering that there is an equal chance for W boson decaying to electron or muon or tau, the yield ratio between SFOS and OFOS final states would be 1:2. Since the OFOS events are well seperated from the SFOS, this would be a good approach to estimate the background yields in Signal Region(SR) using the CR events. 
+One is the non-resonant background, which requires Opposite Flavor Opposite Sign(OFOS) leptons in the final state. For example, in the \( WW \to \ell\nu\ell\nu \) process, the observable final state could be either Same Flavor Opposite Sign(SFOS) leptons, which fakes the true signals, or Opposite Flavor Opposite Sign(OFOS) leptons. Considering that there is an equal chance for the W boson to decay to an electron, muon, or tau, the yield ratio between SFOS and OFOS final states would be 1:2. Since the OFOS events are well separated from the SFOS, this would be a good approach to estimate the background yields in the Signal Region(SR) using the CR events. 
 
-However, since the final state from top quark pair or single top decay contains 1 or 2 b jets, the observed final state could contain 1 or more b jets. Therefore define a CR with 1 b jet to further estimate the yield from the top backgrounds. This non-resonant with a b-jet CR defination is the same as the common non-resonant CR, except the b-jet number requirement. 
+However, since the final state from top quark pair or single top decay contains 1 or 2 b jets, the observed final state could contain 1 or more b jets. Therefore, define a CR with 1 b jet to further estimate the yield from the top backgrounds. This non-resonant with a b-jet CR definition is the same as the common non-resonant CR, except for the b-jet number requirement. 
 
-Since this is aimming to estimate the yields in the SR, the non-resonant background definition is the same as the SR, except requiring the OFOS events. the detailed definations of non-resonant with/without 1 b-jet are shown in the following table. 
+Since this aims to estimate the yields in the SR, the non-resonant background definition is the same as the SR, except requiring the OFOS events. The detailed definitions of non-resonant with/without 1 b-jet are shown in Table~\ref{tab:em_definition}. 
 
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|>{\centering\arraybackslash}p{4.5cm}|>{\centering\arraybackslash}p{4.5cm}|}
+\hline
+\multicolumn{2}{|c|}{Inclusive ZZ phase space: $t\bar{t}$ / WW $e\mu$ Control Region cuts} \\
+\hline
+\multicolumn{2}{|c|}{$80 < m_{\ell\ell} < 100$ GeV} \\
+\hline\multicolumn{2}{|c|}{$E_\text{T}^\text{miss} > 70$ GeV} \\
+\hline\multicolumn{2}{|c|}{$\Delta R_{\ell\ell} < 2$} \\
+\hline\multicolumn{2}{|c|}{$\Delta\phi(\vec{E}_\text{T}^\text{miss}, \vec{p}_\text{T}^{e\mu}) > 2.2$} \\
+\hline\multicolumn{2}{|c|}{$E_\text{T}^\text{miss}/H_\text{T} > 0.3$} \\
+\hline
+b-jet veto (WW) & $n_{b\text{jet}} > 0$ (top) \\
+\hline
+\end{tabular}
+\caption{\rm  Definition of $t\bar{t}$ / WW $e\mu$ Control Region in inclusive $ZZ$ measurement phase-space.}
+\label{tab:em_definition}
+\end{table}
 
-
-This is a table TBA
-including the yields from different backgrounds. 
-
-
-
-
-
-
-
-
-
-
-
-
-
+%{\color{red}This is a table TBA including the yields from different backgrounds.} 
 
 \subsection{3-Lepton Control Region (3l CR)}
 \label{sec:bkg_3lCR}
@@ -113,9 +113,9 @@ The selection criteria for the 3l CR are summarized in Table~\ref{table:3lCR_def
 
 Apart from the lepton multiplicity, the kinematic cuts are chosen to closely mirror those of the Signal Region. This strategy ensures that the control region probes a phase space with similar kinematic characteristics to the signal region, thereby minimizing systematic uncertainties associated with extrapolating the normalization factors (scaling factors) from the CR to the SR. However, certain cuts are kept slightly looser than in the SR to retain higher statistics, reducing the statistical uncertainty on the derived scaling factors.
 
-Specifically, the selection requires an Opposite Sign Same Flavor (OSSF) lepton pair consistent with the $Z$ boson mass ($80 < M_{\ell\ell} < 100$ GeV). To select a topology consistent with the high-$p_T$ $Z$ boson signal, a large missing transverse energy cut ($E_{miss}^T > 70$ GeV) and a boost requirement on the leptons ($\Delta R_{\ell\ell} < 2$) are applied.
+Specifically, the selection requires an Opposite Sign Same Flavor (OSSF) lepton pair consistent with the $Z$ boson mass ($80 < M_{\ell\ell} < 100$ GeV). To select a topology consistent with the high-$p_T$ $Z$ boson signal, a large missing transverse energy cut ($E_\text{T}^\text{miss} > 70$ GeV) and a boost requirement on the leptons ($\Delta R_{\ell\ell} < 2$) are applied.
 
-Furthermore, a transverse mass cut is applied to the third lepton and the MET, denoted as $m_{TW} > 30$ GeV. This cut is introduced specifically to suppress the contribution from $Z$+jets events where a jet is misidentified as a lepton. By requiring a non-zero $m_{TW}$, we reduce the contamination from non-prompt leptons, ensuring high purity of the $WZ$ process.
+Furthermore, a transverse mass cut is applied to the third lepton and the $E_\text{T}^\text{miss}$, denoted as $m_{TW} > 30$ GeV. This cut is introduced specifically to suppress the contribution from $Z$+jets events where a jet is misidentified as a lepton. By requiring a non-zero $m_{TW}$, we reduce the contamination from non-prompt leptons, ensuring high purity of the $WZ$ process.
 
 \begin{table}[h!]
 \centering
@@ -127,20 +127,20 @@ $n_{leptons}$ & $> 2$ \\
 \hline 
 $M_{\ell\ell}$ & $80 < M_{\ell\ell} < 100$ GeV \\
 \hline 
-$E_{miss}^T$ & $> 70$ GeV \\
+$E_\text{T}^\text{miss}$ & $> 70$ GeV \\
 \hline 
 $\Delta R_{\ell\ell}$ & $< 2$ \\ 
 \hline 
-$\Delta \varphi(E_{miss}^T, Z)$ & $> 2.2 $ \\
+$\Delta \varphi(E_\text{T}^\text{miss}, Z)$ & $> 2.2 $ \\
 \hline 
-$E_{miss}^T / H_T$ & $> 0.3$ \\
+$E_\text{T}^\text{miss} / H_T$ & $> 0.3$ \\
 \hline 
 Heavy Flavor & b-jet veto \\
 \hline 
 $m_{TW}$ & $> 30$ GeV \\ 
 \hline
 \end{tabular}
-\caption{Definition of the inclusive 3-lepton Control Region (3l CR). The kinematic selections mimic the Signal Region to ensure phase-space compatibility, while the lepton multiplicity ensures orthogonality.}
+\caption{\rm Definition of the inclusive 3-lepton Control Region (3l CR). The kinematic selections mimic the Signal Region to ensure phase-space compatibility, while the lepton multiplicity ensures orthogonality.}
 \label{table:3lCR_definition_sim}
 \end{table}
 \FloatBarrier
@@ -175,55 +175,46 @@ $\frac{\text{Data-nonWZ}}{\text{WZ}}$ & 1.03 $\pm$ 0.03 & 0.99 $\pm$ 0.05 & 1.03
 Signal/WZ (\%) & 0.12 $\pm$ 0 & 0.02 $\pm$ 0 & 0.28 $\pm$ 0 & 0.19 $\pm$ 0 & -0.0 $\pm$ 0 \\ \hline
 \end{tabular}%
 }
-\caption{Pre-fit event yields in the inclusive 3l Control Region. The "Rare" category includes $4\ell$, $\ell\ell qq$, $VVV$, $W$+jets, and $Z\tau\tau$. The region is highly pure in $WZ$ events.}
+\caption{\rm Pre-fit event yields in the inclusive 3l Control Region. The "Rare" category includes $4\ell$, $\ell\ell qq$, $VVV$, $W$+jets, and $Z\tau\tau$. The region is highly pure in $WZ$ events.}
 \label{table:3lCR_unscaled}
 \end{table}
 \FloatBarrier
 
 
-
-
-
-
-
-
-
-
-
-
 \subsection{Z+jets Control Region (Z+jets CR)}
 \label{sec:bkg_ZjetsCR}
 
-The estimation of the $Z$+jets background presents a unique challenge in the $ZZ \to \ell\ell\nu\nu$ analysis. Unlike the irreducible diboson backgrounds, the missing transverse energy in $Z$+jets events is instrumental ("fake"), arising primarily from jet energy mismeasurement, pile-up interactions, and detector resolution effects rather than from genuine neutrinos. Consequently, the modeling of $E_{miss}^T$ in Monte Carlo simulations is highly sensitive to the accuracy of the detector response, jet energy corrections, and track reconstruction.
+The estimation of the $Z$+jets background presents a unique challenge in the $ZZ \to \ell\ell\nu\nu$ analysis. Unlike the irreducible diboson backgrounds, the missing transverse energy in $Z$+jets events is instrumental ("fake"), arising primarily from jet energy mismeasurement, pile-up interactions, and detector resolution effects rather than from genuine neutrinos. Consequently, the modeling of $E_\text{T}^\text{miss}$ in Monte Carlo simulations is highly sensitive to the accuracy of the detector response, jet energy corrections, and track reconstruction.
 
 \subsubsection{Definition and Event Selection}
 
 To constrain this background using data, a Control Region must be defined that is rich in $Z$+jets events while maintaining orthogonality to the Signal Region. This creates a tension in the selection logic:
 \begin{itemize}
-    \item \textbf{Similarity:} The CR should probe high $E_{miss}^T$ and high $E_{miss}^T/H_T$ values to resemble the kinematic phase space of the Signal Region.
+    \item \textbf{Similarity:} The CR should probe high $E_\text{T}^\text{miss}$ and high $E_\text{T}^\text{miss}/H_T$ values to resemble the kinematic phase space of the Signal Region.
     \item \textbf{Purity:} The CR must have minimal contamination from true $ZZ \to 2\ell2\nu$ signal events to ensure independent background estimation.
     \item \textbf{Orthogonality:} The specific cut values must ensure no overlap with the Signal Region.
 \end{itemize}
 
-To satisfy these requirements, the $Z$+jets CR is defined using a two-dimensional selection in the ($E_{miss}^T$, $E_{miss}^T/H_T$) plane, selecting events that fall just outside the signal boundaries. The specific selection logic is:
+To satisfy these requirements, the $Z$+jets CR is defined using a two-dimensional selection in the ($E_\text{T}^\text{miss}$, $E_\text{T}^\text{miss}/H_T$) plane, selecting events that fall just outside the signal boundaries. The specific selection logic is:
 \begin{equation}
-\left( 70 < E_{miss}^T < 80 \text{ GeV} \land \frac{E_{miss}^T}{H_T} > 0.3 \right) 
+\small
+\left( 70 < E_\text{T}^\text{miss} < 80 \text{ GeV} \land \frac{E_\text{T}^\text{miss}}{H_T} > 0.3 \right) 
 \lor 
-\left( E_{miss}^T > 80 \text{ GeV} \land 0.3 < \frac{E_{miss}^T}{H_T} < 0.45 \right)
+\left( E_\text{T}^\text{miss} > 80 \text{ GeV} \land 0.3 < \frac{E_\text{T}^\text{miss}}{H_T} < 0.45 \right)
 \end{equation}
 
-This definition captures the tail of the $Z$+jets distribution that is kinematically closest to the signal. The geometric relationship between the Signal Region and the $Z$+jets Control Region in this phase space is illustrated in Figure~\ref{fig:Zjets_Control_Region}.
+This definition captures the tail of the $Z$+jets distribution that is kinematically closest to the signal. The geo$E_\text{T}^\text{miss}$ric relationship between the Signal Region and the $Z$+jets Control Region in this phase space is illustrated in Figure~\ref{fig:Zjets_Control_Region}.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[width=0.6\textwidth]{figures/ch5-llvv/Zjets_Control_Region.png}
- \caption{Illustration of the inclusive phase-space in the ($E_{miss}^T$, $E_{miss}^T/H_T$) plane. The $Z$+jets Control Region is defined to be adjacent to the Signal Region to constrain the fake MET tail while maintaining orthogonality.}
+ \caption{Illustration of the inclusive phase-space in the ($E_\text{T}^\text{miss}$, $E_\text{T}^\text{miss}/H_T$) plane. The $Z$+jets Control Region is defined to be adjacent to the Signal Region to constrain the fake $E_\text{T}^\text{miss}$ tail while maintaining orthogonality.}
  \label{fig:Zjets_Control_Region}
 \end{figure}
 
 
 
-All other kinematic selections, such as the dilepton mass window ($80 < M_{\ell\ell} < 100$ GeV), lepton separation ($\Delta R_{\ell\ell} < 1.8$), and azimuthal separation ($\Delta \varphi(E_{miss}^T, Z) > 2.2$), are kept identical to the Signal Region to minimize extrapolation uncertainties. A summary of the cuts is provided in Table~\ref{table:Zjets_definition}.
+All other kinematic selections, such as the dilepton mass window ($80 < M_{\ell\ell} < 100$ GeV), lepton separation ($\Delta R_{\ell\ell} < 1.8$), and azimuthal separation ($\Delta \varphi(E_\text{T}^\text{miss}, Z) > 2.2$), are kept identical to the Signal Region to minimize extrapolation uncertainties. A summary of the cuts is provided in Table~\ref{table:Zjets_definition}.
 
 
 \begin{table}[htbp]
@@ -234,24 +225,24 @@ All other kinematic selections, such as the dilepton mass window ($80 < M_{\ell\
 \hline 
 Dilepton Mass & $80 < M_{\ell\ell} < 100$ GeV \\
 \hline 
-\multirow{2}{*}{MET / Significance} & ($70 < E_{miss}^T < 80$ GeV \textbf{and} $E_{miss}^T / H_T > 0.3$) \\
-& \textbf{OR} ($E_{miss}^T > 80$ GeV \textbf{and} $0.3 < E_{miss}^T / H_T < 0.45$) \\
+\multirow{2}{*}{$E_\text{T}^\text{miss}$ / Significance} & ($70 < E_\text{T}^\text{miss} < 80$ GeV \textbf{and} $E_\text{T}^\text{miss} / H_\text{T} > 0.3$) \\
+& \textbf{OR} ($E_\text{T}^\text{miss} > 80$ GeV \textbf{and} $0.3 < E_\text{T}^\text{miss} / H_T < 0.45$) \\
 \hline 
 Lepton separation & $\Delta R_{\ell\ell} < 1.8$ \\ 
 \hline 
-Azimuthal separation & $\Delta \varphi(E_{miss}^T, Z) > 2.2 $ \\
+Azimuthal separation & $\Delta \varphi(E_\text{T}^\text{miss}, Z) > 2.2 $ \\
 \hline 
 Heavy Flavor & b-jet veto \\
 \hline
 \end{tabular}
-\caption{Definition of the inclusive $Z$+jets Control Region. The region targets the phase space dominated by instrumental MET while remaining orthogonal to the signal region.}
+\caption{\rm Definition of the inclusive $Z$+jets Control Region. The region targets the phase space dominated by instrumental $E_\text{T}^\text{miss}$ while remaining orthogonal to the signal region.}
 \label{table:Zjets_definition}
 \end{table}
 \FloatBarrier
 
 \subsubsection{Categorization by Jet Multiplicity}
 
-Studies of the $Z$+jets modeling revealed significant shape differences between Data and Monte Carlo in key distributions used for unfolding. Since the fake MET originates largely from jet mismeasurements, the kinematics of the event are strongly correlated with the number of hadronic jets. 
+Studies of the $Z$+jets modeling revealed significant shape differences between Data and Monte Carlo in key distributions used for unfolding. Since the fake $E_\text{T}^\text{miss}$ originates largely from jet mismeasurements, the kinematics of the event are strongly correlated with the number of hadronic jets. 
 
 It was determined that a single global scaling factor was insufficient to correct the $Z$+jets prediction across the entire phase space. Therefore, the control region is split into three sub-regions based on jet multiplicity ($n_{jets}$):
 \begin{itemize}
@@ -289,7 +280,7 @@ $\frac{\text{Data-OtherBkg}}{\text{Zjets}}$ & 1.21 $\pm$ 0.03 & 1.27 $\pm$ 0.05 
 Signal/Zjets (\%) & 3.99 $\pm$ 0 & 4.01 $\pm$ 0 & 3.98 $\pm$ 0 \\ \hline
 \end{tabular}%
 }
-\caption{Pre-fit event yields in the inclusive $Z$+jets Control Region. The last row indicates the ratio of the Signal expectation to the dominant $Z$+jets background, confirming the region is background-enriched.}
+\caption{\rm Pre-fit event yields in the inclusive $Z$+jets Control Region. The last row indicates the ratio of the Signal expectation to the dominant $Z$+jets background, confirming the region is background-enriched.}
 \label{table:Zjets_unscaled}
 \end{table}
 \FloatBarrier
@@ -303,12 +294,12 @@ Signal/Zjets (\%) & 3.99 $\pm$ 0 & 4.01 $\pm$ 0 & 3.98 $\pm$ 0 \\ \hline
 \subsection{Minor Backgrounds}
 \label{sec:bkg_minor}
 
-Several background processes contribute to the signal region at a subleading level (typically $< 1\%$ of the total yield). Due to their small cross-sections or low acceptance in the analysis phase space, it is not feasible to define statistically significant dedicated control regions for these processes. Instead, their contributions are estimated purely from Monte Carlo simulation normalized to their theoretical cross-sections.
+Several background processes contribute to the signal region at a subleading level (typically $< 1\%$ of the total yield). Due to their small cross-sections or low acceptance in the analysis phase space, it is not feasible to define statistically significant dedicated control regions for these processes. Instead, their contributions are estimated purely from MC simulations normalized to their theoretical cross-sections.
 
 These minor backgrounds include:
 
 \begin{itemize}
-    \item \textbf{$ZZ \to 4\ell$:} This process can enter the signal region if two leptons are lost (e.g., falling outside detector acceptance or failing identification). While physically similar to the signal, the requirement of large $E_{miss}^T$ strongly suppresses this contribution.
+    \item \textbf{$ZZ \to 4\ell$:} This process can enter the signal region if two leptons are lost (e.g., falling outside detector acceptance or failing identification). While physically similar to the signal, the requirement of large $E_\text{T}^\text{miss}$ strongly suppresses this contribution.
     
     \item \textbf{Triboson Production ($VVV$):} Processes such as $WWW$, $WWZ$, and $WZZ$ have very small production cross-sections but can produce high lepton multiplicities and missing energy.
     
@@ -318,6 +309,86 @@ These minor backgrounds include:
 \end{itemize}
 
 Since these backgrounds are not constrained by data in the simultaneous fit, conservative systematic uncertainties are assigned to their theoretical cross-sections (typically on the order of $20\%$ to $30\%$) to account for potential modeling discrepancies.
+
+\subsection{Summary of selected number of events from SR and CRs}
+\label{sec:summary-table}
+
+Data and pre-fit MC yields for the inclusive $ZZ$ phase space are presented in Table~\ref{tab:prefitYieldsInclu}. The predicted signal-to-background ratio in the signal region (SR) is approximately 1.5. The targeted background control regions exhibit high purity: for example, the top-quark purity in the non-resonant CR with a $b$-jet requirement is close to 100\%, while the $WZ$ purity in the $WZ$ CR exceeds 90\%.
+
+
+\begin{table}[htbp]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{l
+        S[table-format=4.3(4)]
+        S[table-format=4.3(4)]
+        S[table-format=4.3(4)]
+        S[table-format=4.3(4)]
+        S[table-format=4.3(4)]
+        S[table-format=4.3(4)]
+        S[table-format=4.3(4)]}
+       \hline
+Process & \textbf{SR} & \textbf{WZ CR} & \textbf{WW CR} & \textbf{Top CR}
+& \textbf{Z+0j CR} & \textbf{Z+1j CR} & \textbf{Z+$\geq$2j CR} \\
+       \hline
+        $ZZ$   signal                & 1650(36)     & 2.6(0.7)     & 0.58(0.11)   & 0.005(0.011) & 100(12)      & 150(20)       & 160(34)       \\
+        \hline \hline
+        Background &  & & & & & & \\
+        \hline
+        $WZ$                   & 740(43)      & 2100(140)    & 22(2)        & 0.9(0.3)     & 80(12)       & 250(28)       & 310(60)       \\
+        $Z$+0j                 & 80(34)       & 40(17)       & 0.6(1.0)     & 0            & 1700(670)    & 0             & 0             \\
+        $Z$+1j                 & 80(40)       & 40(14)       & 2.2(0.7)     & 0.12(0.08)   & 0            & 3800(1460)    & 0             \\
+        $Z$+$\geq$2j           & 13(7)        & 20(12)       & 0.4(0.6)     & 0.15(0.16)   & 0            & 0             & 4700(1700)    \\
+        $WW$                   & 36.2(1.9)    & 0.65(0.12)   & 672(41)      & 13.9(1.6)    & 48(6)        & 46(5)         & 18.5(1.9)     \\
+        Top                    & 114(20)      & 57(8)        & 1850(290)    & 5700(710)    & 92(25)       & 200(39)       & 250(43)       \\
+        Other                  & 48(4)        & 91(7)        & 46(13)       & 3.4(1.3)     & 12(3)        & 44(10)        & 48(10)        \\
+       \hline
+        Total prediction       & 2760(120)    & 2340(150)    & 2590(310)    & 5720(710)    & 2050(700)    & 4510(1500)    & 5470(1700)    \\
+        \hline \hline
+        {\bf Data}                   & 2917         & 2409         & 2903         & 5736         & 2691         & 5733          & 5769          \\
+       \hline
+    \end{tabular}}
+    \caption{\rm Data and pre-fit MC yields for the inclusive $ZZ$ phase-space. The ``Other'' category includes events from the processes $ZZ(\rightarrow 4\ell$, $2\ell 2q)$, $VVV~(V=W,Z)$, $Wj$, $Z(\rightarrow \tau\tau)$, and $WH$. The selected number of data events in the SR and the CRs is also provided. The numbers shown in the parentheses are the MC uncertainties.}
+    \label{tab:prefitYieldsInclu}    
+\end{table}
+
+Data and pre-fit MC yields for the VBS-like $ZZjj$ phase space are presented in Table~\ref{tab:prefitYieldsZZjj}. The predicted signal-to-background ratio in the signal region (SR) is approximately 1.45. The overall top+WW purity in the non-reasonce CR is 97\%, while the $WZ$ purity in the $WZ$ CR is 88\%.
+
+\newcommand{\YieldTableSize}{\small} % or {\fontsize{9}{11}\selectfont}
+
+\begin{table}[htbp]
+    \centering
+    \scriptsize
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{lccc}
+%        S[table-format=3.3(3)]
+%        S[table-format=3.3(3)]
+%        S[table-format=3.3(3)]}
+       \hline
+Process & \textbf{SR} & \textbf{WZ CR} & \textbf{WW and Top CR} \\
+       \hline
+        $ZZ$  signal       & 108(12)   & 1.0(0.3)   & 0.006(0.004) \\
+        \hline
+        \hline
+        Background &  & &  \\
+        \hline        
+        $WZ$         & 62(12)    & 280(60)    & 4.8(1.0)     \\
+        $Z$+jets     & 2.4(1.2)  & 15(8)      & 0.4(0.2)     \\
+        $WW$ and Top     & 7.2(1.5)  & 8.2(1.8)   & 620(90)      \\
+        Other        & 3.0(0.7)  & 12(3)      & 12(14)       \\
+       \hline
+        Total prediction      & 183(21)   & 320(60)    & 640(100)     \\
+        \hline \hline
+       {\bf Data}        & 184       & 317        & 678          \\
+       \hline
+    \end{tabular}
+    \caption{\rm Data and pre-fit MC yields for the $ZZjj$ phase-space. The ``Other'' category includes events from the processes of $ZZ(\rightarrow 4\ell$, $2\ell 2q), VVV (V=W, Z), Wj, Z(\rightarrow \tau\tau), \textrm{and}~ WH$ production. The selected number of data events in the SR and the CRs are also provided in the table. The numbers shown in the parentheses are the MC uncertainties.}
+    \label{tab:prefitYieldsZZjj}
+\end{table}
+
+%=========================== plots==================================
+
 
 
 

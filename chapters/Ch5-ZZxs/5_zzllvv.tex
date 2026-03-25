@@ -4,33 +4,48 @@
 %\label{chap:llvv_analysis}
 
 
-\section{Physics motivation}
+\section{Overview}
 \label{sec:ZZ_intro}
 
-The study of diboson production at the Large Hadron Collider (LHC) is a cornerstone of the experimental program to test the Standard Model (SM) of particle physics. Among these processes, the production of $Z$ boson pairs ($ZZ$) is of particular importance. It provides a direct probe of the electroweak gauge structure and the non-Abelian self-interactions of the gauge bosons. Precise measurements of the $ZZ$ production cross-section constitute a stringent test of the SM predictions at the highest available energies and serve as a sensitive probe for new physics phenomena that may manifest as anomalous Triple Gauge Couplings (aTGCs).
+The study of diboson production at the Large Hadron Collider constitutes a central component of the particle physics program, providing stringent tests of the Standard Model. It offers a direct probe of the electroweak gauge structure, in particular the non-Abelian self-interactions among gauge bosons, as described in Section~\ref{boson-interactions}.
+%
+Among diboson processes, the production of $Z$-boson pairs ($ZZ$) is of particular interest. At tree level, interactions involving only neutral gauge bosons are absent in the SM, making this channel especially sensitive to potential contributions from physics beyond the Standard Model (BSM), where such interactions can arise.
+%
+Precise measurements of the $ZZ$ production cross section therefore provide rigorous tests of SM predictions at the highest accessible energies, while also offering strong sensitivity to new physics effects, such as anomalous triple gauge couplings (aTGCs).
 
-This chapter presents a measurement of the $ZZ$ production cross-section in proton-proton collisions at a center-of-mass energy of $\sqrt{s} = 13$ TeV, using the full Run 2 dataset collected by the ATLAS detector, corresponding to an integrated luminosity of $140~\text{fb}^{-1}$. The analysis focuses on the final state where one $Z$ boson decays into a pair of charged leptons ($\ell^+\ell^-$, where $\ell = e, \mu$) and the other decays into a pair of neutrinos ($\nu\bar{\nu}$).
+The $ZZ$ production cross sections have been extensively measured by the ATLAS Collaboration~\cite{ATLAS:2013zz,ATLAS:2017zz,ATLAS:2018zz,STDM-2017-03,STDM-2022-17,ATLAS:2024zz_13p6} 
+and the CMS Collaboration~\cite{CMS-SMP-12-007, CMS-SMP-13-005, CMS-SMP-16-001, CMS-SMP-19-001} 
+using data collected at center-of-mass energies of $\sqrt{s} = 7$, $8$, $13$, and $13.6$~TeV. These measurements exploit two complementary final states arising from $Z$ boson pair decays: the fully leptonic channel with four charged leptons ($4\ell$) and the semi-invisible channel with two charged leptons and two neutrinos ($\ell\ell\nu\nu$).
 
-\subsection{Motivation for the $\ell\ell\nu\nu$ Channel}
+%\subsection{Motivation for the $\ell\ell\nu\nu$ Channel}
+While the “golden channel” $ZZ \to 4\ell$ provides a fully reconstructed final state with exceptionally high signal purity, it is limited by its small branching ratio. In contrast, the branching fraction of the $Z$ boson to neutrinos ($\mathcal{B}(Z \to \nu\bar{\nu}) \approx 20\%$) is about six times larger than that to charged leptons ($\mathcal{B}(Z \to \ell^+\ell^-) \approx 3.3\%$ per lepton flavor).
+%
+As a result, the $ZZ \to \ell^+\ell^-\nu\bar\nu$ channel benefits from a substantially higher event rate, leading to increased statistical precision in the analysis.
 
-While the "golden channel" $ZZ \to 4\ell$ offers a fully reconstructed final state with very high signal purity, it suffers from a small branching ratio. The branching fraction of the $Z$ boson to neutrinos ($\mathcal{B}(Z \to \nu\bar{\nu}) \approx 20\%$) is approximately six times larger than that to charged leptons ($\mathcal{B}(Z \to \ell^+\ell^-) \approx 3.3\%$). Consequently, the $ZZ \to \ell\ell\nu\nu$ channel benefits from significantly higher statistics.
+This statistical advantage is particularly important in the high transverse momentum ($p_{\mathrm{T}}$) regime. Potential deviations from the Standard Model, arising from effective field theory (EFT) operators or new heavy resonances, are expected to become more pronounced at high energies. In this context, the $\ell\ell\nu\nu$ channel offers enhanced sensitivity to anomalous triple gauge couplings (aTGCs) compared to the $4\ell$ channel.
 
-This statistical advantage is particularly crucial in the high transverse momentum ($p_{\mathrm{T}}$) regime. Since deviations from the SM due to effective field theory (EFT) operators or new heavy resonances are expected to be enhanced at high energies, the $\ell\ell\nu\nu$ channel provides superior sensitivity for constraining aTGCs compared to the $4\ell$ channel. Furthermore, understanding the $ZZ \to \ell\ell\nu\nu$ process is essential as it constitutes a major irreducible background for searches for Dark Matter (Mono-$Z$) and high-mass Higgs boson decays.
+Moreover, a precise understanding of the $ZZ \to \ell^+\ell^-\nu\bar\nu$ process is essential, as it constitutes a major irreducible background in searches for dark matter in the mono-$Z$ signature and for high-mass Higgs boson decays to $ZZ$ in the same final state.
 
-\subsection{Analysis Strategy and Outline}
+This chapter presents the detailed analysis of the most recent measurement of $ZZ$ production in proton–proton collisions at a center-of-mass energy of $\sqrt{s} = 13$~TeV, based on the full Run~2 dataset collected by the ATLAS detector, corresponding to an integrated luminosity of $140~\text{fb}^{-1}$~\cite{ATLAS:2025_ZZ_llvv}, improving upon the previous measurement with 36~fb$^{-1}$, which achieved a precision of 7.0\%~\cite{ATLAS:2019zz_llvv}. The analysis focuses on the $ZZ \rightarrow \ell^+\ell^- \nu \bar{\nu}$ final state, in which one $Z$ boson decays to a pair of charged leptons ($\ell = e, \mu$) and the other to neutrinos, yielding a distinctive signature of a dilepton pair from the $Z$ boson decay accompanied by significant missing transverse momentum, $\ell^+\ell^- + E_\text{T}^\text{miss}$. This work further includes differential cross-section measurements for an extended set of kinematic observables. Searches for new physics are presented as constraints on anomalous gauge boson self-interactions, derived using both the effective vertex function formalism~\cite{Hagiwara:1987} and the Effective Field Theory framework~\cite{Degrande:2013}.
 
-The measurement is performed in a fiducial phase space defined to match the experimental acceptance. The analysis relies on identifying events with a dilepton pair consistent with a $Z$ boson mass and significant missing transverse momentum ($E_{\mathrm{T}}^{\text{miss}}$) arising from the neutrinos.
+\section{Analysis Strategy and Outline}
 
-The structure of this chapter is as follows:
+The measurement is performed within a fiducial phase space defined to closely match the experimental acceptance. The analysis selects events containing a dilepton pair consistent with the $Z$ boson mass, accompanied by significant missing transverse momentum ($E_{\mathrm{T}}^{\text{miss}}$) originating from the neutrinos.
+
+Several background processes can mimic the signal signature, including top-quark production, other diboson processes ($WW$, $WZ$), and $Z$+jets events. These contributions are estimated using dedicated control regions enriched in the respective background processes.
+
+The final results are obtained from a simultaneous fit to the data in the signal region (SR) and the control regions (CRs), compared to predictions from MC simulations.
+
+The presentation of the analysis is structured as follows:
 \begin{itemize}
-    \item Section~\ref{sec:llvv_samples} describes the data and Monte Carlo (MC) simulation samples used to model the signal and background processes.
+    \item Section~\ref{sec:llvv_samples} describes the data and MC simulation samples used to model the signal and background processes.
     \item Section~\ref{sec:llvv_selection} details the reconstruction of physics objects and the selection criteria defining the Signal Regions (SR).
-    \item Section~\ref{sec:llvv_background} discusses the estimation of major backgrounds, particularly the dominant $WZ$ and non-resonant backgrounds, using data-driven control regions.
+    \item Section~\ref{sec:llvv_background} discusses the estimation of major backgrounds, particularly the dominant $WZ$ and non-resonant (top and $WW$) backgrounds, using data-driven control regions.
     \item Section~\ref{sec:llvv_systematics} outlines the sources of experimental and theoretical systematic uncertainties.
     \item Section~\ref{sec:llvv_unfolding} presents the unfolding procedure used to correct the detector-level distributions to the particle level.
     \item Section~\ref{sec:llvv_dnn} describes the optimization strategies, including the use of Deep Neural Networks (DNN), to enhance the separation between signal and background.
     \item Section~\ref{sec:llvv_results} reports the measured integrated and differential cross-sections for the inclusive $ZZ$ production and the constraints on aTGCs.
-    \item Finally, Section~\ref{sec:llvvjj} extends the analysis to the electroweak production of $ZZ$ in association with two jets ($ZZjj$), targeting the Vector Boson Scattering (VBS) topology and Anomalous Quartic Gauge Couplings (aQGCs).
+    \item Finally, Section~\ref{sec:llvvjj} extends the analysis to the electroweak production of $ZZ$ in association with two jets ($ZZjj$), targeting the Vector Boson Scattering (VBS) topology and anomalous Quartic Gauge Couplings (aQGCs).
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{chapters/Ch5-ZZxs/5_1_samples}
