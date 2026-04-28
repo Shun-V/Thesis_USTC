@@ -124,3 +124,120 @@ Statistics             & 3.6\%   & 14\%   \\
 \label{tab:uncertainties}
 \end{table}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fiducial and Total Cross-section Measurements}
+
+For each SR, a signal strength $\mu_\text{S}^\text{SR}$, defined by $\mu_\mathrm{s}^{\mathrm{SR}} = \frac{N^{\mathrm{SR}}_{\mathrm{data}}}{N^{\mathrm{SR}}_{\mathrm{MC}}}$ (where MC predictions come from \textsc{SHERPA} and \textsc{MadGraph5}),
+and a set of background normalisation factors is obtained by fitting the distributions of $ \Delta\phi(\vec {E}_\text{T}^\text{miss}, Z)$ of the selected events from MC simulations to data in SRs and CRs. The postfit distributions of the $ \Delta\phi(\vec {E}_\text{T}^\text{miss}, Z)$ in the RSs and CRs are shown in Figure~\ref{fig:postfit_observed_ZZCR}.
+%
+%The signal strength parameters, denoted as $\mu_\mathrm{s}^{\mathrm{ZZ}}$ and $\mu_\mathrm{s}^{\mathrm{ZZjj}}$, are defined as the ratio of the observed to predicted number of signal events in the \(ZZ\) and \(ZZjj\) SRs, respectively: $\mu_\mathrm{s}^{\mathrm{SR}} = \frac{N^{\mathrm{SR}}_{\mathrm{data}}}{N^{\mathrm{SR}}_{\mathrm{MC}}}$. The predicted number of events comes from the signal simulations by \textsc{SHERPA} and \textsc{MadGraph5}. %described in Section~\ref{sec:dataMC}. For the inclusive $ZZ$ case, the background scale factors are $\mu_\mathrm{WZ}$, $\mu_{\mathrm{top}}$, $\mu_{\mathrm{WW}}$, $\mu_\mathrm{Z+0jets}$, $\mu_\mathrm{Z+1 jet}$ and $\mu_\mathrm{Z+\geq 2 jets}$. For the $ZZjj$ case, the $WW$ and top backgrounds are grouped in the non-resonant category, and the normalisation factors used are $\mu_\mathrm{WZ}$ and $\mu_\mathrm{non-resonant}$. The $Z$+jets background in the $ZZjj$ case and all other minor backgrounds are taken from their MC predictions.
+%%%The fitted signal strength in each SR is later used to derive the cross-section in the %%%corresponding fiducial phase space. 
+%Theory systematic uncertainties are propagated to the measured cross-section via the ratio of reconstructed to fiducial signal MC number of events, to avoid double counting, as the signal strength $\mu_\mathrm{s}^{\mathrm{SR}}$ is defined relative to the reconstructed prediction.
+
+ In the inclusive $ZZ$ case, the fitted signal strength is $\mu_\mathrm{s}^\mathrm{ZZ} = 1.05 \pm 0.05$, where the uncertainty includes the statistical uncertainty and the $0.83\%$ uncertainty from the luminosity and the 
+ various sources of systematic uncertainties as given in Table~\ref{tab:uncertainties}.
+ The background scale factors were found to be: $1.00^{+0.06}_{-0.05}$ for $WZ$, $0.98^{+0.13}_{-0.10}$ for top, $1.27^{+0.18}_{-0.17}$ for $WW$, 
+ %and $1.14^{+0.44}_{-0.30}$, $1.06^{+0.37}_{-0.28}$, 
+ %and $1.10^{+0.44}_{-0.31}$ for $Z$+0, 1, and $\geq$2 jet categories, respectively. 
+ $1.14^{+0.44}_{-0.30}$ for $Z \mathrm{+0 jets}$, 
+ $1.06^{+0.37}_{-0.28}$ for $Z \mathrm{+1 jet}$, 
+ and $1.10^{+0.44}_{-0.31}$ for $Z \mathrm{+ \geq 2 jets}$.
+
+In the \(ZZjj\) case, the fitted signal strength is $\mu_s^{ZZjj} = 1.02^{+0.19}_{-0.17}$, where the uncertainty includes the statistical uncertainty, the uncertainty from the luminosity, and those from the 
+ various sources of systematic uncertainty, as given in Table~\ref{tab:uncertainties}.
+The background normalisation factors are found to be $0.97^{+0.24}_{-0.20}$ for $WZ$ and $1.08^{+0.19}_{-0.15}$ for the non-resonant backgrounds.
+The $Z$+jets background in the $ZZjj$ case and all other minor backgrounds are taken from their MC predictions.
+%%%%%%%%%%%%%%%%%%%%% plots %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!htbp]
+\minipage{1\textwidth}
+\centering
+    \subfloat[]{
+\includegraphics[width=0.32\linewidth]{figures/ch5-llvv/kin-distribution/SignalR_postFit-ZZ.pdf}
+} 
+    \subfloat[]{
+\includegraphics[width=0.32\linewidth]{figures/ch5-llvv/kin-distribution/SignalR_postFit-ZZjj.pdf}
+}\\
+    \subfloat[]{
+\includegraphics[width=0.325\linewidth]{figures/ch5-llvv/kin-distribution/WZ_postFit-ZZ.png}
+}
+    \subfloat[]{
+\includegraphics[width=0.32\linewidth]{figures/ch5-llvv/kin-distribution/EMU_A_postFit-ZZ.pdf}
+}
+    \subfloat[]{
+\includegraphics[width=0.32\linewidth]{figures/ch5-llvv/kin-distribution/EMU_B_postFit-ZZ.pdf}
+}\\
+    \subfloat[]{
+\includegraphics[width=0.325\linewidth]{figures/ch5-llvv/kin-distribution/WZ_postFit-ZZjj.pdf}
+}
+    \subfloat[]{
+\includegraphics[width=0.325\linewidth]{figures/ch5-llvv/kin-distribution/EMU_postFit-ZZjj.pdf}
+}
+    \subfloat[]{
+\includegraphics[width=0.325\linewidth]{figures/ch5-llvv/kin-distribution/Zj_VR_nJ_postFit-ZZ.pdf}
+}
+  \caption{The post-fit distributions of $\Delta\phi(\vec{E}_\text{T}^\text{miss}, Z)$. Panels (a) and (b) show the signal regions for the inclusive $ZZ$ and $ZZjj$ production, respectively. The "Other" category counts events from processes of $ZZ(\rightarrow 4\ell$, $2\ell 2q), VVV (V=W, Z), Wj, Z(\rightarrow \tau\tau), \textrm{and}~ WH$. Figure (c), (d), and (e) illustrate the background CRs for inclusive $ZZ$ production, while panels (f) and (g) display the $ZZjj$ CRs. Figure (h) presents the post-fit event yields for background events in the $Z$+0, 1, and $\geq$ 2 jets CRs for the inclusive $ZZ$ analysis.  Data points are shown with statistical error bars, while the shaded band represents the total post-fit uncertainty on the prediction, combining statistical and systematic uncertainties.}
+  \label{fig:postfit_observed_ZZCR}
+\endminipage\hfill
+\end{figure}
+
+Additional post-fit kinematic distributions for the inclusive $ZZ$ SR are shown in the top row of Figure~\ref{fig:postfit_observed}: 
+(a) the transverse momentum of the leading lepton, $p_\text{T}^\text{leading-lepton}$, 
+(b) the missing transverse energy, $E_\text{T}^\text{miss}$, and 
+(c) the azimuthal angle separation between the two charged leptons, $\Delta\phi(\ell, \ell)$. 
+For the $ZZjj$ SR, the bottom row shows: 
+(d) the transverse momentum of the leading jet, $p_\text{T}^\text{leading-jet}$, 
+(e) the invariant mass of the dijet system, $m_\text{jj}$, and 
+(f) the transverse mass of the $ZZ$ system, $m_\text{T}^\text{ZZ}$. 
+
+The data points are shown with statistical uncertainties, while the shaded band represents the total post-fit uncertainty in the prediction, including both statistical and systematic components. 
+Overall, good agreement between data and MC predictions is observed across all distributions.
+
+
+\begin{figure}[!htbp]
+\minipage{1\textwidth}
+\centering
+   \subfloat[]{
+\includegraphics[width=0.32\linewidth]{figures/ch5-llvv/kin-distribution/Val_green_met50_postFit-ZZ.pdf}
+}
+    \subfloat[]{
+\includegraphics[width=0.32\linewidth]{figures/ch5-llvv/kin-distribution/Val_green_met50_postFit-ZZ.pdf}
+}
+    \subfloat[]{
+\includegraphics[width=0.32\linewidth]{figures/ch5-llvv/kin-distribution/Val_green_dPhill50_postFit-ZZ.pdf}
+}\\
+    \subfloat[]{
+\includegraphics[width=0.32\linewidth]{figures/ch5-llvv/kin-distribution/SignalR_Jpt50_postFit-ZZjj.pdf}
+}
+    \subfloat[]{
+\includegraphics[width=0.32\linewidth]{figures/ch5-llvv/kin-distribution/SignalR_mjj100_postFit-ZZjj.pdf}
+}
+    \subfloat[]{
+\includegraphics[width=0.32\linewidth]{figures/ch5-llvv/kin-distribution/SignalR_mtzz100_log-ZZjj.pdf}
+}
+  \caption{Post-fit kinematic distributions for the inclusive $ZZ$ SR are shown in the top row: (a) the transverse momentum of the leading lepton $p_\text{T}^\text{leading-lepton}$, (b) the missing transverse energy $E_\text{T}^\text{miss}$ and (c) the azimuthal angle separation between two charged leptons $\Delta\phi(\ell, \ell)$. For the $ZZjj$ SR, the bottom row shows: (d) the leading jet $p_\text{T}^\text{leading-jet}$, (e) the invariant mass of the dijet system $m_\text{jj}$, 
+  and (f) the transverse mass of the $ZZ$ system $m_\text{T}^\text{ZZ}$. The data points are shown with statistical error bars, while the shaded band represents the total post-fit uncertainty in the prediction, combining statistical and systematic uncertainties.}
+  \label{fig:postfit_observed}
+\endminipage\hfill
+\end{figure}
+
+
+ The fiducial cross-sections for the processes $ZZ \rightarrow \ell\ell\nu\nu$ and $ZZjj \rightarrow \ell\ell\nu\nu jj$ in their respective fiducial phase spaces are calculated 
+by multiplying the measured signal strengths ($\mu_\text{s}^\text{ZZ}$ and $\mu_\text{s}^\text{ZZjj}$) by the SM cross-section predictions as shown in Table~\ref{tab:sherpa-xs}.
+
+The measured fiducial cross-section for the inclusive $ZZ \to \ell\ell\nu\nu$ production process is found to be
+$$\sigma_{ZZ}^{\mathrm{fid}} = 21.03 \pm 0.73\,(\text{stat}) \pm 0.57\,(\text{exp}) \pm 0.18\,(\text{theory}) \pm 0.18\,(\text{lumi}) \text{ fb.} $$ 
+where the uncertainty is separated into the data statistical uncertainty (stat), the uncertainty from experimental systematic uncertainties (exp), the uncertainty from theory systematic uncertainties (theory), and the luminosity uncertainty (lumi). 
+The measured cross-section is in agreement with the SM prediction of $20.1 \pm 1.1$~fb from \textsc{Sherpa}+\textsc{MadGraph5} and $21.03 \pm 0.30
+$~fb from \textsc{Matrix}. 
+
+For the $ZZjj \to \ell\ell\nu\nu jj$ production process, the measured fiducial cross-section is 
+$$\sigma_{ZZjj}^{\mathrm{fid}} = 0.96^{+0.15}_{-0.11}~(\text{stat}) \pm 0.10~(\text{exp}) \pm 0.04~(\text{theory}) \pm 0.01~(\text{lumi}) \text{ fb.}$$
+This is compatible with the theoretical prediction of $0.94 \pm 0.20$~fb from \textsc{Sherpa}+\textsc{MadGraph5}. 
+
+The $ZZ\rightarrow \ell\ell\nu \nu$ fiducial production cross-section is extrapolated to the total phase space, using the fiducial acceptance reported in Table~\ref{tab:zz-xs} and the branching ratio ~\cite{Zyla:2020zbs} of the $ZZ$ decay mode  $ZZ \rightarrow 2\ell 2\nu $. 
+
+The total $pp\rightarrow ZZ$ production is found to be:
+$$\sigma^\text{total}_\text{measured}(pp\rightarrow ZZ) = 15.38\pm 0.81 ~\text{pb}.$$
+This measurement is in agreement with the SM prediction calculated using \textsc{Matrix}: $\sigma^\text{total}_\text{SM}(pp\rightarrow ZZ) = 15.40\pm 0.38 ~\text{pb}.$
+
+

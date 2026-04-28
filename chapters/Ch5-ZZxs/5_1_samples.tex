@@ -32,10 +32,31 @@ The estimation of signal efficiencies and background contributions relies on a d
 The analysis targets the measurement of the SM $ZZ$ production cross-section in the $\ell^+\ell^-\nu\bar{\nu}$ final state and searches for BSM physics through anomalous gauge boson couplings.
 
 \paragraph{Standard Model \textit{ZZ} Production}
-The primary signal process is the production of a pair of $Z$ bosons decaying to $\ell^+\ell^-\nu\bar{\nu}$. This includes both quark-antiquark initiated and loop-induced gluon-gluon fusion processes, which are simulated with \texttt{Sherpa 2.2.2}. Electroweak $ZZ$ production in association with two jets is modelled separately with \texttt{MadGraph5}~\cite{Alwall:2014hca}. Details of these samples are provided in Table~\ref{tab:ZZ_signal_samples}.
+The primary signal process is the production of a pair of $Z$ bosons decaying to $\ell^+\ell^-\nu\bar{\nu}$. This includes both quark-antiquark initiated and loop-induced gluon-gluon fusion processes, which are simulated with \texttt{Sherpa 2.2.2}. Electroweak $ZZ$ production in association with two jets is modelled separately with \texttt{MadGraph5}~\cite{Alwall:2014hca}. 
+The MC predicted cross-sections calculated with these generators are given in Table~\ref{tab:sherpa-xs} for both $ZZ$ and $ZZjj$ phase space.
+Details of these samples used in the analyses are provided in Table~\ref{tab:ZZ_signal_samples}.
 
-\paragraph{Samples with anomalous Gauge Couplings}
-The search for new physics is performed by probing for anomalous neutral triple gauge couplings (nTGC) and anomalous quartic gauge couplings (aQGC) using an Effective Field Theory (EFT) framework. A dedicated set of MC samples has been generated to model the kinematic effects of these BSM operators. The samples used for the nTGC and aQGC searches are listed in Tables~\ref{tab:ZZEFTsamples} and~\ref{tab:ZZaQGCsamples}, respectively.
+
+\begin{table}[htbp]
+
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{l c}
+\hline
+\textbf{Cross-section}  & \textbf{Calculated value [fb] } \\
+\hline
+$\sigma^{\text{fid}}_{ZZ \to \ell \ell \nu\nu}$ & $20.08 \pm 1.0\,\text{(QCD scale variation)} \pm 0.30\,\text{(PDF)} \pm 0.24\,(\alpha_s)$ \\
+$\sigma^{\text{fid}}_{ZZjj \to \ell \ell \nu\nu jj}$ & $0.94 \pm 0.19\,\text{(QCD scale variation)} \pm 0.01\,\text{(PDF)} \pm 0.02\,(\alpha_s)$ \\
+\hline
+\end{tabular}
+\caption{\rm
+Fiducial cross-sections for $ZZ \to 2\ell 2\nu$ and $ZZjj \to 2\ell 2\nu jj$ productions at $\sqrt{s} = 13$~TeV. The $ZZ$ and $ZZjj$ cross-sections are obtained with the QCD production simulated using \textsc{SHERPA} 
+and the electroweak production simulated using \textsc{MadGraph5} (NLO EW). Theoretical uncertainties from QCD scale variation, PDFs, and $\alpha_s$ are quoted.
+}
+\label{tab:sherpa-xs}
+\end{table}
+
 
 \begin{table}[htbp]
 \centering
@@ -52,6 +73,10 @@ The search for new physics is performed by probing for anomalous neutral triple 
 \caption{\rm Summary of Monte Carlo samples used to model the SM $ZZ \to \ell^+\ell^-\nu\bar{\nu}$ signal components. Cross-sections ($\sigma$) are provided by the generator, and k-factors are applied to correct for higher-order predictions.}
 \label{tab:ZZ_signal_samples}
 \end{table}
+
+\paragraph{Samples with anomalous Gauge Couplings}
+The search for new physics is performed by probing for anomalous neutral triple gauge couplings (nTGC) and anomalous quartic gauge couplings (aQGC) using an Effective Field Theory (EFT) framework. A dedicated set of MC samples has been generated to model the kinematic effects of these BSM operators. The samples used for the nTGC and aQGC searches are listed in Tables~\ref{tab:ZZEFTsamples} and~\ref{tab:ZZaQGCsamples}, respectively.
+
 
 \begin{table}[htbp]
 \centering

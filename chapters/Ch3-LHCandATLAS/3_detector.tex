@@ -214,9 +214,9 @@ High-energy physicists use Monte Carlo (MC) event generators, based on pQCD, as 
 
 %%%%%%%%%%%%%%%%%%%%
 \subsection{The diboson $ZZ$ production cress-section at the LHC}% ZZ Production at LHC
-\abel{sec:zz-matrix-xs}
+\label{sec:zz-matrix-xs}
 
-One major topic of this thesis is the measurement of the $ZZ$ production cross section. The corresponding theoretical predictions are obtained using the MATRIX~\cite{Grazzini2018MATRIX} and Sherpa~\cite{Gleisberg2009Sherpa} MC generators.
+One major topic of this thesis is the measurement of the $ZZ$ production cross section. The corresponding theoretical predictions are obtained using the \textsc{Matrix}~\cite{Grazzini2018MATRIX} and \textsc{Sherpa}~\cite{Gleisberg2009Sherpa} MC generators.
 
 At the lowest order, pairs of $Z$ bosons may be produced via quark-antiquark ($q\bar q$) annihilation or through gluon-gluon fusion via a quark loop.
 The dominant mechanisms for $ZZ$ diboson production at the LHC are illustrated in Figure~\ref{fig:zz-prod}, which includes lowest-order Feynman diagrams. These diagrams underscore the absence of neutral triple gauge couplings (e.g., $ZZZ$ and $ZZ\gamma$) in the SM, as shown in Figure~\ref{fig:zz-prod}(c).
@@ -283,6 +283,16 @@ The MC statistical and systematic uncertainties are listed in the table.
 }
 \label{tab:zz-xs}
 \end{table}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figures/ch3-LHC-ATLAS/Feynman_vbsZZ.png}
+    \caption{Feynman diagrams for $ZZjj$ production at the LHC. The diagrams of electroweak $ZZjj$ production processes are shown in the top row, and the QCD $ZZjj$ production diagrams are shown in the bottom row. }
+    \label{fig:zzjj-prod}
+\end{figure}
+
+Feynman diagrams for $ZZjj$ production at the LHC are shown in Figure~\ref{fig:zzjj-prod}. The production in the fiducial phase space in the $pp$ collision at 13~TeV is calculated by \textsc{Sherpa} and \textsc{MadGraph5}:
+$$\sigma^{\text{fid}}_{ZZjj \to \ell \ell \nu\nu jj} = 0.94 \pm 0.19\,\text{(QCD scale variation)} \pm 0.01\,\text{(PDF)} \pm 0.02\,(\alpha_s).$$
 
 %\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -106,6 +106,18 @@ The specific cut values for all variables were chosen following an optimization 
 The number of events observed in the inclusive $ZZ$ (VBS-like $ZZjj$) signal region is 2917 (108), compared to 1650 (108) signal events predicted by MC simulation. The difference arises from background contributions and MC normalization factors, which will be constrained using dedicated background control regions (CRs). Details of the event selection in the background CRs will be presented in the following sections. 
 
 The predicted signal yields and observed data are summarized in the event selection tables, Table~\ref{tab:prefitYieldsInclu} and Table~\ref{tab:prefitYieldsZZjj}, corresponding to the inclusive $ZZ$ and VBS-like $ZZjj$ signal regions, respectively. In these tables, the MC event yields from the background CRs are also provided.
+Figure~\ref {fig:SR-prefit} shows data and MC prediction comparisons of of the $\Delta\phi(\vec {E}_\text{T}^\text{miss}, Z)$ distributions in the signal regions for selected inclusive $ZZ$ and VBS-like $ZZjj$ events. In general, MC predictions are consistent with the observed data. 
+
+\begin{figure}
+    \centering
+    \subfloat[]{
+    \includegraphics[width=0.45\linewidth]{figures/ch5-llvv/kin-distribution/SignalR-ZZ.pdf}}
+    \vspace{0.5cm}
+    \subfloat[]{    
+    \includegraphics[width=0.45\linewidth]{figures/ch5-llvv/kin-distribution/SignalR-ZZjj.pdf}}
+    \caption{Data and MC (pre-fit) comparison of the $\Delta\phi(\vec {E}_\text{T}^\text{miss}, Z)$ in the signal regions (SRs): (a) The inclusive $ZZ$ SR, and (b) The VBS-like $ZZjj$ SR.}
+    \label{fig:SR-prefit}
+\end{figure}
 
 % ======================================================================
 
@@ -192,15 +204,21 @@ To clearly illustrate the relationship between the final signal region definitio
     \label{tab:reco_truth_vbs}
 \end{table}
 
-The fiducial selections defined here provide the basis for calculating a correction factor, $C$, which maps the observed detector-level yield to the particle-level fiducial yield. This factor, derived from simulation, corrects the background-subtracted data for detector inefficiencies and resolution-induced migrations. It is calculated as the ratio of the number of simulated signal events passing the full reconstruction-level selection ($N_\text{reco}^\text{MC}$) to the number of simulated signal events passing the particle-level fiducial selection ($N_\text{fid}^\text{MC}$):
-$$
-C = \frac{N_\text{reco}^\text{MC}}{N_\text{fid}^\text{MC}}
-$$
-The fiducial cross-section, $\sigma_\text{fid}$, is then determined by:
-$$
-\sigma_\text{fid} = \frac{N_\text{obs} - N_\text{bkg}}{\mathcal{L}} \cdot \frac{1}{C}
-$$
-where $N_\text{obs}$ is the observed number of events in the signal region, $N_\text{bkg}$ is the estimated background contribution, and $\mathcal{L}$ is the integrated luminosity. This approach isolates the detector-dependent corrections ($C$) from any model-dependent extrapolations to the full phase space, which are not part of this measurement.
+The fiducial selections defined here form the basis for calculating a correction factor, $C$, which maps the observed detector-level yield to the particle-level fiducial yield. This factor, derived from simulation, corrects the background-subtracted data for detector inefficiencies and resolution-induced migrations. It is defined as the ratio of the number of simulated signal events passing the full reconstruction-level selection ($N_\text{Sel}^\text{MC}$) to the number of simulated signal events passing the particle-level fiducial selection ($N_\text{fid}^\text{MC}$):
+%
+\begin{equation}
+C = \frac{N_\text{sel}^\text{MC}}{N_\text{fid}^\text{MC}} \, .
+\end{equation}
+
+The fiducial cross-section, $\sigma_\text{fid}$, is then determined as:
+%
+\begin{equation}
+\sigma_\text{fid} = \frac{N_\text{obs} - N_\text{bkg}}{\mathcal{L}} \cdot \frac{1}{C} \, ,
+\end{equation}
+%
+where $N_\text{obs}$ is the number of observed events in the signal region, $N_\text{bkg}$ is the estimated background contribution, and $\mathcal{L}$ is the integrated luminosity. This formulation isolates the detector-dependent corrections ($C$) from model-dependent extrapolations to the full phase space.
+
+For this analysis, the correction factor is determined to be $C = 56.1\%$. It is obtained from the ratio of the selected MC signal event yield to the product of the fiducial cross-section calculated with \textsc{MATRIX} and the integrated luminosity of 140~fb$^{-1}$.
 
 
 
