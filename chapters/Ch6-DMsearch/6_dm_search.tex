@@ -7,24 +7,106 @@
 \section{Introduction}
 \label{sec:monoZ_intro}
 
-The existence of Dark Matter (DM) remains one of the strongest evidences for physics Beyond the Standard Model (BSM). While astrophysical observations—ranging from galaxy rotation curves to the Cosmic Microwave Background anisotropy—provide compelling gravitational evidence for DM, its particle nature remains elusive~\cite{Bertone:2004pz}. The Large Hadron Collider (LHC) offers a unique laboratory to produce DM particles in high-energy proton-proton collisions. If DM particles interact weakly with the Standard Model (SM) sector, they may be produced in the ATLAS detector. Being electrically neutral and stable, they would escape detection, manifesting only as a significant imbalance in transverse momentum, denoted as missing transverse momentum ($E_{\mathrm{T}}^{\text{miss}}$)~\cite{Abercrombie:2015wmb}.
+The existence of Dark Matter (DM) provides one of the strongest pieces of evidence for physics beyond the Standard Model (BSM). Astrophysical observations, ranging from galaxy rotation curves to anisotropies in the Cosmic Microwave Background, offer compelling gravitational evidence for DM, although its particle nature remains unknown~\cite{Bertone:2004pz}. 
 
-To identify such events, the DM particles must be produced in association with a visible SM particle ("X") to recoil against, resulting in a distinct "Mono-X" signature. This chapter presents a search for Dark Matter produced in association with a $Z$ boson, where the $Z$ boson decays into a pair of charged leptons ($\ell^+\ell^-$, with $\ell = e, \mu$). This is referred to as the \textit{Mono-Z} channel~\cite{Aaboud:2017bja}.
+The LHC provides a unique environment to search for Dark Matter (DM) particles in high-energy proton--proton ($pp$) collisions. If DM particles interact weakly (often referred to as WIMP) with the SM sector, they may be produced in these collisions and detected with the ATLAS detector. Being electrically neutral and stable, such particles would escape direct detection and manifest experimentally as a significant imbalance in transverse momentum, referred to as missing transverse momentum ($E_{\mathrm{T}}^{\text{miss}}$)~\cite{Abercrombie:2015wmb}.
 
-This analysis builds directly upon the measurement of the SM $ZZ \to \ell\ell\nu\nu$ process presented in Chapter~\ref{chap:llvv_analysis}. Both analyses share the same final state topology: an on-shell $Z$ boson and large $E_{\mathrm{T}}^{\text{miss}}$. However, they probe distinct kinematic regimes:
+To identify such events, DM particles must be produced in association with a visible SM particle ("X") that recoils against the invisible system, resulting in a characteristic "Mono-X" signature. This chapter presents a search for DM particles produced in association with a $Z$ boson (see Figure~\ref{fig:Hinv-diagram} (a)), where the $Z$ boson decays into a pair of charged leptons ($\ell^+\ell^-$, with $\ell = e, \mu$). This topology is referred to as the DM search \textit{Mono-Z} channel~\cite{Aaboud:2017bja}. 
+\begin{figure}
+    \centering
+    \subfloat[]{
+    \includegraphics[width=0.3\linewidth]{figures/ch6-DM/fig_01b.png}}
+    \hspace{0.8cm}
+    \subfloat[]{
+    \includegraphics[width=0.3\linewidth]{figures/ch6-DM/fig_01a.png}}
 
-\begin{itemize}
-    \item \textbf{Precision Measurement:} In the previous chapter, $ZZ \to \ell\ell\nu\nu$ was the signal. The focus was on the inclusive production cross-section and unfolding kinematic spectra.
-    \item \textbf{BSM Search:} In this chapter, $ZZ \to \ell\ell\nu\nu$ represents the dominant, irreducible \textbf{background}. The search strategy is optimized for the high-$E_{\mathrm{T}}^{\text{miss}}$ tails where BSM signals are expected to deviate from the SM prediction.
-\end{itemize}
+%            \includegraphics[width=0.24\linewidth]{figures/ch6-DM/fig_01c.png}
+%             \includegraphics[width=0.24\linewidth]{figures/ch6-DM/fig_01d.png}
+    \caption{Feyman diagrams of the DM probing process. (a) Mono-Z production in the simplified DM production models~\cite{Boveia:2016mrp, Albert:2017onk}, in which DM particle pair ($\chi\chi$) is produced through a mediator particle that also couples to quarks, and (b) the Higgs boson production associated with a $Z$ boson, where the Higgs boson decays to DM particles.}
+    \label{fig:Hinv-diagram}
+\end{figure}
 
-The results are interpreted within the context of two benchmark BSM scenarios recommended by the LHC Dark Matter Working Group:
+\subsection{DM models used in this analysis}
+Within this search program, {\bf Higgs portal models} are of particular interest, 
+as they provide a simple and well-motivated framework in which the Higgs boson 
+mediates interactions between the SM and DM sectors. If the DM particle mass 
+satisfies $m_{\mathrm{DM}} < m_{H}/2$, the Higgs boson can decay invisibly 
+into a pair of DM particles (see Figure~\ref{fig:Hinv-diagram}(b)). 
+The invisible Higgs decay signature is identified via the associated 
+production of a $Z$ boson decaying into a lepton pair, $\ell^+\ell^-$. 
+The resulting experimental final state considered in this search is therefore 
+$\ell^+\ell^- + E_{\mathrm{T}}^{\mathrm{miss}}$.
+
+In addition to the search for invisible Higgs decays, this analysis is also 
+sensitive to BSM Higgs-like scalars with predominantly invisible branching 
+ratios in the mass range $110$--$400$~GeV.
+
+In the SM, the branching ratio for Higgs boson decays into $ZZ^{(*)} \to 4\nu$ is only about $0.1\%$. Assuming SM Higgs boson production rates, the branching ratio to invisible particles, $\mathcal{B}(H \to \mathrm{invisible})$, can therefore be constrained in the absence of a significant excess of events above the expected background.
+
+This analysis builds directly upon the measurement of the SM $ZZ \to \ell\ell\nu\nu$ process presented in Chapter~\ref{chap:zz}. Both analyses use the same final-state topology: an on-shell $Z$ boson accompanied by large $E_{\mathrm{T}}^{\text{miss}}$. Consequently, the physics object selection is largely identical in the two analyses, while the event selection is optimized to probe distinct kinematic regimes relevant for DM searches.
+
+The searches with the Mono-Z signature are performed using two benchmark BSM scenarios recommended by the LHC Dark Matter Working Group:
 \begin{enumerate}
-    \item \textbf{Simplified Models:} Models involving vector or axial-vector mediators (spin-1) that couple the SM quarks to Dirac fermion DM candidates~\cite{Abercrombie:2015wmb}.
-    \item \textbf{2HDM+$a$ Models:} A more complex extension involving Two-Higgs-Doublet Models with an additional pseudoscalar mediator ($a$), which provides a rich phenomenology including mono-$Z$ signatures~\cite{Bauer:2017ota}.
+\item \textbf{Simplified Models:} Models with vector or axial-vector mediators (spin-1) that couple SM quarks to Dirac fermion DM candidates~\cite{Abercrombie:2015wmb}. In these models, the SM is extended to
+include an additional U(1) gauge symmetry under which the DM particles are charged, and a BSM particle is introduced to mediate the interactions between the WIMP (denoted as $\chi$) and SM particles. The simplest model has one pair of WIMPs and one mediator particle. It includes five additional parameters to the SM: the WIMP mass ($m_\chi$), Mediator mass ($m_\text{med}$) and its width ($|Lambda_\text{med}$), and the Mediator's couplings to $\chi$--$g_\chi$ and to quarks $g_\text{q}$. 
+    
+\item \textbf{2HDM+$a$ models:} A Two-Higgs-Doublet Model (2HDM) extended 
+with an additional pseudoscalar mediator ($a$) (see Feynman diagrams in 
+Figure~\ref{fig:2HDM-diagram}), providing rich phenomenology including 
+Mono-$Z$ signatures~\cite{Bauer:2017ota}. The model is assumed to be 
+CP-conserving and in the alignment limit, such that the lighter CP-even 
+state corresponds to the SM Higgs boson. Only type-II 2HDMs are considered, 
+where up-type and down-type quarks couple to different doublets, and leptons 
+couple to the same doublet as down-type quarks. The pseudoscalar $a$ may 
+arise from an additional U(1) symmetry, enabling its coupling to WIMP pairs.
+
+The model contains 14 parameters, including the WIMP mass ($m_\chi$); 
+the scalar masses ($m_h$, $m_H$, $m_a$, $m_A$, $m_{H^\pm}$); quartic 
+couplings ($\lambda_1$, $\lambda_2$, $\lambda_3$); the WIMP coupling 
+($y_\chi$); the electroweak vacuum expectation value ($v=246$~GeV); 
+the ratio of vacuum expectation values ($\tan\beta$); and the mixing 
+angles ($\alpha$, $\theta$).
 \end{enumerate}
 
-The structure of this chapter is as follows. Section~\ref{sec:monoZ_samples} details the simulated samples used to model DM signals and SM backgrounds. Section~\ref{sec:monoZ_selection} describes the event selection criteria, optimized to suppress the $Z+\text{jets}$ and diboson backgrounds while retaining sensitivity to DM signals using the transverse mass of the $ZZ$ system ($m_T^{ZZ}$) as the primary discriminant. The background estimation strategy, utilizing specific Control Regions (CRs) to constrain dominant processes, is discussed in Section~\ref{sec:monoZ_bkg}. Section~\ref{sec:monoZ_syst} outlines the experimental and theoretical systematic uncertainties. Finally, the statistical interpretation and exclusion limits on mediator masses are presented in Section~\ref{sec:monoZ_results}.
+The search results are interpreted within the context of these benchmark models.
+
+\begin{figure}
+    \centering
+    \subfloat[]{
+    \includegraphics[width=0.32\linewidth]{figures/ch6-DM/fig_01c.png}}
+    \hspace{1.0cm}
+    \subfloat[]{
+    \includegraphics[width=0.22\linewidth]{figures/ch6-DM/fig_01d.png}}
+    \caption{Feynman diagrams of (a) $gg$- and (b) $bb$-initiated 2HDM+$a$ processes for the Mono-$Z$ DM search signature.}
+    \label{fig:2HDM-diagram}
+\end{figure}
+
+In the Mono-$Z$ DM search, the SM $ZZ \to \ell\ell\nu\nu$ process constitutes the dominant irreducible background, which is estimated using MC simulations. Additional reducible backgrounds arise from diboson, top-quark, and $Z$+jets processes. These backgrounds are estimated with dedicated background control regions (CRs).
+
+Previous results in the $\ell^+\ell^- + E_\text{T}^\text{miss}$ final state were obtained by the ATLAS Collaboration using partial Run~2 datasets. 
+With 36~fb$^{-1}$ of data, ATLAS set a 95\% confidence level (CL) upper limit of 67\% on the Higgs boson branching ratio to invisible particles, with an expected limit of 39\% in the absence of signal~\cite{ZHinv-36ifb}. 
+The same study also reported exclusion limits for the simplified dark matter models described above. Using the full Run~2 dataset in this thesis, the search sensitivity is expected to improve significantly.
+
+%By combining multiple Higgs boson production channels and datasets from different LHC runs, including 36~fb$^{-1}$ from Run~2, ATLAS further constrained the branching ratio to invisible particles to be below 26\% (17\% expected) at 95\% CL~\cite{Hinv-combined}. Using the full Run~2 dataset in this thesis, the search sensitivity is expected to improve significantly.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%However, they probe distinct kinematic regimes:
+%\begin{itemize}
+%    \item \textbf{Precision Measurement:} In the previous chapter, $ZZ \to \ell\ell\nu\nu$ was the signal. The focus was on the inclusive production cross-section and unfolding kinematic spectra.
+%    \item \textbf{BSM Search:} In this chapter, $ZZ \to \ell\ell\nu\nu$ represents the dominant, irreducible \textbf{background}. The search strategy is optimized for the high-$E_{\mathrm{T}}^{\text{miss}}$ tails where BSM signals are expected to deviate from the SM prediction.
+%\end{itemize}
+
+\input{chapters/Ch6-DMsearch/6_5_stats}
+
+\subsection{Outline of the \textsc{Mone-Z} DM Search Presentation}
+
+The structure of this chapter is as follows. 
+Section~\ref{sec:monoZ_samples} details the simulated samples used to model DM signals and SM backgrounds. 
+Section~\ref{sec:monoZ_selection} describes the event selection criteria, optimized to suppress the $Z+\text{jets}$ and diboson backgrounds while retaining sensitivity to DM signals using the transverse mass of the $ZZ$ system ($m_\text{T}^\text{ZZ}$) as the primary discriminant. The background estimation strategy, utilizing specific CRs to constrain dominant processes, is discussed in Section~\ref{sec:monoZ_bkg}. Section~\ref{sec:monoZ-syst} outlines the experimental and theoretical systematic uncertainties. 
+Finally, physics interpretations and exclusion limits on DM search using Mono-Z channel are presented in Section~\ref{sec:monoZ_results}.
+
+
 
 \input{chapters/Ch6-DMsearch/6_1_samples}
 
@@ -34,7 +116,7 @@ The structure of this chapter is as follows. Section~\ref{sec:monoZ_samples} det
 
 \input{chapters/Ch6-DMsearch/6_4_syst}
 
-\input{chapters/Ch6-DMsearch/6_5_stats}
+%\input{chapters/Ch6-DMsearch/6_5_stats}
 
 \input{chapters/Ch6-DMsearch/6_6_results}
 
