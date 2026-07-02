@@ -28,7 +28,7 @@ The specific sources considered are listed below:
     The total integrated luminosity of the dataset is known to a precision of $0.83\%$. This uncertainty is determined using a combination of van der Meer beam separation scans in dedicated data-taking sessions and calibrated luminosity-sensitive detectors during regular data-taking periods~\cite{DAPR-2021-01}.
     
     \item \textbf{Pile-up Reweighting:} 
-    The number of proton--proton interactions per bunch crossing is modelled in simulation by reweighting events to match the distribution observed in data. An uncertainty arises from the limited precision in the ratio of predicted to measured inelastic cross-sections within the ATLAS acceptance region~\cite{STDM-2015-05}. To account for this, a systematic variation is applied to the average number of interactions in the simulation via the nuisance parameter \texttt{PRW\_DATASF}.
+    The number of proton--proton interactions per bunch crossing is modelled in simulation by reweighting events to match the distribution observed in data. An uncertainty arises from the limited precision in the ratio of predicted to measured inelastic cross-sections within the ATLAS acceptance region~\cite{STDM-2015-05}. To account for this, a systematic uncertainty \texttt{PRW\_DATASF} is evaluated by varying the scale factor used to reweight the average number of interactions in the simulation by its associated uncertainty.
 
     \item \textbf{Trigger Efficiency:} 
     Uncertainties in the trigger efficiency scale factors are separated by lepton flavor. For electrons, a single total nuisance parameter is used. For muons, the uncertainty is split into statistical and systematic components.
@@ -43,7 +43,7 @@ The specific sources considered are listed below:
     \item \textbf{Lepton Momentum and Scale:} 
     Differences between data and simulation in the lepton momentum scale and resolution are evaluated by applying additional scaling and smearing variations.
     \begin{itemize}
-        \item \textbf{Electrons:} Two parameters, \texttt{EG\_RESOLUTION\_ALL} and \texttt{EG\_SCALE\_ALL}, account for resolution and scale uncertainties.
+        \item \textbf{Electrons:} Two parameters, \texttt{EG\_RESOLUTION\_ALL} and \texttt{EG\_SCALE\_ALL}, account for electron energy resolution and scale uncertainties derived from $Z \to \ell^+\ell^-$ samples.
         \item \textbf{Muons:} Independent parameters are used for Inner Detector and Muon Spectrometer measurements, along with Sagitta correction uncertainties and momentum scale parameters.
     \end{itemize}
 
@@ -92,7 +92,7 @@ The experimental and theoretical uncertainties are incorporated into the analysi
 
 \begin{table}[hbtp]
 \centering
-\scriptsize
+%\scriptsize
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{lcc}
 \toprule
@@ -128,7 +128,7 @@ Statistics             & 3.6\%   & 14\%   \\
 \section{Fiducial and Total Cross-section Measurements}
 
 For each SR, a signal strength $\mu_\text{S}^\text{SR}$, defined by $\mu_\mathrm{s}^{\mathrm{SR}} = \frac{N^{\mathrm{SR}}_{\mathrm{data}}}{N^{\mathrm{SR}}_{\mathrm{MC}}}$ (where MC predictions come from \textsc{SHERPA} and \textsc{MadGraph5}),
-and a set of background normalisation factors is obtained by fitting the distributions of $ \Delta\phi(\vec {E}_\text{T}^\text{miss}, Z)$ of the selected events from MC simulations to data in SRs and CRs. The postfit distributions of the $ \Delta\phi(\vec {E}_\text{T}^\text{miss}, Z)$ in the RSs and CRs are shown in Figure~\ref{fig:postfit_observed_ZZCR}.
+and a set of background normalisation factors is obtained by fitting the distributions of $ \Delta\phi(\vec {E}_\text{T}^\text{miss}, Z)$ of the selected events from MC simulations to data in SRs and CRs. The postfit distributions of the $ \Delta\phi(\vec {E}_\text{T}^\text{miss}, Z)$ in the SRs and CRs are shown in Figure~\ref{fig:postfit_observed_ZZCR}.
 %
 %The signal strength parameters, denoted as $\mu_\mathrm{s}^{\mathrm{ZZ}}$ and $\mu_\mathrm{s}^{\mathrm{ZZjj}}$, are defined as the ratio of the observed to predicted number of signal events in the \(ZZ\) and \(ZZjj\) SRs, respectively: $\mu_\mathrm{s}^{\mathrm{SR}} = \frac{N^{\mathrm{SR}}_{\mathrm{data}}}{N^{\mathrm{SR}}_{\mathrm{MC}}}$. The predicted number of events comes from the signal simulations by \textsc{SHERPA} and \textsc{MadGraph5}. %described in Section~\ref{sec:dataMC}. For the inclusive $ZZ$ case, the background scale factors are $\mu_\mathrm{WZ}$, $\mu_{\mathrm{top}}$, $\mu_{\mathrm{WW}}$, $\mu_\mathrm{Z+0jets}$, $\mu_\mathrm{Z+1 jet}$ and $\mu_\mathrm{Z+\geq 2 jets}$. For the $ZZjj$ case, the $WW$ and top backgrounds are grouped in the non-resonant category, and the normalisation factors used are $\mu_\mathrm{WZ}$ and $\mu_\mathrm{non-resonant}$. The $Z$+jets background in the $ZZjj$ case and all other minor backgrounds are taken from their MC predictions.
 %%%The fitted signal strength in each SR is later used to derive the cross-section in the %%%corresponding fiducial phase space. 
@@ -197,7 +197,7 @@ Overall, good agreement between data and MC predictions is observed across all d
 \minipage{1\textwidth}
 \centering
    \subfloat[]{
-\includegraphics[width=0.32\linewidth]{figures/ch5-llvv/kin-distribution/Val_green_met50_postFit-ZZ.pdf}
+\includegraphics[width=0.32\linewidth]{figures/ch5-llvv/kin-distribution/Val_green_ptZ50_postFit-ZZ.pdf}
 }
     \subfloat[]{
 \includegraphics[width=0.32\linewidth]{figures/ch5-llvv/kin-distribution/Val_green_met50_postFit-ZZ.pdf}
@@ -214,7 +214,8 @@ Overall, good agreement between data and MC predictions is observed across all d
     \subfloat[]{
 \includegraphics[width=0.32\linewidth]{figures/ch5-llvv/kin-distribution/SignalR_mtzz100_log-ZZjj.pdf}
 }
-  \caption{Post-fit kinematic distributions for the inclusive $ZZ$ SR are shown in the top row: (a) the transverse momentum of the leading lepton $p_\text{T}^\text{leading-lepton}$, (b) the missing transverse energy $E_\text{T}^\text{miss}$ and (c) the azimuthal angle separation between two charged leptons $\Delta\phi(\ell, \ell)$. For the $ZZjj$ SR, the bottom row shows: (d) the leading jet $p_\text{T}^\text{leading-jet}$, (e) the invariant mass of the dijet system $m_\text{jj}$, 
+  %\caption{Post-fit kinematic distributions for the inclusive $ZZ$ SR are shown in the top row: (a) the transverse momentum of the leading lepton $p_\text{T}^\text{leading-lepton}$, (b) the missing transverse energy $E_\text{T}^\text{miss}$ and (c) the azimuthal angle separation between two charged leptons $\Delta\phi(\ell, \ell)$. For the $ZZjj$ SR, the bottom row shows: (d) the leading jet $p_\text{T}^\text{leading-jet}$, (e) the invariant mass of the dijet system $m_\text{jj}$, 
+  \caption{Post-fit kinematic distributions for the inclusive $ZZ$ SR are shown in the top row: (a) the transverse momentum of the lepton pair, (b) the missing transverse energy $E_\text{T}^\text{miss}$ and (c) the azimuthal angle separation between two charged leptons $\Delta\phi(\ell, \ell)$. For the $ZZjj$ SR, the bottom row shows: (d) the leading jet $p_\text{T}^\text{leading-jet}$, (e) the invariant mass of the dijet system $m_\text{jj}$, 
   and (f) the transverse mass of the $ZZ$ system $m_\text{T}^\text{ZZ}$. The data points are shown with statistical error bars, while the shaded band represents the total post-fit uncertainty in the prediction, combining statistical and systematic uncertainties.}
   \label{fig:postfit_observed}
 \endminipage\hfill

@@ -7,8 +7,7 @@ The major design parameters are given in the 2nd column of Table~\ref{tab:LHCrun
 %-------------LHC----------------
 \section{The Large Hadron Collider}
 
-The Large Hadron Collider (LHC) is currently the world’s largest and most powerful particle accelerator%~\cite{Evans:2008zzb, CERNLHC}
-and is located approximately 100 m underground on the Franco–Swiss border near Geneva. It was designed and constructed by the European Organization for Nuclear Research (CERN), with major additional contributions from the United States and Japan.
+The Large Hadron Collider (LHC) is currently the world’s largest and most powerful particle accelerator~\cite{Evans:2008zzb}, and is located approximately 100 m underground on the Franco–Swiss border near Geneva. It was designed and constructed by the European Organization for Nuclear Research (CERN), with major additional contributions from the United States and Japan.
 
 The CERN accelerator complex (shown in Fig.~\ref{fig:CERNAccComplex})~\cite{CERNAccComplex} is a large integrated system composed of a series of accelerators that successively increase the energy of proton beams before their injection into the LHC. The acceleration chain begins with Linac4, which serves as the source of proton beams. Linac4 accelerates negative hydrogen ions ($H^-$) to an energy of 160~MeV before injecting them into the Proton Synchrotron Booster (PSB). During injection into the PSB, the electrons are stripped from the hydrogen ions, leaving bare protons, which are then accelerated to an energy of 2~GeV.
 
@@ -44,7 +43,7 @@ calculate the total number of events for a process during this period:
     N_{event} = \sigma \times \int L \,dt .
 \end{equation}
 The $\sigma$ shown in the equation denotes the cross-section, 
-which represents the likelihood of a reaction occurring between particles during an interaction process.  The common unit of the cross-section used is the barn ($b$) with $1b=10^{-24}cm^2$.
+which represents the likelihood of a reaction occurring between particles during an interaction process.  The common unit of the cross-section used is the barn ($b$) with $1b=10^{-24}\text{cm}^2$.
 
 %%%%%%%%%%%%%%%
 Table~\ref{tab:lhc_timeline} summarizes the timeline of LHC operations and major milestones from Run~1 through Run~3, including the intervening long shutdown periods. Table~\ref{tab:LHCrun2param} lists the key LHC design parameters alongside the corresponding operational parameters achieved during the Run~2 data-taking period. The work presented in this thesis is based on data collected during Run~2.
@@ -85,7 +84,6 @@ Table~\ref{tab:lhc_timeline} summarizes the timeline of LHC operations and major
 
 \vspace*{0.5cm}
 \begin{table}
-\label{tab:LHCrun2param}
 \begin{center}
 \caption{LHC operation parameters for the Run-2 data-taking period. 
 %Table adapted from~\cite{LHCphysoverview}
@@ -116,7 +114,7 @@ Table~\ref{tab:lhc_timeline} summarizes the timeline of LHC operations and major
 Luminosity is an important indicator of the performance of an accelerator: it is proportional to the number of collisions that occur in a given amount of time. The higher the luminosity, the more data the experiments can gather to allow them to observe rare processes.
 
 The High-Luminosity Large Hadron Collider (HL-LHC), a major LHC upgrade, 
-is scheduled to run in mid-2030 and beyond. The HL-LHC
+is scheduled to run in 2030 and beyond. The HL-LHC
 is expected to deliver an instantaneous luminosity of $L=7.5\times10^{34}$
 cm$^{-2}$s$^{-1}$ and an annual integrated luminosity of approximately
 $250\text{ fb}^{-1}$ to reach a total dataset of $3000 - 4000\text{ fb}^{-1}$.
@@ -151,7 +149,7 @@ The hard-scattering process, which is the central mechanism exploited at hadron 
 \subsection{Cross-section calculation for proton-proton collision process}
 \label{sec:cal-xs}
 
-The cross-section calculation for proton beam A and B collision is shown in Figure~\ref{fig:hadron-coll}.
+The cross-section calculation for the collision of proton beam A and B collision is shown in Figure~\ref{fig:hadron-coll}.
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.5\linewidth]{figures/ch3-LHC-ATLAS/hadron_coll.pdf}
@@ -169,51 +167,76 @@ where X represents the remnants of the incoming hadrons. At the hard scattering 
 In this framework, $X_1$ and $X_2$ shown in Figure~\ref{fig:hadron-coll}, denote underlying events associated with the process.
 To calculate the total cross-section of such proton-proton scattering, the cross-section is integrated over the momentum fractions $x_a$ and $x_b$, summing over all possible initial parton pairs:
 \begin{equation}
-    \sigma(A + B \rightarrow C+X) = \sum_{a, b}\int 
-    dx_a dx_b f_{a/A}(x_a, Q^2) f_{b/B}(x_a, Q^2) \sigma_{a+b \rightarrow c}
+    \sigma(A + B \rightarrow C+X) = \sum_{a, b}
+    \int_{0}^{1} \int_{0}^{1} dx_a dx_b f_{a/A}(x_a, Q^2) f_{b/B}(x_b, Q^2) 
+    \sigma_{a+b \rightarrow c}
     ,
 \end{equation}
 where the PDFs $f_{a/A}(x_a, Q^2)$ and $f_{b/B}(x_b, Q^2)$ are the distributions of the momentum fraction $x_a$ $x_b$ for partons a and b, at the momentum transfer scale $Q^2$.
 
 The production cross section in hadron collisions is calculated within the framework of perturbative quantum chromodynamics (pQCD). The precision of the calculation improves as higher-order corrections in the perturbative expansion are included.
 
-The inclusive cross section at the LHC for a process $pp \to X$ calculated at the $n$-th order in perturbation theory can be written schematically as
+The inclusive cross section at the LHC for a process $pp \to X$ calculated up to the $n$-th order in perturbation theory can be written as
 \begin{equation}
-\sigma^{(n)}_{\text{inclusive}}
-=
-f(x_1,\mu_F)\otimes f(x_2,\mu_F)
-\otimes
-\hat{\sigma}^{(n)}(x_1,x_2,\mu_R,\mu_F),
+    \sigma^{(n)}_{\text{inclusive}} 
+    = 
+    \sum_{a,b} \int_{0}^{1} dx_1 \int_{0}^{1} dx_2 \, f_{a}(x_1,\mu_F) f_{b}(x_2,\mu_F) \hat{\sigma}_{ab}^{(n)}(x_1,x_2,\mu_R,\mu_F),
 \end{equation}
-where $f(x,\mu_F)$ denotes the parton distribution function (PDF) evaluated at the
-momentum fraction $x$ and factorization scale $\mu_F$~\cite{Collins1989Factorization}, $\hat{\sigma}^{(n)}$ represents
-the partonic cross section, $\mu_R$ is the renormalization scale~\cite{Ellis1996QCD}, and $\otimes$
-denotes the convolution over the parton momentum fractions.
+where $f_a(x,\mu_F)$ and $f_b(x,\mu_F)$ denote the parton distribution functions (PDFs) evaluated at the momentum fraction $x$ and factorization scale $\mu_F$~\cite{Collins1989Factorization}. Here, $\hat{\sigma}_{ab}^{(n)}$ represents the partonic cross section for partons $a$ and $b$ calculated up to the $n$-th order, and $\mu_R$ is the renormalization scale~\cite{Ellis1996QCD}.
 
-The perturbative expansion of the partonic cross section in powers of the strong
-coupling constant $\alpha_S$ is given by
+The perturbative expansion of the exact partonic cross section $\hat{\sigma}_{ab}$ in powers of the strong coupling constant $\alpha_S$ is given by
 \begin{equation}
-\hat{\sigma}^{(n)}
+\hat{\sigma}_{ab}
 =
-\hat{\sigma}^{(0)}
+\hat{\sigma}_{ab}^{(0)}
 +
-\alpha_S\,\hat{\sigma}^{(1)}
+\alpha_S\,\hat{\sigma}_{ab}^{(1)}
 +
 \cdots
 +
-\alpha_S^{n}\hat{\sigma}^{(n)}
+\alpha_S^{n}\hat{\sigma}_{ab}^{(n)}
 +
 \mathcal{O}(\alpha_S^{n+1}),
 \end{equation}
-where $\hat{\sigma}^{(0)}$ corresponds to the leading-order (LO) contribution, while
-the higher-order terms represent next-to-leading order (NLO), next-to-next-to-leading
-order (NNLO), and higher perturbative corrections.
+where $\hat{\sigma}_{ab}^{(0)}$ corresponds to the leading-order (LO) contribution, while the higher-order terms represent next-to-leading order (NLO), next-to-next-to-leading order (NNLO), and higher perturbative corrections.
+
+% The inclusive cross section at the LHC for a process $pp \to X$ calculated at the $n$-th order in perturbation theory can be written schematically as
+% \begin{equation}
+% \sigma^{(n)}_{\text{inclusive}}
+% =
+% f(x_1,\mu_F)\otimes f(x_2,\mu_F)
+% \otimes
+% \hat{\sigma}^{(n)}(x_1,x_2,\mu_R,\mu_F),
+% \end{equation}
+% where $f(x,\mu_F)$ denotes the parton distribution function (PDF) evaluated at the
+% momentum fraction $x$ and factorization scale $\mu_F$~\cite{Collins1989Factorization}, $\hat{\sigma}^{(n)}$ represents
+% the partonic cross section, $\mu_R$ is the renormalization scale~\cite{Ellis1996QCD}, and $\otimes$
+% denotes the convolution over the parton momentum fractions.
+
+% The perturbative expansion of the partonic cross section in powers of the strong
+% coupling constant $\alpha_S$ is given by
+% \begin{equation}
+% \hat{\sigma}^{(n)}
+% =
+% \hat{\sigma}^{(0)}
+% +
+% \alpha_S\,\hat{\sigma}^{(1)}
+% +
+% \cdots
+% +
+% \alpha_S^{n}\hat{\sigma}^{(n)}
+% +
+% \mathcal{O}(\alpha_S^{n+1}),
+% \end{equation}
+% where $\hat{\sigma}^{(0)}$ corresponds to the leading-order (LO) contribution, while
+% the higher-order terms represent next-to-leading order (NLO), next-to-next-to-leading
+% order (NNLO), and higher perturbative corrections.
 %%%%%%%%%%%%%%%%%%%%%% 
 
 High-energy physicists use Monte Carlo (MC) event generators, based on pQCD, as theoretical frameworks to calculate production cross sections, both within the experimentally accessible fiducial phase space and over the full phase space. These generators provide detailed modeling of hard-scattering processes, parton showering~\cite{AltarelliParisi1977}, which describes the perturbative QCD radiation of quarks and gluons before hadronization, and hadronization to produce jets.
 
 %%%%%%%%%%%%%%%%%%%%
-\subsection{The diboson $ZZ$ production cress-section at the LHC}% ZZ Production at LHC
+\subsection{The diboson $ZZ$ production cross-section at the LHC}% ZZ Production at LHC
 \label{sec:zz-matrix-xs}
 
 One major topic of this thesis is the measurement of the $ZZ$ production cross section. The corresponding theoretical predictions are obtained using the \textsc{Matrix}~\cite{Grazzini2018MATRIX} and \textsc{Sherpa}~\cite{Gleisberg2009Sherpa} MC generators.
@@ -235,9 +258,9 @@ is defined with the following cuts on MC particle truth-level quantities:
 \begin{itemize}
 \item The charged leptons ($\ell = e, ~\mu$ ) are "dressed" by adding the momentum of nearby photons found within an angular separation $\Delta R(\ell, \gamma) < 0.1$ to the lepton's four-momentum. If no photons are present within this angular separation, the lepton's momentum remains unchanged;
 \item Charged leptons are in the rapidity region $|{\eta}^{\ell} | < 2.5$;
-\item Transverse momentum  $p_\text{T}^{\ell} > 30 (20) ~GeV$ for the leading (sub-leading) charged lepton; 
-\item Dilepton invariant mass must be in a range: $76  <m_{\ell\ell}<106 ~GeV $;
-\item Missing transverse energy (due to neutrinos), $E_\text{T}^\text{miss}>95 ~GeV$; % reco > 110
+\item Transverse momentum  $p_\text{T}^{\ell} > 30 (20) ~\text{GeV}$ for the leading (sub-leading) charged lepton; 
+\item Dilepton invariant mass must be in a range: $76  <m_{\ell\ell}<106 ~\text{GeV} $;
+\item Missing transverse energy (due to neutrinos), $E_\text{T}^\text{miss}>95 ~\text{GeV}$; % reco > 110
 \item Charged lepton angular separation, $\Delta R_{\ell\ell}<1.8$;  % reco-level < 1.8)
 \item The $\Phi$ angle separation between two Zs: $\Delta \Phi (E_\text{T}^\text{miss},p_\text{T}^{\ell\ell})>2.2$;  % reco is >2.7
 \item The ratio of $E_\text{T}^\text{miss}$ and the sum of $p_\text{T}$ for all particles, $E_\text{T}^\text{miss}/H_\text{T} > 0.65$.
@@ -260,7 +283,7 @@ The cross-sections for the $q\bar q$ and $gg$ initial states are shown in Table~
 \centering  $gg\rightarrow ZZ$ & NLO  & 0.4633 ($\pm$0.0051) & 2.7798  & ($^{+8.0}_{-8.8 } $) \% \\ \hline 
 \end{tabular}
 \end{center}
-\caption{\rm The $ZZ$ production cross-sections in fiducial volume at LO. NLO, and NLO in perturbation theory at $\sqrt{s}$ = 13~TeV. 
+\caption{\rm The $ZZ$ production cross-sections in fiducial volume at LO, NLO, and NNLO in perturbation theory at $\sqrt{s}$ = 13~TeV. 
 The processes listed refer to both quark-antiquark and gluon-gluon production modes, $\ell$ denotes electron and muon, and $\nu$ includes three flavors. The QCD-scale uncertainties are given in the last column.
 }
 \label{tab:zz-prod}
@@ -354,11 +377,11 @@ Muon Spectrometer
 \end{table}\label{tab:detector-performance}
 
 
-To maximize the physics discovery potential at the High-Luminosity LHC (HL-LHC), which is expected to begin operation in the mid-2030s, the \textsc{ATLAS} detector is currently undergoing a series of major upgrades. These upgrades are designed to cope with the significantly increased luminosity and pileup conditions anticipated at the HL-LHC.
+To maximize the physics discovery potential at the High-Luminosity LHC (HL-LHC), which is expected to begin operation in 2030, the \textsc{ATLAS} detector is currently undergoing a series of major upgrades. These upgrades are designed to cope with the significantly increased luminosity and pileup conditions anticipated at the HL-LHC.
 %
 An overview of the ATLAS HL-LHC upgrade program is provided in Chapter~\ref{chap:ATLAS-upgrade}. In particular, the construction of the small-diameter Monitored Drift Tube (sMDT) muon detector for the muon spectrometer upgrade, one of the major topics of this thesis, is described in detail in Chapters~\ref{chap:sMDT-tube} and~\ref{chap:sMDT-chamber}. 
 
-Sections below of this Chapter describe detailed technologies of the initial ATLAS subdetectors.
+The following sections of this chapter describe the detailed technologies of the initial ATLAS subdetectors.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Inner Detector}
@@ -480,7 +503,7 @@ There is a significant amount of inactive material in the transition region betw
         \hline
          & \# of Layers & $|\eta|$ coverage & \# of Layers & $|\eta|$ coverage \\
          \hline
-         Presamples & 1 & $|\eta|<1.52$ & 1 & $1.5<|\eta|<1.8$ \\
+         Presampler & 1 & $|\eta|<1.52$ & 1 & $1.5<|\eta|<1.8$ \\
          \hline
          \multirow{3}{*}{Calorimeter} & 3 & $|\eta|<1.35$ & 2 & $1.375<|\eta|<1.5$ \\
          & 2 & $1.35<|\eta|<1.475$ & 3 & $1.5<|\eta|<2.5$ \\
@@ -579,7 +602,7 @@ The Muon Spectrometer (MS)~\cite{ATLAS-TDR-10,muonRecoPerf21}, shown in Figure~\
     \subfloat[]{
     \includegraphics[width=0.575\textwidth]{figures/ch3-LHC-ATLAS/ATLAS-MS-RZ.png}
     }
-    \caption{The ATLAS MS Barrel (a), and End-cap (b), layout for Run~1 and Run~2 operations.}
+    \caption{The ATLAS MS Barrel (a) and End-cap (b), layout for Run~1 and Run~2 operations.}
     \label{fig:MS-layout}
 \end{figure}
 
@@ -589,6 +612,7 @@ Muon trajectories are bent by large superconducting air-core toroidal magnets. I
 During Run~1 and Run~2 operations, the Muon Spectrometer (MS) consisted of four subdetector systems: Monitored Drift Tubes (MDT) and Cathode Strip Chambers (CSC) for precision tracking, and Resistive Plate Chambers (RPC) and Thin Gap Chambers (TGC) for muon triggering. Three RPC and TGC stations provide triggering in the barrel and end-cap regions of the MS, respectively. Precision tracking measurements are provided by MDT chambers throughout most of the MS, while CSC detectors are installed in the innermost layer of the end-cap region, where the particle flux is highest. The muon detector technologies are described below.
 
 \noindent\textbf{Monitored Drift Tube (MDT) detectors}   \\
+MDT chambers, shown in Figure~\ref{fig:MDT_struct},  consist of pressurized aluminum drift tubes with an inner diameter of 29.7 mm. The operating gas mixture is 93\% Ar and 7\% CO$_2$, pressurized to 3~bar. Ionization produced by charged particles crossing the tube generates electrons that drift toward a central tungsten--rhenium wire with a diameter of 50~$\mu$m held at an operating voltage of 3080~V.
 \begin{figure}[!htbp]
     \centering
     \subfloat[][]{
@@ -604,9 +628,6 @@ During Run~1 and Run~2 operations, the Muon Spectrometer (MS) consisted of four 
     \label{fig:MDT_struct}
 \end{figure}
 %
-
-MDT chambers, shown in Figure~\ref{fig:MDT_struct},  consist of pressurized aluminum drift tubes with an inner diameter of 29.7 mm. The operating gas mixture is 93\% Ar and 7\% CO$_2$, pressurized to 3~bar. Ionization produced by charged particles crossing the tube generates electrons that drift toward a central tungsten--rhenium wire with a diameter of 50~$\mu$m held at an operating voltage of 3080~V.
-
 Each MDT chamber contains two multilayer groups separated by a mechanical support structure. The innermost multilayer includes four tubes per layer to enhance pattern recognition, while the middle and outer multilayers consist of three layers each (see Figure~\ref{fig:MDT_struct}). The MDT design provides excellent mechanical stability and operational reliability. Due to the radial electric field, the spatial resolution depends only weakly on the particle incidence angle, with an expected and observed single-tube resolution of approximately 80~$\mu$m~\cite{PERF-2007-01}.
 
 \begin{table}[!htbp]
@@ -618,7 +639,7 @@ Each MDT chamber contains two multilayer groups separated by a mechanical suppor
         Gas mixture & Ar/CO$_2$ (93\%/7\%) \\
         Operating voltage & 3080 V \\
         Wire material & W/Re (97\%/3\%); 3\% gold plating \\
-        Gas pressure & 3 bar (absolute) \\
+        Gas pressure & 3 mbar (absolute) \\
         Gas gain & $2\times10^4$ \\
         Maximum drift time & $\sim 750$ ns \\
         Average tube resolution & $\sim 80$ $\mu$m\\
@@ -628,8 +649,9 @@ Each MDT chamber contains two multilayer groups separated by a mechanical suppor
     \label{tab:summary_MDT}
 \end{table}
 
+\vspace{0.3cm}
 \noindent \textbf{Cathode Strip Chambers (CSCs)} \\
-CSCs are multiwire proportional chambers with radially oriented anode wires operated at a voltage of approximately 1900~V. The chambers use a gas mixture of Ar/CO$_2$ (80\%/20\%) as the ionization medium. Two cathode strip planes are used for readout: one oriented parallel to the wires and the other perpendicular to them, allowing position measurements in both the bending and non-bending directions.
+CSCs are multiwire proportional chambers with radially oriented anode wires operated at a voltage of approximately 1900~V. The chambers use a gas mixture of Ar/CO$_2$ (80\%/20\%) as the ionization medium. 
 \begin{figure}[!hbtp]
     \centering 
     \subfloat[]{
@@ -638,9 +660,10 @@ CSCs are multiwire proportional chambers with radially oriented anode wires oper
     \subfloat[]{
     \includegraphics[width=.35\textwidth]{figures/ch3-LHC-ATLAS/CSC_wheelstruct.png}
     }
-    \caption{The cross-section of the CSC chamber in the wire length direction \protect\subref{subfig:csc_diag}~\cite{PERF-2007-01} and the CSC End-Cap wheel structure with small and large chambers \protect\subref{subfig:csc_mechstruct}~\cite{PERF-2007-01}.}
+    \caption{(a) The cross-section of the CSC chamber in the wire length direction,  and (b) the CSC End-Cap wheel structure with small and large chambers~\cite{PERF-2007-01}.}
     \label{fig:csc_struct}
 \end{figure}
+Two cathode strip planes are used for readout: one oriented parallel to the wires and the other perpendicular to them, allowing position measurements in both the bending and non-bending directions.
 
 Figure~\ref{fig:csc_struct} shows the chamber structure and layout. CSC detectors are installed in the innermost end-cap station in the region $2 < |\eta| < 2.7$, where the particle flux is highest. Each CSC wheel consists of eight small and eight large chambers. Each chamber contains four CSC planes, providing four independent measurements in both $\eta$ and $\phi$. The CSC parameters are summarized in Table~\ref{tab:summary_CSC}.
 
@@ -669,7 +692,6 @@ The spatial resolution in the non-bending direction is about 5~mm~\cite{PERF-200
 \end{table}
 
 \noindent\textbf{Resistive Plate Chambers (RPCs)} \\
-
 RPCs are used as trigger detectors in the barrel region and are arranged in three concentric cylindrical layers (trigger stations) around the beam axis. Due to the large lever arm between the outer and inner layers, RPCs provide a high-$p_T$ trigger in the range of 9--35~GeV, while the two inner layers provide a low-$p_T$ trigger in the range of 6--9~GeV. The redundancy in the track measurement enables a coincidence-based trigger scheme that suppresses fake tracks from noise and improves the overall trigger efficiency.
 
 RPCs are gaseous parallel-plate detectors without wires. An electric field of approximately 4.9~kV/mm is applied across a 2~mm gas gap. The gas mixture used is C$_2$H$_2$F$_4$/Iso-C$_4$H$_{10}$/SF$_6$ (94.7/5/0.3). Figure~\ref{fig:rpc_struct} shows the detector and chamber structure of the RPC system.
@@ -711,7 +733,6 @@ RPCs are gaseous parallel-plate detectors without wires. An electric field of ap
 \end{table}
 
 \noindent\textbf{Thin Gap Chambers (TGCs)} \\
-
 TGCs provide the muon trigger in the end-cap region. The determination of the azimuthal coordinate complements the radial position measurement provided by the MDT chambers. The middle layer of the end-cap MDT stations (the EM wheels) is equipped with seven layers of TGCs, while the inner layer contains two TGC layers.
 
 The inner layer (I layer), which corresponds to the innermost muon station, is segmented radially into two non-overlapping regions: the end-cap (EI) and forward (FI) regions. These regions together form the Small Wheel. The TGC system consists of two doublets (four layers) in the inner station and one triplet plus two doublets (seven layers) in the middle station.
@@ -823,23 +844,40 @@ The High-Level Trigger (HLT) is the second stage of the trigger system and is im
 
 The trigger algorithms perform feature extraction, requesting detector data either within specific RoIs or from the full detector, depending on the physics object being reconstructed (for example, missing transverse momentum reconstruction requires information from the entire detector). During Run~2, the HLT reduces the event rate from approximately 100~kHz to an average output rate of about 3~kHz, corresponding to a data throughput of roughly 6~GB/s.
 
+%Events accepted by the HLT are transferred by the Sub-Farm Output (SFO) system to permanent storage and subsequently exported to the Tier-0 computing facility at CERN for offline reconstruction and analysis~\cite{ATLAS-TDR-17}.
+
+%\begin{table}[!htbp]
+%    \centering
+%    \begin{tabular}{c|c|c|c}
+%        \hline\hline
+%        Trigger & Incoming event rate & Outgoing event rate & Reduction factor \\ 
+%        \hline
+%        Level 1 & 40 MHz  & 100 kHz ; 300 GB/s & 400 \\
+%        HLT     & 100 kHz & 3 kHz   ; 6 GB/s   & 30  \\
+%        \hline\hline
+%    \end{tabular}
+%    \caption{\rm Summary of event rates and reduction factors in the ATLAS trigger system.}
+%    \label{tab:summary_trigger}
+%\end{table}
+
 Events accepted by the HLT are transferred by the Sub-Farm Output (SFO) system to permanent storage and subsequently exported to the Tier-0 computing facility at CERN for offline reconstruction and analysis~\cite{ATLAS-TDR-17}.
 
 \begin{table}[!htbp]
     \centering
-    \begin{tabular}{c|c|c|c}
+    \begin{tabular}{c|c|c|c|c}
         \hline\hline
-        Trigger & Incoming event rate & Outgoing event rate & Reduction factor \\ 
+        LHC Period & Trigger & Incoming event rate & Outgoing rate \& Bandwidth & Reduction factor \\ 
         \hline
-        Level 1 & 40 MHz  & 100 kHz ; 300 GB/s & 400 \\
-        HLT     & 100 kHz & 3 kHz   ; 6 GB/s   & 30  \\
+        \multirow{2}{*}{Run 2} & Level 1 & 40 MHz  & 100 kHz ; $\sim$160 GB/s & 400 \\
+                               & HLT     & 100 kHz & 1 kHz ; $\sim$1.2 GB/s   & 100 \\
+        \hline
+        \multirow{2}{*}{Run 3} & Level 1 & 40 MHz  & 100 kHz ; $\sim$300 GB/s & 400 \\
+                               & HLT     & 100 kHz & 3 kHz ; $\sim$6.0 GB/s   & $\sim$33 \\
         \hline\hline
     \end{tabular}
-    \caption{\rm Summary of event rates and reduction factors in the ATLAS trigger system.}
+    \caption{\rm Summary of event rates and reduction factors in the ATLAS trigger system comparing LHC Run 2~\cite{ATLAS-Run2-Trigger} and Run 3~\cite{ATLAS-Run3-Trigger} operations.}
     \label{tab:summary_trigger}
 \end{table}
-
-
 
 
 

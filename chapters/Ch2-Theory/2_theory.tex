@@ -2,7 +2,7 @@
 %\chapter{The Standard Model of Particle Physics}
 
 %-------------SM----------------
-\section{Standard Model}
+\section{The Standard Model}
 
 The SM of particle physics is the theoretical framework that describes the fundamental particles and their interactions, excluding gravity. It is one of the most successful theories in physics, providing highly precise predictions that have been confirmed by experiments over energy scales spanning more than twelve orders of magnitude.
 
@@ -31,7 +31,7 @@ The SM of particle physics is the theoretical framework that describes the funda
 %    \item \textbf{Strong Nuclear Force}: Described by Quantum Chromodynamics (QCD), it binds quarks together to form hadrons. Gluons mediate this force and carry color charge.
 %\end{enumerate}
 
-The theoretical framework of the SM is formulated using a Lagrangian density function~\cite{PeskinSchroeder1995}, grounded in quantum field theory, special relativity, and the conservation laws observed in nature. The Lagrangian includes the kinematic terms for elementary and gauge fields as well as their interactions, and the physics law, the equations of motion for particles, can be derived directly from it. To be consistent with fundamental principles, the Lagrangian must remain invariant under symmetry transformations~\cite{Noether1918}. In particular, gauge fields and their interactions arise naturally from the requirement of gauge invariance, which ensures that the particle wave function $\psi(x)$ transforms locally as $\psi(x)\rightarrow \psi'(x)= e^{i\alpha(x)}\psi(x)$ where $x$ is 4-dimensional space-time coordinates
+The theoretical framework of the SM is formulated using a Lagrangian density function~\cite{PeskinSchroeder1995}, grounded in quantum field theory, special relativity, and the conservation laws observed in nature. The Lagrangian includes the kinematic terms for elementary and gauge fields as well as their interactions, and the physics law, the equations of motion for particles, can be derived directly from it. To be consistent with fundamental principles, the Lagrangian must remain invariant under symmetry transformations~\cite{Noether1918}. In particular, gauge fields and their interactions arise naturally from the requirement of gauge invariance. %which ensures that the particle wave function $\psi(x)$ transforms locally as $\psi(x)\rightarrow \psi'(x)= e^{i\alpha(x)}\psi(x)$ where $x$ is 4-dimensional space-time coordinates
 and $\alpha(x)$ is a local phase angle in rotation.
 
 The interactions in the SM are described by the non-Abelian Yang-Mills gauge theory, based on the symmetry group 
@@ -40,7 +40,7 @@ In this framework, the labels $C$, $L$, and $Y$ stand for the color charge, left
 The \(\text{SU}(3)_C\) symmetry governs the strong interaction and corresponds to internal rotations of the three-dimensional quark wave function in color space, \((\psi_q^r, \psi_q^g, \psi_q^b)\). Its gauge fields are the eight gluons, each carrying a combination of two color charges~\cite{pich2007SM}.  
 The \(\text{SU}(2)_L \otimes \text{U}(1)_Y\) symmetry describes the electroweak interaction, unifying the weak and electromagnetic forces. The \(\text{SU}(2)_L\) component acts on left-handed fermion doublets and introduces three massless gauge bosons, \(W^\pm\) and \(Z\), while the \(\text{U}(1)_Y\) component accounts for weak hypercharge and combines with \(\text{SU}(2)_L\) to produce the massless photon, \(\gamma\), mediating the electromagnetic interaction.
 The electroweak symmetry is spontaneously broken by the Higgs mechanism, giving masses to the $W$ and $Z$ bosons while leaving the photon massless.
-The Higgs mechanism is central to the SM. It explains how particles acquire mass, and it's introduced in detail in~\ref{sec:higgs}.
+The Higgs mechanism is central to the SM. It explains how particles acquire mass, and it's introduced in detail in~\ref{EW-theory}.
 
 \section{Mathematical Presentation of the Theoretical Framework}
 
@@ -90,7 +90,7 @@ the covariant derivative in Eq.~\ref{eq:QCD-quark}:
 \begin{equation}\label{eq:QCD-quark}
     D_{\mu}=\partial_{\mu}+i g_s \frac{\lambda^{a}}{2} G_{a}^{\mu}.
 \end{equation}
-Here, $\lambda^{a} (a = 0,1,...,8)$ are the Gell-Mann matrices, $G_{a}^{\mu}$ are the gluon fields and $g_s$ is the strong (QCD) coupling constant.
+Here, $\lambda^{a} (a = 1,2,...,8)$ are the Gell-Mann matrices, $G_{a}^{\mu}$ are the gluon fields and $g_s$ is the strong (QCD) coupling constant.
 
 The existence of the strong-interaction force carrier, the gluon, predicted by QCD, was experimentally confirmed in the late spring of 1979 at the PETRA electron-positron collider at DESY in Germany. Four experiments: TASSO~\cite{Tasso1979_PlanarEvents}, MARK-J~\cite{MarkJ1979_ThreeJet}, JADE~\cite{JADE1980_PlanarThreeJets}, and PLUTO~\cite{Pluto1979_GluonBremsstrahlung}, independently observed three-jet events arising from gluon bremsstrahlung. This discovery provided direct evidence for the gluon's existence, established its spin-1 nature, and confirmed its role as the gauge boson of the strong interaction.
 
@@ -105,6 +105,7 @@ It is conventionally quoted at the mass scale of the $Z$ boson~\cite{PDG2016}, w
 The strong coupling is determined with high precision (approximately $0.9\%$ uncertainty) from a wide range of QCD processes, including measurements at the LHC (e.g.\ ATLAS data), lattice QCD calculations, and $e^+e^-$ collision experiments.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Lagrangian of electroweak theory}
+\label{EW-theory}
 
 The Lagrangian of the electroweak theory can be written as
 \begin{equation}
@@ -169,9 +170,9 @@ The symmetry transformations in $\mathrm{SU}(2)_L \otimes \mathrm{U}(1)_Y$ inter
     \psi_{2}(x) {\longrightarrow} \psi_{2}^{\prime}(x) \equiv \exp \left\{i Y_{2} \theta(x)\right\} \psi_{2}(x),
 \end{equation}
 \begin{equation}
-    \psi_{3}(x) {\longrightarrow} \psi_{3}^{\prime}(x) \equiv \exp \left\{i Y_{3} \theta(3)\right\} \psi_{3}(x).
+    \psi_{3}(x) {\longrightarrow} \psi_{3}^{\prime}(x) \equiv \exp \left\{i Y_{3} \theta(x)\right\} \psi_{3}(x).
 \end{equation}
-Here, $U_L$ trpresents the $\text{SU}(2)_L$ transformation acts on the doublet field $\psi_1(x)$:
+Here, $U_L$ represents the $\text{SU}(2)_L$ transformation acts on the doublet field $\psi_1(x)$:
 \begin{equation}
     U_{L} \equiv \exp{\left\{i\tau_i\alpha^i(x)\right\}}
     = \exp \left\{i \frac{\sigma_{i}}{2} \alpha^{i}(x) \right\} \quad(i=1,2,3).

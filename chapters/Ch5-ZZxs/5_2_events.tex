@@ -1,17 +1,17 @@
 \section{Object and Event Selection} 
 \label{sec:llvv_selection}
 
-To isolate the rare signal process from the vast number of particles produced in proton-proton collisions, a rigorous procedure is required to identify and select the final-state objects of interest. This procedure begins with reconstructing physical objects, including electrons, muons, and jets, from the electronic signals collected by the ATLAS detector. The object reconstruction with the ATLAS experiment has been described in Chapter~\ref{chap:recon}. Following reconstruction, a stringent set of selection criteria is applied to ensure the high quality of these objects and to keep high selection efficiency for signals and to suppress contributions from misidentified particles and background processes, thereby enhancing the purity of the event sample.
+To isolate the rare signal process from the vast number of particles produced in proton-proton collisions, a rigorous procedure is required to identify and select the final-state objects of interest. This procedure begins with reconstructing physical objects, including electrons, muons, and jets, from the electronic signals collected by the ATLAS detector. The object reconstruction with the ATLAS experiment has been described in Chapter~\ref{chap:recon}. Following reconstruction, a stringent set of selection criteria is applied to ensure the high quality of these objects, maintain high selection efficiency for signals, and suppress contributions from misidentified particles and background processes, thereby enhancing the purity of the event sample.
 
 This section describes the complete event selection strategy, which is carried out in two sequential stages. First, criteria are defined to select individual physics objects, ensuring a clean and well-calibrated set of inputs for the analysis. Second, events are selected based on these reconstructed objects to isolate the characteristic signal topology and define the final signal regions.
 
-The implementation of these selections follows the official recommendations of the ATLAS Collaboration and is based on AnalysisBase release 21.2.164. The analysis is performed using STDM3 DAOD (Derived Analysis Object Data) samples, with r-tags r9364, r10201, and r10724 corresponding to the MC16a, MC16d, and MC16e campaigns, respectively.
+The implementation of these selections follows the official recommendations of the ATLAS Collaboration. Detailed information regarding the specific software releases, data derivation formats, and simulation campaign tags utilized for this analysis is documented in Appendix~\ref{subsec:samples_zz}.
 
 % ======================================================================
 \subsection{Object Selection}
 \label{sec:llvv_object_selection}
 
-The successful identification of the signal final state relies on the precise reconstruction and selection of its constituent physics objects from the complex collision environment. This section details the criteria applied to select the muons, electrons, and jets that form the basis of the analysis. A final step resolves any spatial ambiguities between these selected objects to ensure each is uniquely defined. All selections adhere to the recommendations provided by the ATLAS Combined Performance groups.
+The successful identification of the signal final state relies on the precise reconstruction and selection of its constituent physics objects from the complex collision environment. This section details the criteria applied to select the muons, electrons, and jets that form the basis of the analysis. A final step resolves any spatial ambiguities between these selected objects to ensure each is uniquely defined. All selections adhere to the standard recommendations provided by the ATLAS Combined Performance groups. The exact software working points and algorithm names are tabulated in Appendix~\ref{subsec:samples_zz}.
 
 \subsubsection{Muons}
 This analysis uses muons identified as \textit{combined muons}, which are reconstructed by matching a track in the inner detector (ID) with a corresponding track in the muon spectrometer. This combined fit yields muon candidates with high purity and precise momentum measurement.
@@ -19,30 +19,30 @@ This analysis uses muons identified as \textit{combined muons}, which are recons
 Signal muons selected for this analysis are required to satisfy a stringent set of criteria to ensure they are prompt (originating from the primary interaction) and well-isolated.
 \begin{itemize}
     \item \textbf{Kinematics:} Muons must have a transverse momentum $p_\text{T} > 20$ GeV and be within the detector acceptance of $|\eta| < 2.5$.
-    \item \textbf{Identification:} The \texttt{Medium} identification working point is required. This selection imposes quality requirements on the track fit and the compatibility between the ID and muon spectrometer measurements, effectively suppressing contamination from misidentified hadrons.
+    \item \textbf{Identification:} A medium-level identification criteria is required. This selection imposes quality requirements on the track fit and the compatibility between the ID and muon spectrometer measurements, effectively suppressing contamination from misidentified hadrons.
     \item \textbf{Prompt:} To reject non-prompt muons from heavy-flavour decays and cosmic-ray muons, requirements are placed on the track's impact parameters with respect to the primary vertex: the transverse impact parameter significance $|d_0/\sigma(d_0)| < 3$ and the longitudinal impact parameter $|z_0 \cdot \sin(\theta)| < 0.5$~mm.
-    \item \textbf{Isolation:} To ensure the muon is not part of a jet, an isolation requirement is applied. This is based on the sum of track and calorimeter energy deposits in a cone of $\Delta R = \sqrt{(\Delta\eta)^2+(\Delta\phi)^2} = 0.2$ around the muon. The \texttt{FixedCutPflowLoose} working point is used, which corresponds to an efficiency of approximately 99\% for high-$p_\text{T}$ muons.
+    \item \textbf{Isolation:} To ensure the muon is not part of a jet, an isolation requirement is applied based on the sum of track and calorimeter energy deposits in a cone of $\Delta R = \sqrt{(\Delta\eta)^2+(\Delta\phi)^2} = 0.2$ around the muon. A loose particle-flow isolation working point is used, which corresponds to an efficiency of approximately 99\% for high-$p_\text{T}$ muons.
 \end{itemize}
-To account for differences between data and simulation, dedicated scale and smearing corrections are applied to the muon momentum, and efficiency scale factors are used to correct the MC event yields. In addition, a looser “baseline” selection, requiring $p_\text{T} > 7$ GeV and \texttt{Loose} identification, is used to define muons for event vetoes.
+To account for differences between data and simulation, dedicated scale and smearing corrections are applied to the muon momentum, and efficiency scale factors are used to correct the MC event yields. In addition, a looser baseline selection, requiring $p_\text{T} > 7$ GeV and relaxed identification criteria, is used to define muons for event vetoes.
 
 \subsubsection{Electrons}
 Electrons are reconstructed by matching a track in the inner detector to an energy cluster in the electromagnetic calorimeter. Signal electrons are selected based on the following criteria:
 \begin{itemize}
     \item \textbf{Kinematics:} Electrons must have $p_\text{T} > 20$ GeV and be reconstructed within the fiducial pseudorapidity range of $|\eta| < 2.47$.
-    \item \textbf{Identification:} A likelihood-based discriminant, which combines information from shower shapes, track quality, and track-cluster matching, is used for identification. The \texttt{Medium} working point is chosen to provide a high signal efficiency with strong rejection of jets misidentified as electrons.
+    \item \textbf{Identification:} A likelihood-based discriminant, which combines information from shower shapes, track quality, and track-cluster matching, is used for identification. A medium-level working point is chosen to provide a high signal efficiency with strong rejection of jets misidentified as electrons.
     \item \textbf{Prompt:} Similar to muons, cuts on the impact parameters are applied to ensure electrons originate from the primary vertex: $|d_0/\sigma(d_0)| < 5$ and $|z_0 \cdot \sin(\theta)| < 0.5$~mm.
-    \item \textbf{Isolation:} The \texttt{FixedCutPflowLoose} isolation working point, defined in a cone of $\Delta R = 0.2$, is required to reject non-prompt electrons and ensure they are well-separated from other particles.
+    \item \textbf{Isolation:} A loose particle-flow isolation working point, defined in a cone of $\Delta R = 0.2$, is required to reject non-prompt electrons and ensure they are well-separated from other particles.
     \item \textbf{Quality Veto:} For the 2015-2016 data-taking period, events containing an electron in a known problematic region of the electromagnetic calorimeter crack ($1.37 < |\eta| < 1.52$) are vetoed to prevent mismeasurement of the event's missing transverse momentum.
 \end{itemize}
-Electron energy scale and resolution corrections, along with efficiency scale factors, are applied to the simulation to ensure accurate modeling of the detector response. A “baseline” electron selection, requiring $p_\text{T} > 7$ GeV and satisfying the \texttt{LooseLHB} identification criteria, is used for veto purposes.
+Electron energy scale and resolution corrections, along with efficiency scale factors, are applied to the simulation to ensure accurate modeling of the detector response. A baseline electron selection, requiring $p_\text{T} > 7$ GeV and satisfying a looser likelihood identification criteria, is used for veto purposes.
 
 \subsubsection{Jets}
 Jets provide crucial information about the hadronic activity in the event and are key to defining the VBS-like signal region.
 \begin{itemize}
     \item \textbf{Reconstruction:} Jets are reconstructed from particle-flow objects using the anti-$k_T$ algorithm with a radius parameter of $R=0.4$.
-    \item \textbf{Kinematics and Cleaning:} Jets are selected if they have $p_\text{T} > 30$ GeV and $|\eta| < 4.5$. They must also pass the `Loose` jet cleaning criteria, which are designed to remove spurious jets arising from detector noise or non-collision backgrounds.
+    \item \textbf{Kinematics and Cleaning:} Jets are selected if they have $p_\text{T} > 30$ GeV and $|\eta| < 4.5$. They must also pass standard jet cleaning criteria designed to remove spurious jets arising from detector noise or non-collision backgrounds.
     \item \textbf{Pileup Suppression:} To mitigate the impact of additional proton-proton interactions (pileup), jets within the tracker acceptance ($|\eta| < 2.4$) and with $p_\text{T} < 60$ GeV must satisfy a requirement on the Jet Vertex Tagger (JVT) discriminant.
-    \item \textbf{B-Jet Veto:} To suppress the large background from top-quark pair production, events containing b-jets are vetoed. Jets are identified as b-jets using the `DL1r` multivariate tagging algorithm. Any event containing a jet within $|\eta| < 2.5$ that passes the 85\% efficiency working point is rejected.
+    \item \textbf{B-Jet Veto:} To suppress the large background from top-quark pair production, events containing $b$-jets are vetoed. Jets are identified as $b$-jets using a multivariate tagging algorithm. Any event containing a jet within $|\eta| < 2.5$ that passes the 85\% efficiency working point is rejected.
 \end{itemize}
 
 \subsubsection{Overlap Removal}

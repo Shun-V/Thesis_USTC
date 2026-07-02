@@ -2,7 +2,7 @@
 %\label{sec:obj}
 
 The ATLAS detector identifies and measures the fundamental particles produced in high-energy 
-$pp$ collisions, including electrons, muons, taus, photons, jets of hadrons (originating from quarks and gluons), and missing transverse energy, as illustrated in the left panel of Fig.~\ref{fig:coordinator}. These physics objects are reconstructed from detector signals 
+$pp$ collisions, including $e$, $\mu$, $\tau$ leptons, photons, hadronic jets (originating from quarks and gluons), and missing transverse energy, as illustrated in the left panel of Fig.~\ref{fig:coordinator}. These physics objects are reconstructed from detector signals 
 to transform raw data, such as energy deposits, hit patterns, timing information, and collected charges, into high-level physics objects, including electrons, photons, muons, $\tau$ leptons, and hadronic jets. This reconstruction relies on sophisticated algorithms and AI-based techniques to achieve high-precision tracking and calorimetry. Core components of the process include primary-vertex reconstruction to identify proton–proton interaction points, clustering of energy deposits in the calorimeters, charged-particle track reconstruction in the Inner Detector and the Muon Spectrometer, and the determination of missing transverse energy ($E_\text{T}^{\mathrm{miss}}$).
 
 %This chapter presents the reconstruction of the primary physics objects used in the event selection. ATLAS coordinator for reconstruction is shown in the right panel of Figure~\ref{fig:coordinator}.
@@ -15,7 +15,7 @@ to transform raw data, such as energy deposits, hit patterns, timing information
     \subfloat[]{
     \includegraphics[width=0.55\textwidth]{figures/ch4-recon/ATLAS-coordinate.png}
     }
-    \caption{(a) illustration of the particles produced in the pp collision passing the ATLAS sub-detector layers; (b) the ATLAS coordinator for physics object reconstruction.}
+    \caption{(a) illustration of the particles produced in the pp collision passing the ATLAS sub-detector layers; (b) the ATLAS coordinate system for physics object reconstruction.}
     \label{fig:coordinator}
 \end{figure}
 
@@ -81,7 +81,7 @@ The process involves finding tracks in the MS, extrapolating them to the beamlin
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/ch4-recon/Muon-recon.png}
-    \caption{Schematic drawing of the detector parts used for muon reconstruction. Dependent on the detector parts used for the recontruction, several muon types are defined: Combined muons use the information of both inner detector and muon spectrometer, Standalone muons are reconstructed in the muon spectrometer only, Segment-Tagged muons are reconstructed in the inner detector and a single segment of the muon spectrometer and Calorimeter-Tagged muons get reconstructed in the inner detector and additionally leave a characteristic energy deposit in the calorimeter.}
+    \caption{Schematic drawing of the detector parts used for muon reconstruction. Dependent on the detector parts used for the reconstruction, several muon types are defined: Combined muons use the information of both inner detector and muon spectrometer, Standalone muons are reconstructed in the muon spectrometer only, Segment-Tagged muons are reconstructed in the inner detector and a single segment of the muon spectrometer and Calorimeter-Tagged muons get reconstructed in the inner detector and additionally leave a characteristic energy deposit in the calorimeter.}
     \label{fig:mu-ID}
 \end{figure}
 
@@ -98,7 +98,7 @@ A \texttt{Medium} identification selection~\cite{ATLAS-Muon-Reco-ID-2021} is app
     \includegraphics[width=0.48\textwidth]{figures/ch4-recon/Muon-eff-pT.png}
     }
     \caption{Muon reconstruction and identification efficiency as a function of $\eta$ (a) and $p_\text{T}$ (b).}
-    \label{fig:mu-ID}
+    \label{fig:mu-ID2}
 \end{figure}
 
 %%%%%%%%%%%%%%%
@@ -120,15 +120,15 @@ anti-$k_T$ algorithm with $R=0.4$. Large-$R$ jets mainly originate from
 hadronic decays of boosted Higgs bosons, $W$ and $Z$ bosons, and top quarks,
 and are reconstructed using the anti-$k_T$ algorithm with $R=1.0$.
 
-Jets with $p_{\mathrm{T}} > 30$~GeV and $|\eta| < 4.5$ are reconstructed
+Jets with $p_\text{T} > 30$~GeV and $|\eta| < 4.5$ are reconstructed
 using the anti-$k_T$ algorithm applied to particle-flow (PFlow)~\cite{ATLAS-PFlow-Jets-2017} objects,
 which combine information from the Inner Detector and calorimeters to improve the measurement of jet properties. The jet energy scale (JES) is initially derived from simulation and subsequently refined using in situ calibration techniques based on
 dijet, $\gamma+$jet, and $Z+$jet events~\cite{JETM-2018-05}.
 
-A jet-vertex tagger (JVT)~\cite{ATLAS-CONF-2014-018} is applied to jets with $p_{\mathrm{T}} < 60$~GeV and $|\eta| < 2.4$ to suppress jets originating from pile-up interactions.
+A jet-vertex tagger (JVT)~\cite{ATLAS-CONF-2014-018} is applied to jets with $p_\text{T} < 60$~GeV and $|\eta| < 2.4$ to suppress jets originating from pile-up interactions.
 
 The jet energy scale (JES), jet energy resolution (JER), and their associated uncertainties constitute major sources of systematic uncertainty in analyses involving jets. Figure~\ref{fig:JER} shows the ATLAS small-$R$ jet energy resolution as a function of the jet
-transverse momentum $p_{\mathrm{T}}$~\cite{ATLAS-Jet-JER-2021}.
+transverse momentum $p_\text{T}$~\cite{ATLAS-Jet-JER-2021}.
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.90\textwidth]{figures/ch4-recon/JERpTanduncertainty.png}
@@ -153,7 +153,7 @@ The neutrinos $\nu$ in the final state of an event do not interact with the ATLA
 
 \begin{equation} \label{eq:Et-miss}
 \small
-    \mathbf{E}_T^{\text{miss}} = - \sum_{\substack{\text{selected}\\\text{electrons}}} \mathbf{p}_T^e - \sum_{\substack{\text{accepted}\\\text{photons}}} \mathbf{p}_T^{\gamma} - \sum_{\substack{\text{accepted}\\ \tau \text{leptons}}} \mathbf{p}_T^{\tau_{\text{had}}} - \sum_{\substack{\text{selected}\\\text{muons}}} \mathbf{p}_T^{\mu} - \sum_{\substack{\text{accepted}\\\text{jets}}} \mathbf{p}_T^{\text{jet}} - \sum_{\substack{\text{unused}\\\text{tracks}}} \mathbf{p}_T^{\text{track}},
+    \mathbf{E}_T^{\text{miss}} = - \sum_{\substack{\text{selected}\\\text{electrons}}} \mathbf{p}_T^e - \sum_{\substack{\text{accepted}\\\text{photons}}} \mathbf{p}_T^{\gamma} - \sum_{\substack{\text{accepted}\\ \tau \text{leptons}}} \mathbf{p}_T^{\tau_{\text{had}}} - \sum_{\substack{\text{selected}\\\text{muons}}} \mathbf{p}_T^{\mu} - \sum_{\substack{\text{accepted}\\\text{jets}}} \mathbf{p}_T^{\text{jet}} - \sum_{\substack{\text{unused}\\\text{tracks}}} \mathbf{p}_T^{\text{track}}.
 \end{equation} 
 
 Figure~\ref{fig:met} shows that the missing transverse energy, $E_\text{T}^\text{miss}$, points in the direction opposite to the vector sum of all other visible particles.
