@@ -1,20 +1,24 @@
 % !TEX root = ./main.tex
 
 \ustcsetup{
-  title               = {学位论文模板示例文档 v\ustcthesisversion},
-  title*              = {Sample Document for Thesis Template v\ustcthesisversion},
-  author              = {李泽平},
-  student-id          = {学号},
-  discipline          = {学科专业},
-  supervisor          = {洪专~教授, 李实~教授},
+  title               = {在ATLAS实验上\\基于双轻子和不可见末态\\精确测量ZZ玻色子对产生截面\\并探测暗物质},
+  title*              = {Measurement of ZZ Production Cross-section and Searching for Dark Matter 
+  %at $\sqrt{S}$$ = 13$~TeV 
+  in ATLAS with $\ell^+\ell^-+E^{miss}_{T}$ Final State},
+  author              = {魏传顺},
+  student-id          = {BA19004051},
+  discipline          = {粒子物理与原子核物理},
+  supervisor          = {赵政国~教授, 周冰~教授},
   % date                = {2026-06-09},  % 提交日期，默认为今日
   %
   % 研究生需要填写
   % practice-supervisor = {洪专~教授, 李实~教授},  % 工程/专业类学位的实践导师
-  clc                 = {P185.3},  % 中图分类号，参考 https://www.clcindex.com/category/
-  udc                 = {550.3},  % UDC 分类号，参考 https://udcsummary.info/php/index.php?lang=chi
-  department          = {院系},
-  research-direction  = {研究方向},
+  clc                 = {O572.21},  % 中图分类号，参考 https://www.clcindex.com/category/
+  % 当前clc分类为： O 数理科学和化学  O4 物理学  O57 原子核物理学、高能物理学  O572 高能物理学  O572.2 粒子物理学  O572.21 实验与测定
+  udc                 = {539.1},  % UDC 分类号，参考 https://udcsummary.info/php/index.php?lang=chi
+  % 当前udc分类为： 539.1 核物理、原子物理学、分子物理
+  department          = {近代物理系},
+  research-direction  = {高能物理实验},
   %
   % secret-level        = {秘密},     % 绝密|机密|秘密|控阅，注释本行则公开
   % secret-year         = {10},      % 保密/控阅期限
@@ -54,20 +58,20 @@
 
 % 参考文献使用 BibTeX + natbib 宏包
 % 顺序编码制
-\usepackage[sort]{natbib}
-\bibliographystyle{ustcthesis-numeric}
+% \usepackage[sort]{natbib}
+% \bibliographystyle{ustcthesis-numeric}
 
 % 著者-出版年制
 % \usepackage{natbib}
 % \bibliographystyle{ustcthesis-authoryear}
 
 % 参考文献使用 BibLaTeX 宏包
-% \usepackage[style=ustcthesis-numeric]{biblatex}
+\usepackage[style=ustcthesis-numeric]{biblatex}
 % \usepackage[style=ustcthesis-numeric, inline=true]{biblatex}
 % \usepackage[style=ustcthesis-authoryear]{biblatex}
 
 % 声明 .bib 数据库
-\addbibresource{references.bib}
+\addbibresource{bib/ustc.bib}
 
 % 配置图片的默认目录
 \graphicspath{{figures/}}

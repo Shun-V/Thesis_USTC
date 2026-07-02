@@ -2,7 +2,7 @@
 % !TEX program = xelatex
 % !TEX spellcheck = en_US
 
-\documentclass[degree=doctor]{ustcthesis}
+\documentclass[degree=doctor,language=english]{ustcthesis}
 % degree      = doctor | master | bachelor
 % degree-type = academic | professional | engineering
 % language    = chinese | english
@@ -12,6 +12,15 @@
 % 加载宏包、全部的配置
 \include{ustcsetup}
 
+% 额外宏包 - Chunashun Wei
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{subfig}
+
+% 添加bib路径（现在定义在ustcsetup.tex）
+% \addbibresource{bib/ustc.bib}
 
 \begin{document}
 
@@ -26,58 +35,58 @@
 \declarationofaiusage[purpose=语言润色]
 % \declarationofaiusage[purpose=none, file=figures/declaration-of-ai-usage-scanned.pdf]
 
-\include{chapters/innovations}  % 博士学位论文的创新性说明
+\include{chapters/0_innovations.tex}  % 博士学位论文的创新性说明
 
 \frontmatter
-\include{chapters/0_abstract.tex}
 % \include{chapters/abstract}
+\include{chapters/0_abstract.tex}
 \tableofcontents
 \listoffigures
 \listoftables
 % \listoffiguresandtables
-% \include{chapters/notation}
 
+% \include{chapters/notation}
 \include{chapters/0_notation.tex}
 
 \mainmatter
 \chapter{Introduction}
 \label{chap:Intro}
-\include{chapters/Ch1-Intro/1_intro.tex}
+\input{chapters/Ch1-Intro/1_intro.tex}
 \clearpage
 
 \chapter{The Standard Model of Particle Physics}
 \label{chap:theory}
-\include{chapters/Ch2-Theory/2_theory.tex}
+\input{chapters/Ch2-Theory/2_theory.tex}
 \clearpage
 
 \chapter{The LHC and ATLAS Experiment}
 \label{chap:experiment}
-\include{chapters/Ch3-LHCandATLAS/3_detector.tex}
+\input{chapters/Ch3-LHCandATLAS/3_detector.tex}
 \clearpage
 
 \chapter{Physics object reconstruction}
 \label{chap:recon}
-\include{chapters/Ch4-Reconstruction/4_obj_reconstruction}
+\input{chapters/Ch4-Reconstruction/4_obj_reconstruction}
 \clearpage
 
 \chapter{\texorpdfstring{Measurement of ZZ Production Cross-section with $\ell\ell\nu\nu$ Final State}{Measurement of ZZ Production with llnunu Final State}}
 \label{chap:zz}
-\include{chapters/Ch5-ZZxs/5_zzllvv}
+\input{chapters/Ch5-ZZxs/5_zzllvv}
 \clearpage
 
 \chapter{Search for Dark Matter in Mono-Z Channel}
 \label{chap:monoZ}
-\include{chapters/Ch6-DMsearch/6_dm_search}
+\input{chapters/Ch6-DMsearch/6_dm_search}
 \clearpage
 
 \chapter{Construction of sMDT Chambers for Muon Detector HL-LHC Upgrade}
 \label{chap:sMDT}
-\include{chapters/Ch7-sMDT/7_hardware}
+\input{chapters/Ch7-sMDT/7_hardware}
 \clearpage
 
 \chapter{Summary}
 \label{chap:sum}
-\include{chapters/Ch8-Summary/8_summary.tex}
+\input{chapters/Ch8-Summary/8_summary.tex}
 
 
 
