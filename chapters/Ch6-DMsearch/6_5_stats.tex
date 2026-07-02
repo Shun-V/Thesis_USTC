@@ -3,59 +3,57 @@
 
 %%%%%%%%%%%%%%%%%%%
 
- A brief introduction of the statistical method used to extract physics results from observations in the DM search program is given in this section.
+A brief introduction to the statistical methods used to extract physics results from observations in the DM search program is given in this section.
 
-In physics analyses, theoretical predictions are tested against experimental data using statistical hypothesis testing, a method of statistical inference used to determine whether the observed data support a given hypothesis. Typically, a null hypothesis, denoted as $H_0$, represents the background-only model in which the interaction or signal of interest is absent. In contrast, the alternative hypothesis, denoted as $H_1$ (or $H_a$), corresponds to the signal-plus-background model in which the interaction or new physics process is present. Hypothesis testing is designed to quantify the strength of evidence against the null hypothesis.
+In physics analyses, theoretical predictions are tested against experimental data using statistical hypothesis testing, a method of statistical inference used to determine whether the observed data support a given hypothesis. Typically, a null hypothesis, denoted as $H_0$, represents the background-only model in which the interaction or signal of interest is absent. In contrast, the alternative hypothesis, denoted as $H_1$, corresponds to the signal-plus-background model in which the interaction or new physics process is present. Hypothesis testing is designed to quantify the strength of evidence against the null hypothesis.
 
-\subsubsection{The $p$-value}
+\subsubsection{The $p$-Value}
 \label{sec:p-value}
 The compatibility of the observed data with a given hypothesis is quantified using a $p$-value. The $p$-value is defined as the probability, under the assumption that the null hypothesis $H_0$ is true, of obtaining a value of the test statistic at least as extreme as the one observed in the data. A small $p$-value indicates that the observed data are unlikely under the null hypothesis and may provide evidence in favor of the alternative hypothesis. In particle physics, the statistical significance of an excess is often expressed in terms of the number of standard deviations ($\sigma$) of a Gaussian distribution corresponding to the observed $p$-value.
 
-\subsubsection{Statistical significance}
+\subsubsection{Statistical Significance}
 \label{sec:significance}
 
-The statistical significance quantifies the degree to which the observed data are incompatible with the null hypothesis. It is closely related to the $p$-value, which represents the probability, under the assumption that the null hypothesis $H_0$ is true, of obtaining a test statistic at least as extreme as the one observed. 
+The statistical significance quantifies the degree to which the observed data are incompatible with the null hypothesis. It is closely related to the $p$-value; in fact, it is a direct translation of the $p$-value, expressing this probability in terms of the standard deviation ($\sigma$) of a standard normal distribution. 
 
-In particle physics, the significance is conventionally expressed in units of the standard deviation $\sigma$ of a standard normal distribution. For example, a $2\sigma$ significance corresponds to a $p$-value of approximately 0.0455 (4.55\%), indicating mild evidence against $H_0$. A $3\sigma$ significance corresponds to a $p$-value of about $2.7 \times 10^{-3}$, providing stronger evidence for a deviation from the null hypothesis. A $5\sigma$ significance, with a $p$-value of roughly $5.7 \times 10^{-7}$, is the standard threshold in particle physics for claiming a discovery, meaning that the probability of the observed effect arising from a statistical fluctuation of the background is extremely small.
+For example, a $2\sigma$ significance corresponds to a $p$-value of approximately 0.0455 (4.55\%), indicating mild evidence against $H_0$. A $3\sigma$ significance corresponds to a $p$-value of about $2.7 \times 10^{-3}$, providing stronger evidence for a deviation from the null hypothesis. A $5\sigma$ significance, with a $p$-value of roughly $5.7 \times 10^{-7}$, is the standard threshold in particle physics for claiming a discovery, meaning that the probability of the observed effect arising from a statistical fluctuation of the background is extremely small.
 
-\subsubsection{Likelihood function}
+\subsubsection{Likelihood Function}
 \label{sec:likelihood}
 
-To distinguish between competing hypotheses, a test statistic is constructed from the observed data. The choice of test statistic is guided by its ability to separate the signal-plus-background hypothesis from the background-only hypothesis. A commonly used test statistic in particle physics is based on the \textsc{likelihood function}, which describes the probability of observing the data given a particular hypothesis and set of model parameters.
+To distinguish between competing hypotheses, a test statistic is constructed from the observed data. The choice of test statistic is guided by its ability to separate the signal-plus-background hypothesis from the background-only hypothesis. A commonly used test statistic in particle physics is based on the \textit{likelihood function}, which describes the probability of observing the data given a particular hypothesis and set of model parameters.
 
-In particle physics experiments, the number of events in a given region typically follows a Poisson distribution. To measure the strength of a particular interaction, a parameter denoted as $\mu$, called the \emph{signal strength}, is applied to the expected number of signal events. The parameter $\mu$ is often referred to as the \emph{parameter of interest}, as the goal of the analysis is to determine its best-fit value given the observed data. The case $\mu = 0$ corresponds to the background-only hypothesis, while a positive value of $\mu$ indicates the presence of a signal in addition to the background.
+In particle physics experiments, the number of events in a given region typically follows a Poisson distribution. To measure the strength of a particular interaction, a parameter denoted as $\mu$, called the \textit{signal strength}, is applied to the expected number of signal events. The parameter $\mu$ is often referred to as the \textit{parameter of interest}, as the goal of the analysis is to determine its best-fit value given the observed data. The case $\mu = 0$ corresponds to the background-only hypothesis, while a positive value of $\mu$ indicates the presence of a signal in addition to the background.
 
-Other parameters, which affect the likelihood function but are not of direct interest, are included to account for systematic uncertainties. These are called \emph{nuisance parameters} and are denoted collectively as $\theta$. The likelihood function as a function of both the signal strength $\mu$ and the nuisance parameters $\theta$ can be written as:
+Other parameters, which affect the likelihood function but are not of direct interest, are included to account for systematic uncertainties. These are called \textit{nuisance parameters} and are denoted collectively as $\theta$. The likelihood function as a function of both the signal strength $\mu$ and the nuisance parameters $\theta$ can be written as:
 
 \begin{equation}
 \label{eqn:likelihood}
 L(\mu,\theta \mid \text{data}) = \prod_{j=1}^{N} \frac{(\mu s_j + b_j)^{n_j}}{n_j!} e^{-(\mu s_j + b_j)},
 \end{equation}
-
 where $s_j$ and $b_j$ are the expected numbers of signal and background events in bin $j$, and $n_j$ is the number of observed events in that bin. The value of $\mu$ is estimated by maximizing the likelihood function with respect to $\mu$ and $\theta$ based on the observed data.
 
-In addition to the signal region where the parameter $\mu$ is determined, additional regions, called \emph{control regions}, are often included to constrain background contributions. Including these control regions, the likelihood function can be extended as:
+In addition to the signal region where the parameter $\mu$ is determined, additional regions, called \textit{control regions}, are often included to constrain background contributions. Including these control regions, the likelihood function can be extended as:
 
 \begin{equation}
 \label{eqn:likelihood2}
 L(\mu,\theta \mid \text{data}) = \prod_{j=1}^{N} \frac{(\mu s_j + b_j)^{n_j}}{n_j!} e^{-(\mu s_j + b_j)}
-\prod_{k=1}^{M} \frac{u_k^{m_k}}{m_k!} e^{-m_k},
+\prod_{k=1}^{M} \frac{m_k^{u_k}}{u_k!} e^{-m_k},
 \end{equation}
-
 where $m_k$ is the expected number of background events in control region bin $k$, and $u_k$ is the number of observed events in that bin. This combined likelihood allows for a simultaneous fit of the signal strength and nuisance parameters while constraining backgrounds using data in both signal and control regions.
 
-\subsubsection{Confidence intervals}
+\subsubsection{Confidence Intervals}
 \label{sec:CL}
 
-Confidence intervals or exclusion limits in the search program are commonly derived to constrain model parameters. In searches for new phenomena, upper limits on the signal strength or cross-section are typically set using the modified frequentist approach, known as the CL$_s$ method. In this method, two quantities are defined: $\mathrm{CL}_{s+b}$, the confidence level for the signal-plus-background hypothesis, and $\mathrm{CL}_b$, the confidence level for the background-only hypothesis. The exclusion criterion is based on the ratio
+Confidence intervals or exclusion limits in the search program are commonly derived to constrain model parameters. In searches for new phenomena, upper limits on the signal strength or cross-section are typically set using the modified frequentist approach, known as the $\text{CL}_s$ method. In this method, two quantities are defined: $\text{CL}_{s+b}$, the confidence level for the signal-plus-background hypothesis, and $\text{CL}_b$, the confidence level for the background-only hypothesis. The exclusion criterion is based on the ratio
 \[
-\mathrm{CL}_s = \frac{\mathrm{CL}_{s+b}}{\mathrm{CL}_b}.
+\text{CL}_s = \frac{\text{CL}_{s+b}}{\text{CL}_b}.
 \]
-A signal hypothesis is excluded at a confidence level of $(1-\alpha)$ if $\mathrm{CL}_s < \alpha$, where $\alpha$ is typically chosen as 0.05, corresponding to a 95\% confidence level.
+A signal hypothesis is excluded at a confidence level of $(1-\alpha)$ if $\text{CL}_s < \alpha$, where $\alpha$ is typically chosen as 0.05, corresponding to a 95\% confidence level.
 
-The likelihood function, shown in Eq.~\ref{eqn:likelihood2}, plays a central role in particle physics analyses. It is typically constructed as a product of Poisson probability terms describing the observed event counts in different regions or bins, along with constraint terms that incorporate systematic uncertainties through nuisance parameters. These nuisance parameters represent uncertainties in detector performance, background modelling, and theoretical predictions.
+The likelihood function, shown in Equation~\eqref{eqn:likelihood2}, plays a central role in particle physics analyses. It is typically constructed as a product of Poisson probability terms describing the observed event counts in different regions or bins, along with constraint terms that incorporate systematic uncertainties through nuisance parameters. These nuisance parameters represent uncertainties in detector performance, background modelling, and theoretical predictions.
 
-To estimate parameters of interest, such as the signal strength, the \textsc{profile likelihood ratio} is widely used as the test statistic. The signal strength parameter, denoted by $\mu$, scales the expected signal yield relative to the predicted value. The profile likelihood ratio is defined as
+To estimate parameters of interest, such as the signal strength, the \textit{profile likelihood ratio} is widely used as the test statistic. The signal strength parameter, denoted by $\mu$, scales the expected signal yield relative to the predicted value. The profile likelihood ratio is defined as
 \[
 \lambda(\mu) =
 \frac{L(\mu, \hat{\hat{\theta}}(\mu))}
@@ -70,4 +68,3 @@ q_\mu = -2 \ln \lambda(\mu)
 is constructed to evaluate the compatibility of the data with the signal hypothesis. The asymptotic properties of this test statistic allow the calculation of $p$-values and confidence intervals without relying on computationally intensive Monte Carlo simulations in many cases.
 
 These statistical techniques provide a consistent framework for hypothesis testing, parameter estimation, and limit setting in particle physics experiments, enabling robust interpretation of experimental data in terms of theoretical models.
-

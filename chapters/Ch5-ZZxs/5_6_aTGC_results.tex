@@ -1,10 +1,10 @@
 \subsection{Measured Differential Cross-sections}
 \label{subsec:diff-xs}
 
-Differential cross-sections are measured in the fiducial phase spaces by counting data events in each bin of the relevant observables, subtracting the expected background contributions, and correcting for detector effects. Detector-level distributions are unfolded to stable-particle level using an iterative Bayesian method~\cite{DAgostini1995}, which accounts for resolution effects, reconstruction inefficiencies, and bin migrations. Response matrices derived from simulated signal samples encode the probability of an event generated in a given particle-level bin being reconstructed in a corresponding detector-level bin. 
+Differential cross-sections are measured in the fiducial phase spaces by counting data events in each bin of the relevant observables, subtracting the expected background contributions, and correcting for detector effects. Detector-level distributions are unfolded to the stable-particle level using an iterative Bayesian method~\cite{DAgostini1995}, which accounts for resolution effects, reconstruction inefficiencies, and bin migrations. Response matrices derived from simulated signal samples encode the probability of an event generated in a given particle-level bin being reconstructed in a corresponding detector-level bin. 
 
-The number of iterations, typically between two and five depending on the observable, is optimised to balance statistical uncertainty and unfolding stability. The binning is defined using purity and efficiency criteria to ensure reliable unfolding and preserve the distribution shapes. The final bin of each observable is open-ended and extends to the kinematic limit, with no separate overflow bin. Validation studies using nominal and alternative samples show no significant bias. 
-The kinematic variables used for the differential cross-section measurements are summarised in Table~\ref{tab:diff-var}.
+The number of iterations, typically between two and five depending on the observable, is optimized to balance statistical uncertainty and unfolding stability. The binning is defined using purity and efficiency criteria to ensure reliable unfolding and preserve the distribution shapes. The final bin of each observable is open-ended and extends to the kinematic limit, with no separate overflow bin. Validation studies using nominal and alternative samples show no significant bias. 
+The kinematic variables used for differential cross-section measurements are summarized in Table~\ref{tab:diff-var}.
 \begin{table}[!hbtp]
     \centering
 %    \scriptsize
@@ -20,7 +20,7 @@ The kinematic variables used for the differential cross-section measurements are
       Transverse momentum of the $ZZ$ system  &  $p_\text{T}^{ZZ}$ & $ZZ$ and $ZZjj$ \\ 
        Transverse mass of the $ZZ$ system 
        &  $m_\text{T}^{ZZ}$ & $ZZ$ and $ZZjj$\\
-     Number of jets                   &   $N_{jets}$ & $ZZ$ only\\  
+     Number of jets                   &   $N_\text{jets}$ & $ZZ$ only\\  
  %   CP-sensitive angular variable (scenario 1)  & $sin(\phi_1)cos(\theta_1)$ & $ZZ$ only \\  \hline 
     CP-sensitive angular variable   &  $\sin(\varphi)\cos(\theta)$ & $ZZ$ only\\
     Invariant mass of the dijet system & $m_{jj}$ & $ZZjj$ only \\ 
@@ -31,7 +31,7 @@ The kinematic variables used for the differential cross-section measurements are
     \label{tab:diff-var}
 \end{table} 
 
-A CP-sensitive angular variable, $\sin\varphi \cos\theta$, is constructed in the $ZZ$ signal region following Refs.~\cite{Chang:1994cs, STDM-2021-05, Semushin:2025uts}. The polar angle $\theta$ and azimuthal angle $\varphi$ are defined for the negatively charged lepton in the dilepton rest frame, with the $z$-axis aligned with the dilepton momentum in the $ZZ$ rest frame and the remaining axes forming a right-handed coordinate system. Since neutrinos from $Z\to\nu\bar{\nu}$ decays are not directly detected, the dineutrino momentum is approximated as $\vec{p}^{\,\nu\nu}=-\vec{p}^{\,\ell\ell}$, corresponding to the assumption that the $ZZ$ system is at rest in the laboratory frame. The differential cross-section for this observable is unfolded to the particle level in the fiducial phase space.
+A CP-sensitive angular variable, $\sin(\varphi)\cos(\theta)$, is constructed in the $ZZ$ signal region following Refs.~\cite{Chang:1994cs, STDM-2021-05, Semushin:2025uts}. The polar angle $\theta$ and azimuthal angle $\varphi$ are defined for the negatively charged lepton in the dilepton rest frame, with the $z$-axis aligned with the dilepton momentum in the $ZZ$ rest frame and the remaining axes forming a right-handed coordinate system. Since neutrinos from $Z\to\nu\bar{\nu}$ decays are not directly detected, the dineutrino momentum is approximated as $\vec{p}^{\,\nu\nu}=-\vec{p}^{\,\ell\ell}$, corresponding to the assumption that the $ZZ$ system is at rest in the laboratory frame. The differential cross-section for this observable is unfolded to the particle level in the fiducial phase space.
 
 Figures~\ref{fig:diff-xs-ZZ} and~\ref{fig:diff-xs-ZZjj} present the measured differential cross-sections. The quoted uncertainties include both statistical and systematic contributions propagated through the unfolding procedure. Statistical uncertainties dominate most bins, while systematic uncertainties become significant in specific kinematic regions.
 
@@ -190,7 +190,7 @@ The statistical and total uncertainties on the data points are displayed in both
 
 As presented in the sections above, the measured fiducial and total cross-sections are in good agreement with the SM predictions within the measurement uncertainties. These results enable constraints to be placed on anomalous gauge boson self-interaction couplings.
 
-Inclusive $ZZ$ production (particularly see diagram in Figure~\ref{fig:zz-prod} (c)) provides a key channel for probing anomalous neutral triple gauge couplings (aNTGCs). In the SM, the $s$-channel diagram involving the neutral $ZZZ$ or $ZZ\gamma$ vertex is absent, making this process particularly sensitive to possible deviations from SM expectations.
+Inclusive $ZZ$ production (see, in particular, the diagram in Figure~\ref{fig:zz-prod}c) provides a key channel for probing anomalous neutral triple gauge couplings (aNTGCs). In the SM, the $s$-channel diagram involving the neutral $ZZZ$ or $ZZ\gamma$ vertex is absent, making this process particularly sensitive to possible deviations from SM expectations.
 
 The $ZZjj$ production in $pp$ collisions (see Figure~\ref{fig:zzjj-prod}) includes electroweak vector boson scattering (VBS) processes that involve the triple gauge boson ($WWZ$) and quartic gauge boson ($WWZZ$) couplings. These processes are directly linked to two fundamental aspects of the SM electroweak theory, the non-Abelian gauge structure and spontaneous electroweak symmetry breaking, and therefore provide sensitivity to both anomalous triple gauge couplings (aTGCs) and anomalous quartic gauge couplings (aQGCs).
 
@@ -219,24 +219,24 @@ Inclusive $ZZ$ production is sensitive to anomalous $ZZZ$ and $ZZ\gamma$ couplin
 \begin{figure}
     \centering
     \includegraphics[width=0.6\linewidth]{figures/ch5-llvv/aTGC-aQGC/ptll_atgc.pdf}
-    \caption{Distribution of the transverse momentum of the dilepton system, $p_\text{T}^{Z}$, including data and SM predictions.
+    \caption{Distribution of the transverse momentum of the dilepton system, $p_\text{T}^\text{Z}$, including data and SM predictions.
     The dashed band represents the total systematic uncertainty in the SM prediction. The expected effects of an aTGC induced by the operator $O_{G+}$, for two representative values of the Wilson coefficient, are also shown.}
     \label{fig:ptll-aTGC}
 \end{figure}
 
 Limits on aTGC parameters are derived using two complementary frameworks: the vertex-function (VF) formalism~\cite{Baur2000,Biekotter2021} and the Standard Model Effective Field Theory (SMEFT)~\cite{Degrande:2013,Degrande2014,Ellis2023}. 
 
-The most general anomalous $ZZV$ ($V=Z,\gamma$) vertex function for on-shell $Z$ bosons is given by~\cite{Hagiwara:1986vm}:
+The most general anomalous $ZZV$ ($V=Z,\gamma$) vertex function for on-shell $\text{Z}$ bosons is given by~\cite{Hagiwara:1986vm}:
 \begin{equation}
-g_{ZZV}\Gamma_{ZZV}^{\alpha\beta\mu}
-= e\frac{P^2-m_V^2}{m_Z^2}
+g_{\text{ZZ}V}\Gamma_{\text{ZZ}V}^{\alpha\beta\mu}
+= e\frac{P^2-m_V^2}{m_\text{Z}^2}
 \left[
 if_4^V(P^{\alpha}g^{\mu\beta}+P^{\beta}g^{\mu\alpha})
 + if_5^V\epsilon^{\mu\alpha\beta\rho}(q_1-q_2)_\rho
 \right],
 \label{eqn:vtx_func}
 \end{equation}
-where $P$, $q_1$, and $q_2$ denote the momenta of the $V$ boson and the two on-shell $Z$ bosons, respectively. The anomalous couplings $f_4^V$ and $f_5^V$ correspond to CP-violating and CP-conserving interactions.
+where $P$, $q_1$, and $q_2$ denote the momenta of the $V$ boson and the two on-shell $\text{Z}$ bosons, respectively. The anomalous couplings $f_4^V$ and $f_5^V$ correspond to CP-violating and CP-conserving interactions.
 
 In the SMEFT framework, the Lagrangian is extended by dimension-eight operators:
 \begin{equation}
@@ -276,9 +276,5 @@ SMEFT & $C_{WW}/\Lambda^4$         & $[-2.4,\ 2.4]$   & $[-2.0,\ 2.0]$ \\
 \caption{\rm Expected and observed 95\% CL intervals for the parameters of the VF and SMEFT formalisms derived from inclusive $ZZ$ production, obtained without applying any unitarization procedure. The limits are derived by varying one parameter at a time while setting all other aTGC parameters to zero.}
 \label{tab:atgc_limits}
 \end{table}
-
-
-
-
 
 

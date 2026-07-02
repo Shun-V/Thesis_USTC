@@ -1,7 +1,7 @@
 \section{Monte Carlo and Data Samples}
 \label{sec:llvv_samples}
 
-This section details the datasets and simulated samples employed in the analysis. The Run~2 $pp$ collision data used in this analysis were collected by the ATLAS experiment between 2015 and 2018 at a centre-of-mass energy of $\sqrt{s} = 13$~TeV.
+This section details the datasets and simulated samples employed in the analysis. The Run~2 $pp$ collision data used in this analysis were collected by the ATLAS experiment between 2015 and 2018 at a centre-of-mass energy of $\sqrt{s} = 13~\text{TeV}$.
 
 MC simulations, incorporating both theoretical predictions and detailed modeling of the detector response, play a central role in describing the kinematic and topological properties of the signal, as well as in estimating contributions from all significant SM backgrounds.
 
@@ -10,14 +10,14 @@ A key element of the analysis is the consistent application of physics object re
 The following sections will first provide a comprehensive overview of the MC samples generated for the signal and various background processes. Subsequently, the data samples, data quality requirements, and the trigger strategy employed to select events for this analysis will be detailed. Complete lists of the dataset identifiers (DSIDs), generation parameters, trigger chains, and Good Run Lists for all samples are tabulated in Appendix~\ref{subsec:samples_zz}.
 
 \subsection{The ATLAS Simulation Framework}
-The production of simulated events in ATLAS follows a well-established multi-step procedure, ensuring a high-fidelity representation of proton-proton collisions and the subsequent detector response. This simulation chain consists of three main stages:
+The production of simulated events in ATLAS follows a well-established multi-step procedure, ensuring a high-fidelity representation of proton--proton collisions and the subsequent detector response. This simulation chain consists of three main stages:
 
 \begin{enumerate}
-    \item \textbf{Event Generation:} The initial hard-scatter interaction is simulated using a variety of event generators. These generators compute the matrix element (ME) for a specific physics process, often to Next-to-Leading Order (NLO) or Leading Order (LO) in perturbative QCD. The ME calculation is then interfaced with a parton shower (PS) algorithm, such as those provided by \texttt{PYTHIA~8}~\cite{Sjostrand:2014zea} or the one internal to \texttt{Sherpa}~\cite{Bothmann_2019}, which models initial- and final-state radiation, multiple parton interactions, hadronisation, and particle decays. The specific generator, perturbative order, and Parton Distribution Function (PDF) set used for each sample are chosen to provide the most accurate description of the process.
+    \item \textbf{Event Generation:} The initial hard-scatter interaction is simulated using a variety of event generators. These generators compute the matrix element (ME) for a specific physics process, often to next-to-leading order (NLO) or leading order (LO) in perturbative QCD. The ME calculation is then interfaced with a parton shower (PS) algorithm, such as those provided by \textsc{Pythia}~8~\cite{Sjostrand:2014zea} or the one internal to \textsc{Sherpa}~\cite{Bothmann_2019}, which models initial- and final-state radiation, multiple parton interactions, hadronisation, and particle decays. The specific generator, perturbative order, and Parton Distribution Function (PDF) set used for each sample are chosen to provide the most accurate description of the process.
 
-    \item \textbf{Detector Simulation:} The stable particles generated in the first step are propagated through a detailed model of the ATLAS detector geometry and material composition using the \texttt{Geant4} toolkit~\cite{GEANT4:2002zbu}. This stage simulates the interactions of particles with the active and passive elements of the detector, resulting in simulated energy deposits and "hits" in the various sub-systems.
+    \item \textbf{Detector Simulation:} The stable particles generated in the first step are propagated through a detailed model of the ATLAS detector geometry and material composition using the \textsc{Geant4} toolkit~\cite{GEANT4:2002zbu}. This stage simulates the interactions of particles with the active and passive elements of the detector, resulting in simulated energy deposits and ``hits'' in the various sub-systems.
 
-    \item \textbf{Digitisation and Reconstruction:} The simulated hits are converted into digitised electronic signals that emulate the real detector readout. To account for the high-luminosity environment of the LHC, multiple inelastic $pp$ collisions, known as pile-up, are overlaid on each hard-scatter event. These pile-up events are simulated with \texttt{PYTHIA~8} using the A3 tune~\cite{ATL-PHYS-PUB-2016-017} and the \texttt{NNPDF2.3LO} PDF set~\cite{Ball:2012cx}. The distribution of the number of pile-up interactions is weighted to match that observed in the data. Finally, the same reconstruction algorithms used for collision data are applied to the digitised output to reconstruct high-level physics objects such as electrons, muons, jets, and missing transverse momentum ($E_{\text{T}}^{\text{miss}}$).
+    \item \textbf{Digitisation and Reconstruction:} The simulated hits are converted into digitised electronic signals that emulate the real detector readout. To account for the high-luminosity environment of the LHC, multiple inelastic $pp$ collisions, known as pile-up, are overlaid on each hard-scatter event. These pile-up events are simulated with \textsc{Pythia}~8 using the A3 tune~\cite{ATL-PHYS-PUB-2016-017} and the \textsc{NNPDF2.3LO} PDF set~\cite{Ball:2012cx}. The distribution of the number of pile-up interactions is weighted to match that observed in the data. Finally, the same reconstruction algorithms used for collision data are applied to the digitised output to reconstruct high-level physics objects such as electrons, muons, jets, and missing transverse momentum ($E_{\text{T}}^{\text{miss}}$).
 \end{enumerate}
 
 Correction factors, or scale factors, are applied to all simulated samples to account for small differences in trigger, reconstruction, and identification efficiencies between data and MC simulation.
@@ -29,32 +29,29 @@ The estimation of signal efficiencies and background contributions relies on a d
 
 
 \subsubsection{Signal Samples}
-The analysis targets the measurement of the SM $ZZ$ production cross-section in the $\ell^+\ell^-\nu\bar{\nu}$ final state and searches for BSM physics through anomalous gauge boson couplings.
+The analysis targets the measurement of the SM $\text{ZZ}$ production cross-section in the $\ell^+\ell^-\nu\bar{\nu}$ final state and searches for BSM physics through anomalous gauge boson couplings.
 
-\paragraph{Standard Model \textit{ZZ} Production}
-The primary signal process is the production of a pair of $Z$ bosons decaying to $\ell^+\ell^-\nu\bar{\nu}$. This includes both quark-antiquark initiated and loop-induced gluon-gluon fusion processes, which are simulated with \texttt{Sherpa 2.2.2}. Electroweak $ZZ$ production in association with two jets is modelled separately with \texttt{MadGraph5}~\cite{Alwall:2014hca}. 
-The MC predicted cross-sections calculated with these generators are given in Table~\ref{tab:sherpa-xs} for both $ZZ$ and $ZZjj$ phase space. Detailed lists of these samples, including their corresponding DSIDs and k-factors, are provided in Appendix~\ref{subsec:samples_zz} (Table~\ref{tab:ZZ_signal_samples}).
+\paragraph{Standard Model $\text{ZZ}$ Production}
+The primary signal process is the production of a pair of $\text{Z}$ bosons decaying to $\ell^+\ell^-\nu\bar{\nu}$. This includes both quark-antiquark initiated and loop-induced gluon-gluon fusion processes, which are simulated with \textsc{Sherpa}~2.2.2. Electroweak $\text{ZZ}$ production in association with two jets is modelled separately with \textsc{MadGraph5}~\cite{Alwall:2014hca}. 
+The MC predicted cross-sections calculated with these generators are given in Table~\ref{tab:sherpa-xs} for both $\text{ZZ}$ and $\text{ZZ}jj$ phase space. Detailed lists of these samples, including their corresponding DSIDs and k-factors, are provided in Appendix~\ref{subsec:samples_zz} (Table~\ref{tab:ZZ_signal_samples}).
 
 \begin{table}[htbp]
 \centering
-\scriptsize
-\renewcommand{\arraystretch}{1.6}
+\small
+\renewcommand{\arraystretch}{1.4}
 \begin{tabular}{l c}
 \hline
 \textbf{Cross-section}  & \textbf{Calculated value [fb] } \\
 \hline
-$\sigma^{\text{fid}}_{ZZ \to \ell \ell \nu\nu}$ & $20.08 \pm 1.0\,\text{(QCD scale variation)} \pm 0.30\,\text{(PDF)} \pm 0.24\,(\alpha_s)$ \\
-$\sigma^{\text{fid}}_{ZZjj \to \ell \ell \nu\nu jj}$ & $0.94 \pm 0.19\,\text{(QCD scale variation)} \pm 0.01\,\text{(PDF)} \pm 0.02\,(\alpha_s)$ \\
+$\sigma^{\text{fid}}_{\text{ZZ} \to \ell\ell\nu\nu}$ & $20.08 \pm 1.0_{\text{scale}} \pm 0.30_{\text{PDF}} \pm 0.24_{\alpha_S}$ \\
+$\sigma^{\text{fid}}_{\text{ZZ}jj \to \ell\ell\nu\nu jj}$ & $0.94 \pm 0.19_{\text{scale}} \pm 0.01_{\text{PDF}} \pm 0.02_{\alpha_S}$ \\
 \hline
 \end{tabular}
-\caption{\rm
-Fiducial cross-sections for $ZZ \to 2\ell 2\nu$ and $ZZjj \to 2\ell 2\nu jj$ productions at $\sqrt{s} = 13$~TeV. The $ZZ$ and $ZZjj$ cross-sections are obtained with the QCD production simulated using \textsc{SHERPA} 
-and the electroweak production simulated using \textsc{MadGraph5} (NLO EW). Theoretical uncertainties from QCD scale variation, PDFs, and $\alpha_s$ are quoted.
-}
+\caption{Fiducial cross-sections for $\text{ZZ} \to 2\ell 2\nu$ and $\text{ZZ}jj \to 2\ell 2\nu jj$ productions at $\sqrt{s} = 13~\text{TeV}$. The $\text{ZZ}$ and $\text{ZZ}jj$ cross-sections are obtained with the QCD production simulated using \textsc{Sherpa} and the electroweak production simulated using \textsc{MadGraph5} (NLO EW). Theoretical uncertainties from QCD scale variation, PDFs, and $\alpha_S$ are quoted.}
 \label{tab:sherpa-xs}
 \end{table}
 
-\paragraph{Samples with anomalous Gauge Couplings}
+\paragraph{Samples with Anomalous Gauge Couplings}
 The search for new physics is performed by probing for anomalous neutral triple gauge couplings (nTGC) and anomalous quartic gauge couplings (aQGC) using an Effective Field Theory (EFT) framework. A dedicated set of MC samples has been generated to model the kinematic effects of these BSM operators. The full lists of DSIDs for the nTGC and aQGC searches are available in Tables~\ref{tab:ZZEFTsamples} and~\ref{tab:ZZaQGCsamples} in Appendix~\ref{subsec:samples_zz}.
 
 
@@ -62,16 +59,16 @@ The search for new physics is performed by probing for anomalous neutral triple 
 Backgrounds to the $\ell^+\ell^- + E_{\text{T}}^{\text{miss}}$ final state are broadly categorised as either featuring prompt leptons and genuine $E_{\text{T}}^{\text{miss}}$ (irreducible) or arising from misidentified objects or detector mismeasurement (reducible). Comprehensive tables detailing the background samples can be found in Appendix~\ref{subsec:samples_zz}.
 
 \paragraph{Diboson and Triboson Backgrounds}
-The production of $WZ$, $WW$, and $ZZ \to \ell^+\ell^-\ell^+\ell^-$ represents the most significant irreducible backgrounds. Smaller contributions from triboson processes ($WWW$, $WWZ$, $WZZ$, $ZZZ$) are also considered. These processes are primarily simulated with \texttt{Sherpa} and \texttt{Powheg+Pythia8} (Tables~\ref{tab:ZZbkg_samples},~\ref{tab:WZandWWsamples}, and~\ref{tab:VVVsamples}).
+The production of $\text{WZ}$, $\text{WW}$, and $\text{ZZ} \to \ell^+\ell^-\ell^+\ell^-$ represents the most significant irreducible backgrounds. Smaller contributions from triboson processes ($\text{WWW}$, $\text{WWZ}$, $\text{WZZ}$, $\text{ZZZ}$) are also considered. These processes are primarily simulated with \textsc{Sherpa} and \textsc{Powheg}+\textsc{Pythia}~8 (Tables~\ref{tab:ZZbkg_samples},~\ref{tab:WZandWWsamples}, and~\ref{tab:VVVsamples}).
 
 \paragraph{Top Quark Backgrounds}
-Events from top-antitop ($t\bar{t}$) and single-top production are a significant source of background, primarily from their dileptonic decay channels. Associated production with a vector boson ($t\bar{t}V$) also contributes. These are simulated with \texttt{Powheg+Pythia8} and \texttt{MadGraph5\_aMC@NLO} (Tables~\ref{tab:Topsamples} and~\ref{tab:ttVsamples}).
+Events from top-antitop ($t\bar{t}$) and single-top production are a significant source of background, primarily from their dileptonic decay channels. Associated production with a vector boson ($t\bar{t}\text{V}$) also contributes. These are simulated with \textsc{Powheg}+\textsc{Pythia}~8 and \textsc{MadGraph5\_aMC@NLO} (Tables~\ref{tab:Topsamples} and~\ref{tab:ttVsamples}).
 
-\paragraph{$Z/\gamma^*$+jets Background}
-This is the dominant reducible background, arising from Drell-Yan events with large, mismeasured $E_{\text{T}}^{\text{miss}}$. It is modelled using \texttt{Sherpa~2.2.1} with NLO-accurate matrix elements. Samples are generated in slices of the partonic transverse momentum sum and separated by lepton flavour (Tables~\ref{tab:ZjetsSamplesSherpa1},~\ref{tab:ZjetsSamplesSherpa2}, and~\ref{tab:ZjetsSamplesSherpa3}).
+\paragraph{$\text{Z}/\gamma^*$+jets Background}
+This is the dominant reducible background, arising from Drell-Yan events with large, mismeasured $E_{\text{T}}^{\text{miss}}$. It is modelled using \textsc{Sherpa}~2.2.1 with NLO-accurate matrix elements. Samples are generated in slices of the partonic transverse momentum sum and separated by lepton flavour (Tables~\ref{tab:ZjetsSamplesSherpa1},~\ref{tab:ZjetsSamplesSherpa2}, and~\ref{tab:ZjetsSamplesSherpa3}).
 
 \paragraph{Higgs Boson Backgrounds}
-Processes involving the production of a Higgs boson can also contribute to the selected final state. These minor backgrounds are simulated with \texttt{Powheg+Pythia8} (Table~\ref{tab:Higgssamples}).
+Processes involving the production of a Higgs boson can also contribute to the selected final state. These minor backgrounds are simulated with \textsc{Powheg}+\textsc{Pythia}~8 (Table~\ref{tab:Higgssamples}).
 
 
 \subsection{Data Samples}
