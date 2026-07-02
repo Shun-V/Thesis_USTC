@@ -1,76 +1,48 @@
-# 中国科学技术大学学位论文 LaTeX 模板
+# Ph.D. Thesis
 
-[![GitHub release](https://img.shields.io/github/release/ustctug/ustcthesis/all.svg)](https://github.com/ustctug/ustcthesis/releases/latest)
-[![GitHub commits](https://img.shields.io/github/commits-since/ustctug/ustcthesis/latest.svg)](https://github.com/ustctug/ustcthesis/commits/master)
-[![Test](https://github.com/ustctug/ustcthesis/actions/workflows/test.yml/badge.svg)](https://github.com/ustctug/ustcthesis/actions/workflows/test.yml)
+This repository contains the LaTeX source code for my Ph.D. thesis at the University of Science and Technology of China (USTC). 
 
-本项目是中国科学技术大学的学位论文 LaTeX 模板 ustcthesis，按照
-研究生院《[学位论文撰写模板](https://gradschool.ustc.edu.cn/column/65)》（2025-03-31）、
-教务处《[\[2025\]32号 中国科学技术大学本科毕业论文（设计）质量标准（试行）](https://www.teach.ustc.edu.cn/?attachment_id=19501)》
-和
-《[中国科学技术大学本科毕业论文（设计）格式式样](https://www.teach.ustc.edu.cn/?attachment_id=13867)》（2026-04-24）
-的要求编写，兼容最新版的 TeX Live、MacTeX 、MiKTeX 发行版，支持跨平台使用。
+The document is typeset using the official [ustcthesis](https://github.com/ustctug/ustcthesis) LaTeX template, complying with the university's strict formatting guidelines for degree theses.
 
-注意：
+> **Note:**
+> 1. A modern TeX distribution (TeX Live, MacTeX, or MiKTeX 2021 or newer) is required to compile this project. Please ensure your distribution is up to date.
+> 2. The deprecated CTeX package is **not** supported.
 
-1. 使用说明文档 `ustcthesis-doc.pdf` 在发布版中附带，用户也可自行编译；**使用模板前应仔细阅读**。
+---
 
-2. 本模板要求 TeX Live、MacTeX、MiKTeX 不低于 2021 年的发行版，
-并且尽可能升级到最新。安装和升级方法见
-[新手指南](https://github.com/ustctug/ustcthesis/wiki/新手指南)。
+## Repository Structure
 
-3. **不支持** [CTeX 套装](https://github.com/ustctug/ustcthesis/wiki/常见问题#3-模板支持用-ctex-套装编译吗)。
+The main directories and files are organized as follows:
 
+* `main.tex`: The root LaTeX file that manage the thesis structure and all the individual chapters.
+* `ustcsetup.tex`: The root LaTeX file that configures the document settings, loads packages.
+* `ustcthesis.cls`: The custom LaTeX document class file provided by USTC that defines the layout, margins, fonts, and overall styling of the thesis.
+* `chapters/`: Contains the LaTeX source files (`.tex`) for each chapter of the thesis. Keeping chapters in separate files makes editing and debugging easier.
+* `figures/`: Stores all the images, diagrams, and plots used in the thesis (typically in `.pdf`, `.png`, or `.jpg` formats), organized by chapter.
+* `bib/`: Contains the BibTeX database file(s) (`.bib`) used for managing citations and references.
+* `Makefile` / `latexmkrc`: Configuration files that automate the compilation process.
 
-## 下载地址
+---
 
-- GitHub Releases：<https://github.com/ustctug/ustcthesis/releases>
+## Thesis Structure
 
-- 校内镜像：<https://git.lug.ustc.edu.cn/ustctug/ustcthesis>
+The thesis is organized into the following chapters, reflecting the core research contributions:
 
-- TexPage 模板 <https://texpage.com/template/fe69d6fc-f811-4b8c-824f-7848a07c9551>
+* **Chapter 1: Introduction**: Provides the theoretical background of particle physics, the role of the $Z$ boson in the Standard Model, the motivation for dark matter (DM) searches, and an overview of the ATLAS experiment at the LHC.
+* **Chapter 2: The Standard Model of Particle Physics**: Details the mathematical framework of the Standard Model, including the strong interaction (QCD) and electroweak (EW) theory, and discusses the Higgs mechanism and BSM theoretical frameworks.
+* **Chapter 3: The LHC and ATLAS Experiment**: Describes the design and operational roadmap of the LHC and the ATLAS detector subsystems (Inner Detector, Calorimeters, and Muon Spectrometer).
+* **Chapter 4: Physics Object Reconstruction**: Explains the methods for reconstructing and identifying electrons, muons, jets, and missing transverse energy ($E_T^{\text{miss}}$) in the ATLAS detector.
+* **Chapter 5: Measurement of $ZZ$ Production Cross-section with $\ell\ell\nu\nu$ Final State**: Details the precision measurement of $ZZ$ inclusive and $ZZjj$ cross-sections using the full Run 2 dataset, including the unfolding procedures and constraints on anomalous gauge couplings (aTGCs/aQGCs).
+* **Chapter 6: Search for Dark Matter in Mono-$Z$ Channel**: Presents the DM search strategy in the $Z+E_T^{\text{miss}}$ channel, utilizing BDT-based signal enhancement and providing exclusion limits for Higgs invisible decay, simplified DM models, and 2HDM+$a$ models.
+* **Chapter 7: Construction of sMDT Chambers for Muon Detector HL-LHC Upgrade**: Documents the author's work on the development, construction, and rigorous quality-control testing of small-diameter Monitored Drift Tube (sMDT) chambers for the ATLAS HL-LHC upgrade.
+* **Chapter 8: Summary**: Concludes the main research findings and discusses the outlook for future physics runs.
 
-- LoongTeX <https://www.loongtex.com/>
+---
 
-- Overleaf 模板 <https://www.overleaf.com/latex/templates/latex-template-for-ustc-thesis/qbfkwzbrfhbr>
+## Compilation Instructions
 
-- 研究生院网站（版本可能较旧）：<https://gradschool.ustc.edu.cn/column/65>
+The recommended way to compile the thesis is by using the `latexmk` tool, which automatically handles the multiple compilation runs required for cross-references, bibliographies, and the table of contents to resolve correctly.
 
-
-## 编译文档
-
-- 编译模板的使用说明文档 `ustcthesis-doc.pdf`：
-  ```
-  latexmk -xelatex ustcthesis-doc.tex
-  ```
-- 编译论文 `main.pdf`：
-  ```
+- To compile the thesis and generate the final `main.pdf`:
+  ```bash
   latexmk -xelatex main.tex
-  ```
-- 如需清理论文编译过程中的临时文件，可以：
-  ```
-  latexmk -c
-  ```
-
-- 以上编译过程也可以用 `make` 工具：
-  ```
-  make doc        # 编译生成 ustcthesis-doc.pdf
-  make            # 编译生成论文 main.pdf
-  make clean      # 删除编译过程中生成的临时文件
-  ```
-
-## 反馈问题
-
-如果发现模板有问题，请按照以下步骤操作：
-
-1. 阅读学校的标准，判断是否符合学校的要求；
-2. 将模板升级到 Github 上最新版本，查看问题是否已经修复；
-3. 在 [GitHub Issues](https://github.com/ustctug/ustcthesis/issues)
-  中搜索该问题的关键词；
-4. 在 [GitHub Issues](https://github.com/ustctug/ustcthesis/issues)
-  中提出新 issue，或者联系模板作者 Zeping Lee <zepinglee@gmail.com>，
-  并提供以下信息：
-  - 使用了什么版本的 TeX Live / MacTeX / MiKTeX ？
-  - 具体的问题是什么？
-  - 预期的结果应该是什么样的？
-  - 在必要时附上相关源码或者截图
