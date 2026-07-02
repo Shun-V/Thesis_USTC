@@ -12,7 +12,7 @@ The relationship between the true physical observable and the measured quantity 
 \subsubsection{Migration Matrix}
 The measured value of an observable often differs from the true value due to the non-zero resolution of the detector elements. In binned distributions, if this deviation is significant relative to the bin width, an event generated in bin $i$ may be reconstructed in bin $j$.
 
-The **Migration Matrix** ($M$) quantifies this effect. Each element $M_{ij}$ represents the probability that an event generated in the $i$-th bin at the particle level is reconstructed in the $j$-th bin. This matrix is populated using MC events that satisfy both the fiducial (truth) and reconstruction (reco) selection criteria.
+The \textbf{Migration Matrix} ($M$) quantifies this effect. Each element $M_{ij}$ represents the probability that an event generated in the $i$-th bin at the particle level is reconstructed in the $j$-th bin. This matrix is populated using MC events that satisfy both the fiducial (truth) and reconstruction (reco) selection criteria.
 
 \subsubsection{Purity and Stability}
 To ensure a robust unfolding, the binning choice must be optimized such that the migration matrix remains diagonally dominant. Two metrics are defined to quantify this quality:
@@ -47,7 +47,7 @@ In addition to bin migration, the unfolding procedure must correct for event los
 
 \subsection{Unfolding Algorithm}
 
-This analysis employs the **Iterative Bayesian Unfolding (IBU)** method \cite{dagostini2010improved}, implemented within the \texttt{RooUnfold} framework \cite{Adye:1349242}. 
+This analysis employs the \textbf{Iterative Bayesian Unfolding (IBU)} method \cite{dagostini2010improved}, implemented within the \texttt{RooUnfold} framework \cite{Adye:1349242}. 
 
 The algorithm is based on Bayes' theorem. It begins with a prior probability distribution, initially assumed to be the particle-level distribution from the nominal MC simulation. In each iteration, the prior is updated based on the agreement between the measured data and the folded prediction. The algorithm takes as input the measured background-subtracted data, the migration matrix ($M$), and the efficiency/acceptance corrections described above.
 
@@ -64,7 +64,7 @@ The technical closure test verifies that the unfolding algorithm can correctly r
 
 Since the input distribution and the response matrix are consistent, the unfolded result must recover the MC truth-level distribution within numerical precision. This test has been performed for all differential variables. Three representative examples covering different kinematic regimes are presented below.
 
-\paragraph{Angular Variables: $\Delta\Phi(l,l)$ (Inclusive)}
+\paragraph{Angular Variables: $\Delta\Phi(\ell,\ell)$ (Inclusive)}
 Figure \ref{fig:unfolding_technical_closure_dphill_inclusive} shows the validation for the azimuthal separation between leptons. The migration matrix (Fig. \ref{fig:unfolding_technical_closure_migration_dphill_inclusive}) shows strong diagonality. The unfolded result matches the truth perfectly, as confirmed by the ratio in Fig. \ref{fig:unfolding_technical_closure_distribution_dphill_inclusive} and the numerical values in Table \ref{tab:unfolding_technical_closure_dphill_inclusive}.
 
 \begin{figure}[h!]
@@ -76,6 +76,26 @@ Figure \ref{fig:unfolding_technical_closure_dphill_inclusive} shows the validati
 \label{fig:unfolding_technical_closure_dphill_inclusive}
 \end{figure}
 
+% \begin{table}[h!]
+% \centering
+% \caption{Unfolded cross-sections (fb/rad) and uncertainties (\%) for the technical closure test of $\Delta\Phi(l,l)$ in the Inclusive region.}
+% \small
+% \begin{tabular}{c|ccccc}
+% \toprule
+% Bin (rad)       & 0 - 0.3   & 0.3 - 0.6  & 0.6 - 1    & 1 - 1.4    & 1.4 - 1.8 \\ 
+% \midrule
+% XS              & 7.092931  & 8.668584   & 11.756990  & 15.992146  & 10.534318 \\
+% \midrule
+% MET             & 0.46  & 0.80  & 0.42  & 0.35  & 1.57   \\
+% Jet             & 0.67  & 0.53  & 0.85  & 0.69  & 1.23   \\
+% Theory          & 0.93  & 0.32  & 1.12  & 0.42  & 1.27   \\
+% \midrule
+% Total           & 4.60  & 3.66  & 2.72  & 2.30  & 3.88   \\
+% \bottomrule
+% \end{tabular}
+% \label{tab:unfolding_technical_closure_dphill_inclusive}
+% \end{table}
+
 \begin{table}[h!]
 \centering
 \caption{Unfolded cross-sections (fb/rad) and uncertainties (\%) for the technical closure test of $\Delta\Phi(l,l)$ in the Inclusive region.}
@@ -84,7 +104,7 @@ Figure \ref{fig:unfolding_technical_closure_dphill_inclusive} shows the validati
 \toprule
 Bin (rad)       & 0 - 0.3   & 0.3 - 0.6  & 0.6 - 1    & 1 - 1.4    & 1.4 - 1.8 \\ 
 \midrule
-XS              & 7.092931  & 8.668584   & 11.756990  & 15.992146  & 10.534318 \\
+XS              & 7.09  & 8.67   & 11.76  & 15.99  & 10.53 \\
 \midrule
 MET             & 0.46  & 0.80  & 0.42  & 0.35  & 1.57   \\
 Jet             & 0.67  & 0.53  & 0.85  & 0.69  & 1.23   \\
@@ -108,6 +128,26 @@ Unfolding discrete variables can be challenging due to migration between adjacen
 \label{fig:unfolding_technical_closure_n_jets_inclusive}
 \end{figure}
 
+% \begin{table}[h!]
+% \centering
+% \caption{Unfolded cross-sections (fb) and uncertainties (\%) for the technical closure test of $n_{\text{jets}}$ in the Inclusive region.}
+% \small
+% \begin{tabular}{c|cccc}
+% \toprule
+% Bin             & 0 - 1      & 1 - 2     & 2 - 3     & 3 - 11        \\
+% \midrule
+% XS              & 15.330063  & 3.808171  & 0.739250  & 0.020761 \\
+% \midrule
+% MET             & 0.39  & 1.46  & 1.26  & 1.57   \\
+% Jet             & 5.68  & 13.29 & 40.21 & 61.25  \\
+% Theory          & 0.90  & 2.06  & 7.15  & 5.09   \\
+% \midrule
+% Total           & 5.87  & 13.90 & 42.40 & 63.50  \\
+% \bottomrule
+% \end{tabular}
+% \label{tab:unfolding_technical_closure_n_jets_inclusive}
+% \end{table}
+
 \begin{table}[h!]
 \centering
 \caption{Unfolded cross-sections (fb) and uncertainties (\%) for the technical closure test of $n_{\text{jets}}$ in the Inclusive region.}
@@ -116,7 +156,7 @@ Unfolding discrete variables can be challenging due to migration between adjacen
 \toprule
 Bin             & 0 - 1      & 1 - 2     & 2 - 3     & 3 - 11        \\
 \midrule
-XS              & 15.330063  & 3.808171  & 0.739250  & 0.020761 \\
+XS              & 15.33  & 3.81  & 0.74  & 0.02 \\
 \midrule
 MET             & 0.39  & 1.46  & 1.26  & 1.57   \\
 Jet             & 5.68  & 13.29 & 40.21 & 61.25  \\
@@ -169,7 +209,7 @@ Total           & 4.36  & 29.20 & 42.10  \\
 
 The unfolding result carries an intrinsic dependence on the physics model (prior) used to generate the migration matrix. To estimate the potential bias introduced by this assumption, a stress test is performed using an alternative signal model.
 
-The migration matrix is re-weighted using an alternative Monte Carlo sample (MadGraph qqZZ) to mimic a different underlying physics distribution. The nominal reconstruction-level distribution is then unfolded using this alternative matrix. The deviation of the unfolded result from the nominal truth is taken as the **unfolding bias**.
+The migration matrix is re-weighted using an alternative Monte Carlo sample (MadGraph qqZZ) to mimic a different underlying physics distribution. The nominal reconstruction-level distribution is then unfolded using this alternative matrix. The deviation of the unfolded result from the nominal truth is taken as the \textbf{unfolding bias}.
 
 Figures \ref{fig:unfolding_modelling_bias_inclusive_1} and \ref{fig:unfolding_modelling_bias_ZZjj_1} summarize the bias tests for the Inclusive and ZZjj regions, respectively. In most bins, the bias is found to be negligible. However, to ensure a conservative result, any bias exceeding 1\% is symmetrized and applied as a systematic uncertainty on the final measurement.
 
@@ -216,7 +256,7 @@ To determine the optimal number of iterations for each variable, the total uncer
         $p_{T}^{ZZ}$                  & 5         & 4 \\
         $p_{T}^{Z}$                   & 2         & 3 \\
         $y(Z)$                        & 2         & 3 \\
-        $sin(\phi)cos(\theta)$        & 2         & - \\ \bottomrule
+        $\sin(\phi)\cos(\theta)$        & 2         & - \\ \bottomrule
     \end{tabular}
     \label{tab:unfolding_technical_closure_n_itr}
 \end{table}

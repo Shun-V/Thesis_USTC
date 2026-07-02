@@ -1,89 +1,95 @@
-% !TeX encoding = UTF-8
-% !TeX program = xelatex
-% !TeX spellcheck = en_US
+% !TEX encoding = UTF-8
+% !TEX program = xelatex
+% !TEX spellcheck = en_US
 
-\documentclass[degree=doctor, language=english]{ustcthesis}
+\documentclass[degree=doctor]{ustcthesis}
 % degree      = doctor | master | bachelor
-% degree-type = academic | professional
+% degree-type = academic | professional | engineering
 % language    = chinese | english
 % fontset     = windows | mac | ubuntu | fandol
+% review      = true | false  % 盲审模式
 
-% 加https://www.overleaf.com/project载宏包、全部的配置
-\input{ustcsetup.tex}
+% 加载宏包、全部的配置
+\include{ustcsetup}
 
 
 \begin{document}
 
 \maketitle
-\copyrightpage
+
+% 原创性和使用授权声明
+\declarationoforiginality
+% \declarationoforiginality[file=figures/declaration-of-originality-scanned.pdf]
+
+% 使用人工智能工具声明
+% 可选：none | 文献检索 | 语言润色 | 数据处理
+\declarationofaiusage[purpose=语言润色]
+% \declarationofaiusage[purpose=none, file=figures/declaration-of-ai-usage-scanned.pdf]
+
+\include{chapters/innovations}  % 博士学位论文的创新性说明
 
 \frontmatter
-
-\input{chapters/0_abstract.tex}
+\include{chapters/0_abstract.tex}
+% \include{chapters/abstract}
 \tableofcontents
+\listoffigures
+\listoftables
+% \listoffiguresandtables
+% \include{chapters/notation}
 
-% \listoffigures
-% \listoftables
-\input{chapters/0_notation.tex}
+\include{chapters/0_notation.tex}
 
 \mainmatter
 \chapter{Introduction}
 \label{chap:Intro}
-\input{chapters/Ch1-Intro/1_intro.tex}
+\include{chapters/Ch1-Intro/1_intro.tex}
 \clearpage
 
 \chapter{The Standard Model of Particle Physics}
 \label{chap:theory}
-\input{chapters/Ch2-Theory/2_theory.tex}
+\include{chapters/Ch2-Theory/2_theory.tex}
 \clearpage
 
 \chapter{The LHC and ATLAS Experiment}
 \label{chap:experiment}
-\input{chapters/Ch3-LHCandATLAS/3_detector.tex}
+\include{chapters/Ch3-LHCandATLAS/3_detector.tex}
 \clearpage
 
 \chapter{Physics object reconstruction}
 \label{chap:recon}
-\input{chapters/Ch4-Reconstruction/4_obj_reconstruction}
+\include{chapters/Ch4-Reconstruction/4_obj_reconstruction}
 \clearpage
 
 \chapter{\texorpdfstring{Measurement of ZZ Production Cross-section with $\ell\ell\nu\nu$ Final State}{Measurement of ZZ Production with llnunu Final State}}
 \label{chap:zz}
-\input{chapters/Ch5-ZZxs/5_zzllvv}
+\include{chapters/Ch5-ZZxs/5_zzllvv}
 \clearpage
 
 \chapter{Search for Dark Matter in Mono-Z Channel}
 \label{chap:monoZ}
-\input{chapters/Ch6-DMsearch/6_dm_search}
+\include{chapters/Ch6-DMsearch/6_dm_search}
 \clearpage
 
-\chapter{Building sMDTs for Muon Detector HL-LHC Upgrade}
+\chapter{Construction of sMDT Chambers for Muon Detector HL-LHC Upgrade}
 \label{chap:sMDT}
-\input{chapters/Ch7-sMDT/7_hardware}
+\include{chapters/Ch7-sMDT/7_hardware}
 \clearpage
 
 \chapter{Summary}
 \label{chap:sum}
-\input{chapters/Ch8-Summary/8_summary.tex}
+\include{chapters/Ch8-Summary/8_summary.tex}
 
 
 
-\bibliography{bib/ustc}  % 参考文献使用 BibTeX 编译
-% \printbibliography       % 参考文献使用 BibLaTeX 编译
+\printbibliography
 
 \appendix
-\input{chapters/a_complementary.tex}
-\clearpage
+\include{chapters/a_complementary.tex}
 
 \backmatter
-\input{chapters/9_acknowledgements.tex}
-\clearpage
-\input{chapters/10_publications.tex}
+\include{chapters/9_acknowledgements.tex}
+% \include{chapters/achievements}
+\include{chapters/10_publications.tex}
 
-
-%Template docs
-%\input{chapters/floats.tex}
-%\input{chapters/math.tex}
-%\input{chapters/citations.tex}
 
 \end{document}

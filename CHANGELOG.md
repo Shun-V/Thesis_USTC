@@ -7,6 +7,231 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.0.0] - 2026-07-01
+
+### Added
+
+- 添加“使用人工智能工具声明” `\declarationofaiusage`。
+- 添加 BibTeX 模式的 `\addbibresource` 和 `\printbibliography` 命令。
+- BibTeX 顺序编码制的样式名称改为 `ustcthesis-numeric.bst`。
+- `biblatex-numeric` 添加 `inline = true / false` 选项控制格式为上标或行内。
+
+### Changed
+
+- “学科专业”的选项改为 `discipline`。
+- 章节标题中的英文和数字改用无衬线字体（Arial）。
+- 参考文献格式改为 GB/T 7714—2025 版。
+
+### Deprecated
+
+- `author*`、`speciality*`、`supervisor*`、`practice-supervisor*` 等设置封面英文信息的选项已过时。
+- 本科生的参考文献样式 `ustcthesis-bachelor` 已过时，现在同研究生一致。
+
+## [4.1.0] - 2026-05-30
+
+### Added
+
+- 添加对 `algorithms` 宏包的支持。
+
+### Changed
+
+- 允许 `\statement` 命令使用可选参数 `[file=foo.pdf]` 插入扫描后的 PDF（[#506](https://github.com/ustctug/ustcthesis/issues/506)）。
+
+### Fixed
+
+- 修正关键词中多余的空格。
+
+## [4.0.0] - 2026-05-10
+
+### Changed
+
+- 本科生的正文行距改为 20 磅（同步教务处 2026-04-24 格式式样更新，[#501](https://github.com/ustctug/ustcthesis/issues/501)）。
+- 更新本科生的目录格式：章标题加粗，去掉空行，调整缩进（同步教务处 2026-04-24 格式式样更新，[#505](https://github.com/ustctug/ustcthesis/issues/505)）。
+- 修改本科生目录中“参考文献”、“致谢”的空格（同步教务处 2026-04-24 格式式样更新）。
+- 本科生的节标题改为左对齐（同步教务处 2026-04-24 格式式样更新，[#504](https://github.com/ustctug/ustcthesis/issues/504)）。
+
+## [4.0.0-beta.11] - 2026-04-06
+
+### Added
+
+- 新增选项 `review = true/false` 选择盲审模式（[#489](https://github.com/ustctug/ustcthesis/issues/489)）。
+- 本科生新增学术诚信承诺书（教务处 2025-09-09 更新，[#496](https://github.com/ustctug/ustcthesis/issues/496)）。
+- 新增 `achievements*` 环境用于输出盲审版的研究成果（[#489](https://github.com/ustctug/ustcthesis/issues/489#issuecomment-4182565581)）。
+
+### Changed
+
+- 默认数学符号风格 `math-style` 改为 `TeX`。
+- 中文著者-出版年制引用标注的括号改为全角（[tuna/thuthesis#1054](https://github.com/tuna/thuthesis/issues/1054)）。
+- 研究生的原创性声明命令改为 `\statement`。
+- 改进盲审模式 `review = true` 的输出格式（[#489](https://github.com/ustctug/ustcthesis/issues/489#issuecomment-4182565581)）。
+
+### Deprecated
+
+- 原创性声明命令 `\copyrightpage` 已经过时。
+- BibTeX 样式名称 `ustcthesis-numerical.bst` 已过时。
+- Biblatex 引用样式 `biblatex-inline` 已过时。
+
+### Fixed
+
+- 修正 arXiv 预印本的 URL 错误（[#490](https://github.com/ustctug/ustcthesis/issues/490)）。
+- 修正了调用 `mathtools` 后 `\eqref` 与前文间距的问题（[tuna/thuthesis#1043](https://github.com/tuna/thuthesis/discussions/1043)）。
+
+### Removed
+
+- 移除专业学位类型及 `professional-type`、`professional-type*` 选项。
+
+## [4.0.0-beta.10] - 2025-12-21
+
+### Changed
+
+- 移除图表清单中章之间的空行（[#486](https://github.com/ustctug/ustcthesis/issues/486)）。
+- 更新参考文献表的预印本格式（[#488](https://github.com/ustctug/ustcthesis/issues/488)）。
+
+### Fixed
+
+- 修正 LuaTeX 部分符号错误地使用西文字体（[tuna/thuthesis#1022](https://github.com/tuna/thuthesis/issues/1022)）。
+- 修正声明页中错误换行的问题（[#470](https://github.com/ustctug/ustcthesis/issues/470)）。
+- 修正 BibTeX `edition` 为 `1` 的报错（[#476](https://github.com/ustctug/ustcthesis/issues/476)）。
+
+## [4.0.0-beta.9] - 2025-05-25
+
+### Changed
+
+- 本科生参考文献的期刊题名不再使用斜体（[#457](https://github.com/ustctug/ustcthesis/pull/457)）。
+- 页眉距离边界改为 1.5 cm（[#413](https://github.com/ustctug/ustcthesis/issues/413)）。
+- 更新参考文献格式。
+
+### Fixed
+
+- 本科生的空白页不显示页码（[#457](https://github.com/ustctug/ustcthesis/pull/458)）。
+- 本科生表格、插图标题按照 Word 模板使用 22 pt 行距。
+- 本科生表格内容使用 1.5 倍行距。
+- 修正“关键词”的格式。
+- 修正参考文献表的缩进格式。
+
+## [4.0.0-beta.8] - 2025-04-16
+
+### Changed
+
+- 科研成果列表的序号改为方括号（[#449](https://github.com/ustctug/ustcthesis/issues/449#issuecomment-2804822791)）。
+- 更新科研成果列表的缩进（[#449](https://github.com/ustctug/ustcthesis/issues/449#issuecomment-2804870730)）。
+
+### Fixed
+
+- 修正中文摘要的关键词和分隔符（[#449](https://github.com/ustctug/ustcthesis/issues/449)、[#450](https://github.com/ustctug/ustcthesis/issues/450)）。
+- 修正插图和附表清单的标签（[#449](https://github.com/ustctug/ustcthesis/issues/449)）。
+
+## [4.0.0-beta.7] - 2025-04-07
+
+### Added
+
+- 新增 `eqn-paren-style` 控制中文数学公式的编号（`\eqref`）使用全角或半角括号（[#420](https://github.com/ustctug/ustcthesis/issues/420)）。
+- 添加博士学位论文的“创新性说明”环境 `innovations`（研究生院 2025-02-27 Word 模板，[#423](https://github.com/ustctug/ustcthesis/issues/423)）。
+- 添加 `degree-type = engineering` 工程学位类型（[#427](https://github.com/ustctug/ustcthesis/issues/427)）。
+
+### Changed
+
+- 中文数学公式的编号（`\eqref`）默认使用全角括号（[#420](https://github.com/ustctug/ustcthesis/issues/420)）。
+- 封面的横向页边距改为 3.17 cm（[#424](https://github.com/ustctug/ustcthesis/issues/424)）。
+- 更新封面的格式（[#438](https://github.com/ustctug/ustcthesis/issues/438)）。
+- 更新原创性和授权使用声明的格式。
+- 数学式的改为段前6磅、段后6磅（研究生院 2025-03-12 Word 模板）。
+- 图表标题的对齐方式改为 `centerlast`（两端对齐、末行居中）（[#442](https://github.com/ustctug/ustcthesis/issues/442)）。
+- 英文摘要改为悬挂缩进 2 em（研究生院 2025-03-12 Word 模板）。
+- 英文关键词改为悬挂缩进 6.5 em（研究生院 2025-03-12 Word 模板）。
+
+### Fixed
+
+- 修正复数 Practice supervisors 的拼写（[#431](https://github.com/ustctug/ustcthesis/pull/431)）。
+- 修正英文摘要的缩进为 1 em（[#434](https://github.com/ustctug/ustcthesis/pull/434)）。
+- 修正图注和表注格式。
+
+### Removed
+
+- 移除封面的“专业/工程学位类型”（[#427](https://github.com/ustctug/ustcthesis/issues/427#issuecomment-2714402725)）。
+- 移除研究生的三级以下节标题的设置（[#445](https://github.com/ustctug/ustcthesis/issues/445)）。
+
+## [4.0.0-beta.6] - 2025-02-25
+
+### Changed
+
+- 调整页眉距边界 2.0 cm（研究生院 2024-12-05 Word 模板修改，[#411](https://github.com/ustctug/ustcthesis/issues/411#issuecomment-2652543582)）。
+- 空白页添加页码（研究生院 2024-12-05 Word 模板修改，[#390](https://github.com/ustctug/ustcthesis/issues/390#issuecomment-2652974038)）。
+- 修改符号说明的页脚样式（研究生院 2024-12-05 Word 模板修改，[#411](https://github.com/ustctug/ustcthesis/issues/411#issuecomment-2656237617)）。
+- 图注较短时居中（[#414](https://github.com/ustctug/ustcthesis/issues/414)）。
+- 修改章节标题的格式（研究生院 2024-12-05 Word 模板修改，[#411](https://github.com/ustctug/ustcthesis/issues/390#issuecomment-2677732743)）。
+
+## [4.0.0-beta.5] - 2025-02-10
+
+### Fixed
+
+- 修正英文摘要标题“ABSTRACT”的粗体（[#411](https://github.com/ustctug/ustcthesis/issues/411#issuecomment-2577181494)）。
+- 修正中文封面的“企业导师”（[#411](https://github.com/ustctug/ustcthesis/issues/390#issuecomment-2646114373)）。
+
+## [4.0.0-beta.4] - 2025-01-05
+
+### Added
+
+- 新增科研成果列表环境 `theachievements`。
+- 新增图注命令 `\figurenote`。
+
+### Changed
+
+- 章标题取消加粗（研究生院 2024-12-05 Word 模板修改，[#411](https://github.com/ustctug/ustcthesis/issues/411)）。
+- 调整科研成果示例（研究生院 2024-12-05 Word 模板修改，[#411](https://github.com/ustctug/ustcthesis/issues/411)）。
+- 更新专业硕士论文封面：“专业领域”改为“学科专业”，“Advisor”改为“Practice supervisor”（研究生院 2024-12-05 Word 模板修改，[#390](https://github.com/ustctug/ustcthesis/issues/390#issuecomment-2558042581)）。
+- 图表的标题字号改为 11pt（研究生院 2024-12-05 Word 模板修改）。
+- 表题改为宋体（研究生院 2024-12-05 Word 模板修改）。
+- 图注、表注字号改为 11pt（研究生院 2024-12-05 Word 模板修改）。
+- 调整插图、表格与文字的间距（研究生院 2024-12-05 Word 模板修改）。
+- 修改表单元格中的字号和行距（研究生院 2024-12-05 Word 模板修改）。
+
+### Deprecated
+
+- 图注、表注命令 `\note` 已经过时，改为使用 `\figurenote` 或 `\tablenote` 命令。
+
+## [4.0.0-beta.3] - 2024-12-15
+
+### Added
+
+- 新增“插图和附表清单” `\listoffiguresandtables`（研究生院 2024-12-05 Word 模板修改）。
+
+### Changed
+
+- 英文封面的“Finished time”改为“Completion date”（研究生院 2024-12-05 Word 模板修改，[#390](https://github.com/ustctug/ustcthesis/issues/390#issuecomment-2532580113)）。
+- 英文摘要的“Key Words”改为大写“KEY WORDS”（研究生院 2024-12-05 Word 模板修改，[#390](https://github.com/ustctug/ustcthesis/issues/390#issuecomment-2532580113)）。
+- 章标题较短时（四字以下）不再空字（研究生院 2024-12-05 Word 模板修改，[#390](https://github.com/ustctug/ustcthesis/issues/390#issuecomment-2532580113)）。
+- “在读期间发表的学术论文与取得的研究成果”改为“在读期间取得的科研成果”（研究生院 2024-12-05 Word 模板修改，[#390](https://github.com/ustctug/ustcthesis/issues/390#issuecomment-2532580113)）。
+- 关键词之间改用分号间隔（研究生院 2024-12-05 Word 模板修改）。
+- 英文摘要的页眉改为大写“ABSTRACT”（研究生院 2024-12-05 Word 模板修改）。
+- 目录的章标题改为黑体小四号（研究生院 2024-12-05 Word 模板修改）。
+- 目录的二级节标题改为宋体（研究生院 2024-12-05 Word 模板修改）。
+- 目录的引导线改为句点（研究生院 2024-12-05 Word 模板修改）。
+- “表格清单”改为“附表清单”（研究生院 2024-12-05 Word 模板修改）。
+- 更新英文封面布局（研究生院 2024-12-05 Word 模板修改）。
+
+## [4.0.0-beta.2] - 2024-11-18
+
+### Changed
+
+- 封面中“导师姓名”改为“导师”（研究生院 2024-10-14 Word 模板修改，[#406](https://github.com/ustctug/ustcthesis/issues/406)）。
+
+## [4.0.0-beta.1] - 2024-10-18
+
+### Changed
+
+- 本科生参考文献改用 GB/T 7714 格式（[zepinglee/gbt7714-bibtex-style#169](https://github.com/zepinglee/gbt7714-bibtex-style/issues/169)）。
+- 专业博士的封面改为“工程博士”（研究生院 2024-09-23 Word 模板修改，[#402](https://github.com/ustctug/ustcthesis/issues/402)）。
+
+## [3.3.5] - 2024-05-09
+
+### Changed
+
+- 本科生摘要关键词的分隔符改为分号，同步教务处 2023-05-06 的修改（[#376](https://github.com/ustctug/ustcthesis/issues/376)）。
+- 本科生的参考文献格式恢复为 2021 年版，同步教务处 2023-05-06 的修改（[#376](https://github.com/ustctug/ustcthesis/issues/376)）。
+- 二级节标题不再缩进（研究生院 2024-03-01 Word 模板）。
+- 标题的编号使用 Times New Roman 字体（研究生院 2024-03-01 Word 模板）。
+
 ## [3.3.4] - 2023-05-10
 
 ### Changed
@@ -306,7 +531,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 优化图注、算法的行距。
 - 二级以下节标题编号下采用“1.”、“(1)”、“①”。
 
-[Unreleased]: https://github.com/ustctug/ustcthesis/compare/v3.3.4...HEAD
+[Unreleased]: https://github.com/ustctug/ustcthesis/compare/v5.0.0...HEAD
+[5.0.0]: https://github.com/ustctug/ustcthesis/compare/v4.1.0...v5.0.0
+[4.1.0]: https://github.com/ustctug/ustcthesis/compare/v4.0.0...v4.1.0
+[4.0.0]: https://github.com/ustctug/ustcthesis/compare/v4.0.0-beta.11...v4.0.0
+[4.0.0-beta.11]: https://github.com/ustctug/ustcthesis/compare/v4.0.0-beta.10...v4.0.0-beta.11
+[4.0.0-beta.10]: https://github.com/ustctug/ustcthesis/compare/v4.0.0-beta.9...v4.0.0-beta.10
+[4.0.0-beta.9]: https://github.com/ustctug/ustcthesis/compare/v4.0.0-beta.8...v4.0.0-beta.9
+[4.0.0-beta.8]: https://github.com/ustctug/ustcthesis/compare/v4.0.0-beta.7...v4.0.0-beta.8
+[4.0.0-beta.7]: https://github.com/ustctug/ustcthesis/compare/v4.0.0-beta.6...v4.0.0-beta.7
+[4.0.0-beta.6]: https://github.com/ustctug/ustcthesis/compare/v4.0.0-beta.5...v4.0.0-beta.6
+[4.0.0-beta.5]: https://github.com/ustctug/ustcthesis/compare/v4.0.0-beta.4...v4.0.0-beta.5
+[4.0.0-beta.4]: https://github.com/ustctug/ustcthesis/compare/v4.0.0-beta.3...v4.0.0-beta.4
+[4.0.0-beta.3]: https://github.com/ustctug/ustcthesis/compare/v4.0.0-beta.2...v4.0.0-beta.3
+[4.0.0-beta.2]: https://github.com/ustctug/ustcthesis/compare/v4.0.0-beta.1...v4.0.0-beta.2
+[4.0.0-beta.1]: https://github.com/ustctug/ustcthesis/compare/v3.3.5...v4.0.0-beta.1
+[3.3.5]: https://github.com/ustctug/ustcthesis/compare/v3.3.4...v3.3.5
 [3.3.4]: https://github.com/ustctug/ustcthesis/compare/v3.3.3...v3.3.4
 [3.3.3]: https://github.com/ustctug/ustcthesis/compare/v3.3.2...v3.3.3
 [3.3.2]: https://github.com/ustctug/ustcthesis/compare/v3.3.1...v3.3.2
