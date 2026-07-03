@@ -37,7 +37,7 @@ and $\alpha(x)$ is a local phase angle in rotation.
 The interactions in the SM are described by the non-Abelian Yang--Mills gauge theory, based on the symmetry group 
 \(\text{SU}(3)_{\text{C}} \otimes \text{SU}(2)_{\text{L}} \otimes \text{U}(1)_{\text{Y}}\).  
 In this framework, the labels C, L, and Y stand for the color charge, left-handed fields, and weak hypercharge, respectively.
-The \(\text{SU}(3)_{\text{C}}\) symmetry governs the strong interaction and corresponds to internal rotations of the three-dimensional quark wave function in color space, \((\psi_q^r, \psi_q^g, \psi_q^b)\). Its gauge fields are the eight gluons, each carrying a combination of two color charges~\cite{pich2007SM}.  
+The \(\text{SU}(3)_{\text{C}}\) symmetry governs the strong interaction and corresponds to internal rotations of the three-dimensional quark wave function in color space, \((\psi_q^r, \psi_q^g, \psi_q^b)\). Its gauge fields are the eight gluons, each carrying a combination of two color charges~\cite{Pich2007SM}.  
 The \(\text{SU}(2)_{\text{L}} \otimes \text{U}(1)_{\text{Y}}\) symmetry describes the electroweak interaction, unifying the weak and electromagnetic forces. The \(\text{SU}(2)_{\text{L}}\) component acts on left-handed fermion doublets and introduces three massless gauge bosons, \(\text{W}^\pm\) and \(\text{Z}\), while the \(\text{U}(1)_{\text{Y}}\) component accounts for weak hypercharge and combines with \(\text{SU}(2)_{\text{L}}\) to produce the massless photon, \(\gamma\), mediating the electromagnetic interaction.
 The electroweak symmetry is spontaneously broken by the Higgs mechanism, giving masses to the $\text{W}$ and $\text{Z}$ bosons while leaving the photon massless.
 The Higgs mechanism is central to the SM. It explains how particles acquire mass, and it is introduced in detail in~\ref{EW-theory}.
@@ -55,7 +55,7 @@ The QCD and electroweak terms are discussed in detail in the following sections.
 \subsection{The Strong Interaction Lagrangian}
 
 Denote the quark field of flavor $f$ by $q_f$, which carries three color components 
-$(q_f^r, q_f^g, q_f^b)$. The free quark kinetic term of the QCD Lagrangian is given by~\cite{pich2007SM}
+$(q_f^r, q_f^g, q_f^b)$. The free quark kinetic term of the QCD Lagrangian is given by~\cite{Pich2007SM}
 \begin{equation}\label{eq:lag_qcd_1}
     \mathcal{L}_{\text{QCD}}^0 = \sum_{f} \bar{q}_{f}\left(i \gamma^{\mu} \partial_{\mu} - m_{f}\right) q_{f}.
 \end{equation}
@@ -442,7 +442,7 @@ The second term corresponds to the Higgs boson mass term, from which the physica
 This term predicts the existence of a physical scalar particle associated with electroweak symmetry breaking. The Higgs boson was experimentally discovered in 2012 at the LHC experiments, nearly five decades after the formulation of the SM. 
 The third and fourth terms describe the Higgs boson self-interactions, corresponding to the trilinear and quartic Higgs couplings, respectively. One of the primary physics objectives of the LHC program is to measure these self-couplings through single-, double-, and (prospectively) triple-Higgs boson production processes.
 
-It is worth emphasizing that, already at tree level, the Higgs boson plays a crucial role in restoring the high-energy behavior of longitudinal gauge boson scattering amplitudes. In the absence of a physical Higgs boson, the scattering amplitudes for longitudinally polarized weak gauge bosons grow with energy and lead to a violation of perturbative unitarity at center-of-mass energies $E_{\text{CM}} \gtrsim 800~\text{GeV}$~\cite{Schwartz:2014sze}. 
+It is worth emphasizing that, already at tree level, the Higgs boson plays a crucial role in restoring the high-energy behavior of longitudinal gauge boson scattering amplitudes. In the absence of a physical Higgs boson, the scattering amplitudes for longitudinally polarized weak gauge bosons grow with energy and lead to a violation of perturbative unitarity at center-of-mass energies $E_{\text{CM}} \gtrsim 800~\text{GeV}$~\cite{Schwartz2014sze}. 
 This bound should be interpreted carefully: it does not imply that a theory without a Higgs boson is fundamentally non-unitary. Rather, it indicates that perturbation theory breaks down at such energy scales, and the scattering amplitudes can no longer be computed reliably within a perturbative framework.
 
 %%%%%%%%%%%%%%% L_Yukawa
@@ -520,8 +520,8 @@ The Yukawa couplings of the Higgs boson to third-generation fermions have been m
 \label{boson-interactions}
 
 The non-Abelian self-interactions among gauge bosons within the electroweak theoretical framework manifest as multi-boson interaction vertices, which arise directly from the electroweak gauge field Lagrangian. By expressing the gauge fields in terms of the physical (mixed) boson states defined in Equations~\eqref{eq:photon}, \eqref{eq:zboson}, and \eqref{eq:bosons}, the Lagrangian can be rewritten as
+\begin{small}
 \begin{equation}\label{eq:lag_ew_gauge}
-\small
 \begin{aligned}
     \mathcal{L}_{\text{gauge}}^{\text{EW}} =& -\frac{1}{4}(W_{\mu\nu}^a)^2-\frac{1}{4}B_{\mu\nu}^2\\
     =& \underbrace{-\frac{1}{4}F^2_{\mu\nu}-\frac{1}{4}Z^2_{\mu\nu}
@@ -544,6 +544,7 @@ The non-Abelian self-interactions among gauge bosons within the electroweak theo
     &\underbrace{+e^2\cot{\theta_W}(A_{\mu}W^+_{\mu}W^-_{\nu}Z_{\nu} + A_{\mu}W^-_{\mu}W^+_{\nu}Z_{\nu} - W^+_{\mu}W^-_{\mu}A_{\nu}Z_{\nu})}_{\gamma\text{ZWW vertex}}
 \end{aligned}
 \end{equation}
+\end{small}
 where $e = g\sin{\theta_W} = g'\cos{\theta_W}$, this is indeed the conventional normalization where the electron has charge -1.
 In the kinetic term, $Z_{\mu\nu}=\partial_\mu Z_\nu - \partial_\nu Z_\mu$
 corresponds to the $\text{Z}$ boson field strength, and $F_{\mu\nu}=\partial_\mu A_\nu - \partial_\nu A_\mu$ corresponds to the photon field strength.

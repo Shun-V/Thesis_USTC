@@ -418,3 +418,38 @@ Muon track-to-vertex assoc. efficiency (syst.)  & \texttt{MUON\_EFF\_TTVA\_SYS} 
 \caption{\rm Mapping of physical descriptions used in this thesis to the specific ATLAS internal names for experimental systematic nuisance parameters.}
 \label{tab:syst-mapping}
 \end{table}
+
+
+
+
+
+\subsection{Supplementary Systematic Uncertainty and Fit Pull Distributions}
+\label{subsec:app_syst_plots}
+
+This section provides the full distributions of the experimental systematic uncertainties and the nuisance parameter pulls from the combined fit, which are summarized in the main text of Chapter~6.
+
+Figure~\ref{fig:MonoZ-syst-app} illustrates the relative impact of all experimental systematic uncertainties on the expected yield for each reconstructed simplified dark matter model and 2HDM+$a$ signal sample. As discussed in Section~\ref{sec:monoZ-syst}, the uncertainties remain uniform across the wide range of mass hypotheses.
+
+\begin{figure}[!htbp]
+    \centering
+    \subfloat[]{
+    \includegraphics[width=0.8\linewidth]{figures/ch6-DM/ZHinv-syst-simplified-model.jpg}}\\
+     \subfloat[]{
+    \includegraphics[width=0.8\linewidth]{figures/ch6-DM/ZHinv-syst-2HDMa.jpg}}
+    \caption{\rm Summary of experimental uncertainties for all Mono-$\text{Z}$ (a) simplified model signal samples, and (b) 2HDM+$a$ samples.}
+    \label{fig:MonoZ-syst-app}
+\end{figure}
+
+Figure~\ref{fig:pull-fit-app} shows the pulls of the nuisance parameters from the combined fit to data in the signal and control regions using the \textsc{HistFitter} framework. All nuisance parameters are well-behaved and constrained within their $\pm 1\sigma$ pre-fit expectations, demonstrating the stability of the background estimation and uncertainty modeling described in Section~\ref{sec:monoZ_results}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.98\linewidth]{figures/ch6-DM/ZHinv-fit-pull.jpg}
+    \caption{\rm Pulls of the nuisance parameters from the combined fit to data.}
+    \label{fig:pull-fit-app}
+\end{figure}
+
+
+
+
+
