@@ -1,7 +1,7 @@
 \section{Results}
 \label{sec:monoZ_results}
 
-No significant excess above the SM prediction is observed in the data, and exclusion limits are therefore set on the signal strength for each of the considered dark matter hypothesis signals. Hypothesis tests are performed using the \textsc{HistFitter}~\cite{HistFitter} framework as the nominal fitting tool, with \textsc{TRExFitter}~\cite{TRexFitter} used as an independent cross-check. 
+No significant excess above the SM prediction is observed in the data, and exclusion limits are therefore set on the signal strength for each of the considered dark matter hypothesis signals. Hypothesis tests are performed using the \textsc{HistFitter}~\cite{HistFitter} framework as the nominal fitting tool, with \textsc{TRExFitter}~\cite{TRExFitter} used as an independent cross-check. 
 
 The discriminant distributions in the signal region are used as inputs to the fit for data, expected signal, and background processes, including all systematic uncertainty variations. The boosted decision tree (BDT) score is used as the discriminant for the $\text{ZH}(\to \text{inv.})$ signal, while the transverse mass $m_{\text{T}}^{\text{ZZ}}$ is used for the simplified dark matter and 2HDM+$a$ signal models. Limits on the signal strength are derived using the $\text{CL}_s$ method.
 
@@ -11,14 +11,16 @@ Finally, the results are compared with those from underground direct-detection e
 
 \subsection{Limits from the $\text{ZH}(\to \text{inv.})$ Search}
 
-Signal and background predictions are simultaneously fitted to the observed data in the signal region (SR) and control regions (CRs) using the \textsc{HistFitter} framework. 
-Figure~\ref{fig:pull-fit} shows the pulls of the nuisance parameters from the combined fit.
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.98\linewidth]{figures/ch6-DM/ZHinv-fit-pull.jpg}
-    \caption{Pulls of the nuisance parameters from the combined fit to data.}
-    \label{fig:pull-fit}
-\end{figure}
+% Signal and background predictions are simultaneously fitted to the observed data in the signal region (SR) and control regions (CRs) using the \textsc{HistFitter} framework. 
+% Figure~\ref{fig:pull-fit} shows the pulls of the nuisance parameters from the combined fit.
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.98\linewidth]{figures/ch6-DM/ZHinv-fit-pull.jpg}
+%     \caption{Pulls of the nuisance parameters from the combined fit to data.}
+%     \label{fig:pull-fit}
+% \end{figure}
+
+Signal and background predictions are simultaneously fitted to the observed data in the signal region (SR) and control regions (CRs) using the \textsc{HistFitter} framework. The behavior of the nuisance parameters (NPs) included in the combined fit was carefully examined. All nuisance parameters are found to be well-behaved, with their post-fit values remaining fully consistent with the pre-fit expectations within one standard deviation ($\pm 1\sigma$). No significant asymmetrical pulls or unexpected over-constraints are observed for any of the systematic uncertainties. Since the fit does not reveal any anomalous behavior in the uncertainty modeling, the individual NP pulls are omitted for brevity.
 
 From the fit, the signal strength is determined to be 
 $\mu_s = 0.003 \pm 0.090$. 
@@ -219,7 +221,7 @@ The limits obtained in this analysis are particularly competitive at low DM mass
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.9\linewidth]{figures/ch6-DM/fig_07.png}
+    \includegraphics[angle=-90,width=0.9\linewidth]{figures/ch6-DM/fig_07.pdf}
     \caption{Comparison of the 90\% C.L. upper limits from direct detection experiments~\cite{LUX:2017,PandaX-II:2017,XENON1T:2018,XENON1T:2019SD,DarkSide-50:2018}
     on the spin-independent WIMP--nucleon scattering cross-section with the observed exclusion limits from this analysis as a function of the WIMP mass. The ATLAS interpretation assumes Higgs portal scenarios in which the $125~\text{GeV}$ Higgs boson decays into pairs of dark matter particles~\cite{ATLAS:2016:HinvisibleVBF}, either scalars or Majorana fermions. Uncertainties from the nuclear form factor are shown as a hatched band. Regions above the limit contours are excluded in the $\sigma_{\text{WIMP--N}}$ range shown.}
     \label{fig:xs-DM-mass}

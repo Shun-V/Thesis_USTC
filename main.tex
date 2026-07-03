@@ -5,7 +5,7 @@
 % 由于学校根据相关规定，要求必须更换并统一模板；该模板在6.28日和7.02日分别进行了一次更新
 % 现在的Thesis已经根据新模板，从6.28日的版本迁移过来
 
-\documentclass[degree=doctor]{ustcthesis}
+\documentclass[degree=doctor,language=english]{ustcthesis}
 % degree      = doctor | master | bachelor
 % degree-type = academic | professional | engineering
 % language    = chinese | english
@@ -13,7 +13,7 @@
 % review      = true | false  % 盲审模式
 
 % 加载宏包、全部的配置
-\include{ustcsetup}
+\input{ustcsetup}
 
 % 额外宏包 - Chunashun Wei
 \usepackage{float}
@@ -24,6 +24,31 @@
 
 % 添加bib路径（现在定义在ustcsetup.tex）
 % \addbibresource{bib/ustc.bib}
+
+% 修改三级节标题(subsubsection)和四级节标题(paragraph)为短编号风格
+\ctexset{
+  subsubsection = {
+    number     = \arabic{subsubsection},
+    aftername  = .\hspace{0.5\ccwd},
+    indent     = 2\ccwd,
+    beforeskip = 0pt,  % Changed from \z@ to 0pt
+    afterskip  = 0pt,  % Changed from \z@ to 0pt
+  },
+  paragraph = {
+    number     = （\arabic{paragraph}）,
+    aftername  = \hspace{0.5\ccwd},
+    indent     = 2\ccwd,
+    beforeskip = 0pt,  % Changed from \z@ to 0pt
+    afterskip  = 0pt,  % Changed from \z@ to 0pt
+    runin      = false,
+  }
+}
+
+% 尝试修复目录中错误换行的问题
+\makeatletter
+\renewcommand{\@pnumwidth}{2.5em} 
+\renewcommand{\@tocrmarg}{3.5em}  
+\makeatother
 
 \begin{document}
 
