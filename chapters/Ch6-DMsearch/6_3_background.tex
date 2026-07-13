@@ -1,13 +1,13 @@
 \subsection{Background Selection} % 删除了多余的空格
 \label{sec:monoZ_bkg}
 
-Three dedicated background control regions (CRs) are defined to determine normalization factors for the dominant backgrounds in the signal region (SR). The CR definitions are summarized below.
+To accurately constrain the normalization factors of the primary background processes contributing to the signal region (SR), a set of three specific control regions (CRs) is established. The exact kinematic definitions governing these CRs are outlined below.
 
 \paragraph{The $e\mu$ CR:}
-This region is defined identically to the SR, except that the two leptons are required to have different flavours. It constrains the non-resonant backgrounds from $t\bar{t}$, single top-quark, $\text{WW}$, and $\text{Z} \to \tau\tau$ processes. The $e\mu$ CR is approximately 98\% pure in the non-resonant background.
+Constructed with kinematic criteria identical to the SR, this phase space diverges only by mandating an opposite-flavor lepton pair ($e\mu$). Its primary function is to anchor the normalizations of non-resonant processes (namely $t\bar{t}$, single top-quark, $\text{WW}$, and $\text{Z} \to \tau\tau$). The resulting selection yields a non-resonant background purity of approximately 98\%.
 
 \paragraph{The $3\ell$ CR:}
-This region, requiring exactly three leptons, is used to normalize the $\text{WZ}$ background. A $\text{Z}$ boson candidate is formed from two opposite-charge, same-flavour leptons with $p_{\text{T}}^{\ell} > 20,\,30~\text{GeV}$ and invariant mass $76 < m_{\ell\ell} < 106~\text{GeV}$. An additional lepton with $p_{\text{T}}^{\ell} > 20~\text{GeV}$ is required. Events must satisfy $E_{\text{T}}^{\text{miss}} > 30~\text{GeV}$ and $S_{E_{\text{T}}^{\text{miss}}} > 3$. The transverse mass of the $\text{W}$ boson candidate is required to be
+Dedicated to the calibration of the $\text{WZ}$ diboson estimate, this region enforces an exact three-lepton requirement. A valid $\text{Z}$ boson candidate is reconstructed from two same-flavor, opposite-charge leptons satisfying $p_{\text{T}}^{\ell} > 20,\,30~\text{GeV}$ within an invariant mass window of $76 < m_{\ell\ell} < 106~\text{GeV}$. A third isolated lepton possessing $p_{\text{T}}^{\ell} > 20~\text{GeV}$ is further required. To suppress contamination, thresholds of $E_{\text{T}}^{\text{miss}} > 30~\text{GeV}$ and $S_{E_{\text{T}}^{\text{miss}}} > 3$ are enforced. Furthermore, the transverse mass associated with the $\text{W}$ boson candidate must satisfy the condition:
 \begin{equation}
 m_{\text{T}}^{\text{W}} =
 \sqrt{
@@ -17,17 +17,14 @@ E_{\text{T}}^{\text{miss}}\,
 }
 > 60~\text{GeV},
 \end{equation}
-where $\Delta\phi(\ell, E_{\text{T}}^{\text{miss}})$ is the azimuthal angle between the third lepton and the missing transverse momentum. The $3\ell$ CR has a purity of about 93\% in $\text{WZ}$ events.
+where $\Delta\phi(\ell, E_{\text{T}}^{\text{miss}})$ defines the azimuthal separation between the third lepton and the missing transverse momentum vector. This carefully sculpted $3\ell$ CR achieves a $\text{WZ}$ process purity of roughly 93\%.
 
 \paragraph{The $4\ell$ CR:}
-This region, requiring exactly four leptons, constrains the $\text{ZZ}$ background. Events must contain two same-flavour, oppositely charged lepton pairs with $p_{\text{T}}^{\ell} > 7,\,15,\,15,\,27~\text{GeV}$ when ordered in increasing $p_{\text{T}}$. If all four leptons have the same flavour, the pairing that minimizes $|m_{\ell\ell_1} - m_{\text{Z}}| + |m_{\ell\ell_2} - m_{\text{Z}}|$ is chosen, where $m_{\text{Z}} = 91.19~\text{GeV}$. Both lepton pairs are required to satisfy $76 < m_{\ell\ell} < 106~\text{GeV}$.
+To effectively evaluate the irreducible $\text{ZZ}$ background, this CR mandates the presence of exactly four reconstructed leptons. The event must feature two pairs of same-flavor, oppositely charged leptons, which, when sorted by ascending transverse momentum, satisfy $p_{\text{T}}^{\ell} > 7,\,15,\,15,\,27~\text{GeV}$. In scenarios where all four constituent leptons share an identical flavor, the combinatorial ambiguity is resolved by selecting the pairing configuration that minimizes the metric $|m_{\ell\ell_1} - m_{\text{Z}}| + |m_{\ell\ell_2} - m_{\text{Z}}|$, setting $m_{\text{Z}} = 91.19~\text{GeV}$. Both identified lepton pairs are strictly required to fall within the $76 < m_{\ell\ell} < 106~\text{GeV}$ invariant mass window.
 
-To mimic the SR topology, one randomly chosen lepton pair is treated as invisible when calculating ${E_{\text{T}}^{\text{miss}}}'$ and $S_{{E_{\text{T}}^{\text{miss}}}'}$. The same selection criteria as in the SR are then applied:
-${E_{\text{T}}^{\text{miss}}}' > 90~\text{GeV}$,
-$S_{{E_{\text{T}}^{\text{miss}}}'} > 9$, and
-$\Delta R_{\ell\ell} < 1.8$ for the remaining lepton pair. The $4\ell$ CR is nearly 100\% pure in $\text{ZZ}$ events.
+To replicate the missing energy topology inherent to the SR, one lepton pair (selected at random) is artificially treated as invisible particles, enabling the calculation of proxy variables ${E_{\text{T}}^{\text{miss}}}'$ and $S_{{E_{\text{T}}^{\text{miss}}}'}$. Subsequently, the SR baseline criteria are imposed upon these pseudo-variables: ${E_{\text{T}}^{\text{miss}}}' > 90~\text{GeV}$ and $S_{{E_{\text{T}}^{\text{miss}}}'} > 9$, while the remaining visible lepton pair must satisfy $\Delta R_{\ell\ell} < 1.8$. This procedural approach ensures the $4\ell$ CR remains nearly 100\% pure in genuine $\text{ZZ}$ events.
 
-The definitions of these control regions are summarized in Table~\ref{tab:SR_CR_selection}, columns~2--4.
+A comprehensive summary of the exact criteria defining these control regions alongside the SR is provided in Table~\ref{tab:SR_CR_selection}, columns~2--4.
 
 \begin{table}[htbp]
 \centering
@@ -59,12 +56,12 @@ $m_{\text{T}}^{\text{W}} > 60~\text{GeV}$ & $\Delta R_{\ell\ell} < 1.8$ \\
 & $S_{{E_{\text{T}}^{\text{miss}}}'} > 9$ \\
 \hline
 \end{tabular}
-\caption{\rm Event selection criteria for the signal region (SR) and control regions (CRs).}
+\caption{\rm Summary of the explicit event selection requirements characterizing the signal region (SR) and the associated control regions (CRs).}
 \label{tab:SR_CR_selection}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%
-The yields of signal and all backgrounds are estimated through simultaneous likelihood fits in the SR and CRs, using MC simulation as input. The dominant background in the SR is the $\text{ZZ}$ process, followed by $\text{WZ}$, $\text{Z}$+jets, and the non-resonant backgrounds ($\text{WW}$, $t\bar{t}$, single top-quark, and $\text{Z} \to \tau\tau$), which are treated together. Small contributions arise from $\text{VVV}$, $t\bar{t}\text{V}$, and $\text{ZZ} \to 4\ell$ processes.
+Using MC simulated samples as baseline inputs, the final expected yields for both the signal and various backgrounds are extracted via a simultaneous likelihood fit spanning the SR and all CRs. Within the SR, the $\text{ZZ}$ continuum acts as the most prominent background, closely followed by $\text{WZ}$, $\text{Z}$+jets, and the aggregated non-resonant sources (comprising $\text{WW}$, $t\bar{t}$, single top-quark, and $\text{Z} \to \tau\tau$). Minor contaminations originating from the $\text{VVV}$, $t\bar{t}\text{V}$, and $\text{ZZ} \to 4\ell$ processes are also accounted for.
 
 %The $ZZ$ and non-resonant backgrounds have the same topology as the signal, consisting of two leptons and $E_{\mathrm{T}}^{\mathrm{miss}}$. The SM Higgs boson decay $H \to ZZ \to 4\nu$ is included as part of the signal, while other Higgs decay modes are estimated to be small and are neglected. The $WZ$ background enters the SR when one of the leptons is not reconstructed.
 
@@ -74,11 +71,11 @@ The yields of signal and all backgrounds are estimated through simultaneous like
 
 \section{Improving the Signal Sensitivity with a BDT}
 
-The sensitivity of the $\text{H} \to \text{invisible}$ search is enhanced using a boosted decision tree (BDT) implemented in the TMVA package~\cite{Hoecker:2007tmva} to improve the separation between signal and background events. The BDT combines multiple kinematic variables, chosen for their discriminative power, into a single output that achieves greater separation than any individual variable.
+To maximize the discovery potential for the $\text{H} \to \text{invisible}$ process, a multivariate approach leveraging a Boosted Decision Tree (BDT) is deployed via the TMVA framework~\cite{Hoecker:2007tmva}, significantly enhancing the discrimination capabilities against SM backgrounds. By simultaneously processing multiple weakly discriminating kinematic features, the BDT constructs a single highly sensitive discriminant, thereby delivering a classification performance substantially superior to that of any individual variable.
 
-Eight input variables are used: $E_{\text{T}}^{\text{miss}}/H_{\text{T}}$, $S_{E_{\text{T}}^{\text{miss}}}$, $H_{\text{T}}$, $f_{\text{soft}} = |1 - |\vec{E}_{\text{T}}^{\text{miss}} + \vec{p}_{\text{T}}^{\text{jets}}| / p_{\text{T}}^{\ell\ell}|$, $m_{\ell\ell}$, $\Delta R_{\ell\ell}$, $Y_{\ell\ell}$ (rapidity of the dilepton system), and $\Delta\phi(\ell\ell, E_{\text{T}}^{\text{miss}})$ (azimuthal angle between the dilepton transverse momentum and $E_{\text{T}}^{\text{miss}}$). Additional variables were evaluated, but provided negligible improvement.
+A set of eight distinctive input variables is incorporated: $E_{\text{T}}^{\text{miss}}/H_{\text{T}}$, $S_{E_{\text{T}}^{\text{miss}}}$, $H_{\text{T}}$, the soft-term fraction $f_{\text{soft}} = |1 - |\vec{E}_{\text{T}}^{\text{miss}} + \vec{p}_{\text{T}}^{\text{jets}}| / p_{\text{T}}^{\ell\ell}|$, $m_{\ell\ell}$, $\Delta R_{\ell\ell}$, the rapidity of the dilepton system ($Y_{\ell\ell}$), and the azimuthal separation between the dilepton transverse momentum and the missing energy ($\Delta\phi(\ell\ell, E_{\text{T}}^{\text{miss}})$). Although supplementary variables were initially investigated, they yielded negligible gains in performance and were subsequently discarded.
 
-The BDT is trained in the signal region (SR) using simulated $\text{ZH} \to \ell\ell + \text{invisible}$ signal events and the combined background samples selected in the CRs. The resulting BDT output distribution, shown in Figure~\ref{fig:bdt}(a), is used as the input to the profile likelihood fit in the SR and the $e\mu$ CR, shown in Figure~\ref{fig:bdt}(b). In the $3\ell$ and $4\ell$ CRs, the $E_{\text{T}}^{\text{miss}}$ distribution is used instead, as several BDT input variables exhibit significantly different shapes between the CRs and SR.
+Training of the BDT is executed exclusively within the signal region (SR) phase space, utilizing simulated $\text{ZH} \to \ell\ell + \text{invisible}$ events as the signal model against a blended dataset of background samples acquired from the CR selections. The continuous output score generated by this BDT, illustrated in Figure~\ref{fig:bdt}(a), serves as the primary observable for the profile likelihood extraction within the SR and the $e\mu$ CR (depicted in Figure~\ref{fig:bdt}(b)). Conversely, within the $3\ell$ and $4\ell$ CRs, the fit strictly relies on the $E_{\text{T}}^{\text{miss}}$ spectrum, given that several fundamental BDT input variables display pronounced shape discrepancies between these CRs and the SR.
 
 \begin{figure}[htbp]
     \centering
@@ -86,16 +83,16 @@ The BDT is trained in the signal region (SR) using simulated $\text{ZH} \to \ell
     \includegraphics[width=0.48\linewidth]{figures/ch6-DM/fig_03a.png}}
 \subfloat[]{    
     \includegraphics[width=0.47\linewidth]{figures/ch6-DM/fig_02c.png}}    
-    \caption{Data and MC comparison of BDT output distributions. (a) signal and background spectra in the SR, and (b) the non-resonant $e\mu$ CR BDT spectrum.}
+    \caption{Visual comparisons of the simulated and observed BDT output distributions, showing (a) the corresponding signal and background spectra constructed in the SR, and (b) the BDT evaluation within the non-resonant $e\mu$ CR.}
     \label{fig:bdt}
 \end{figure}
     
 
 \section{Data and MC Comparison in SR and CRs}
 
-Table~\ref{tab:event-yields} gives the summary of signal and control region yields after the simultaneous fit for the $\text{ZH}(\to \text{inv.})$ signal. Also given is the total post-fit uncertainty of each number.
+A detailed breakdown of the event yields within both the signal and control regions, evaluated subsequent to the simultaneous fit (under the $\text{ZH} \to \text{inv.}$ signal hypothesis), is presented in Table~\ref{tab:event-yields}. The tabulated values inherently encompass their comprehensive post-fit uncertainties.
 
-Figure~\ref{fig:SR-CR-plot} shows data and MC prediction (after fit) comparison in distributions: (a) $m_{\text{T}}^{\text{ZZ}}$ in SR, (b) $E_{\text{T}}^{\text{miss}}$ in $3\ell$ CR, (c) $E_{\text{T}}^{\text{miss}}$ in $4\ell$ CR, and (d) $m_{\text{T}}^{\text{ZZ}}$ in $e\mu$ CR. In general, MC predictions agree with data in both SR and all three CRs.
+Graphical comparisons between the observed data and the post-fit MC predictions are illustrated in Figure~\ref{fig:SR-CR-plot} across various key observables: (a) the $m_{\text{T}}^{\text{ZZ}}$ spectrum in the SR, (b) the $E_{\text{T}}^{\text{miss}}$ distribution in the $3\ell$ CR, (c) the modified $E_{\text{T}}^{\text{miss}}$ in the $4\ell$ CR, and (d) the $m_{\text{T}}^{\text{ZZ}}$ observable in the $e\mu$ CR. Overall, a robust level of agreement is observed between the simulated theoretical predictions and the experimental data across the SR and all three designated CRs.
 
 \begin{table}[htbp]
     \centering
@@ -117,7 +114,7 @@ $\text{ZZ} \to 4\ell$& $85.8 \pm 5.5$ & $0.621 \pm 0.056$ &$443 \pm 40$  & $295 
 $t\bar{t}\text{V}$ & $12.7 \pm 2.8$ & $1.76 \pm 0.41$ & $53 \pm 12$ &  - \\
 $\text{VVV}$       & $13.0 \pm 6.2$ & $3.1 \pm 1.4$ & $44 \pm 20$ &  $0.48 \pm 0.23$\\       \hline\hline 
     \end{tabular}         
-    \caption{\rm Summary of SR and CR yields after the simultaneous fit for the $\text{ZH}(\to \text{inv.})$ signal. Also given is the total post-fit uncertainty of each number.}
+    \caption{\rm Quantitative summary detailing the extracted event yields in the SR and CRs derived from the simultaneous fit under the $\text{ZH}(\to \text{inv.})$ signal hypothesis. The cited errors reflect the total combined post-fit uncertainties.}
     \label{tab:event-yields}
 \end{table}
 
@@ -133,7 +130,7 @@ $\text{VVV}$       & $13.0 \pm 6.2$ & $3.1 \pm 1.4$ & $44 \pm 20$ &  $0.48 \pm 0
     \hspace{0.5cm}
     \subfloat[]{
     \includegraphics[width=0.4\linewidth]{figures/ch6-DM/fig_02d.png}}
-    \caption{Data and MC prediction (post-fit) comparison in distributions: (a) $m_{\text{T}}^{\text{ZZ}}$ in SR (with Mono-$\text{Z}$ signal), (b) $E_{\text{T}}^{\text{miss}}$ in $3\ell$ CR, (c) $E_{\text{T}}^{\text{miss}}$ in $4\ell$ CR, and (d) $m_{\text{T}}^{\text{ZZ}}$ in $e\mu$ CR.}
+    \caption{Post-fit validation plots demonstrating the concordance between recorded data and MC expectations across critical variables: (a) the $m_{\text{T}}^{\text{ZZ}}$ variable within the SR (superimposing a Mono-$\text{Z}$ signal hypothesis), (b) the $E_{\text{T}}^{\text{miss}}$ spectrum in the $3\ell$ CR, (c) the $E_{\text{T}}^{\text{miss}}$ spectrum evaluated in the $4\ell$ CR, and (d) the $m_{\text{T}}^{\text{ZZ}}$ distribution within the $e\mu$ CR.}
     \label{fig:SR-CR-plot}
 \end{figure}
 

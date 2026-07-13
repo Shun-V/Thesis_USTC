@@ -1,31 +1,31 @@
 \section{Systematics and Uncertainties}
 \label{sec:monoZ-syst}
 
-Systematic uncertainties in the search include both theoretical and experimental sources.
+The evaluation of systematic uncertainties within this search comprehensively accounts for both theoretical modeling limitations and experimental detector effects.
 
-For theoretical modelling uncertainties, the analysis follows as closely as possible the ATLAS Physics Modelling Group recommendations and prescriptions. The main components are listed below:
+Regarding theoretical modeling systematics, the employed strategies strictly adhere to the established prescriptions provided by the ATLAS Physics Modelling Group. The primary sources of these theoretical uncertainties are categorized as follows:
 \begin{itemize}
 
-\item The effect of renormalisation and factorisation scale variations ($\mu_R, \mu_F$) is evaluated using a three-point variation scheme, in which $\mu_R$ and $\mu_F$ are scaled simultaneously by factors of 2 and 1/2 to obtain the upward and downward variations, respectively. In general, both signal and background simulated samples provide internal event weights that are used to estimate these variations. The QCD scale uncertainties range from 4\% to 5\% in different signal samples.
+\item To assess the impact of missing higher-order QCD corrections, the renormalisation ($\mu_R$) and factorisation ($\mu_F$) scales are varied. This is achieved via a correlated three-point scheme, where both scales are concurrently multiplied by factors of 0.5 or 2.0 to derive the downward and upward systematic shifts, respectively. The corresponding matrix-element event weights, inherently provided within the generated MC samples, are utilized to quantify these effects, yielding overall QCD scale uncertainties between 4\% and 5\% across various signal models.
 
-\item Parton-shower and hadronisation uncertainties are evaluated using eigenvector variations of the \textsc{Pythia}~8 A14 tune, where available (e.g., for top-pair production). For signal and diboson samples generated with \textsc{Sherpa}, alternative truth-level samples are used. Typical parton-shower uncertainties range from 1\% to 4\% for different MC samples.
+\item Uncertainties originating from the parton shower and hadronisation modeling are estimated by applying respective eigenvector variations of the \textsc{Pythia}~8 A14 tune (applicable to processes such as top-quark pair production). Conversely, for datasets simulated utilizing the \textsc{Sherpa} framework (including diboson and specific signal processes), comparisons against alternative truth-level configurations are employed. The magnitude of these showering uncertainties generally spans from 1\% to 4\% depending on the specific process.
 
-\item For the signal and $\text{ZZ}$ samples, dedicated corrections are applied to account for electroweak (EW) effects, as described in the corresponding sections. The uncertainty of the EW correction is about 2\%.
+\item Specific higher-order electroweak (EW) corrections are applied to the $\text{ZZ}$ continuum and the signal samples, following the methodology outlined in preceding sections. The systematic uncertainty assigned to these EW correction factors is approximately 2\%.
 
-\item For top-quark processes, alternative samples are used to evaluate the effects of different MC generators on the hard-scattering process (e.g., \textsc{Powheg} vs.\ \textsc{MadGraph5\_aMC@NLO}) and on the parton-showering model (e.g., \textsc{Powheg}+\textsc{Pythia}~8 vs.\ \textsc{Powheg}+\textsc{Herwig}~7). The associated uncertainty is at the 1\% level.
+\item To gauge the modeling systematics for top-quark backgrounds, nominal distributions are compared against alternative MC configurations. This strategy probes the uncertainties linked to the hard-scattering matrix element calculation (comparing \textsc{Powheg} against \textsc{MadGraph5\_aMC@NLO}) as well as the underlying parton shower algorithm (contrasting \textsc{Powheg}+\textsc{Pythia}~8 with \textsc{Powheg}+\textsc{Herwig}~7). These generator-level variations typically induce an uncertainty of around 1\%.
 
-\item The impact of parton distribution function (PDF) uncertainties is evaluated for both signal and background samples. The uncertainties range from 1\% to 2\%.
+\item Systematic deviations stemming from the choice of parton distribution functions (PDFs) are evaluated across all simulated signal and background datasets. The resulting variations on the expected yields are found to be contained within 1\% to 2\%.
 
 \end{itemize}
 
-The experimental uncertainties include contributions from lepton reconstruction and identification, trigger efficiencies, and the energy/momentum scale and resolution. Systematic uncertainties related to jets, $E_{\text{T}}^{\text{miss}}$, flavour-tagging, pile-up, and luminosity are also considered. The impact of each major experimental systematic uncertainty on the signal is reported as ``up'' ($+1\sigma$) and ``down'' ($-1\sigma$) variations. Overall, the total experimental uncertainties remain below 2.5\% for all signal samples.
+On the experimental side, systematic sources encompass potential mis-modelings of lepton identification, reconstruction, and trigger efficiencies, alongside uncertainties in their corresponding momentum or energy scales and resolutions. Furthermore, variations associated with jet calibrations, the $E_{\text{T}}^{\text{miss}}$ soft-term computation, $b$-tagging performance, pile-up modeling, and the integrated luminosity measurement are comprehensively incorporated. The directional impact of each individual experimental uncertainty upon the signal yield is quantified via explicit $+1\sigma$ (``up'') and $-1\sigma$ (``down'') shifts. Cumulatively, the overall experimental systematic uncertainty assigned to any given signal sample does not exceed 2.5\%.
 
 %%%%%%%%%%%%%%%%
-For signal processes, Tables~\ref{tab:syst-uncertainties-ee} and~\ref{tab:syst-uncertainties-mm} show the impact of the experimental uncertainties on the $qq \to \text{ZH}$ signal in the $ee$ and $\mu\mu$ channels, respectively. Tables~\ref{tab:syst-uncertainties-MonoZ-ee} and~\ref{tab:syst-uncertainties-MonoZ-mm} summarize the individual impacts for the benchmark axial-vector signal in the $ee$ and $\mu\mu$ channels, respectively. The full mapping between the physical descriptions used in these tables and the specific ATLAS internal parameter names is provided in Appendix~\ref{subsec:app_syst}.
+Focusing on the targeted signal processes, the individual impacts of the principal experimental systematics on the $qq \to \text{ZH}$ event yields are cataloged in Tables~\ref{tab:syst-uncertainties-ee} (for the $ee$ channel) and~\ref{tab:syst-uncertainties-mm} (for the $\mu\mu$ channel). Similarly, the relative variations evaluated for the benchmark Mono-$\text{Z}$ axial-vector configuration are detailed in Tables~\ref{tab:syst-uncertainties-MonoZ-ee} and~\ref{tab:syst-uncertainties-MonoZ-mm}. To ensure full reproducibility, a complete translation between the physical systematic definitions presented herein and the designated ATLAS internal nomenclature is appended in Appendix~\ref{subsec:app_syst}.
 
 % The systematic uncertainties on the total yield for all reconstructed simplified models and the 2HDM+$a$ model signals are shown in Figures~\ref{fig:MonoZ-syst}(a) and (b). Binned variations for each source are used in the limit-setting procedure.
 
-The total experimental systematic uncertainties on the expected yield for all reconstructed simplified models and the 2HDM+$a$ model signals have been evaluated. Across the wide range of signal mass hypotheses, the impact of the experimental uncertainties remains relatively uniform. For the simplified model signal samples, the total systematic uncertainty typically ranges between 2\% and 3\%, with maximum values around 5\% for specific parameter choices. Similarly, for the 2HDM+$a$ samples, the total systematic uncertainty predominantly falls within the range of 2\% to 4\%, peaking at approximately 6\%. Because of the large number of signal points and the uniformity of the uncertainties, these values are summarized here rather than presented individually. In the final limit-setting procedure, binned variations for each systematic source are implemented consistently.
+Extensive evaluations of the global experimental uncertainties affecting the predicted yields of both the simplified DM frameworks and the 2HDM+$a$ models have been conducted. Throughout the expansive grid of simulated mass hypotheses, the magnitude of these detector-level effects exhibits remarkable stability. Specifically, the aggregated systematic variations for the simplified models generally fluctuate between 2\% and 3\%, occasionally reaching 5\% at certain extreme phase-space boundaries. A congruent pattern is observed for the 2HDM+$a$ signals, where cumulative experimental uncertainties typically reside within the 2\% to 4\% interval, topping out near 6\%. Given this relative uniformity across hundreds of discrete signal points, a summarized description is provided in text rather than an exhaustive tabulation. Ultimately, during the statistical limit extraction, the full shape-dependent (binned) variations for every considered systematic source are meticulously applied.
 
 %------------------------
 \begin{table}[!htbp]
@@ -58,7 +58,7 @@ Jet energy resolution (rest term)               &  $0.24$ & $-0.24$ \\
 \textbf{Total} &$+2.57$ & $-2.36$ \\
 \bottomrule
 \end{tabular}
-\caption{\rm Impact of the 20 dominant experimental uncertainties on the $qq \to \text{ZH}$ signal in the $ee$ channel. The total positive (negative) uncertainty is calculated by summing the largest positive (negative) variations for each source in quadrature, including smaller sources that are not shown.}
+\caption{\rm Relative impact of the top 20 experimental uncertainty sources on the expected yield of the $qq \to \text{ZH}$ signal evaluated in the $ee$ channel. The aggregate upward (downward) uncertainty is derived by combining the respective maximal positive (negative) deviations in quadrature, a calculation that inherently incorporates minor systematic sources omitted from this table.}
 \label{tab:syst-uncertainties-ee}
 \end{table}
 
@@ -93,7 +93,7 @@ Jet energy resolution (component 5)             &  $0.25$ & $-0.25$ \\
 \textbf{Total}  & $+2.37$ & $-2.21$ \\
 \bottomrule
 \end{tabular}
-\caption{\rm Impact of the 20 dominant experimental uncertainties on the $qq \to \text{ZH}$ signal in the $\mu\mu$ channel. The total positive (negative) uncertainty is calculated by summing the largest positive (negative) variations for each source in quadrature, including smaller sources that are not shown.}
+\caption{\rm Relative impact of the top 20 experimental uncertainty sources on the expected yield of the $qq \to \text{ZH}$ signal evaluated in the $\mu\mu$ channel. The aggregate upward (downward) uncertainty is derived by combining the respective maximal positive (negative) deviations in quadrature, a calculation that inherently incorporates minor systematic sources omitted from this table.}
 \label{tab:syst-uncertainties-mm}
 \end{table}
 %%%%%%%%%%%%%%%%
@@ -128,7 +128,7 @@ Electron identification (component 15)          & $-0.15$ & $+0.15$ \\
 \textbf{Total} & $+2.08$ & $-2.04$ \\ 
 \bottomrule
 \end{tabular}
-\caption{\rm Impact of the 20 dominant experimental uncertainties on the Mono-$\text{Z}$ axial-vector $(m_\chi, m_{\text{med}}) = (1, 500)~\text{GeV}$ signal sample in the $ee$ channel. The total positive (negative) uncertainty is calculated by summing the largest positive (negative) variations for each source in quadrature, including smaller sources that are not shown.}
+\caption{\rm Relative impact of the top 20 experimental uncertainty sources on the Mono-$\text{Z}$ axial-vector $(m_\chi, m_{\text{med}}) = (1, 500)~\text{GeV}$ signal expected yield evaluated in the $ee$ channel. The aggregate upward (downward) uncertainty is derived by combining the respective maximal positive (negative) deviations in quadrature, a calculation that inherently incorporates minor systematic sources omitted from this table.}
 \label{tab:syst-uncertainties-MonoZ-ee}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%
@@ -163,7 +163,7 @@ Muon reconstruction efficiency (stat.)          & $+0.10$ & $-0.10$ \\
 \textbf{Total} & $+1.62$ & $-1.78$ \\    
 \bottomrule
 \end{tabular}
-\caption{\rm Impact of the 20 dominant experimental uncertainties on the Mono-$\text{Z}$ axial-vector $(m_\chi, m_{\text{med}}) = (1, 500)~\text{GeV}$ signal sample in the $\mu\mu$ channel. The total positive (negative) uncertainty is calculated by summing the largest positive (negative) variations for each source in quadrature, including smaller sources that are not shown.}
+\caption{\rm Relative impact of the top 20 experimental uncertainty sources on the Mono-$\text{Z}$ axial-vector $(m_\chi, m_{\text{med}}) = (1, 500)~\text{GeV}$ signal expected yield evaluated in the $\mu\mu$ channel. The aggregate upward (downward) uncertainty is derived by combining the respective maximal positive (negative) deviations in quadrature, a calculation that inherently incorporates minor systematic sources omitted from this table.}
 \label{tab:syst-uncertainties-MonoZ-mm}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%
@@ -178,4 +178,4 @@ Muon reconstruction efficiency (stat.)          & $+0.10$ & $-0.10$ \\
 %     \label{fig:MonoZ-syst}
 % \end{figure}
 
-For some non-dominant backgrounds in the control regions (CRs), systematic uncertainties are assigned based on those evaluated in the signal region (SR). Specifically, normalization uncertainties on $\text{Z}$+jets are set to 38\% in the $e\mu$ and $3\ell$ CRs, while $\text{WZ}$ uncertainties in the $e\mu$ region are set to 9\%. The $\text{ZZ} \to \ell\ell\nu\nu$ uncertainties in the $e\mu$ and $3\ell$ CRs are set to 6.6\%, and 8.8\% for $\text{ZZ} \to 4\ell$. The uncertainties for the non-resonant processes in the $3\ell$ CR are set to 14\%. For triboson and $t\bar{t}\text{V}$ processes, conservative uncertainties of 50\% and 20\% are assumed, respectively.
+Regarding specific sub-dominant background contributions within the designated CRs, their associated systematic errors are extrapolated directly from SR evaluations. Consequently, the assigned normalization uncertainty for $\text{Z}$+jets events is inflated to 38\% across both the $e\mu$ and $3\ell$ boundaries, whereas the $\text{WZ}$ prediction within the $e\mu$ CR is subjected to a 9\% uncertainty. Furthermore, the systematic margins for the $\text{ZZ} \to \ell\ell\nu\nu$ process within the $e\mu$ and $3\ell$ regions are fixed at 6.6\%, compared to an 8.8\% assignment for the $\text{ZZ} \to 4\ell$ yield. Non-resonant background estimations populating the $3\ell$ CR are allocated a 14\% uncertainty. Lastly, highly conservative uncertainty bands of 50\% and 20\% are applied to the minimal triboson and $t\bar{t}\text{V}$ components, respectively.

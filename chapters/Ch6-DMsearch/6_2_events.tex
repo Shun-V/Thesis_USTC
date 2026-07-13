@@ -1,12 +1,12 @@
 \section{Event Selection}
 \label{sec:monoZ_selection}
 
-The analysis targets events with a leptonic $Z$ boson candidate and large missing transverse momentum. The selection is optimized to maximize the significance of DM signals against the SM background, primarily diboson and $Z+\text{jets}$ processes.
+The primary objective of this phase space selection is to isolate collision events characterized by a substantial missing transverse momentum alongside a reconstructed $Z$ boson decaying leptonically. To maximize the sensitivity for DM signals, the applied criteria are heavily optimized to suppress the dominant SM backgrounds, particularly those originating from $Z+\text{jets}$ and diboson production.
 
 %\subsection{Object Selection}
 %\label{subsec:object_sel}
 
-Candidate events are required to have a primary vertex with at least two associated tracks with $p_{\text{T}} > 1~\text{GeV}$. The physics objects used in this analysis, electrons, muons, jets, and missing transverse momentum, are defined as described in Chapter~\ref{chap:zz}.
+At the fundamental level, valid candidate events must contain at least one reconstructed primary vertex featuring a minimum of two associated tracks, each possessing $p_{\text{T}} > 1~\text{GeV}$. The detailed definitions and calibration procedures for the physics objects utilized in this search—namely electrons, muons, jets, and the missing transverse momentum—are identical to those outlined in Chapter~\ref{chap:zz}.
 
 %\paragraph{Electrons:}
 %Electrons are reconstructed from energy clusters in the electromagnetic calorimeter matched to tracks in the inner detector~\cite{PERF-2017-01}. They are required to be within the acceptance region $|\eta| < 2.47$ and satisfy $p_{\text{T}} > 7~\text{GeV}$. For the final signal selection, electrons must satisfy ``Medium'' likelihood-based identification criteria and ``FixedCutPflowLoose'' isolation requirements.
@@ -23,43 +23,42 @@ Candidate events are required to have a primary vertex with at least two associa
 \subsection{Event Pre-selection}
 \label{subsec:pre_selection}
 
-Events are selected using \texttt{single-electron} or \texttt{single-muon} triggers~\cite{ATLAS:2020ejn}. The baseline pre-selection criteria are designed to identify a $Z$ boson candidate while ensuring high efficiency:
+The dataset is filtered initially using a combination of unprescaled \texttt{single-electron} and \texttt{single-muon} triggers~\cite{ATLAS:2020ejn}. A baseline pre-selection phase is introduced to confidently reconstruct a $Z$ boson candidate while preserving maximum signal efficiency:
 
 \begin{itemize}
-    \item \textbf{Leptons:} Exactly two same-flavor, opposite-sign (SFOS) leptons ($\ell = e, \mu$) are required. The leading lepton must have $p_{\text{T}} > 30~\text{GeV}$, and the sub-leading lepton must have $p_{\text{T}} > 20~\text{GeV}$.
-    \item \textbf{Z-mass window:} The invariant mass of the lepton pair must fall within $76 < m_{\ell\ell} < 106~\text{GeV}$, consistent with the $Z$ boson mass to suppress non-resonant dilepton backgrounds.
-    \item \textbf{Third lepton veto:} Events containing a third lepton with $p_{\text{T}} > 7~\text{GeV}$ (satisfying ``Loose'' identification) are vetoed to suppress the $WZ$ background.
-    \item \textbf{$b$-jet veto:} Events containing any $b$-tagged jets ($p_{\text{T}} > 20~\text{GeV}$, $|\eta| < 2.5$) are vetoed to suppress top-quark backgrounds ($t\bar{t}$, $Wt$). The \texttt{MV2c10} tagger~\cite{ATLAS:2019bwq} is used at the 85\% efficiency working point.
-    \item \textbf{$E_{\text{T}}^{\text{miss}}$ threshold:} A relatively loose requirement of $E_{\text{T}}^{\text{miss}} > 70~\text{GeV}$ is applied at the pre-selection stage.
+    \item \textbf{Leptons:} The event must contain precisely two leptons ($\ell = e, \mu$) having the same flavor and opposite electric charge (SFOS). The $p_{\text{T}}$ of the leading lepton is required to exceed $30~\text{GeV}$, while the sub-leading lepton is subject to a $p_{\text{T}} > 20~\text{GeV}$ threshold.
+    \item \textbf{Z-mass window:} To ensure the selected leptons originate from a genuine $Z$ boson and to effectively reject non-resonant dilepton contributions, the invariant mass of the dilepton system is restricted to a tight window of $76 < m_{\ell\ell} < 106~\text{GeV}$.
+    \item \textbf{Third lepton veto:} To severely curtail the $WZ$ diboson contamination, any event featuring a third baseline lepton with $p_{\text{T}} > 7~\text{GeV}$ (passing the ``Loose'' identification working point) is entirely rejected.
+    \item \textbf{$b$-jet veto:} Similarly, an explicit veto is imposed on events containing one or more $b$-tagged jets (defined with $p_{\text{T}} > 20~\text{GeV}$ and $|\eta| < 2.5$), thereby mitigating backgrounds arising from top-quark processes ($t\bar{t}$ and single-top $Wt$). This veto employs the \texttt{MV2c10} tagger~\cite{ATLAS:2019bwq} calibrated to an $85\%$ efficiency operating point.
+    \item \textbf{$E_{\text{T}}^{\text{miss}}$ threshold:} At this pre-selection stage, a relatively broad requirement of $E_{\text{T}}^{\text{miss}} > 70~\text{GeV}$ is applied to ensure basic kinematic consistency.
 \end{itemize}
 
 \subsection{Signal Selection}
 \label{subsec:sr_def}
 
-To further enhance the sensitivity to Dark Matter signals, specific kinematic requirements are applied to define the Signal Region (SR), presented in the first column of Table~\ref{tab:SR_CR_selection}.
-The optimization was further performed using an iterative BDT approach and the signal significance calculations:
+To construct a dedicated Signal Region (SR) with maximally enhanced sensitivity to potential DM candidates, a series of stringent kinematic thresholds are imposed, as detailed in the first column of Table~\ref{tab:SR_CR_selection}. The ultimate thresholds were refined leveraging an iterative Boosted Decision Tree (BDT) methodology intertwined with analytical signal significance evaluations:
 
 \begin{itemize}
-    \item \textbf{$E_{\text{T}}^{\text{miss}} > 90~\text{GeV}$:} A tighter $E_{\text{T}}^{\text{miss}}$ cut is applied to reduce the $Z+\text{jets}$ background, where $E_{\text{T}}^{\text{miss}}$ often arises from instrumental mis-measurement.
-    \item \textbf{$E_{\text{T}}^{\text{miss}}$-significance $> 9$:} The object-based $E_{\text{T}}^{\text{miss}}$-significance ($S$) is a powerful discriminant against fake missing energy. It assesses whether the observed $E_{\text{T}}^{\text{miss}}$ is consistent with the resolution of the reconstructed objects. A cut of $S > 9$ significantly suppresses the $Z+\text{jets}$ contribution. 
+    \item \textbf{$E_{\text{T}}^{\text{miss}} > 90~\text{GeV}$:} This tightened missing energy threshold is critical for eliminating a substantial portion of the $Z+\text{jets}$ background, where non-zero $E_{\text{T}}^{\text{miss}}$ typically emerges from detector resolution effects and jet energy mis-measurement.
+    \item \textbf{$E_{\text{T}}^{\text{miss}}$-significance $> 9$:} Evaluated on an object-by-object basis, the $E_{\text{T}}^{\text{miss}}$-significance ($S$) serves as an excellent discriminator against anomalous or fake missing energy. By verifying whether the observed momentum imbalance is statistically compatible with the intrinsic resolution of the reconstructed objects, a requirement of $S > 9$ effectively eradicates residual $Z+\text{jets}$ events.
     
-    \item \textbf{$\Delta R_{\ell\ell} < 1.8$:} The angular separation between the two leptons is required to be small. This selects events where the $Z$ boson is boosted, recoiling against the invisible DM system. 
+    \item \textbf{$\Delta R_{\ell\ell} < 1.8$:} The geometric distance in the $\eta-\phi$ plane between the two candidate leptons must be small. This constraint naturally isolates topologies where a highly boosted $Z$ boson strongly recoils against an invisible massive DM system. 
 \end{itemize}
 
-The event selection is to optimize the signal significance ($Z$), which is defined as~\cite{ATL-PHYS-PUB-2020-025}:
+The fundamental principle governing the event selection optimization is the maximization of the statistical signal significance ($Z$), formally expressed as~\cite{ATL-PHYS-PUB-2020-025}:
     \begin{equation}
         Z = \sqrt{2\left((s+b)\ln\left[\frac{(s+b)(b+\sigma_{b}^{2})}{b^{2}+(s+b)\sigma_{b}^{2}}\right] - \frac{b^{2}}{\sigma_{b}^{2}}\ln\left[1+\frac{s\sigma_{b}^{2}}{b(b+\sigma_{b}^{2})}\right]\right)}
     \end{equation}
 
-For the final statistical interpretation of the Mono-$Z$ channel, the transverse mass of the $ZZ$ system, $m_{\text{T}}^{\text{ZZ}}$, is used as the discriminant variable. It is defined as:
+In the context of the final statistical extraction for the Mono-$Z$ analysis, the transverse mass of the reconstructed $ZZ$ system, denoted as $m_{\text{T}}^{\text{ZZ}}$, acts as the primary discriminating observable. Its formulation is given by:
 \begin{equation}
     m_{\text{T}}^{\text{ZZ}} = \sqrt{ \left( \sqrt{m_{\text{Z}}^2 + (p_{\text{T}}^{\ell\ell})^2} + \sqrt{m_{\text{Z}}^2 + (E_{\text{T}}^{\text{miss}})^2} \right)^2 - \left| \vec{p}_{\text{T}}^{\ell\ell} + \vec{E}_{\text{T}}^{\text{miss}} \right|^2 }
 \end{equation}
-This variable effectively separates the signal (which peaks at higher values correlated with the mediator mass) from the SM backgrounds. For the Mono-$Z$ search, only events with $m_{\text{T}}^{\text{ZZ}} > 200~\text{GeV}$ are included in the fit. 
+This specific variable provides excellent discrimination capability, as the DM signal tends to populate the high-$m_{\text{T}}^{\text{ZZ}}$ tail (strongly correlated with the assumed mediator mass) relative to the rapidly falling SM background spectra. Consequently, only events satisfying $m_{\text{T}}^{\text{ZZ}} > 200~\text{GeV}$ are retained for the statistical fit in the Mono-$Z$ search.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-Considering all Mono-$Z$ signal events predicted from different models, in which the $Z$ boson decays into $e^+e^-$ or $\mu^+\mu^-$ pair, the SR selection has an acceptance times efficiency of about $8\%$ ($19\%$) for quark-induced (gluon-induced) $ZH \to \ell^+\ell^- + \text{inv}$ production, resulting in an expectation of 120 events for $\mathcal{B}(H \to \text{inv}) = 10\%$. 
+Evaluating the total acceptance multiplied by efficiency ($A \times \epsilon$) across various Mono-$Z$ signal scenarios yielding $e^+e^-$ or $\mu^+\mu^-$ pairs, the SR selection retains approximately $8\%$ of the quark-induced and $19\%$ of the gluon-induced $ZH \to \ell^+\ell^- + \text{inv}$ events. Assuming a branching ratio $\mathcal{B}(H \to \text{inv}) = 10\%$, this translates to an expected yield of around 120 signal events.
 
-For an example signal point in the simplified DM model ($m_{\chi} = 1~\text{GeV}$, $m_{\text{med}} = 900~\text{GeV}$), the acceptance times efficiency is about $20\%$, corresponding to 145 expected events. For a $gg$-induced 2HDM+$a$ signal point ($\tan\beta = 1.0$, $\sin\theta = 0.7$, $m_A = 600~\text{GeV}$, $m_a = 400~\text{GeV}$, $m_{\chi} = 10~\text{GeV}$), it is about $32\%$, corresponding to 182 expected events. 
+When investigating a representative simplified DM benchmark characterized by $m_{\chi} = 1~\text{GeV}$ and $m_{\text{med}} = 900~\text{GeV}$, the resultant $A \times \epsilon$ reaches roughly $20\%$, yielding an expectation of 145 events. Similarly, for a gluon-initiated 2HDM+$a$ parameter point (defined by $\tan\beta = 1.0$, $\sin\theta = 0.7$, $m_A = 600~\text{GeV}$, $m_a = 400~\text{GeV}$, and $m_{\chi} = 10~\text{GeV}$), the efficiency climbs to about $32\%$, translating to 182 anticipated events. 
 
-For all signal models, the acceptance times efficiency is very similar for the dielectron and dimuon selections.
+Across all evaluated theoretical models, the combined acceptance and efficiency profiles remain highly consistent between the dielectron and dimuon final states.
