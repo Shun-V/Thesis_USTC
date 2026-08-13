@@ -8,6 +8,7 @@
 *.xdv
 *.fls
 *.fdb_latexmk
+.DS_Store
 main.pdf
 README_USTC.md
-.DS_Store
+review
