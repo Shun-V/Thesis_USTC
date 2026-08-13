@@ -49,7 +49,7 @@ In addition to bin migration, the unfolding procedure must correct for event los
 
 This analysis employs the \textbf{Iterative Bayesian Unfolding (IBU)} method~\cite{dagostini2010improved}, implemented within the \textsc{RooUnfold} framework~\cite{Adye:1349242}. 
 
-The algorithm is based on Bayes' theorem. It begins with a prior probability distribution, initially assumed to be the particle-level distribution from the nominal MC simulation. In each iteration, the prior is updated based on the agreement between the measured data and the folded prediction. The algorithm takes as input the measured background-subtracted data, the migration matrix ($M$), and the efficiency/acceptance corrections described above.
+The algorithm is based on Bayes' theorem. It begins with a prior probability distribution, initially assumed to be the particle-level distribution from the nominal MC simulation. In each iteration, the prior is updated based on the agreement between the measured data and the folded prediction. The algorithm takes as input the measured background-subtracted data, the migration matrix ($M$), and the efficiency/acceptance corrections described above. For the evaluation of experimental systematic uncertainties, the background subtraction is performed dynamically: the varied background predictions, re-estimated under the corresponding systematic variations, are subtracted from the data prior to unfolding.
 
 The number of iterations serves as the regularization parameter. A low number of iterations may retain a bias towards the MC prior, while a high number of iterations reduces this bias but amplifies statistical fluctuations from the data. The optimization of this parameter is discussed in Section~\ref{sec:unfolding_regularization}.
 

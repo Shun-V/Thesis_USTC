@@ -64,7 +64,8 @@ As conveyed in Figure~\ref{fig:e-ID}, valid electron candidates are assembled wh
     \subfloat[] {
     \includegraphics[width=0.45\textwidth]{figures/ch4-recon/Obj-eID-eff-eta.png}
     }
-    \caption{Performance profiles showing the efficiency of electron reconstruction and identification, evaluated against the electron's transverse energy $E_{\text{T}}$ (a) and its pseudorapidity $\eta$ (b).}
+    \caption{Performance profiles showing the data identification efficiency ($\epsilon_{\text{id}}$) for electrons, evaluated against the electron's transverse energy $E_{\text{T}}$ (a) and its pseudorapidity $\eta$ (b). The efficiencies are measured using the tag-and-probe method in $Z \to ee$ and $J/\psi \to ee$ events from $37.1~\text{fb}^{-1}$ of $pp$ collision data at $\sqrt{s} = 13~\text{TeV}$, corresponding to an average pile-up of $\langle\mu\rangle \approx 24$~\cite{ATLAS-Egamma-2019}.}
+    %\caption{Performance profiles showing the efficiency of electron reconstruction and identification, evaluated against the electron's transverse energy $E_{\text{T}}$ (a) and its pseudorapidity $\eta$ (b).}
     \label{fig:eID-eff}
 \end{figure}
 The data-driven studies outlined in this document mandate that all accepted electrons satisfy the \texttt{Medium} likelihood-based identification threshold. By adopting this specific operational working point, the analyses benefit from an average identification efficiency hovering around $90\%$~\cite{ATLAS-Egamma-Efficiencies-2024}, a performance trend visibly charted in Figure~\ref{fig:eID-eff}. To accurately evaluate the electron's final momentum, the energy magnitude recorded by the calorimeter cluster is fused with the directional trajectory provided by the matched track.
@@ -80,7 +81,7 @@ This reconstruction sequence initiates by locating track segments within the MS,
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/ch4-recon/Muon-recon.png}
-    \caption{Visual breakdown of the detector components utilized for isolating muons. The classification of a muon candidate depends directly on which tracking sub-systems contribute to its reconstruction. \textit{Combined} muons successfully merge trajectory data from both the Muon Spectrometer and the Inner Detector. \textit{Standalone} muons are built exclusively from Muon Spectrometer hits. \textit{Segment-Tagged} candidates pair an Inner Detector track with just one localized track segment in the Muon Spectrometer. Finally, \textit{Calorimeter-Tagged} muons rely on an Inner Detector trajectory combined with a distinct minimum-ionizing energy signature deposited within the calorimeter volume.}
+    \caption{Visual breakdown of the detector components utilized for isolating muons. The classification of a muon candidate depends directly on which tracking sub-systems contribute to its reconstruction. \textit{Combined} muons successfully merge trajectory data from both the Muon Spectrometer and the Inner Detector. \textit{Standalone} muons are built exclusively from Muon Spectrometer hits. \textit{Segment-Tagged} candidates pair an Inner Detector track with just one localized track segment in the Muon Spectrometer. Finally, \textit{Calorimeter-Tagged} muons rely on an Inner Detector trajectory combined with a distinct minimum-ionizing energy signature deposited within the calorimeter volume\cite{ATLAS-Muon-Reco-ID-2021}.}
     \label{fig:mu-ID}
 \end{figure}
 
@@ -96,7 +97,7 @@ Across the various experimental studies documented in this thesis, muon candidat
         \subfloat[] {
     \includegraphics[width=0.48\textwidth]{figures/ch4-recon/Muon-eff-pT.png}
     }
-    \caption{Muon reconstruction and identification performance scaling mapped as a function of $\eta$ (a) and $p_{\text{T}}$ (b).}
+    \caption{Muon reconstruction and identification performance scaling mapped as a function of $\eta$ (a) and $p_{\text{T}}$ (b)\cite{ATLAS-Muon-Reco-ID-2021}.}
     \label{fig:mu-ID2}
 \end{figure}
 
@@ -117,7 +118,7 @@ Whenever an analysis deeply depends on tracking hadronic final states, the syste
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.90\textwidth]{figures/ch4-recon/JERpTanduncertainty.png}
-    \caption{The fractional energy resolution for standard jets, plotted against the transverse momentum $p_{\text{T}}$. These performance curves are shown for (a) the pseudorapidity interval $0.2 < |\eta| < 0.7$ and (b) a specific target of $\eta = 0.2$.}
+    \caption{The fractional energy resolution for standard jets, plotted against the transverse momentum $p_{\text{T}}$. These performance curves are shown for (a) the pseudorapidity interval $0.2 < |\eta| < 0.7$ and (b) a specific target of $\eta = 0.2$\cite{ATLAS-Jet-JER-2021}.}
     \label{fig:JER}
 \end{figure}
 
@@ -130,7 +131,7 @@ Due to their weakly interacting nature, final-state neutrinos ($\nu$) easily pen
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.75\textwidth]{figures/ch4-recon/Obj-met-diagram.png}   
-    \caption{Vectorial derivation of the missing transverse energy, illustrating how it balances against the combined transverse momenta of all successfully reconstructed jets and leptons.}
+    \caption{Vectorial derivation of the missing transverse energy, illustrating how it balances against the combined transverse momenta of all successfully reconstructed jets and leptons\cite{JETM-2020-03}.}
     \label{fig:met}
 \end{figure}
  Instead, their unseen presence is mathematically deduced via the $E_{\text{T}}^{\text{miss}}$ parameter. This variable is derived by calculating the magnitude of the negative vectorial sum of the transverse momenta generated by all fully identified physics objects (namely, leptons and jets). To ensure absolute momentum conservation, this calculation also integrates any residual unassociated tracks that clearly map back to the primary collision vertex~\cite{JETM-2020-03}, as mathematically structured in Equation~\eqref{eq:Et-miss}. 

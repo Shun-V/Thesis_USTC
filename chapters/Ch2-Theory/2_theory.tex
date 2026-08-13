@@ -519,7 +519,8 @@ The Yukawa couplings of the Higgs boson to third-generation fermions have been m
 \subsection{The Non-Abelian Self-Interactions Among Gauge Bosons}
 \label{boson-interactions}
 
-The non-Abelian self-interactions among gauge bosons within the electroweak theoretical framework manifest as multi-boson interaction vertices, which arise directly from the electroweak gauge field Lagrangian. By expressing the gauge fields in terms of the physical (mixed) boson states defined in Equations~\eqref{eq:photon}, \eqref{eq:zboson}, and \eqref{eq:bosons}, the Lagrangian can be rewritten as
+The non-Abelian self-interactions among gauge bosons within the electroweak theoretical framework manifest as multi-boson interaction vertices, which arise directly from the electroweak gauge field Lagrangian. By expressing the gauge fields in terms of the physical (mixed) boson states defined in Equations~\eqref{eq:photon}, \eqref{eq:zboson}, and \eqref{eq:bosons}, the Lagrangian can be rewritten as\par
+
 \begin{small}
 \begin{equation}\label{eq:lag_ew_gauge}
 \begin{aligned}
@@ -589,4 +590,122 @@ A wide range of theoretical frameworks beyond the SM (BSM) have been proposed to
 The BSM theoretical approaches aim to provide a deeper and more unified description of fundamental interactions and may help address some of the open questions that remain unresolved within the SM.
 
 
+\subsection{Specific Dark Matter Phenomenological Models}
+\label{sec:theory_dm_models}
 
+In the search for dark matter at the LHC, interpreting the experimental signatures requires well-defined theoretical frameworks. Within this thesis, the Mono-$Z$ signature is interpreted using specific BSM models advocated by the LHC Dark Matter Working Group:
+
+\begin{enumerate}
+    \item \textbf{Simplified Models:} Models with vector or axial-vector mediators (spin-1) that couple SM quarks to Dirac fermion DM candidates~\cite{Abercrombie:2015wmb}. In these models, the SM is extended to include an additional U(1) gauge symmetry under which the DM particles are charged, and a BSM particle is introduced to mediate the interactions between the WIMP (denoted as $\chi$) and SM particles. The simplest model has one pair of WIMPs and one mediator particle. It introduces five parameters in addition to the SM: the WIMP mass ($m_\chi$), the mediator mass ($m_{\text{med}}$) and its decay width ($\Gamma_{\text{med}}$), and the mediator's couplings to the DM particles ($g_\chi$) and to quarks ($g_q$). 
+    
+    \item \textbf{2HDM+$a$ Models:} A Two-Higgs-Doublet Model (2HDM) extended with an additional pseudoscalar mediator ($a$), providing rich phenomenology including Mono-$Z$ signatures~\cite{Bauer:2017ota}. The framework is assumed to be CP-conserving and to reside within the alignment limit, guaranteeing that the lightest CP-even scalar state matches the properties of the SM Higgs boson. Only type-II 2HDMs are considered, where up-type and down-type quarks couple to different doublets, and leptons couple to the same doublet as down-type quarks. The pseudoscalar $a$ may arise from an additional U(1) symmetry, enabling its coupling to WIMP pairs. The model contains 14 parameters, including the WIMP mass ($m_\chi$); the scalar masses ($m_h$, $m_H$, $m_a$, $m_A$, $m_{H^\pm}$); quartic couplings ($\lambda_1$, $\lambda_2$, $\lambda_3$); the WIMP coupling ($y_\chi$); the electroweak vacuum expectation value ($v=246$~GeV); the ratio of vacuum expectation values ($\tan\beta$); and the mixing angles ($\alpha$, $\theta$).
+\end{enumerate}
+
+
+%-------------EFT & Anomalous Couplings----------------
+\section{Effective Field Theory and Anomalous Gauge Couplings}
+\label{sec:theory_eft}
+
+As introduced in Section~\ref{boson-interactions}, the non-Abelian structure of the $\mathrm{SU}(2)_{\text{L}} \otimes \mathrm{U}(1)_{\text{Y}}$ gauge symmetry dictates the exact forms of gauge boson self-interactions. However, the neutral triple gauge boson vertices (such as $\text{ZZZ}$ and $\text{ZZ}\gamma$) are absent in the SM at tree level. Furthermore, deviations in the quartic gauge couplings ($\text{ZZWW}$ and $\text{ZZZZ}$) could manifest at high energy scales due to new physics. To parameterize these potential BSM effects in a model-independent way, the Standard Model Effective Field Theory (SMEFT) and vertex-function (VF) formalisms are employed.
+
+\subsection{Anomalous Neutral Triple Gauge Couplings (aTGCs)}
+\label{subsec:theory_atgc}
+
+Inclusive $\text{ZZ}$ production provides a key channel for probing anomalous neutral triple gauge couplings (aTGCs). The most general anomalous $\text{ZZ}V$ ($V = \text{Z}, \gamma$) vertex function for on-shell Z bosons is given by~\cite{Baur:2000ae}:
+\begin{equation}
+    g_{\text{ZZ}V} \Gamma_{\text{ZZ}V}^{\alpha\beta\mu} = 
+    e \frac{P^2 - m_V^2}{m_{\text{Z}}^2} 
+    \left[ 
+    i f_4^V (P^\alpha g^{\mu\beta} + P^\beta g^{\mu\alpha}) 
+    + i f_5^V \epsilon^{\mu\alpha\beta\rho}(q_1 - q_2)_\rho 
+    \right],
+\label{eq:vf_atgc}
+\end{equation}
+where $P$, $q_1$, and $q_2$ denote the momenta of the $V$ boson and the two on-shell Z bosons, respectively. The anomalous couplings $f_4^V$ and $f_5^V$ correspond to CP-violating and CP-conserving interactions.
+
+Alternatively, in the SMEFT framework, the Lagrangian is extended by higher-dimensional operators. For aTGCs, dimension-eight operators are introduced:
+\begin{equation}
+    \mathcal{L}_{\text{SMEFT}} = \mathcal{L}_{\text{SM}} + \sum_i \frac{C_i}{\Lambda^4} \mathcal{O}_i^{(8)},
+\label{eq:smeft_atgc}
+\end{equation}
+where $\mathcal{O}_i^{(8)}$ are dimension-eight operators and $C_i$ their Wilson coefficients. Operators such as $\mathcal{O}_{\widetilde{B}W}$, $\mathcal{O}_{BB}$, $\mathcal{O}_{BW}$, and $\mathcal{O}_{WW}$ with corresponding coefficients $C_i/\Lambda^4$ directly modify the neutral gauge boson interactions.
+
+\subsection{Anomalous Quartic Gauge Couplings (aQGCs)}
+\label{subsec:theory_aqgc}
+
+The electroweak vector boson scattering (VBS) processes, such as $\text{ZZ}jj$ production, offer a unique probe of quartic electroweak gauge boson interactions. In the SM, the cross-section contribution from these vertices is small. The aQGCs are also parameterised using the SMEFT framework:
+\begin{equation}
+    \mathcal{L}_{\text{SMEFT}} = \mathcal{L}_{\text{SM}} + \sum_i \frac{f_{\text{T}i}}{\Lambda^4} \mathcal{O}_{\text{T}i}^{(8)}.
+\label{eq:smeft_aqgc}
+\end{equation}
+Dimension-8 operators are considered here, as they directly contribute to quartic gauge couplings without modifying triple gauge couplings, which do not arise at lower dimensions~\cite{Eboli2016}. Specifically, the transversal operators $\text{T}0$ through $\text{T}9$ ($\mathcal{O}_{\text{T}i}$), associated with the Wilson coefficients $f_{\text{T}i}/\Lambda^4$, are used to evaluate BSM enhancements in the high transverse mass tail of the $\text{ZZ}$ system.
+
+
+%-------------Statistical Methods----------------
+\section{Statistical Methods}
+\label{sec:theory_stats}
+
+To reliably derive physical conclusions from the collected experimental data and the theoretical models described above, a robust statistical framework is required. This section provides a comprehensive overview of the specific statistical machinery deployed throughout the experimental measurements and searches in this thesis.
+
+Within modern high-energy physics analyses, theoretical postulations are rigorously evaluated against empirical observations via statistical hypothesis testing. This inference methodology is centrally designed to quantify whether the recorded data statistically favor a specific phenomenological model. Conventionally, the baseline background-only paradigm—assuming the complete absence of the targeted new physics signal—is formulated as the null hypothesis ($H_0$). Conversely, the alternative hypothesis ($H_1$) accommodates a signal-plus-background configuration, intrinsically implying the existence of the newly proposed BSM interaction. The ultimate objective of this testing procedure is to quantitatively measure the degree of evidence resisting the null hypothesis.
+
+\subsection{The $p$-Value}
+\label{subsec:p-value}
+
+To quantitatively assess how well the observed experimental outcomes align with a specific theoretical postulate, the $p$-value metric is conventionally employed. Formally, assuming the background-only baseline ($H_0$) holds exactly true, this metric represents the mathematical probability of yielding a test statistic that is equally or more extreme than the actual measurement. Consequently, an observation characterized by a minute $p$-value is deemed highly improbable under the pure-background assumption, thereby furnishing potential evidence in support of the alternative signal hypothesis. Within the particle physics community, such an excess is routinely translated into a Gaussian statistical significance, mapping the derived $p$-value to a corresponding number of standard deviations ($\sigma$).
+
+\subsection{Statistical Significance}
+\label{subsec:significance}
+
+The statistical significance acts as a direct numerical translator for the $p$-value, articulating the degree of incompatibility between the empirical data and $H_0$ using the standard deviation ($\sigma$) scale of a standard normal distribution.
+
+To contextualize, achieving a $2\sigma$ significance is mathematically equivalent to a $p$-value of roughly 0.0455 (4.55\%), implying only marginal tension with the background-only model. Reaching the $3\sigma$ threshold corresponds to a $p$-value of approximately $2.7 \times 10^{-3}$, constituting compelling evidence for an anomaly. Ultimately, a definitive scientific discovery dictates a rigorous $5\sigma$ standard (yielding a $p$-value of roughly $5.7 \times 10^{-7}$). Crossing this threshold essentially guarantees that the observed experimental excess is overwhelmingly unlikely to manifest merely as a random upward statistical fluctuation of the underlying SM background.
+
+\subsection{Likelihood Function}
+\label{subsec:likelihood}
+
+The statistical separation between the background-only and signal-plus-background hypotheses relies heavily on the construction of a robust test statistic. The most ubiquitous choice in collider physics is built upon the \textit{likelihood function}, a mathematical construct that defines the probability of realizing the observed dataset given a postulated set of theory parameters.
+
+Because event counts populating localized phase-space regions inherently obey Poisson statistics, the interaction strength of the targeted physical process is typically controlled by an unconstrained scaling factor, designated as the \textit{signal strength} ($\mu$). This factor scales the nominal expected signal yields and acts as the primary \textit{parameter of interest} (POI) in the fit. A best-fit configuration of $\mu = 0$ perfectly recovers the $H_0$ scenario, whereas a statistically significant positive $\mu$ estimate highlights a measurable signal contribution residing above the background floor.
+
+To accurately model the real-world detector environment, additional degrees of freedom—termed \textit{nuisance parameters} ($\theta$)—are embedded within the likelihood to profile various systematic uncertainties. These parameters are not inherently interesting for the final physics measurement but are vital for correct uncertainty propagation. The full likelihood function, parameterized simultaneously by the POI $\mu$ and the nuisance array $\theta$, is formulated as:
+\begin{equation}
+\label{eqn:likelihood}
+L(\mu,\theta \mid \text{data}) = \prod_{j=1}^{N} \frac{(\mu s_j + b_j)^{n_j}}{n_j!} e^{-(\mu s_j + b_j)},
+\end{equation}
+where the integer $n_j$ denotes the actual count of observed data events residing in the $j$-th bin. Conversely, $s_j$ and $b_j$ symbolize the theoretically predicted yields for the signal and background processes, respectively, within that identical bin. To extract the optimal signal strength, an unconditional maximization of this likelihood is performed with respect to both $\mu$ and the entire suite of $\theta$ parameters, tightly constrained by the experimental observations.
+
+In sophisticated analyses, evaluating the parameter $\mu$ solely within the signal region is insufficient; dedicated \textit{control regions} are routinely incorporated to anchor the dominant background normalizations. By jointly fitting these regions, the global likelihood expands into:
+\begin{equation}
+\label{eqn:likelihood2}
+L(\mu,\theta \mid \text{data}) = \prod_{j=1}^{N} \frac{(\mu s_j + b_j)^{n_j}}{n_j!} e^{-(\mu s_j + b_j)}
+\prod_{k=1}^{M} \frac{m_k^{u_k}}{u_k!} e^{-m_k},
+\end{equation}
+where the variables $u_k$ and $m_k$ respectively designate the experimentally recorded event counts and the corresponding background expectations within the $k$-th bin of the chosen control regions. Constructing this combined likelihood enables a rigorous, simultaneous profiling procedure that extracts the signal POI while systematically calibrating background estimations directly from data.
+
+\subsection{Confidence Intervals and the $\text{CL}_s$ Method}
+\label{subsec:CL}
+
+When evaluating constraints on specific theoretical parameters or determining upper exclusion bounds on cross-sections, the modified frequentist prescription, universally known as the $\text{CL}_s$ method, is adopted. This rigorous paradigm mitigates the risk of excluding signals to which the analysis possesses no actual sensitivity by evaluating two distinct probabilities: $\text{CL}_{s+b}$ (the confidence level associated with the signal-plus-background hypothesis) and $\text{CL}_b$ (the confidence level of the null hypothesis). The exclusion metric itself is formed via the ratio:
+\begin{equation}
+\text{CL}_s = \frac{\text{CL}_{s+b}}{\text{CL}_b}.
+\end{equation}
+Standard operating procedures dictate that a theoretical signal configuration is formally excluded at a $(1-\alpha)$ confidence level whenever the calculated $\text{CL}_s$ falls below the predefined $\alpha$ tolerance. Typically, $\alpha$ is fixed at 0.05, establishing the widely quoted 95\% confidence level limit.
+
+Equation~\eqref{eqn:likelihood2} serves as the foundational core of this statistical machinery. It integrates the pure Poisson counting probabilities across all populated analysis bins with auxiliary penalty constraints that map the intricate network of systematic uncertainties (encompassing theoretical modeling, detector resolutions, and background estimations) onto the $\theta$ nuisance parameters.
+
+For the purpose of estimating the optimal parameter of interest, the \textit{profile likelihood ratio} is overwhelmingly selected as the optimal test statistic. Operating on the signal strength $\mu$, this ratio is mathematically defined as:
+\begin{equation}
+\lambda(\mu) =
+\frac{L(\mu, \hat{\hat{\theta}}(\mu))}
+     {L(\hat{\mu}, \hat{\theta})},
+\end{equation}
+in which $\hat{\hat{\theta}}(\mu)$ represents the conditionally maximized estimates for the nuisance parameters assuming a rigidly fixed $\mu$. In contrast, the denominator utilizes the completely unconditional global maximum-likelihood estimates, denoted as $(\hat{\mu}, \hat{\theta})$, optimized simultaneously over all free parameters.
+
+Relying on this robust likelihood ratio, the primary test statistic is formulated as:
+\begin{equation}
+q_\mu = -2 \ln \lambda(\mu)
+\end{equation}
+which serves as the primary metric for quantifying the consistency between the empirical observations and any presumed signal configuration. Thanks to the established asymptotic behaviors of this specific test statistic, one can reliably calculate critical $p$-values and construct confidence intervals analytically, frequently bypassing the need for computationally exhaustive Monte Carlo pseudo-experiments.
+
+Ultimately, the deployment of these sophisticated statistical techniques guarantees a highly coherent and robust framework for hypothesis discrimination, parameter profiling, and theoretical limit derivation, paving the way for sound physical interpretations of the ATLAS dataset.
